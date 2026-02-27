@@ -1,140 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALL‑IN‑1 Market Narrative</title>
-  <style>
-    :root{--bg:#0f1115;--card:#161a22;--accent:#00c853;--text:#fff}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    section{padding:80px 20px}
-    .container{max-width:1100px; margin:auto}
-    .center{text-align:center}
-    h1{font-size:42px;margin-bottom:20px}
-    .button{ display:inline-block; padding:16px 32px; background:var(--accent); color:#000; text-decoration:none; font-weight:600; border-radius:8px; margin-top:20px}
-    .media-block{ background:var(--card); border-radius:12px; overflow:hidden; position:relative; padding-top:56.25%}
-    .media-block iframe{ position:absolute; top:0; right:0; left:0; margin:auto; width:85%; height:100%; border:0}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL IN 1 — Structured Market Context</title>
+
+<style>
+:root {
+  --bg: #0b0d12;
+  --bg-alt: #11151c;
+  --text: #f2f2f2;
+  --text-soft: #aeb6c2;
+  --border: #1c2330;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+section {
+  padding: 100px 8%;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text-soft);
+  max-width: 800px;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.image-full {
+  margin-top: 60px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.alt {
+  background: var(--bg-alt);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.media-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.price-box {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+}
+
+.price {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #666;
+  margin-right: 10px;
+}
+
+footer {
+  padding: 60px 8%;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  h1 { font-size: 42px; }
+  .split { grid-template-columns: 1fr; }
+}
+</style>
 </head>
+
 <body>
 
-<!-- HERO – updated structure -->
-<section class="center">
-  <div class="container">
-    <h1>ALL‑IN‑1 Market Narrative</h1>
-    <p><strong>Session boxes, HTF pivots, gaps, ADR and event flags overlaid non‑intrusively so you see smart levels at a glance. Start 15‑day free trial.</strong></p>
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Full Market Structure.<br>Instantly Loaded.</h1>
+  <p>Sessions, HTF extremes, gaps, volatility projections and economic events — unified into one adaptive layer.</p>
+  <a href="#" class="cta">Start 15-Day Free Trial</a>
+</section>
 
-  <!-- full‑width media block -->
-  <div class="media-block full-width">
-    <iframe
-      src="https://www.tradingview.com/embed-widget/advanced-chart/?chart_id=bJFON9F1k&theme=dark&locale=en"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
+<!-- PRIMARY SCREENSHOT -->
+<section>
+  <h2>Complete Structural Context</h2>
+  <p>What appears complex is structured. Every level is intentional. Sessions, liquidity extremes, gaps and volatility projections coexist without visual conflict.</p>
 
-  <div class="container">
-    <a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">
-      Subscribe Monthly — $36/month
-    </a>
+  <!-- Replace IMAGE_1.jpg -->
+  <img src="IMAGE_1.jpg" alt="ALL IN 1 Full Structure Screenshot" class="image-full">
+</section>
+
+<!-- VIDEO DEMONSTRATION -->
+<section class="alt">
+  <h2>See It Load in Real Time</h2>
+  <p>Open chart. Apply indicator. Full structural framework appears instantly. Multi-timeframe alignment remains consistent. Replay intact.</p>
+
+  <!-- Replace VIDEO_URL_HERE -->
+  <video controls>
+    <source src="VIDEO_URL_HERE.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<!-- MULTI SCREENSHOT GRID -->
+<section>
+  <h2>Structural Density. Visual Order.</h2>
+  <div class="media-grid">
+    <img src="IMAGE_2.jpg" alt="Session Structure View">
+    <img src="IMAGE_3.jpg" alt="HTF Liquidity Mapping">
+    <img src="IMAGE_4.jpg" alt="Volatility Projection Example">
   </div>
 </section>
 
-
-
-<!-- PAIN → SOLUTION -->
-<section>
-  <div class="container">
-    <h2 class="center">Pain Points → Solutions</h2>
-
-    <div class="grid-2" style="gap:60px;">
-      <!-- Pain column -->
-      <div>
-        <h3 style="margin-bottom:12px;">Cluttered charts</h3>
-        <p>Overlapping indicators and manual drawing exhaust me.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Hidden candles</h3>
-        <p>Multitude of lines covering price action.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Late level detection</h3>
-        <p>Miss key support/resistance.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Slow multi‑market setup</h3>
-        <p>Minutes lost building narratives.</p>
-      </div>
-
-      <!-- Solution column -->
-      <div>
-        <h3 style="margin-bottom:12px;">Clean, non‑intrusive chart</h3>
-        <p>Auto‑repositioning elements stop at price; labels stay out of the candle area.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Color‑managed view</h3>
-        <p>Smart color schemes reduce screen fatigue and improve visual processing.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Instant level alerts</h3>
-        <p>Levels auto‑extend with each candle; alerts ping as price reaches them.</p>
-
-        <h3 style="margin-top:32px;margin-bottom:12px;">Ready‑made narrative</h3>
-        <p>A complete market narrative appears instantly for any selected instrument on load.</p>
-      </div>
+<!-- PROBLEM / SHIFT -->
+<section class="alt">
+  <div class="split">
+    <div>
+      <h2>Fragmented Context</h2>
+      <p>Manual session marking. Separate HTF scanning. External economic calendars. Volatility guesswork.</p>
+    </div>
+    <div>
+      <h2>One Layer</h2>
+      <p>ALL IN 1 consolidates structural context into a unified execution environment.</p>
+      <p>No rebuilding. No duplication. No structural drift.</p>
     </div>
   </div>
 </section>
-
-<!-- SOLUTION -->
-<section class="center">
-<div class="container">
-<h2>The Solution</h2>
-<p>ALL IN 1 ⛳️ consolidates all essential context into one clean, non‑intrusive layer that updates automatically with each candle. The overlay lives in the background, so price action and your strategy remain fully visible.</p>
-</div>
-</section>
-
-<!-- BENEFITS -->
-<section>
-<div class="container">
-<h2 class="center">Core Benefits (what you’ll actually feel)</h2>
-<div class="grid-3">
-<div class="card">→ Instant market narrative – sessions, gaps & HTF extremes on a single layer.</div>
-<div class="card">→ Save ≈ 80 % chart‑setup time – less manual drawing; full‑custom hide/show settings.</div>
-<div class="card">→ Clean design – transparent background, auto‑adjusting labels, no candle obstruction.</div>
-<div class="card">→ Immediate awareness – levels shift the moment higher‑timeframe liquidity is hit.</div>
-<div class="card">→ Stay ahead – real‑time alerts ring (phone notifications) as key levels are reached.</div>
-<div class="card">→ Confidence on every TF – each timeframe automatically shows only the data that matters.</div>
-<div class="card">→ Replay mode – smooth review of past trades or back‑test sessions.</div>
-<div class="card">→ Realistic daily targets – ADR provides expected range, helping set achievable goals and trim risk.</div>
-</div>
-</div>
-</section>
-
+  
 <!-- PRICING -->
-<section class="center">
-<div class="container">
-<h2>Pricing</h2>
-<p><strong>Receive 𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ — $36/month</strong></p>
-<div class="pricing">
-<div class="price-card">
-<h3>Monthly</h3>
-<p>$36/month</p>
-<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">Subscribe</a>
-</div>
-<div class="price-card">
-<h3>Yearly</h3>
-<p>Save with annual plan</p>
-<a href="https://buy.stripe.com/00w9AT1ld9Ug9Ex9OX4AU0i" class="button">Subscribe</a>
-</div>
-<div class="price-card">
-<h3>Private Call</h3>
-<p>One‑Off Payment</p>
-<a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="button">Book Call</a>
-</div>
-</div>
-</div>
-</section>
+<section>
+  <div class="price-box">
 
+    <div class="price">
+      <span class="strike">$129</span>$109 / month
+    </div>
+
+    <p>
+      Full ALL-IN-1 access · Private script · Continuous updates ·  
+      15-day free trial · Cancel anytime
+    </p>
+
+    <div style="margin-top:30px;">
+      <a href="STRIPE_CHECKOUT_LINK" class="cta">
+        Start Access — $109
+      </a>
+    </div>
+
+    <div style="margin-top:20px;">
+      <a href="CALL_BOOKING_LINK" 
+         style="color:#aeb6c2; text-decoration:none; font-size:16px;">
+        Book a Private Session →
+      </a>
+    </div>
+
+  </div>
+</section>
+  
 <footer>
-<p>Terms & Conditions · Privacy Policy · Cookie Policy · Refund Policy · DMCA Policy · License Agreement · Compliance · FAQ · Support · About</p>
-<p>©️ 2026 — R‑TradingTools</p>
+© 2026 — R-TradingTools  
+Terms · Privacy · License · Support
 </footer>
+
 </body>
 </html>
