@@ -6,20 +6,82 @@
 <title>ALL-IN-1 Market Narrative</title>
 
 <style>
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0f1115;color:#fff;line-height:1.6}
-section{padding:80px 20px}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+  background:#0f1115;
+  color:#fff;
+  line-height:1.6;
+}
+section{padding:100px 20px}
 .container{max-width:1100px;margin:auto}
 .center{text-align:center}
-h1{font-size:42px;margin-bottom:20px}
-h2{font-size:28px;margin-bottom:30px}
-.button{display:inline-block;padding:16px 32px;background:#00c853;color:#000;text-decoration:none;font-weight:600;border-radius:8px;margin-top:20px}
-.card{background:#161a22;padding:25px;border-radius:12px;margin-bottom:20px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:40px}
-.price-card{background:#161a22;padding:30px;border-radius:12px;text-align:center}
-footer{padding:60px 20px;text-align:center;font-size:14px;opacity:.6;border-top:1px solid #222}
-@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
+h1{font-size:46px;margin-bottom:20px}
+h2{font-size:30px;margin-bottom:30px}
+p{opacity:.9}
+
+.button-primary{
+  display:inline-block;
+  padding:16px 34px;
+  background:#00c853;
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:8px;
+  margin-top:25px;
+}
+
+.button-secondary{
+  display:inline-block;
+  padding:14px 28px;
+  border:1px solid #444;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  margin-top:15px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#161a22;
+  padding:30px;
+  border-radius:14px;
+}
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.price-card{
+  background:#161a22;
+  padding:40px;
+  border-radius:16px;
+  text-align:center;
+  border:1px solid #222;
+}
+
+.price-highlight{
+  border:2px solid #00c853;
+}
+
+footer{
+  padding:60px 20px;
+  text-align:center;
+  font-size:14px;
+  opacity:.6;
+  border-top:1px solid #222;
+}
+
+@media(max-width:768px){
+  section{padding:70px 20px}
+}
 </style>
 </head>
 <body>
@@ -28,107 +90,138 @@ footer{padding:60px 20px;text-align:center;font-size:14px;opacity:.6;border-top:
 <section class="center">
 <div class="container">
 <h1>ALL-IN-1 Market Narrative</h1>
-<p><strong>Session boxes, HTF pivots, gaps, ADR and event flags overlaid non-intrusively so you see smart levels at a glance. Start 15-day free trial.</strong></p>
-<p>⛳ Start your 15-day free trial — 𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️</p>
+<p>Session boxes, HTF pivots, gaps, ADR and event flags overlaid non-intrusively so you see smart levels at a glance.</p>
+<p><strong>Start 15-day free trial.</strong></p>
 
-<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">
-Subscribe Monthly — $36/month
+<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button-primary">
+Start Free Trial — $36/month
+</a>
+
+<a href="#pricing" class="button-secondary">
+View Plans
 </a>
 </div>
 </section>
 
-<!-- PAIN → SOLUTION -->
+<!-- VIDEO PLACEHOLDER -->
 <section>
-<div class="container">
-<h2 class="center">Pain Points → Solutions</h2>
-
-<div class="grid-2">
-<div>
-<p><strong>Cluttered charts</strong><br>
-Cluttered charts – overlapping indicators and manual drawing exhaust me.</p>
-<p>→ Auto-repositioning elements stop at price, labels stay out of candle area → a clean, non-intrusive chart.</p>
-</div>
-
-<div>
-<p><strong>Hidden candles</strong><br>
-2. Hidden candles — moltitude of lines covering price action</p>
-<p>→ Colors management helps screen fatigue, screen time and mind processing thoughts.</p>
-</div>
-
-<div>
-<p><strong>Late level detection</strong><br>
-3. Late level detection — miss key support/resistance</p>
-<p>→ Levels auto-extend with each candle; alerts ping and notify as price reaches them</p>
-</div>
-
-<div>
-<p><strong>Slow multi-market setup</strong><br>
-4. Slow, multi-market setup — minutes lost building narratives.</p>
-<p>→ A ready-made narrative instantly appear for any selected instrument on load</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- SOLUTION -->
-<section class="center">
-<div class="container">
-<h2>The Solution</h2>
-<p>ALL IN 1 ⛳️ consolidates all essential context into one clean, non-intrusive layer that updates automatically with each candle. The overlay lives in the background, so price action and your strategy remain fully visible.</p>
+<div class="container center">
+<h2>See It In Action</h2>
+<video controls width="100%" style="border-radius:14px;margin-top:30px;">
+  <source src="assets/demo.mp4" type="video/mp4">
+</video>
 </div>
 </section>
 
 <!-- BENEFITS -->
 <section>
 <div class="container">
-<h2 class="center">Core Benefits (what you’ll actually feel)</h2>
+<h2 class="center">Why Traders Switch</h2>
 
 <div class="grid-3">
-<div class="card">→ Instant market narrative – sessions, gaps & HTF extremes on a single layer.</div>
-<div class="card">→ Save ≈ 80 % chart-setup time – less manual drawing; full-custom hide/show settings.</div>
-<div class="card">→ Clean design – transparent background, auto-adjusting labels, no candle obstruction.</div>
-<div class="card">→ Immediate awareness – levels shift the moment higher-timeframe liquidity is hit.</div>
-<div class="card">→ Stay ahead – real-time alerts ring (phone notifications) as key levels are reached.</div>
-<div class="card">→ Confidence on every TF – each timeframe automatically shows only the data that matters.</div>
-<div class="card">→ Replay mode – smooth review of past trades or back-test sessions.</div>
-<div class="card">→ Realistic daily targets – ADR provides expected range, helping set achievable goals and trim risk when the market exhausts its expansion.</div>
+
+<div class="card">
+<strong>Instant Market Narrative</strong>
+<p>Sessions, gaps & HTF extremes consolidated on one clean layer.</p>
+</div>
+
+<div class="card">
+<strong>Save 80% Setup Time</strong>
+<p>No more manual drawing. Narrative appears instantly on load.</p>
+</div>
+
+<div class="card">
+<strong>Non-Intrusive Design</strong>
+<p>Auto-adjusting labels. Transparent background. No candle obstruction.</p>
+</div>
+
+<div class="card">
+<strong>Real-Time Alerts</strong>
+<p>Phone notifications when key liquidity levels are reached.</p>
+</div>
+
+<div class="card">
+<strong>Multi-Timeframe Awareness</strong>
+<p>HTF references included automatically on lower timeframes.</p>
+</div>
+
+<div class="card">
+<strong>ADR Context</strong>
+<p>Projected daily range to guide realistic expansion targets.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+<div class="container">
+<h2 class="center">What Traders Are Saying</h2>
+
+<div class="grid-3">
+
+<div class="card">
+<strong>Thomas W.</strong>
+<p>Stress is down, confidence is up. Everything updates in real-time.</p>
+</div>
+
+<div class="card">
+<strong>Amairani R.</strong>
+<p>Six indicators replaced by one clean system.</p>
+</div>
+
+<div class="card">
+<strong>Mohamed D.</strong>
+<p>Alerts changed everything. I don’t need to stare at charts anymore.</p>
+</div>
+
 </div>
 </div>
 </section>
 
 <!-- PRICING -->
-<section class="center">
+<section id="pricing" class="center">
 <div class="container">
 <h2>Pricing</h2>
-<p><strong>Receive 𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ — 36$/month</strong></p>
 
 <div class="pricing">
 
-<div class="price-card">
+<div class="price-card price-highlight">
 <h3>Monthly</h3>
 <p>$36/month</p>
-<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">Subscribe</a>
+<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button-primary">Start Trial</a>
 </div>
 
 <div class="price-card">
 <h3>Yearly</h3>
-<p>Save with annual plan</p>
-<a href="https://buy.stripe.com/00w9AT1ld9Ug9Ex9OX4AU0i" class="button">Subscribe</a>
+<p>Discounted Annual Plan</p>
+<a href="https://buy.stripe.com/00w9AT1ld9Ug9Ex9OX4AU0i" class="button-secondary">Subscribe</a>
 </div>
 
 <div class="price-card">
 <h3>Private Call</h3>
 <p>One-Off Payment</p>
-<a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="button">Book Call</a>
+<a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="button-secondary">Book Call</a>
 </div>
 
 </div>
 </div>
 </section>
 
+<!-- FINAL CTA -->
+<section class="center">
+<div class="container">
+<h2>Trade With Full Context — Every Session</h2>
+<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button-primary">
+Start Your 15-Day Free Trial
+</a>
+</div>
+</section>
+
 <footer>
-<p>Terms & Conditions · Privacy Policy · Cookie Policy · Refund Policy · DMCA Policy · License Agreement · Compliance · FAQ · Support · About</p>
-<p>©️ 2026 — R-TradingTools</p>
+<p>Terms · Privacy · Refund · License · FAQ · Support</p>
+<p>© 2026 — R-TradingTools</p>
 </footer>
 
 </body>
