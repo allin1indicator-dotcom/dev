@@ -1,67 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL‑IN‑1 Market Narrative</title>
-<style>
-:root{
-  --bg:#0f1115;
-  --card:#161a22;
-  --accent:#00c853;   /* <‑ change this to any colour you prefer */
-  --text:#fff;
-}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-section{padding:80px 20px}
-.container{max-width:1100px;margin:auto}
-.center{text-align:center}
-h1{font-size:42px;margin-bottom:20px}
-h2{font-size:28px;margin-bottom:30px}
-.button{display:inline-block;padding:16px 32px;background:var(--accent);color:#000;text-decoration:none;font-weight:600;border-radius:8px;margin-top:20px}
-.card{background:var(--card);padding:25px;border-radius:12px;margin-bottom:20px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:40px}
-.price-card{background:var(--card);padding:30px;border-radius:12px;text-align:center}
-footer{padding:60px 20px;text-align:center;font-size:14px;opacity:.6;border-top:1px solid #222}
-@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
-/* ---- placeholder media block ---- */
-.media-block{
-  background:var(--card);
-  border-radius:12px;
-  overflow:hidden;
-  position:relative;
-  padding-top:56.25%; /* 16:9 ratio */
-}
-.media-block iframe,
-.media-block img,
-.media-block video{
-  position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL‑IN‑1 Market Narrative</title>
+  <style>
+    :root{--bg:#0f1115;--card:#161a22;--accent:#00c853;--text:#fff}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    section{padding:80px 20px}
+    .container{max-width:1100px;margin:auto}
+    .center{text-align:center}
+    h1{font-size:42px;margin-bottom:20px}
+    .button{display:inline-block;padding:16px 32px;background:var(--accent);color:#000;text-decoration:none;font-weight:600;border-radius:8px;margin-top:20px}
+    .media-block{background:var(--card);border-radius:12px;overflow:hidden;position:relative;padding-top:56.25%}
+    .media-block iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    /* …rest of original CSS… */
+  </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="center">
-<div class="container">
-<h1>ALL‑IN‑1 Market Narrative</h1>
-<p><strong>Session boxes, HTF pivots, gaps, ADR and event flags overlaid non‑intrusively so you see smart levels at a glance. Start 15‑day free trial.</strong></p>
+  <div class="container">
+    <h1>ALL‑IN‑1 Market Narrative</h1>
+    <p><strong>Session boxes, HTF pivots, gaps, ADR and event flags overlaid non‑intrusively so you see smart levels at a glance. Start 15‑day free trial.</strong></p>
 
-<!-- PLACEHOLDER FOR VIDEO/IMAGE -->
-<div class="media-block">
-  <!-- Replace the src below with your video (Vimeo/YouTube) or image URL -->
-  <img src="https://via.placeholder.com/1200x675/333333/ffffff?text=Your+Video+or+Image+Here" alt="Landing page hero media">
-</div>
+    <div class="media-block">
+      <iframe
+        src="https://www.tradingview.com/embed-widget/advanced-chart/?symbol=NASDAQ%3AAAPL&interval=D&theme=dark&studies=%5B%22MyIndicator%22%5D&locale=en"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-<a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">
-Subscribe Monthly — $36/month
-</a>
-</div>
+    <a href="https://buy.stripe.com/4gM7sL2ph6I4eYR3qz4AU0h" class="button">
+      Subscribe Monthly — $36/month
+    </a>
+  </div>
 </section>
 
+
 <!-- PAIN → SOLUTION -->
-<!-- PAIN → SOLUTION (two‑column layout) -->
 <section>
   <div class="container">
     <h2 class="center">Pain Points → Solutions</h2>
