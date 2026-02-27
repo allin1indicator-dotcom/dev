@@ -2,217 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ALL IN 1 – Premium Market‑Structure Indicator</title>
+<title>𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ – Premium Market‑Structure Indicator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
 <style>
-/* ────────────────────── GLOBAL PALETTE ────────────────────── */
 :root{
-  /* Page background – same as TradingView canvas */
   --bg-page:#f7faf9;
-
-  /* Text */
   --text:#222;
-
-  /* Primary UI */
-  --accent:#0066ff;          /* button / link */
-  --accent-dark:#004c99;     /* hover */
-  --highlight:#ff9800;       /* badge */
-
-  /* Divider */
+  --accent:#0066ff;
+  --accent-dark:#004c99;
+  --highlight:#ff9800;
   --divider:#e0e0e0;
-
-  /* Candle colors */
   --candle-up:#28e17d;
   --candle-down:#000000;
-
-  /* Session line colors (28 % opacity) */
-  --as-c:#886f14;
-  --ldn-c:#1e70b0;
-  --nym-c:#8c1414;
-  --nyl-c:#537b88;
-  --nya-c:#41793a;
-  --my-c:#673873;
-
-  /* Session box fills (88 % opacity) */
-  --as-box:#bfa649;
-  --ldn-box:#358097;
-  --nym-box:#d14130;
-  --nyl-box:#a1b8bf;
-  --nya-box:#568f53;
-  --my-box:#b28abc;
-
-  /* RTH / DHL */
-  --rth-c:#c67624;
-  --dhl-c:#080e31;
-
-  /* Misc */
-  --nwog-c:#796bb8;
-  --adr-c:#694a25;
-  --news-c:#000000;          /* 20 % opacity – use rgba when needed */
-  --detail-c:#2e2e2e;        /* 30 % opacity */
+  --as-c:#886f14;--ldn-c:#1e70b0;--nym-c:#8c1414;--nyl-c:#537b88;--nya-c:#41793a;--my-c:#673873;
+  --as-box:#bfa649;--ldn-box:#358097;--nym-box:#d14130;--nyl-box:#a1b8bf;--nya-box:#568f53;--my-box:#b28abc;
+  --rth-c:#c67624;--dhl-c:#080e31;
+  --nwog-c:#796bb8;--adr-c:#694a25;--news-c:#000000;--detail-c:#2e2e2e;
 }
-
-/* ────────────────────── BASIC STYLES ────────────────────── */
-body{
-  font-family:Arial,sans-serif;
-  background:var(--bg-page);
-  color:var(--text);
-  margin:0;
-}
-.container{
-  max-width:960px;
-  margin:auto;
-  padding:2rem;
-}
+body{font-family:Arial,sans-serif;background:var(--bg-page);color:var(--text);margin:0;}
+.container{max-width:960px;margin:auto;padding:2rem;}
 h1{font-size:2.4rem;margin-bottom:.5rem}
 h2{font-size:1.8rem;margin-top:2rem}
 p{line-height:1.6;margin:1rem 0}
 a{color:var(--accent);text-decoration:none}
 a:hover{color:var(--accent-dark)}
-
-/* ────────────────────── BUTTONS ────────────────────── */
-.cta{
-  display:inline-block;
-  background:var(--accent);
-  color:#fff;
-  padding:.8rem 1.6rem;
-  border-radius:4px;
-  font-weight:bold;
-  margin-top:1rem;
-}
+.cta{display:inline-block;background:var(--accent);color:#fff;padding:.8rem 1.6rem;border-radius:4px;font-weight:bold;margin-top:1rem}
 .cta:hover{background:var(--accent-dark)}
-
-/* ────────────────────── DIVIDERS ────────────────────── */
 .hr{border:none;height:1px;background:var(--divider);margin:2rem 0}
-.vr{border-left:1px solid var(--divider);height:100%;margin:0 2rem}
-
-/* ────────────────────── CALL‑OUT BOX ────────────────────── */
-.box{
-  background:#fff;
-  border-left:4px solid var(--accent);
-  padding:1rem 1.2rem;
-  margin:1.5rem 0;
-  box-shadow:0 2px 6px rgba(0,0,0,.08);
-}
-.box ul{margin:0.5rem 0 0 1.2rem}
-.box li{margin-bottom:.4rem}
-
-/* ────────────────────── TOGGLE PANELS ────────────────────── */
-.toggle{
-  border:1px solid var(--divider);
-  border-radius:4px;
-  margin:1rem 0;
-}
-.toggle summary{
-  background:#fff;
-  padding:.8rem 1rem;
-  cursor:pointer;
-  font-weight:bold;
-}
+.box{background:#fff;border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.toggle{border:1px solid var(--divider);border-radius:4px;margin:1rem 0}
+.toggle summary{background:#fff;padding:.8rem 1rem;cursor:pointer;font-weight:bold}
 .toggle[open] summary{background:var(--bg-page)}
-.toggle div{
-  padding:1rem;
-  background:#fff;
-}
-
-/* ────────────────────── SLIDESHOW ────────────────────── */
-.slideshow{
-  position:relative;
-  width:100%;
-  padding-bottom:56.25%;   /* 16:9 */
-  overflow:hidden;
-  margin:2rem 0;
-}
-.slideshow img{
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  object-fit:contain;
-  opacity:0;
-  animation:fade 45s infinite;
-}
-.slideshow img:nth-child(1){animation-delay:0s;}
-.slideshow img:nth-child(2){animation-delay:5s;}
-.slideshow img:nth-child(3){animation-delay:10s;}
-.slideshow img:nth-child(4){animation-delay:15s;}
-.slideshow img:nth-child(5){animation-delay:20s;}
-.slideshow img:nth-child(6){animation-delay:25s;}
-.slideshow img:nth-child(7){animation-delay:30s;}
-.slideshow img:nth-child(8){animation-delay:35s;}
-.slideshow img:nth-child(9){animation-delay:40s;}
+.toggle div{padding:1rem;background:#fff}
+.slideshow{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;margin:2rem 0}
+.slideshow img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;opacity:0;animation:fade 45s infinite}
+.slideshow img:nth-child(1){animation-delay:0s}
+.slideshow img:nth-child(2){animation-delay:5s}
+.slideshow img:nth-child(3){animation-delay:10s}
+.slideshow img:nth-child(4){animation-delay:15s}
+.slideshow img:nth-child(5){animation-delay:20s}
+.slideshow img:nth-child(6){animation-delay:25s}
+.slideshow img:nth-child(7){animation-delay:30s}
+.slideshow img:nth-child(8){animation-delay:35s}
+.slideshow img:nth-child(9){animation-delay:40s}
 @keyframes fade{
-  0%   {opacity:0;}
-  2%   {opacity:1;}
-  22%  {opacity:1;}
-  24%  {opacity:0;}
-  100% {opacity:0;}
+  0%{opacity:0}2%{opacity:1}22%{opacity:1}24%{opacity:0}100%{opacity:0}
 }
-
-/* ────────────────────── TESTIMONIALS ────────────────────── */
-.testimonial{
-  border-left:4px solid var(--accent);
-  padding-left:1rem;
-  margin:1.5rem 0;
-}
-
-/* ────────────────────── FAQ ────────────────────── */
+.testimonial{border-left:4px solid var(--accent);padding-left:1rem;margin:1.5rem 0}
 .faq dt{font-weight:bold;margin-top:.8rem}
 .faq dd{margin-left:1rem;margin-bottom:.5rem}
-
-/* ────────────────────── CANDLE SAMPLE (optional) ────────────────────── */
-.candle-sample{
-  display:inline-block;
-  width:12px;height:12px;
-  border:1px solid #222;
-  background:#fff;
-  position:relative;
-  margin-right:4px;
-}
-.candle-sample.up  {background:var(--candle-up);}
-.candle-sample.down{background:var(--candle-down);}
+.price{font-size:2rem;font-weight:bold}
+.badge{background:var(--highlight);color:#fff;padding:0.2rem 0.5rem;border-radius:3px;margin-left:0.5rem}
 </style>
 </head>
-
 <body>
 <div class="container">
 
-<!-- LOGO -->
-<img src="IMG_6798.jpeg" alt="Logo"
-     style="max-width:180px;display:block;margin-bottom:1.5rem">
+<img src="IMG_1197.jpeg" alt="Logo" style="max-width:180px;display:block;margin-bottom:1.5rem">
 
-<!-- HERO -->
-<h1>ALL IN 1 – Instant Market‑Structure Framework</h1>
+<h1>𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ – Premium Market‑Structure Indicator</h1>
 <p><strong>Full market structure, auto‑drawn, instantly loaded.</strong> Sessions, HTF highs & lows, gaps, ADR, news and holiday logic appear on the chart without a single click.</p>
 <a href="#trial" class="cta">Start 15‑Day Free Trial</a>
 
 <hr class="hr">
 
-<!-- PROBLEM / SHIFT -->
 <h2>The Real Problem</h2>
-<p>Day traders have tools, but they lack <strong>structural consistency.</strong> Every session they must redraw sessions, hunt higher‑timeframe levels, track gaps, monitor news, and rebuild the narrative from scratch. The result is *cognitive fragmentation*, not clutter.</p>
+<p>Traders have tools, but they lack structural consistency. Manual session marking, constant HTF scanning, separate gap/volatility tracking, and off‑chart news create <strong>cognitive fragmentation</strong>.</p>
 
 <h2>The Shift</h2>
 <p>ALL IN 1 loads a complete structural framework the moment a chart opens—no drawing, no syncing, no tab‑switching. Price stays central; context stays persistent.</p>
 
 <hr class="hr">
 
-<!-- PAIN → RESOLUTION GRID -->
 <h2>Pain → Structural Resolution</h2>
 <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
   <div class="card"><strong>Manual session marking slows execution</strong> → Auto‑plotted Asia, London & NY ranges persist until invalidated.</div>
-  <div class="card"><strong>HTF blind spots distort bias</strong> → Daily‑Weekly‑Monthly‑Yearly extremes extend forward across timeframes.</div>
-  <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
-  <div class="card"><strong>Volatility expectations are guesswork</strong> → 5‑Day Average Range projects realistic daily expansion.</div>
+  <div class="card"><strong>HTF blind spots distort bias</strong> → Daily‑Weekly‑Monthly‑Quarterly‑Yearly extremes extend forward.</div>
+  <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
+  <div class="card"><strong>Volatility expectations are guesswork</strong> → 5‑Day ADR projects realistic daily expansion.</div>
   <div class="card"><strong>News disrupts narrative</strong> → High‑impact events appear directly on the chart.</div>
   <div class="card"><strong>Holiday sessions distort liquidity</strong> → Holiday boxes mark abnormal session structure automatically.</div>
-  <div class="card"><strong>Daily prep consumes time</strong> → A complete narrative framework loads instantly on any instrument.</div>
+  <div class="card"><strong>Daily prep consumes time</strong> → Complete narrative loads instantly on any instrument.</div>
 </div>
 
 <hr class="hr">
 
-<!-- SOLUTION CALL‑OUT -->
 <div class="box">
   <strong>Solution – ONE adaptive layer</strong>
   <ul>
@@ -230,11 +106,10 @@ a:hover{color:var(--accent-dark)}
 
 <hr class="hr">
 
-<!-- CORE BENEFITS -->
 <h2>Core Benefits</h2>
 <ul>
   <li>Instant market narrative across all timeframes</li>
-  <li>Preparation time drops from minutes to seconds</li>
+  <li>Preparation time drops ~80 %</li>
   <li>Consistent structural references session‑to‑session</li>
   <li>Measurable volatility expectations</li>
   <li>Execution decisions within a defined context</li>
@@ -245,22 +120,20 @@ a:hover{color:var(--accent-dark)}
 
 <hr class="hr">
 
-<!-- SLIDESHOW -->
 <div class="slideshow">
-  <img src="IMG_6781.jpeg" alt="Indicatore 1">
-  <img src="IMG_6782.jpeg" alt="Indicatore 2">
-  <img src="IMG_6783.jpeg" alt="Indicatore 3">
-  <img src="IMG_6784.jpeg" alt="Indicatore 4">
-  <img src="IMG_6785.jpeg" alt="Indicatore 5">
-  <img src="IMG_6786.jpeg" alt="Indicatore 6">
-  <img src="IMG_6787.jpeg" alt="Indicatore 7">
-  <img src="IMG_6788.jpeg" alt="Indicatore 8">
-  <img src="IMG_6790.jpeg" alt="Indicatore 9">
+  <img src="IMG_6781.jpeg" alt="Indicator view 1">
+  <img src="IMG_6782.jpeg" alt="Indicator view 2">
+  <img src="IMG_6783.jpeg" alt="Indicator view 3">
+  <img src="IMG_6784.jpeg" alt="Indicator view 4">
+  <img src="IMG_6785.jpeg" alt="Indicator view 5">
+  <img src="IMG_6786.jpeg" alt="Indicator view 6">
+  <img src="IMG_6787.jpeg" alt="Indicator view 7">
+  <img src="IMG_6788.jpeg" alt="Indicator view 8">
+  <img src="IMG_6790.jpeg" alt="Indicator view 9">
 </div>
 
 <hr class="hr">
 
-<!-- TESTIMONIALS -->
 <h2>What Traders Are Saying</h2>
 <div class="testimonial"><strong>Thomas W. (IE)</strong> – “From manual marking to structured execution. The framework loads instantly and stays aligned across timeframes.”</div>
 <div class="testimonial"><strong>Amairani R. (US)</strong> – “Consolidated framework, clear narrative. Sessions, highs/lows and gaps coexist without obscuring price.”</div>
@@ -272,60 +145,54 @@ a:hover{color:var(--accent-dark)}
 
 <hr class="hr">
 
-<!-- ALERTS TOGGLE -->
 <h2>State‑Based Alerts</h2>
 <details class="toggle">
   <summary>How to set up alerts (click to expand)</summary>
   <div>
     <ol>
-      <li>Open the indicator’s <em>Alert Panel</em> (gear icon top‑right).</li>
-      <li>Select the structural level you want to monitor – e.g., “Daily High”, “NY Gap”, “Holiday Box”.</li>
-      <li>Choose the condition: <strong>Crosses Up</strong>, <strong>Crosses Down</strong> or <strong>Touches</strong>.</li>
-      <li>Set the notification method – Discord webhook, email, or in‑app pop‑up.</li>
-      <li>Save. The alert will fire automatically whenever price interacts with the chosen level.</li>
+      <li>Open the indicator’s Alert Panel (gear icon).</li>
+      <li>Select the level to monitor – Daily High, NY Gap, Holiday Box, etc.</li>
+      <li>Choose condition: Crosses Up, Crosses Down, or Touches.</li>
+      <li>Set notification method – Discord webhook, email, or phone.</li>
+      <li>Save. Alerts fire automatically when price interacts with the level.</li>
     </ol>
-    <p>All alerts are stored in your Coda sheet via the Cloudflare Worker – no extra page required.</p>
+    <p>Alerts are logged to your Coda sheet via the Cloudflare Worker.</p>
   </div>
 </details>
 
-<!-- ADD INDICATOR TO CHART -->
-<h2>Adding the Indicator to Your Chart</h2>
+<h2>Adding the Indicator</h2>
 <details class="toggle">
   <summary>One‑click installation (click to expand)</summary>
   <div>
     <ol>
       <li>Log into TradingView and open any chart.</li>
-      <li>Click <strong>Indicators → My Scripts → ALL IN 1</strong>.</li>
-      <li>If you haven’t subscribed, you’ll be redirected to the Stripe checkout.</li>
-      <li>Once the subscription is active, the indicator loads automatically on every new chart.</li>
-      <li>Use the <em>Settings</em> button to toggle modules (sessions, gaps, ADR, etc.) without leaving the chart.</li>
+      <li>Navigate to Indicators → My Scripts → 𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️.</li>
+      <li>If not subscribed, you’ll be redirected to Stripe checkout.</li>
+      <li>After activation, the indicator loads automatically on every chart.</li>
+      <li>Use Settings to toggle modules without leaving the chart.</li>
     </ol>
   </div>
 </details>
 
 <hr class="hr">
 
-<!-- FAQ / CONTACT -->
 <h2>FAQ & Support</h2>
 <dl class="faq">
   <dt>Do I need to keep the indicator running 24/7?</dt>
-  <dd>No. The framework loads instantly when you open a chart; you can close the browser at any time.</dd>
-
-  <dt>Can I use the tool on multiple devices?</dt>
-  <dd>Yes. Your subscription is tied to your TradingView account, not a single device.</dd>
-
-  <dt>What if I need help customizing modules?</dt>
-  <dd>We offer a 30‑minute “Strategy Call” – book it below.</dd>
+  <dd>No. It loads when you open a chart; you can close the browser anytime.</dd>
+  <dt>Can I use it on multiple devices?</dt>
+  <dd>Yes. Subscription ties to your TradingView account.</dd>
+  <dt>Need help customizing modules?</dt>
+  <dd>Book a 30‑minute Strategy Call below.</dd>
 </dl>
 
 <a href="https://calendly.com/your‑booking‑link" class="cta">Book a Call</a>
 
 <hr class="hr">
 
-<!-- PRICING -->
 <h2>Pricing</h2>
-<p class="price">$109 / month <span class="badge">Professional Access</span></p>
-<p>Founding Access – $99 / month (limited seats)</p>
+<p class="price"><strong>$109 / month</strong><span class="badge">Professional Access</span></p>
+<p>Founding Access – <strong>$99 / month</strong> (limited seats)</p>
 <ul>
   <li>All modules included</li>
   <li>Multi‑timeframe structural mapping</li>
@@ -336,7 +203,8 @@ a:hover{color:var(--accent-dark)}
 </ul>
 <p>15‑day full‑access trial. Private, cancel anytime. Limited onboarding capacity.</p>
 
-<a id="trial" href="https://your‑stripe‑checkout‑link.com" class="cta">Start 15‑Day Trial</a>
+<a id="trial" href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="cta">Start 15‑Day Trial</a>
+<a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="cta" style="margin-left:1rem;">Private Strategy Call</a>
 
 </div>
 </body>
