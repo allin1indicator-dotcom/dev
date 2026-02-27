@@ -7,19 +7,57 @@
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
 <style>
-/* ────────────────────── GLOBAL ────────────────────── */
+/* ────────────────────── GLOBAL PALETTE ────────────────────── */
 :root{
-  --bg:#f4f9ff;               /* light blue‑gray page background */
-  --accent:#0066ff;           /* primary brand blue */
-  --accent‑dark:#004c99;      /* hover/active shade */
-  --highlight:#ff9800;        /* orange for badges */
+  /* Page background – same as TradingView canvas */
+  --bg-page:#f7faf9;
+
+  /* Text */
   --text:#222;
-  --card:#fff;
+
+  /* Primary UI */
+  --accent:#0066ff;          /* button / link */
+  --accent-dark:#004c99;     /* hover */
+  --highlight:#ff9800;       /* badge */
+
+  /* Divider */
   --divider:#e0e0e0;
+
+  /* Candle colors */
+  --candle-up:#28e17d;
+  --candle-down:#000000;
+
+  /* Session line colors (28 % opacity) */
+  --as-c:#886f14;
+  --ldn-c:#1e70b0;
+  --nym-c:#8c1414;
+  --nyl-c:#537b88;
+  --nya-c:#41793a;
+  --my-c:#673873;
+
+  /* Session box fills (88 % opacity) */
+  --as-box:#bfa649;
+  --ldn-box:#358097;
+  --nym-box:#d14130;
+  --nyl-box:#a1b8bf;
+  --nya-box:#568f53;
+  --my-box:#b28abc;
+
+  /* RTH / DHL */
+  --rth-c:#c67624;
+  --dhl-c:#080e31;
+
+  /* Misc */
+  --nwog-c:#796bb8;
+  --adr-c:#694a25;
+  --news-c:#000000;          /* 20 % opacity – use rgba when needed */
+  --detail-c:#2e2e2e;        /* 30 % opacity */
 }
+
+/* ────────────────────── BASIC STYLES ────────────────────── */
 body{
   font-family:Arial,sans-serif;
-  background:var(--bg);
+  background:var(--bg-page);
   color:var(--text);
   margin:0;
 }
@@ -28,11 +66,12 @@ body{
   margin:auto;
   padding:2rem;
 }
-h1{font-size:2.4rem;color:var(--text);margin-bottom:.5rem}
-h2{font-size:1.8rem;color:var(--text);margin-top:2rem}
+h1{font-size:2.4rem;margin-bottom:.5rem}
+h2{font-size:1.8rem;margin-top:2rem}
 p{line-height:1.6;margin:1rem 0}
 a{color:var(--accent);text-decoration:none}
-a:hover{color:var(--accent‑dark)}
+a:hover{color:var(--accent-dark)}
+
 /* ────────────────────── BUTTONS ────────────────────── */
 .cta{
   display:inline-block;
@@ -43,17 +82,15 @@ a:hover{color:var(--accent‑dark)}
   font-weight:bold;
   margin-top:1rem;
 }
-.cta:hover{background:var(--accent‑dark)}
+.cta:hover{background:var(--accent-dark)}
+
 /* ────────────────────── DIVIDERS ────────────────────── */
 .hr{border:none;height:1px;background:var(--divider);margin:2rem 0}
-.vr{
-  border-left:1px solid var(--divider);
-  height:100%;
-  margin:0 2rem;
-}
-/* ────────────────────── CALL‑OUT BOXES ────────────────────── */
+.vr{border-left:1px solid var(--divider);height:100%;margin:0 2rem}
+
+/* ────────────────────── CALL‑OUT BOX ────────────────────── */
 .box{
-  background:var(--card);
+  background:#fff;
   border-left:4px solid var(--accent);
   padding:1rem 1.2rem;
   margin:1.5rem 0;
@@ -61,14 +98,7 @@ a:hover{color:var(--accent‑dark)}
 }
 .box ul{margin:0.5rem 0 0 1.2rem}
 .box li{margin-bottom:.4rem}
-.badge{
-  background:var(--highlight);
-  color:#fff;
-  padding:.2rem .6rem;
-  border-radius:3px;
-  font-size:.9rem;
-  vertical-align:middle;
-}
+
 /* ────────────────────── TOGGLE PANELS ────────────────────── */
 .toggle{
   border:1px solid var(--divider);
@@ -76,17 +106,17 @@ a:hover{color:var(--accent‑dark)}
   margin:1rem 0;
 }
 .toggle summary{
-  background:var(--card);
+  background:#fff;
   padding:.8rem 1rem;
   cursor:pointer;
   font-weight:bold;
 }
-.toggle[open] summary{background:var(--bg)}
+.toggle[open] summary{background:var(--bg-page)}
 .toggle div{
   padding:1rem;
   background:#fff;
 }
-pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
+
 /* ────────────────────── SLIDESHOW ────────────────────── */
 .slideshow{
   position:relative;
@@ -119,25 +149,42 @@ pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
   24%  {opacity:0;}
   100% {opacity:0;}
 }
+
+/* ────────────────────── TESTIMONIALS ────────────────────── */
+.testimonial{
+  border-left:4px solid var(--accent);
+  padding-left:1rem;
+  margin:1.5rem 0;
+}
+
 /* ────────────────────── FAQ ────────────────────── */
-.faq dt{
-  font-weight:bold;
-  margin-top:.8rem;
+.faq dt{font-weight:bold;margin-top:.8rem}
+.faq dd{margin-left:1rem;margin-bottom:.5rem}
+
+/* ────────────────────── CANDLE SAMPLE (optional) ────────────────────── */
+.candle-sample{
+  display:inline-block;
+  width:12px;height:12px;
+  border:1px solid #222;
+  background:#fff;
+  position:relative;
+  margin-right:4px;
 }
-.faq dd{
-  margin-left:1rem;
-  margin-bottom:.5rem;
-}
+.candle-sample.up  {background:var(--candle-up);}
+.candle-sample.down{background:var(--candle-down);}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<!-- LOGO & HERO -->
-<img src="IMG_1197.jpeg" alt="Logo" style="max-width:180px;display:block;margin-bottom:1rem">
+<!-- LOGO -->
+<img src="IMG_6798.jpeg" alt="Logo"
+     style="max-width:180px;display:block;margin-bottom:1.5rem">
+
+<!-- HERO -->
 <h1>ALL IN 1 – Instant Market‑Structure Framework</h1>
-<p><strong>Full market structure, auto‑drawn, instantly loaded.</strong> Sessions, HTF highs & lows, gaps, ADR, news and holiday logic appear on the chart without a single click.</p>
+<p><strong>Full market structure, auto‑drawn, instantly loaded.</strong> Sessions, HTF highs & lows, gaps, ADR, news and holiday logic appear on the chart without a single click.</p>
 <a href="#trial" class="cta">Start 15‑Day Free Trial</a>
 
 <hr class="hr">
@@ -154,9 +201,9 @@ pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
 <!-- PAIN → RESOLUTION GRID -->
 <h2>Pain → Structural Resolution</h2>
 <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
-  <div class="card"><strong>Manual session marking slows execution</strong> → Auto‑plotted Asia, London & NY ranges persist until invalidated.</div>
+  <div class="card"><strong>Manual session marking slows execution</strong> → Auto‑plotted Asia, London & NY ranges persist until invalidated.</div>
   <div class="card"><strong>HTF blind spots distort bias</strong> → Daily‑Weekly‑Monthly‑Yearly extremes extend forward across timeframes.</div>
-  <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
+  <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
   <div class="card"><strong>Volatility expectations are guesswork</strong> → 5‑Day Average Range projects realistic daily expansion.</div>
   <div class="card"><strong>News disrupts narrative</strong> → High‑impact events appear directly on the chart.</div>
   <div class="card"><strong>Holiday sessions distort liquidity</strong> → Holiday boxes mark abnormal session structure automatically.</div>
@@ -172,7 +219,7 @@ pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
     <li>Session‑structure engine</li>
     <li>Multi‑timeframe liquidity mapping</li>
     <li>Opening‑imbalance detection</li>
-    <li>Intraday expansion tracking (Live H/L + 5‑Day ADR)</li>
+    <li>Intraday expansion tracking (Live H/L + 5‑Day ADR)</li>
     <li>Custom anchor levels</li>
     <li>Calendar & event awareness</li>
     <li>State‑based alerts</li>
@@ -231,7 +278,7 @@ pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
   <summary>How to set up alerts (click to expand)</summary>
   <div>
     <ol>
-      <li>Open the indicator’s <em>Alert Panel</em> (top‑right gear icon).</li>
+      <li>Open the indicator’s <em>Alert Panel</em> (gear icon top‑right).</li>
       <li>Select the structural level you want to monitor – e.g., “Daily High”, “NY Gap”, “Holiday Box”.</li>
       <li>Choose the condition: <strong>Crosses Up</strong>, <strong>Crosses Down</strong> or <strong>Touches</strong>.</li>
       <li>Set the notification method – Discord webhook, email, or in‑app pop‑up.</li>
@@ -249,7 +296,7 @@ pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
     <ol>
       <li>Log into TradingView and open any chart.</li>
       <li>Click <strong>Indicators → My Scripts → ALL IN 1</strong>.</li>
-      <li>Confirm the “Invite‑Only Access” prompt – you’ll be redirected to the Stripe checkout if you haven’t subscribed.</li>
+      <li>If you haven’t subscribed, you’ll be redirected to the Stripe checkout.</li>
       <li>Once the subscription is active, the indicator loads automatically on every new chart.</li>
       <li>Use the <em>Settings</em> button to toggle modules (sessions, gaps, ADR, etc.) without leaving the chart.</li>
     </ol>
