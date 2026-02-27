@@ -4,39 +4,156 @@
 <meta charset="UTF-8">
 <title>ALL IN 1 – Premium Market‑Structure Indicator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
 <style>
-  body{font-family:Arial,sans-serif;color:#222;background:#fafafa;margin:0;padding:0}
-  .container{max-width:960px;margin:auto;padding:2rem}
-  h1{font-size:2.4rem;color:#0a0a0a;margin-bottom:.5rem}
-  h2{font-size:1.8rem;color:#0a0a0a;margin-top:2rem}
-  p{line-height:1.6;margin:1rem 0}
-  .cta{display:inline-block;background:#0066ff;color:#fff;padding:.8rem 1.6rem;
-       border-radius:4px;text-decoration:none;font-weight:bold;margin-top:1rem}
-  .price{font-size:2rem;color:#0066ff;margin:1rem 0}
-  .badge{background:#ff9800;color:#fff;padding:.2rem .6rem;border-radius:3px;font-size:.9rem}
-  .testimonial{border-left:4px solid #0066ff;padding-left:1rem;margin:1.5rem 0}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-  .card{background:#fff;padding:1.2rem;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+/* ────────────────────── GLOBAL ────────────────────── */
+:root{
+  --bg:#f4f9ff;               /* light blue‑gray page background */
+  --accent:#0066ff;           /* primary brand blue */
+  --accent‑dark:#004c99;      /* hover/active shade */
+  --highlight:#ff9800;        /* orange for badges */
+  --text:#222;
+  --card:#fff;
+  --divider:#e0e0e0;
+}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+}
+.container{
+  max-width:960px;
+  margin:auto;
+  padding:2rem;
+}
+h1{font-size:2.4rem;color:var(--text);margin-bottom:.5rem}
+h2{font-size:1.8rem;color:var(--text);margin-top:2rem}
+p{line-height:1.6;margin:1rem 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent‑dark)}
+/* ────────────────────── BUTTONS ────────────────────── */
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:.8rem 1.6rem;
+  border-radius:4px;
+  font-weight:bold;
+  margin-top:1rem;
+}
+.cta:hover{background:var(--accent‑dark)}
+/* ────────────────────── DIVIDERS ────────────────────── */
+.hr{border:none;height:1px;background:var(--divider);margin:2rem 0}
+.vr{
+  border-left:1px solid var(--divider);
+  height:100%;
+  margin:0 2rem;
+}
+/* ────────────────────── CALL‑OUT BOXES ────────────────────── */
+.box{
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  padding:1rem 1.2rem;
+  margin:1.5rem 0;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.box ul{margin:0.5rem 0 0 1.2rem}
+.box li{margin-bottom:.4rem}
+.badge{
+  background:var(--highlight);
+  color:#fff;
+  padding:.2rem .6rem;
+  border-radius:3px;
+  font-size:.9rem;
+  vertical-align:middle;
+}
+/* ────────────────────── TOGGLE PANELS ────────────────────── */
+.toggle{
+  border:1px solid var(--divider);
+  border-radius:4px;
+  margin:1rem 0;
+}
+.toggle summary{
+  background:var(--card);
+  padding:.8rem 1rem;
+  cursor:pointer;
+  font-weight:bold;
+}
+.toggle[open] summary{background:var(--bg)}
+.toggle div{
+  padding:1rem;
+  background:#fff;
+}
+pre{background:#f7f7f7;padding:.8rem;border-radius:4px;overflow:auto}
+/* ────────────────────── SLIDESHOW ────────────────────── */
+.slideshow{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;   /* 16:9 */
+  overflow:hidden;
+  margin:2rem 0;
+}
+.slideshow img{
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:contain;
+  opacity:0;
+  animation:fade 45s infinite;
+}
+.slideshow img:nth-child(1){animation-delay:0s;}
+.slideshow img:nth-child(2){animation-delay:5s;}
+.slideshow img:nth-child(3){animation-delay:10s;}
+.slideshow img:nth-child(4){animation-delay:15s;}
+.slideshow img:nth-child(5){animation-delay:20s;}
+.slideshow img:nth-child(6){animation-delay:25s;}
+.slideshow img:nth-child(7){animation-delay:30s;}
+.slideshow img:nth-child(8){animation-delay:35s;}
+.slideshow img:nth-child(9){animation-delay:40s;}
+@keyframes fade{
+  0%   {opacity:0;}
+  2%   {opacity:1;}
+  22%  {opacity:1;}
+  24%  {opacity:0;}
+  100% {opacity:0;}
+}
+/* ────────────────────── FAQ ────────────────────── */
+.faq dt{
+  font-weight:bold;
+  margin-top:.8rem;
+}
+.faq dd{
+  margin-left:1rem;
+  margin-bottom:.5rem;
+}
 </style>
 </head>
 
 <body>
 <div class="container">
 
+<!-- LOGO & HERO -->
+<img src="IMG_6798.jpeg" alt="Logo" style="max-width:180px;display:block;margin-bottom:1rem">
 <h1>ALL IN 1 – Instant Market‑Structure Framework</h1>
 <p><strong>Full market structure, auto‑drawn, instantly loaded.</strong> Sessions, HTF highs & lows, gaps, ADR, news and holiday logic appear on the chart without a single click.</p>
-
 <a href="#trial" class="cta">Start 15‑Day Free Trial</a>
 
+<hr class="hr">
+
+<!-- PROBLEM / SHIFT -->
 <h2>The Real Problem</h2>
-<p>Day traders have tools, but they lack <strong>structural consistency.</strong> Every session they must redraw sessions, hunt higher‑timeframe levels, track gaps, monitor news, and rebuild the narrative from scratch. The result is cognitive fragmentation, not clutter.</p>
+<p>Day traders have tools, but they lack <strong>structural consistency.</strong> Every session they must redraw sessions, hunt higher‑timeframe levels, track gaps, monitor news, and rebuild the narrative from scratch. The result is *cognitive fragmentation*, not clutter.</p>
 
 <h2>The Shift</h2>
 <p>ALL IN 1 loads a complete structural framework the moment a chart opens—no drawing, no syncing, no tab‑switching. Price stays central; context stays persistent.</p>
 
+<hr class="hr">
+
+<!-- PAIN → RESOLUTION GRID -->
 <h2>Pain → Structural Resolution</h2>
-<div class="grid">
+<div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
   <div class="card"><strong>Manual session marking slows execution</strong> → Auto‑plotted Asia, London & NY ranges persist until invalidated.</div>
   <div class="card"><strong>HTF blind spots distort bias</strong> → Daily‑Weekly‑Monthly‑Yearly extremes extend forward across timeframes.</div>
   <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
@@ -46,20 +163,27 @@
   <div class="card"><strong>Daily prep consumes time</strong> → A complete narrative framework loads instantly on any instrument.</div>
 </div>
 
-<h2>The Solution</h2>
-<p>ALL IN 1 consolidates every structural element into a single adaptive layer:</p>
-<ul>
-  <li>Session‑structure engine</li>
-  <li>Multi‑timeframe liquidity mapping</li>
-  <li>Opening‑imbalance detection</li>
-  <li>Intraday expansion tracking (Live H/L + 5‑Day ADR)</li>
-  <li>Custom anchor levels</li>
-  <li>Calendar & event awareness</li>
-  <li>State‑based alerts</li>
-  <li>Replay‑compatible framework</li>
-</ul>
-<p>Labels auto‑adjust, levels stack when overlapping, and historical levels change state when re‑traded. No candle obstruction, no visual noise, no manual rebuilding.</p>
+<hr class="hr">
 
+<!-- SOLUTION CALL‑OUT -->
+<div class="box">
+  <strong>Solution – ONE adaptive layer</strong>
+  <ul>
+    <li>Session‑structure engine</li>
+    <li>Multi‑timeframe liquidity mapping</li>
+    <li>Opening‑imbalance detection</li>
+    <li>Intraday expansion tracking (Live H/L + 5‑Day ADR)</li>
+    <li>Custom anchor levels</li>
+    <li>Calendar & event awareness</li>
+    <li>State‑based alerts</li>
+    <li>Replay‑compatible framework</li>
+  </ul>
+  <p>Labels auto‑adjust, levels stack when overlapping, and historical levels change state when re‑traded. No candle obstruction, no visual noise, no manual rebuilding.</p>
+</div>
+
+<hr class="hr">
+
+<!-- CORE BENEFITS -->
 <h2>Core Benefits</h2>
 <ul>
   <li>Instant market narrative across all timeframes</li>
@@ -71,7 +195,10 @@
   <li>Replay mode preserves full contextual accuracy</li>
   <li>Screenshots contain complete structural data</li>
 </ul>
-<!-- Slideshow – placed inside the .container -->
+
+<hr class="hr">
+
+<!-- SLIDESHOW -->
 <div class="slideshow">
   <img src="IMG_6781.jpeg" alt="Indicatore 1">
   <img src="IMG_6782.jpeg" alt="Indicatore 2">
@@ -84,50 +211,9 @@
   <img src="IMG_6790.jpeg" alt="Indicatore 9">
 </div>
 
-<style>
-/* Slideshow – responsive and aligned */
-.slideshow{
-  position:relative;
-  width:100%;
-  max-width:100%;
-  height:0;
-  padding-bottom:56.25%;   /* 16:9 ratio – adjusts automatically */
-  overflow:hidden;
-  margin:2rem 0;           /* space before/after the block */
-}
+<hr class="hr">
 
-/* Images fill the container, stay centered */
-.slideshow img{
-  position:absolute;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;      /* change to cover if you prefer full‑bleed */
-  opacity:0;
-  animation:fade 45s infinite;
-}
-
-/* Stagger each image by 5 s */
-.slideshow img:nth-child(1){animation-delay:0s;}
-.slideshow img:nth-child(2){animation-delay:5s;}
-.slideshow img:nth-child(3){animation-delay:10s;}
-.slideshow img:nth-child(4){animation-delay:15s;}
-.slideshow img:nth-child(5){animation-delay:20s;}
-.slideshow img:nth-child(6){animation-delay:25s;}
-.slideshow img:nth-child(7){animation-delay:30s;}
-.slideshow img:nth-child(8){animation-delay:35s;}
-.slideshow img:nth-child(9){animation-delay:40s;}
-
-/* Fade‑in/out: 1 s in, 3 s visible, 1 s out */
-@keyframes fade{
-  0%   {opacity:0;}
-  2%   {opacity:1;}   /* fade‑in */
-  22%  {opacity:1;}   /* stay visible */
-  24%  {opacity:0;}   /* fade‑out */
-  100% {opacity:0;}
-}
-</style>
-
+<!-- TESTIMONIALS -->
 <h2>What Traders Are Saying</h2>
 <div class="testimonial"><strong>Thomas W. (IE)</strong> – “From manual marking to structured execution. The framework loads instantly and stays aligned across timeframes.”</div>
 <div class="testimonial"><strong>Amairani R. (US)</strong> – “Consolidated framework, clear narrative. Sessions, highs/lows and gaps coexist without obscuring price.”</div>
@@ -137,6 +223,59 @@
 <div class="testimonial"><strong>Mohamed D. (SA)</strong> – “Alerts let me step away from the screen without losing awareness.”</div>
 <div class="testimonial"><strong>Riccardo F.</strong> – “Built for structural clarity, not more indicators.”</div>
 
+<hr class="hr">
+
+<!-- ALERTS TOGGLE -->
+<h2>State‑Based Alerts</h2>
+<details class="toggle">
+  <summary>How to set up alerts (click to expand)</summary>
+  <div>
+    <ol>
+      <li>Open the indicator’s <em>Alert Panel</em> (top‑right gear icon).</li>
+      <li>Select the structural level you want to monitor – e.g., “Daily High”, “NY Gap”, “Holiday Box”.</li>
+      <li>Choose the condition: <strong>Crosses Up</strong>, <strong>Crosses Down</strong> or <strong>Touches</strong>.</li>
+      <li>Set the notification method – Discord webhook, email, or in‑app pop‑up.</li>
+      <li>Save. The alert will fire automatically whenever price interacts with the chosen level.</li>
+    </ol>
+    <p>All alerts are stored in your Coda sheet via the Cloudflare Worker – no extra page required.</p>
+  </div>
+</details>
+
+<!-- ADD INDICATOR TO CHART -->
+<h2>Adding the Indicator to Your Chart</h2>
+<details class="toggle">
+  <summary>One‑click installation (click to expand)</summary>
+  <div>
+    <ol>
+      <li>Log into TradingView and open any chart.</li>
+      <li>Click <strong>Indicators → My Scripts → ALL IN 1</strong>.</li>
+      <li>Confirm the “Invite‑Only Access” prompt – you’ll be redirected to the Stripe checkout if you haven’t subscribed.</li>
+      <li>Once the subscription is active, the indicator loads automatically on every new chart.</li>
+      <li>Use the <em>Settings</em> button to toggle modules (sessions, gaps, ADR, etc.) without leaving the chart.</li>
+    </ol>
+  </div>
+</details>
+
+<hr class="hr">
+
+<!-- FAQ / CONTACT -->
+<h2>FAQ & Support</h2>
+<dl class="faq">
+  <dt>Do I need to keep the indicator running 24/7?</dt>
+  <dd>No. The framework loads instantly when you open a chart; you can close the browser at any time.</dd>
+
+  <dt>Can I use the tool on multiple devices?</dt>
+  <dd>Yes. Your subscription is tied to your TradingView account, not a single device.</dd>
+
+  <dt>What if I need help customizing modules?</dt>
+  <dd>We offer a 30‑minute “Strategy Call” – book it below.</dd>
+</dl>
+
+<a href="https://calendly.com/your‑booking‑link" class="cta">Book a Call</a>
+
+<hr class="hr">
+
+<!-- PRICING -->
 <h2>Pricing</h2>
 <p class="price">$109 / month <span class="badge">Professional Access</span></p>
 <p>Founding Access – $99 / month (limited seats)</p>
@@ -155,4 +294,3 @@
 </div>
 </body>
 </html>
-
