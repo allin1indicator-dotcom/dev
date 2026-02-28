@@ -39,7 +39,6 @@ strong { color:var(--text); font-weight:600; }
 .scroll-indicator::after { content:''; position:absolute; top:6px; left:50%; width:4px; height:6px; background:#fff; border-radius:2px; transform:translateX(-50%); animation:scroll 2.4s infinite; }
 .left p { margin-bottom: 32px; }
 .left { min-width: 0; width: 100%; }
-.left p:not(:last-child) {padding-bottom: 24px;  margin-bottom: 0; border-bottom: 2px solid var(--border); }
 .two-col { display: grid; gap: 65px; grid-template-columns: 8fr 3fr; align-items: start; align-items: stretch; }
 @keyframes scroll { 0%{opacity:0; transform:translate(-50%,0);} 40%{opacity:1;} 100%{opacity:0; transform:translate(-50%,12px);} }
 @media (max-width:768px) { h1 { font-size:34px; } } { .two-col { grid-template-columns: 1fr; } }
@@ -67,25 +66,29 @@ strong { color:var(--text); font-weight:600; }
 
   <!-- LEFT COLUMN -->
   <div class="left">
-    <h2>Structural Consistency Over Fragmentation</h2>
-    <p>Most traders don’t lack strategy. They lack structural continuity.</p>
-    <p>Context fragments. Execution degrades.</p>
-    <p><strong>ALL IN 1 eliminates rebuilding.</strong> Open the chart. Structure is already mapped.</p>
+    <section>
+      <h2>Structural Consistency Over Fragmentation</h2>
+      <p>Most traders don’t lack strategy. They lack structural continuity.</p>
+      <p>Context fragments. Execution degrades.</p>
+      <p><strong>ALL IN 1 eliminates rebuilding.</strong> Open the chart. Structure is already mapped.</p>
+    </section>
+    
+    <section>
+      <h2>Execution Inside Structure</h2>
+      <div class="list">
+        <p>• Narrative visible immediately across timeframes</p>
+        <p>• Bias framed before execution</p>
+        <p>• Volatility measurable, not emotional</p>
+        <p>• Structural references consistent session to session</p>
+        <p>• Reduced screen dependency</p>
+      </div>
+    </section>
 
-    <!-- Execution Inside Structure -->
-    <h2>Execution Inside Structure</h2>
-    <div class="list">
-      <p>• Narrative visible immediately across timeframes</p>
-      <p>• Bias framed before execution</p>
-      <p>• Volatility measurable, not emotional</p>
-      <p>• Structural references consistent session to session</p>
-      <p>• Reduced screen dependency</p>
-    </div>
-
-    <!-- Defined Scope -->
-    <h2>Defined Scope</h2>
-    <p>Does not generate entries. Does not predict direction. Does not automate trades.</p>
-    <p><strong>It amplifies structured discretion.</strong></p>
+    <section>
+      <h2>Defined Scope</h2>
+      <p>Does not generate entries. Does not predict direction. Does not automate trades.</p>
+      <p><strong>It amplifies structured discretion.</strong></p>
+    </section>
   </div>
 
   <!-- RIGHT COLUMN (Architectural Layer) -->
