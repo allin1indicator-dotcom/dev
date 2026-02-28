@@ -39,6 +39,7 @@ strong { color:var(--text); font-weight:600; }
 .scroll-indicator::after { content:''; position:absolute; top:6px; left:50%; width:4px; height:6px; background:#fff; border-radius:2px; transform:translateX(-50%); animation:scroll 2.4s infinite; }
 .left p { margin-bottom: 32px; }
 .left { min-width: 0; width: 100%; }
+.left p:not(:last-child) {padding-bottom: 24px;  margin-bottom: 0; border-bottom: 2px solid var(--border); }
 .two-col { display: grid; gap: 65px; grid-template-columns: 2fr 1fr; align-items: start; align-items: stretch; }
 @keyframes scroll { 0%{opacity:0; transform:translate(-50%,0);} 40%{opacity:1;} 100%{opacity:0; transform:translate(-50%,12px);} }
 @media (max-width:768px) { h1 { font-size:34px; } } { .two-col { grid-template-columns: 1fr; } }
