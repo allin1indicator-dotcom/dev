@@ -149,6 +149,39 @@ color:white;
 font-weight:500;
 cursor:pointer;
 }
+
+.testimonial-carousel{ position:relative; overflow:hidden; }
+
+.carousel-track{
+display:flex;
+transition:transform .6s ease;
+}
+
+.testimonial-card{
+flex:0 0 70%;
+margin:0 15%;
+background:var(--surface-1);
+border:1px solid var(--border);
+padding:2rem;
+backdrop-filter:blur(6px);
+opacity:.4;
+transform:scale(.92);
+transition:.4s ease;
+cursor:pointer;
+}
+
+.testimonial-card.active{
+opacity:1;
+transform:scale(1);
+}
+
+@media(max-width:900px){
+.testimonial-card{
+flex:0 0 85%;
+margin:0 7.5%;
+}
+}
+
 </style>
 </head>
 
@@ -204,82 +237,43 @@ cursor:pointer;
 <p>14-Day Trial. Allocation required. No refund post-trial.</p>
 </div>
 </section>
+
+
 <section>
 <div class="container">
-<h2>Trader Validation</h2>
+<h2 style="text-align:center;margin-bottom:3rem;">Trader Validation</h2>
 
-<!-- PRIMARY TESTIMONIALS (Conversion Anchors) -->
+<div class="testimonial-carousel">
 
-<div class="testimonial">
+<div class="carousel-track">
+
+<div class="testimonial-card active">
 <strong>🇮🇹 Matteo V. — Crypto Intraday Trader (300k payouts in 2023)</strong>
-<p>
-I used to manually draw midnight opens, gaps, and higher timeframe levels before every livestream.
-It was slow and error-prone. Now they appear clean, centered, and structurally aligned.
-Execution is faster, narrative clearer, and there is zero chart clutter.
-This is the first framework that actually respects price.
-</p>
+<p>I used to manually draw key levels before every livestream. Now structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
 </div>
 
-<div class="testimonial">
-<strong>🇺🇸 Kevin L. — Futures Swing / Intraday Trader (Beta User)</strong>
-<p>
-I’ve used it since the first beta. Sessions, timing, and structural levels appear exactly where they should,
-without forcing overlays or blocking candles. I open the chart and the entire context is already mapped.
-If it’s on my screen, it earned its place.
-</p>
+<div class="testimonial-card">
+<strong>🇺🇸 Kevin L. — Futures Swing / Intraday Trader</strong>
+<p>Sessions and structural levels appear exactly where they should. I open the chart and full context is already mapped. Nothing unnecessary survives.</p>
 </div>
 
-<div class="testimonial">
+<div class="testimonial-card">
 <strong>🇸🇦 Mohamed D. — Commodities & Forex Trader</strong>
-<p>
-The alerts changed everything. I don’t stare at charts anymore.
-A notification tells me a level was hit and context is already there.
-It improved patience, consistency, and allowed me to monitor correlated pairs without overload.
-</p>
+<p>Alerts changed everything. I don’t stare at charts anymore. Context is ready when price interacts. Patience and consistency improved immediately.</p>
 </div>
 
-<!-- COLLAPSIBLE EXTENDED PROOF -->
-
-<div id="moreTestimonials" style="display:none; margin-top:2rem;">
-
-<div class="testimonial">
+<div class="testimonial-card">
 <strong>🇮🇪 Thomas W. — Futures Intraday Trader</strong>
-<p>
-Real-time session updates removed manual prep. I no longer chase structure.
-Stress is down. Execution confidence is up.
-</p>
-</div>
-
-<div class="testimonial">
-<strong>🇺🇸 Amairani R. — Stock Swing Trader</strong>
-<p>
-I used to stack multiple indicators. The chart was unreadable.
-Now everything is consolidated and visually disciplined.
-Narrative building is significantly cleaner.
-</p>
-</div>
-
-<div class="testimonial">
-<strong>🇵🇹 Johny F. — Index & Futures Operator</strong>
-<p>
-Key levels appear exactly when expected.
-Reactions are clearer. Timing is sharper.
-Every iteration improved precision.
-</p>
+<p>Real-time session automation removed manual prep. Stress dropped. Execution confidence increased materially.</p>
 </div>
 
 </div>
-
-<!-- EXPAND BUTTON -->
-
-<div style="text-align:center; margin-top:1.5rem;">
-<a class="cta secondary" onclick="toggleTestimonials()" id="toggleBtn">
-+ 3 More Traders Using ALL IN 1
-</a>
 </div>
 
 </div>
 </section>
+
+  
 <section>
 <div class="container">
 <h2>Trader's Feedback</h2>
@@ -347,6 +341,42 @@ if(e.target==document.getElementById('applyModal')){applyModal.style.display='no
 if(e.target==document.getElementById('riskModal')){riskModal.style.display='none';}
 };
 </script>
+<script>
+const track=document.querySelector('.carousel-track');
+const cards=document.querySelectorAll('.testimonial-card');
+let index=0;
+let auto;
 
+function updateCarousel(){
+track.style.transform=`translateX(-${index*100}%)`;
+cards.forEach(c=>c.classList.remove('active'));
+cards[index].classList.add('active');
+}
+
+cards.forEach((card,i)=>{
+card.addEventListener('click',()=>{
+index=i;
+updateCarousel();
+resetAuto();
+});
+});
+
+function next(){
+index=(index+1)%cards.length;
+updateCarousel();
+}
+
+function startAuto(){
+auto=setInterval(next,5000);
+}
+
+function resetAuto(){
+clearInterval(auto);
+startAuto();
+}
+
+updateCarousel();
+startAuto();
+</script>
 </body>
 </html>
