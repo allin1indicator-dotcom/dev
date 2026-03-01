@@ -108,37 +108,131 @@ button{width:100%;padding:14px;background:var(--primary);color:#fff;border:none;
     </div>
   </div>
 </section>
+<section class="features-section">
 
-<!-- FEATURES -->
-<section id="features">
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:3rem;">Core Features & Mechanics</h2>
+  <h1 class="section-title">Advanced Market Session & Reference Tools</h1>
+  <p class="section-subtitle">
+    Seamlessly visualize multi-timeframe sessions, intraday highs/lows, RTH levels, and weekly directional context. Designed for clarity, precision, and actionable insight.
+  </p>
 
-    <!-- Loop these cards for your 15–16 features -->
-    <div class="feature-group" style="background:var(--bg-1);padding:4rem 0;">
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>Multi-Timeframe Session Tracking</h3>
-          <p><strong>Core Purpose:</strong> Tracks and visualizes multi-timeframe (daily → yearly) sessions with high/low/open/close, calculates ranges, and manages raid/cross logic with alerts.</p>
-          <p><strong>Key Features:</strong> Determines session start/end for Daily, Weekly, Monthly, Quarterly, Yearly using timezone-anchored timestamps. Computes session highs/lows with first-candle and historical references. Raid/cross logic triggers extended lines and labels. Dynamically formats ranges and labels for display.</p>
-          <p><strong>Visual Behavior:</strong> Extends session high/low lines across the chart; boxes optional for raid/cross events. Multi-level plotting with text overlays for H/L per timeframe.</p>
-          <p><strong>Triggers:</strong> NB triggers session start, x_NB triggers session end. Cross detection flags when current price breaches previous session high/low.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>DWMQY Unified Framework</h3>
-          <p><strong>Unique Mechanisms:</strong> DWMQY system unifies Daily → Yearly tracking with cross-aware line/label persistence. Timezone-anchored session calculations adapt to instrument type (crypto, equity, futures, forex, index). First-candle and previous-session memory for extended context. Integrated raid system allows dynamic alerts.</p>
-          <p><strong>Positive Effects:</strong> Clear visualization of multi-timeframe extremes and ranges. Reduces clutter via dynamic line/label hiding and extension logic. Enhances context for intraday trading by aligning short-term price action with higher timeframe levels. Supports alerting and precise positioning of labels.</p>
-          <p><strong>Efficiency:</strong> Array-based management of lines and labels ensures efficient creation, update, and deletion. Conditional object creation prevents unnecessary performance overhead. Modular functions allow reuse across multiple timeframes.</p>
-        </div>
-
-        <!-- repeat additional feature cards here for all 15–16 features -->
-
-      </div>
+  <!-- Feature 1: DWMQY -->
+  <div class="feature-card">
+    <div class="feature-header">
+      <h2>DWMQY – Multi-Timeframe Session Engine</h2>
+      <button class="toggle-btn">Details ▼</button>
+    </div>
+    <div class="feature-summary">
+      <p><strong>Core Purpose:</strong> Align short-term price action with higher timeframe context, tracking daily to yearly sessions effortlessly.</p>
+      <ul>
+        <li>Unified Daily → Yearly session tracking with persistent lines and labels.</li>
+        <li>Dynamic raid/cross alerts highlighting session extremes.</li>
+        <li>First-candle & previous session memory for extended context.</li>
+      </ul>
+    </div>
+    <div class="feature-details">
+      <p><strong>Visual/Behavioral Highlights:</strong> Multi-level lines and labels for current, previous, and secondary sessions; optional boxes for raid/cross events.</p>
+      <p><strong>Unique Mechanisms:</strong> Cross-aware line persistence, timezone-anchored session calculations, integrated raid system.</p>
+      <p><strong>Positive Effects:</strong> Instant multi-timeframe clarity, reduced chart clutter, enhanced intraday positioning.</p>
     </div>
   </div>
+
+  <!-- Feature 2: Intraday Session -->
+  <div class="feature-card">
+    <div class="feature-header">
+      <h2>Intraday Session</h2>
+      <button class="toggle-btn">Details ▼</button>
+    </div>
+    <div class="feature-summary">
+      <p><strong>Core Purpose:</strong> Optimize intraday trading with precise session high/low tracking, first-candle ranges, and dynamic raid/cross alerts.</p>
+      <ul>
+        <li>Configurable raid display per session and timeframe.</li>
+        <li>First-candle range tracking for detailed sub-timeframe analysis.</li>
+        <li>Multi-session plotting with color-coded differentiation.</li>
+      </ul>
+    </div>
+    <div class="feature-details">
+      <p><strong>Visual/Behavioral Highlights:</strong> Boxes highlight session ranges; high/low lines extend dynamically; raid crosses flagged with unique symbols.</p>
+      <p><strong>Unique Mechanisms:</strong> Multi-layered persistence arrays, dynamic push/hide for lines/labels, real-time cross detection.</p>
+      <p><strong>Positive Effects:</strong> Clear session differentiation, automated labeling, minimized visual clutter.</p>
+    </div>
+  </div>
+
+  <!-- Feature 3: HOD/LOD Tracker -->
+  <div class="feature-card">
+    <div class="feature-header">
+      <h2>HOD/LOD Tracker</h2>
+      <button class="toggle-btn">Details ▼</button>
+    </div>
+    <div class="feature-summary">
+      <p><strong>Core Purpose:</strong> Provide persistent intraday high/low references for smarter daily trading decisions.</p>
+      <ul>
+        <li>Timezone-aware daily high/low tracking across markets.</li>
+        <li>Dynamic line extension and real-time updates for new intraday highs/lows.</li>
+      </ul>
+    </div>
+    <div class="feature-details">
+      <p><strong>Visual/Behavioral Highlights:</strong> Horizontal lines with labels clearly showing HOD/LOD, auto-hide previous day’s data.</p>
+      <p><strong>Unique Mechanisms:</strong> Separate persistent objects for HOD and LOD; integrates with broader session framework.</p>
+      <p><strong>Positive Effects:</strong> Enhanced intraday context, clutter-free chart readability, adaptive to different markets.</p>
+    </div>
+  </div>
+
+  <!-- Feature 4: RTH Reference -->
+  <div class="feature-card">
+    <div class="feature-header">
+      <h2>RTH – Regular Trading Hours Reference</h2>
+      <button class="toggle-btn">Details ▼</button>
+    </div>
+    <div class="feature-summary">
+      <p><strong>Core Purpose:</strong> Track RTH levels, gaps, and averages to highlight intraday and interday market structure.</p>
+      <ul>
+        <li>RTH open/close, midpoints, and cross detection.</li>
+        <li>Persistent previous-day tracking for gap and directional analysis.</li>
+        <li>Conditional link lines showing context between close and averages.</li>
+      </ul>
+    </div>
+    <div class="feature-details">
+      <p><strong>Visual/Behavioral Highlights:</strong> Horizontal lines and symbols indicate RTH levels and directional bias; session-specific color coding.</p>
+      <p><strong>Unique Mechanisms:</strong> Multi-session cross tracking, gap visualization, timezone-aware logic for futures.</p>
+      <p><strong>Positive Effects:</strong> Clear intraday/interday reference, non-overlapping labels, enhanced gap and trend awareness.</p>
+    </div>
+  </div>
+
+  <!-- Feature 5: NWOG Weekly Reference -->
+  <div class="feature-card">
+    <div class="feature-header">
+      <h2>NWOG – Weekly Reference System</h2>
+      <button class="toggle-btn">Details ▼</button>
+    </div>
+    <div class="feature-summary">
+      <p><strong>Core Purpose:</strong> Track weekly open/close, averages, and gaps for directional week-over-week insight.</p>
+      <ul>
+        <li>Multi-level averages (mid, ¼ open/close) for precise weekly context.</li>
+        <li>Gap detection and closure tracking with dynamic updates.</li>
+        <li>Historical NWOG storage for multi-week perspective.</li>
+      </ul>
+    </div>
+    <div class="feature-details">
+      <p><strong>Visual/Behavioral Highlights:</strong> Lines, boxes, and labels for weekly open/close/mid, directional symbols for bullish/bearish bias.</p>
+      <p><strong>Unique Mechanisms:</strong> Combined line/label/box tracking current and prior week, persistent gap visualization.</p>
+      <p><strong>Positive Effects:</strong> Instant weekly directional clarity, multi-timeframe alignment, organized visual hierarchy.</p>
+    </div>
+  </div>
+
 </section>
 
+<script>
+  // Simple toggle functionality
+  const toggles = document.querySelectorAll('.toggle-btn');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.parentElement.nextElementSibling.nextElementSibling;
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+      btn.textContent = details.style.display === 'block' ? 'Details ▲' : 'Details ▼';
+    });
+  });
+</script>
+  
 <!-- TESTIMONIALS -->
 <section>
   <div class="container">
