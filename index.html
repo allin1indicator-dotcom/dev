@@ -418,17 +418,21 @@ window.onclick=function(e){
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".v3_content", {
-  xPercent: -400,     // 5 slides → -100 * (5 - 1)
+const container = document.querySelector(".v3_content");
+const sections  = gsap.utils.toArray(".v3_content_item");
+
+gsap.to(container, {
+  xPercent: -100 * (sections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: "#v3_sticky_top",
     start: "top top",
-    end: () => "+=" + window.innerWidth * 1.2,
-    scrub: true,
-    pin: true
+    end: () => "+=" + container.offsetWidth,
+    scrub: 1,
+    pin: true,
+    anticipatePin: 1,
+    invalidateOnRefresh: true
   }
-
 });
 </script>
 
