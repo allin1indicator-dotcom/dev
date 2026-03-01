@@ -1,198 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Structured Market Environment</title>
+<title>Landing Page Indicatore</title>
+<meta name="description" content="Scopri il nostro indicatore premium per analisi di mercato veloce e chiara. 15 giorni di prova gratuita.">
 <style>
-:root{--bg:#f5f5f7; --surface:#ffffff; --text:#111111; --muted:#6e6e73; --line:#e2e2e6; --accent:#2563eb; --accent-soft:rgba(37,99,235,.08);}
-*{margin:0; padding:0; box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased;}
-nav{position:sticky; top:0; background:rgba(245,245,247,.85); backdrop-filter:blur(20px); border-bottom:1px solid var(--line); z-index:1000;}
-.nav-inner{max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
-.nav-links a{text-decoration:none; color:var(--text); margin-left:24px; font-size:14px; letter-spacing:.02em; transition:opacity .25s ease;}
-.nav-links a:hover{opacity:.6;}
-section{padding:100px 24px; position:relative; overflow:hidden;}
-.container{max-width:960px; margin:0 auto;}
-.hero{padding-top:140px; padding-bottom:140px; text-align:center;}
-h1{font-size:52px; line-height:1.1; font-weight:600; letter-spacing:-0.02em; margin-bottom:28px;}
-h2{font-size:36px; font-weight:600; letter-spacing:-0.01em; margin-bottom:28px;}
-h3{font-size:22px; font-weight:600; margin-bottom:12px;}
-p{font-size:17px; color:var(--muted); margin-bottom:20px;}
-.large{font-size:20px; color:var(--text);}
-.buttons{margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;}
-.btn{padding:14px 32px; font-size:16px; text-decoration:none; border-radius:999px; transition:all .3s cubic-bezier(.4,0,.2,1); display:inline-block;}
-.btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 20px rgba(37,99,235,.25);}
-.btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 28px rgba(37,99,235,.35);}
-.btn-secondary{border:1px solid var(--line); color:var(--text); background:var(--surface);}
-.btn-secondary:hover{background:var(--accent-soft); border-color:var(--accent);}
-.feature{margin-bottom:60px;}
-.divider{height:2px; width:100%; background:var(--line); margin:100px 0 0 0; position:relative;}
-.divider::after{content:""; position:absolute; left:0; top:0; height:100%; width:0%; background:linear-gradient(90deg,var(--accent),transparent); transition:width 1.2s cubic-bezier(.4,0,.2,1);}
-section.in-view .divider::after{width:100%;}
-.reveal{opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(.4,0,.2,1);}
-section.in-view .reveal{opacity:1; transform:translateY(0);}
-.sticky-title{position:sticky; top:80px; background:var(--bg); z-index:5;}
-.paragraph{height:0; overflow:hidden; transition:height 0.6s ease, margin 0.6s ease;}
-.paragraph.expand{height:auto; margin-bottom:20px;}
-.pricing{text-align:center;}
-.price-old{text-decoration:line-through; color:var(--muted); font-size:22px;}
-.price-new{font-size:36px; font-weight:600; margin:10px 0 20px;}
-.footer-cta{text-align:center; padding:140px 24px;}
-@media (max-width:768px){h1{font-size:36px;} h2{font-size:28px;} section{padding:80px 24px;}}
+/* Reset rapido */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+body { line-height:1.5; color:#111; background:#f8f8f8; }
+a { text-decoration:none; color:inherit; }
+img { max-width:100%; display:block; }
+
+/* Container generale */
+.container { width:90%; max-width:1200px; margin:0 auto; }
+
+/* Hero */
+header {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:100px 0; background:#1a1a1a; color:white;
+}
+header h1 { font-size:48px; margin-bottom:20px; }
+header p { font-size:20px; margin-bottom:30px; max-width:700px; }
+header .cta { background:#ff5722; color:white; padding:16px 40px; font-size:18px; border-radius:6px; transition:0.3s; }
+header .cta:hover { background:#e64a19; }
+
+/* Section generale */
+section { padding:80px 0; }
+section h2 { font-size:36px; margin-bottom:40px; text-align:center; }
+section p { font-size:18px; margin-bottom:20px; text-align:center; max-width:800px; margin-left:auto; margin-right:auto; }
+
+/* Features */
+#features .feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
+.feature { background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; }
+.feature img { margin-bottom:20px; border-radius:6px; }
+.feature h3 { font-size:24px; margin-bottom:10px; }
+
+/* Video demo */
+#demo-video video { display:block; margin:0 auto; border-radius:10px; max-width:90%; }
+
+/* Testimonials */
+#testimonials .testimonial { background:#fff; padding:30px; margin-bottom:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+#testimonials .testimonial p { font-style:italic; margin-bottom:10px; }
+#testimonials .testimonial span { font-weight:bold; color:#333; }
+
+/* Pricing */
+#pricing .price-box { text-align:center; background:#1a1a1a; color:white; padding:60px 30px; border-radius:12px; }
+#pricing .price-box del { color:#ccc; margin-right:15px; }
+#pricing .price-box .cta { margin-top:20px; }
+
+/* FAQ */
+#faq .faq-item { margin-bottom:30px; background:white; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+#faq .faq-item h4 { font-size:20px; margin-bottom:10px; }
+
+/* Footer */
+footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-size:14px; }
+
+/* Responsive */
+@media(max-width:768px){
+  header h1 { font-size:36px; }
+  header p { font-size:16px; }
+  section h2 { font-size:28px; }
+  section p { font-size:16px; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <div>Framework</div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </div>
+<header>
+  <div class="container">
+    <h1>Indicatore Premium All-in-1</h1>
+    <p>Session boxes, HTF pivots, gaps, ADR e flag eventi sovrapposti non intrusivi. Vedi smart levels in un colpo d'occhio.</p>
+    <a href="#pricing" class="cta">Prova 15 giorni gratis</a>
   </div>
-</nav>
-
-<section class="hero">
-  <div class="container reveal">
-    <h1>A Structured Market Environment for Discretionary Precision</h1>
-    <p class="large">All critical intraday and higher-timeframe context — unified, ordered, and embedded directly into price.</p>
-    <p class="paragraph expand">Professional execution depends on structured information. Our framework consolidates session timing, volatility expansions, structural pivots, market imbalances, and macro events directly onto the chart for actionable context.</p>
-    <div class="buttons">
-      <a href="#pricing" class="btn btn-primary">Start 15-Day Free Trial</a>
-      <a href="#features" class="btn btn-secondary">See It in Action</a>
-    </div>
-  </div>
-  <div class="divider"></div>
-</section>
-
-<section>
-  <div class="container reveal">
-    <h2 class="sticky-title">The Problem</h2>
-    <p class="paragraph">Advanced traders often juggle multiple indicators manually: HTF pivots and session levels drawn by hand; Separate ADR and volatility measurement tools; Independent imbalance and displacement tracking; External economic calendars or event markers.</p>
-    <p class="paragraph">While individually useful, this fragmented workflow slows reaction time, increases error, and reduces execution efficiency. The problem is structural inefficiency, not strategy quality.</p>
-  </div>
-  <div class="divider"></div>
-</section>
-
-<section>
-  <div class="container reveal">
-    <h2 class="sticky-title">The Solution</h2>
-    <p class="paragraph">This indicator creates a unified structural layer: Automatically maps intraday sessions with proportional scaling; Projects higher-timeframe pivots downward, preserving chart alignment; Identifies inefficiencies and displacements algorithmically in real-time; Integrates macro event timing for controlled risk management; Adjusts layers dynamically to prevent visual clutter.</p>
-    <p class="paragraph">The result is actionable, compressed market context that preserves candle dominance and speeds discretionary execution.</p>
-  </div>
-  <div class="divider"></div>
-</section>
+</header>
 
 <section id="features">
-  <div class="container reveal">
-    <h2 class="sticky-title">Core Features</h2>
-
-    <div class="feature">
-      <h3>Intraday Session Framework</h3>
-      <p class="paragraph">Trade within defined liquidity windows. Major sessions segmented and scaled to maintain precise timing across all timeframes.</p>
+  <div class="container">
+    <h2>Funzioni principali</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <img src="screenshot1.webp" alt="Feature 1">
+        <h3>Session Boxes</h3>
+        <p>Identifica rapidamente le sessioni di trading e il loro range senza sovraccaricare il grafico.</p>
+      </div>
+      <div class="feature">
+        <img src="screenshot2.webp" alt="Feature 2">
+        <h3>HTF Pivots</h3>
+        <p>Pivot di timeframe più alti automaticamente calcolati per supporto e resistenza chiari.</p>
+      </div>
+      <div class="feature">
+        <img src="screenshot3.webp" alt="Feature 3">
+        <h3>Gaps & Event Flags</h3>
+        <p>Visualizza gap e eventi importanti senza interferire con l’azione del prezzo.</p>
+      </div>
+      <!-- aggiungi altri feature qui -->
     </div>
-
-    <div class="feature">
-      <h3>Higher-Timeframe Anchors</h3>
-      <p class="paragraph">Directional bias maintained without switching charts. Daily and HTF pivots projected with consistent scaling logic.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Imbalance & Displacement Mapping</h3>
-      <p class="paragraph">Structural gaps and displacement zones identified automatically. Tracks where market inefficiency is developing and confirmed.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Volatility Positioning Engine</h3>
-      <p class="paragraph">Defines intraday expansion limits and exhaustion zones using real-time ADR. Ensures entries are aligned with market energy.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Scheduled Event Integration</h3>
-      <p class="paragraph">High-impact macro events integrated into the timeline to control risk and anticipate volatility spikes.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Adaptive Visual Logic</h3>
-      <p class="paragraph">Automatic layer adjustment, fade, and reordering ensures all components remain legible without overlapping candles or cluttering the chart.</p>
-    </div>
-
   </div>
-  <div class="divider"></div>
+</section>
+
+<section id="demo-video">
+  <div class="container">
+    <h2>Video Dimostrativo</h2>
+    <video controls poster="video-poster.jpg">
+      <source src="demo-video.mp4" type="video/mp4">
+      Il tuo browser non supporta il video.
+    </video>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <h2>Cosa dicono gli utenti</h2>
+    <div class="testimonial">
+      <p>"Questo indicatore ha cambiato il mio approccio al trading. Veloce, chiaro e preciso."</p>
+      <span>- Marco R.</span>
+    </div>
+    <div class="testimonial">
+      <p>"Finalmente vedo il mercato senza sovraccarico di informazioni. Top tool."</p>
+      <span>- Lucia S.</span>
+    </div>
+  </div>
 </section>
 
 <section id="pricing">
-  <div class="container reveal pricing">
-    <h2 class="sticky-title">Pricing</h2>
-    <div class="price-old">$129 per month</div>
-    <div class="price-new">$109 per month</div>
-    <p class="paragraph">Full system access included with 15-day free trial. Monthly subscription via Stripe, cancel anytime. Transparent pricing — no hidden tiers.</p>
-    <div class="buttons">
-      <a href="#" class="btn btn-primary">Start 15-Day Free Trial</a>
-    </div>
+  <div class="container price-box">
+    <h2>Piano Mensile</h2>
+    <p><del>$129</del> <strong>$109</strong></p>
+    <a href="stripe-link" class="cta">Abbonati Ora</a>
   </div>
-  <div class="divider"></div>
 </section>
 
 <section id="faq">
-  <div class="container reveal">
-    <h2 class="sticky-title">FAQ</h2>
-    <h3>Is it beginner friendly?</h3>
-    <p class="paragraph">Designed for traders familiar with market structure, liquidity, and volatility concepts.</p>
-    <h3>Does it repaint?</h3>
-    <p class="paragraph">No. Elements update only on confirmed data, never forward-projected.</p>
-    <h3>Multiple assets?</h3>
-    <p class="paragraph">Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
-    <h3>Generates trade signals?</h3>
-    <p class="paragraph">No. Provides structured context for discretionary decision-making.</p>
-    <h3>Multi-timeframe compatible?</h3>
-    <p class="paragraph">Yes, built for cross-timeframe structural alignment.</p>
-    <h3>Cancellation?</h3>
-    <p class="paragraph">Handled directly through Stripe, anytime.</p>
-    <h3>Additional software?</h3>
-    <p class="paragraph">None. Runs natively on TradingView via invite-only access.</p>
-    <h3>Support?</h3>
-    <p class="paragraph">Active subscribers receive live support and updates.</p>
-  </div>
-</section>
-
-<section class="footer-cta">
-  <div class="container reveal">
-    <h2 class="sticky-title">Execute Within a Structured Framework</h2>
-    <p class="paragraph">Eliminate fragmentation. Standardize context. Execute with higher precision using real-time structural and volatility insights.</p>
-    <div class="buttons">
-      <a href="#" class="btn btn-primary">Start 15-Day Free Trial</a>
+  <div class="container">
+    <h2>Domande Frequenti</h2>
+    <div class="faq-item">
+      <h4>Come installo l’indicatore?</h4>
+      <p>Segui la guida passo-passo dopo l’acquisto. L’installazione richiede pochi minuti.</p>
     </div>
+    <div class="faq-item">
+      <h4>Posso provare prima di pagare?</h4>
+      <p>Sì, offriamo 15 giorni di prova gratuita senza impegno.</p>
+    </div>
+    <!-- aggiungi altri FAQ qui -->
   </div>
 </section>
 
-<script>
-// Scroll reveal
-const sections=document.querySelectorAll("section");
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");}});},{threshold:0.15});
-sections.forEach(section=>observer.observe(section));
-
-// Paragrafo espande spazio
-const paragraphs=document.querySelectorAll('.paragraph');
-paragraphs.forEach(p=>{
-  const paraObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        p.style.height=p.scrollHeight+'px';
-        p.classList.add('expand');
-      } else {
-        p.style.height='0px';
-        p.classList.remove('expand');
-      }
-    });
-  },{threshold:0.5});
-  paraObserver.observe(p);
-});
-</script>
+<footer>
+  <div class="container">
+    © 2026 Indicatore Premium. Tutti i diritti riservati. | Contatti: info@indicatorepremium.com
+  </div>
+</footer>
 
 </body>
 </html>
