@@ -20,6 +20,9 @@
 <meta property="og:image" content="https://your-domain.com/preview.jpg">
 
 <style>
+/* -------------------------------------------------
+   Design tokens – based on the common 16 px grid
+   ------------------------------------------------- */
 :root{
   --bg:#0f1113;
   --surface:#15181b;
@@ -27,40 +30,72 @@
   --muted:#b0b8c0;
   --accent:#ffffff;
   --border:#23272b;
-  --gap:24px;
+
+  --gap:16px;               /* base spacing */
+  --gap-lg:calc(var(--gap) * 2);   /* 32 px */
+  --gap-xl:calc(var(--gap) * 3);   /* 48 px */
 }
 
-/* Reset */
+/* -------------------------------------------------
+   Reset & global styles
+   ------------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 img,video{display:block;max-width:100%;height:auto;}
 body{
   font-family:'Inter',system-ui,-apple-system,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.7;
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 
-/* Layout */
-.wrapper{max-width:1400px;margin:0 auto;padding:0 40px;}
+/* -------------------------------------------------
+   Layout containers
+   ------------------------------------------------- */
+.wrapper{
+  max-width:1200px;               /* typical max width */
+  margin:0 auto;
+  padding:0 var(--gap);
+}
 
-/* Typography */
-h1{font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:var(--gap);}
-h2{font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:calc(var(--gap)/2);}
-h3{font-size:18px;font-weight:600;margin-bottom:8px;}
-p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
+/* -------------------------------------------------
+   Typography
+   ------------------------------------------------- */
+h1{
+  font-size:clamp(32px,6vw,56px);
+  font-weight:700;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:var(--gap-xl);
+}
+h2{
+  font-size:1.75rem;
+  font-weight:700;
+  margin-bottom:var(--gap);
+}
+h3{
+  font-size:1.125rem;
+  font-weight:600;
+  margin-bottom:calc(var(--gap)/2);
+}
+p{
+  font-size:1rem;
+  color:var(--muted);
+  max-width:720px;
+  margin-bottom:var(--gap);
+}
 
-/* Buttons */
+/* -------------------------------------------------
+   Buttons
+   ------------------------------------------------- */
 .button{
   display:inline-block;
-  margin-top:var(--gap);
-  padding:16px 28px;
+  padding:12px 24px;
   background:var(--accent);
   color:#000;
   text-decoration:none;
   font-weight:600;
-  font-size:15px;
-  letter-spacing:0.02em;
+  font-size:.875rem;
   border-radius:4px;
   transition:opacity .2s ease;
 }
@@ -70,59 +105,153 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   outline-offset:2px;
 }
 
-/* Sticky Nav */
-.nav{position:sticky;top:0;background:var(--bg);z-index:10;padding:12px 0;}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;}
-.logo{color:var(--accent);font-size:1.2rem;font-weight:600;}
-.nav-cta{background:var(--accent);color:#000;padding:10px 20px;}
-
-/* Hero */
-.hero{position:relative;display:flex;align-items:center;justify-content:center;padding:0;}
-.hero-video{width:100%;filter:brightness(1.06);}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25);}
-.hero-inner{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:0 24px;
+/* -------------------------------------------------
+   Sticky navigation
+   ------------------------------------------------- */
+.nav{
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:10;
+  padding:var(--gap) 0;
 }
-.hero-inner h1{text-shadow:0 4px 10px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);}
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  color:var(--accent);
+  font-size:1.125rem;
+  font-weight:600;
+}
+.nav-cta{
+  background:var(--accent);
+  color:#000;
+}
+
+/* -------------------------------------------------
+   Hero
+   ------------------------------------------------- */
+.hero{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.hero-video{
+  width:100%;
+  filter:brightness(1.06);
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.25);
+}
+.hero-inner{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 var(--gap);
+}
+.hero-inner h1{
+  text-shadow:0 4px 10px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
+}
 .hero-inner p{
-  font-size:24px;font-weight:550;color:var(--text);
-  max-width:720px;margin-bottom:0;
+  font-size:1.5rem;
+  font-weight:550;
+  color:var(--text);
+  max-width:720px;
+  margin-bottom:0;
   text-shadow:0 3px 6px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
 }
 
-/* Pricing Banner */
-.pricing-banner{background:var(--surface);padding:40px 0;text-align:center;}
-.badge{display:inline-block;background:#ffb400;color:#000;padding:4px 12px;border-radius:12px;margin-bottom:12px;}
-.price{font-size:2.4rem;font-weight:700;color:var(--accent);}
-.price span{font-size:0.6em;}
+/* -------------------------------------------------
+   Pricing banner
+   ------------------------------------------------- */
+.pricing-banner{
+  background:var(--surface);
+  padding:var(--gap-xl) var(--gap);
+  text-align:center;
+}
+.badge{
+  display:inline-block;
+  background:#ffb400;
+  color:#000;
+  padding:4px 12px;
+  border-radius:12px;
+  margin-bottom:var(--gap);
+  font-size:.875rem;
+}
+.price{
+  font-size:2rem;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:var(--gap);
+}
+.price span{
+  font-size:.6em;
+}
 
-/* Two‑column layout */
-.two-col{display:grid;grid-template-columns:8fr 3fr;gap:0;align-items:stretch;}
-@media (max-width:1024px){.two-col{grid-template-columns:1fr;}}
+/* -------------------------------------------------
+   Two‑column layout
+   ------------------------------------------------- */
+.two-col{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:var(--gap-xl);
+  align-items:start;
+}
+@media (max-width:1024px){
+  .two-col{grid-template-columns:1fr;}
+}
 
-/* Card */
+/* -------------------------------------------------
+   Card component
+   ------------------------------------------------- */
 .card{
   background:var(--surface);
-  padding:36px;
+  padding:var(--gap-xl);
   border:1px solid var(--border);
   border-radius:6px;
-  max-width:640px;
 }
 
-/* List */
-.list p{margin-bottom:8px;}
+/* -------------------------------------------------
+   List inside “Execution Inside Structure”
+   ------------------------------------------------- */
+.list p{
+  margin-bottom:calc(var(--gap)/2);
+}
 
-/* Scroll indicator */
+/* -------------------------------------------------
+   Scroll indicator
+   ------------------------------------------------- */
 .scroll-indicator{
-  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
-  width:22px;height:36px;border:2px solid rgba(255,255,255,.7);border-radius:14px;
+  position:absolute;
+  bottom:var(--gap);
+  left:50%;
+  transform:translateX(-50%);
+  width:22px;
+  height:36px;
+  border:2px solid rgba(255,255,255,.7);
+  border-radius:14px;
 }
 .scroll-indicator::after{
-  content:'';position:absolute;top:6px;left:50%;
-  width:4px;height:6px;background:#fff;border-radius:2px;
-  transform:translateX(-50%);animation:scroll 2.4s infinite;
+  content:'';
+  position:absolute;
+  top:6px;
+  left:50%;
+  width:4px;
+  height:6px;
+  background:#fff;
+  border-radius:2px;
+  transform:translateX(-50%);
+  animation:scroll 2.4s infinite;
 }
 @keyframes scroll{
   0%{opacity:0;transform:translate(-50%,0);}
@@ -130,11 +259,22 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   100%{opacity:0;transform:translate(-50%,12px);}
 }
 
-/* Footer */
-.footer{padding:60px 0;text-align:center;font-size:14px;color:var(--muted);}
+/* -------------------------------------------------
+   Footer
+   ------------------------------------------------- */
+.footer{
+  padding:var(--gap-xl) 0;
+  text-align:center;
+  font-size:.875rem;
+  color:var(--muted);
+}
 
-/* Responsive tweaks */
-@media (max-width:768px){h1{font-size:34px;}}
+/* -------------------------------------------------
+   Responsive tweaks
+   ------------------------------------------------- */
+@media (max-width:768px){
+  h1{font-size:2rem;}
+}
 </style>
 </head>
 <body>
@@ -240,13 +380,13 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 </footer>
 
 <script>
-/* Simple carousel: rotate testimonials every 5 seconds */
+/* Simple testimonial carousel – rotates every 5 s */
 const testimonials = document.querySelectorAll('.testimonial');
-let idx = 0;
+let cur = 0;
 setInterval(() => {
-  testimonials[idx].classList.remove('active');
-  idx = (idx + 1) % testimonials.length;
-  testimonials[idx].classList.add('active');
+  testimonials[cur].classList.remove('active');
+  cur = (cur + 1) % testimonials.length;
+  testimonials[cur].classList.add('active');
 }, 5000);
 </script>
 
