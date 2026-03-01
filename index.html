@@ -425,7 +425,7 @@ gsap.to(".v3_content", {
   scrollTrigger: {
     trigger: "#v3_sticky_top",
     start: "top top",
-    end: "+=4000",
+    end: () => "+=" + window.innerWidth * 4,
     scrub: true,
     pin: true
   }
