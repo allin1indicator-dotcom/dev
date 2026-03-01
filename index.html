@@ -1,174 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technical Feature Map Example</title>
+<title>DWMQY – Multi-Timeframe Context Model</title>
+<meta name="description" content="Time-based structural awareness engine for institutional levels. Context, not signals.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.5;
-    background-color: #f9f9f9;
-  }
-  h1, h2, h3 {
-    margin: 10px 0 5px;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  nav li {
-    margin-bottom: 5px;
-  }
-  nav a {
-    text-decoration: none;
-    color: #007ACC;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
-  section {
-    background: #fff;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  details {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #333;
-    padding: 5px 0;
-  }
-  ul li {
-    margin-bottom: 4px;
-  }
-  .variable, .function {
-    font-family: monospace;
-    background: #e0e0e0;
-    padding: 2px 4px;
-    border-radius: 3px;
-  }
+:root{
+  --bg:#131722;
+  --panel:#1e222d;
+  --border:#2a2e39;
+  --text:#d1d4dc;
+  --muted:#787b86;
+  --accent:#2962ff;
+  --max:1100px;
+  --radius:6px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.55;
+  font-size:15px;
+}
+
+.container{
+  width:92%;
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+header{
+  padding:3.5rem 0 2.5rem;
+  border-bottom:1px solid var(--border);
+}
+
+h1{
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+
+.subtitle{
+  color:var(--muted);
+  margin-top:.6rem;
+  max-width:720px;
+}
+
+.badge{
+  display:inline-block;
+  font-size:12px;
+  color:var(--accent);
+  margin-bottom:1rem;
+}
+
+section{
+  padding:3rem 0;
+  border-bottom:1px solid var(--border);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  transition:background .15s ease, border .15s ease;
+}
+
+.card:hover{
+  border-color:var(--accent);
+}
+
+.card h3{
+  font-size:15px;
+  font-weight:500;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:14px;
+  color:var(--muted);
+}
+
+footer{
+  padding:2rem 0;
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+}
 </style>
 </head>
-<body>
-
-<h1>Technical Feature Map</h1>
-
-<nav>
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#module1">Module 1: Multi-Timeframe DWMQY Session Engine</a></li>
-    <li><a href="#module2">Module 2: Example Module Two</a></li>
-    <li><a href="#module3">Module 3: Example Module Three</a></li>
-  </ul>
-</nav>
-
-<!-- Module 1 -->
-<section id="module1">
-  <details open>
-    <summary>Multi-Timeframe DWMQY Session Engine</summary>
-
-    <h3>Core Purpose</h3>
-    <p>Tracks and visualizes Daily → Yearly sessions (DWMQY) with open/high/low/close, calculates ranges, manages raid/cross logic, and provides alerts. Supports multi-timeframe analysis.</p>
-
-    <h3>Key Features</h3>
-    <ul>
-      <li>Session start/end detection per timeframe using timezone-anchored timestamps.</li>
-      <li>Computes session highs/lows using first-candle and historical references.</li>
-      <li>Maintains multi-timeframe persistence via arrays for current, previous, and secondary sessions.</li>
-      <li>Raid/cross logic triggers extended lines and dynamic alerts on extreme breaches.</li>
-      <li>Dynamic formatting for labels, boxes, and ranges per session/timeframe.</li>
-      <li>Modular functions like <span class="function">f_SessionNB_HL</span>, <span class="function">f_ExtendLines</span>, <span class="function">f_DWMQY</span>.</li>
-    </ul>
-
-    <h3>Visual / Chart Behavior</h3>
-    <ul>
-      <li>Session high/low lines extended across chart; optional boxes for raid/cross events.</li>
-      <li>Labels display session ranges, first-candle extremes, and alerts.</li>
-      <li>Multi-level plotting: separate arrays/lines for current, previous, secondary session extremes.</li>
-      <li>Text overlays for H/L per timeframe: PD, PW, PM, PQ, PY.</li>
-      <li>Dynamic hiding and extension of lines reduces clutter.</li>
-      <li>First-candle and previous-session memory (<span class="variable">_High1</span>, <span class="variable">_Low1</span>, <span class="variable">_High2</span>, <span class="variable">_Low2</span>) for context.</li>
-    </ul>
-
-    <h3>Triggers / State Changes</h3>
-    <ul>
-      <li><span class="variable">_NB</span> triggers session start; <span class="variable">x_NB</span> triggers session end.</li>
-      <li>Cross detection (<span class="variable">HCross</span>, <span class="variable">LCross</span>) triggers when price breaches previous session highs/lows.</li>
-      <li>Raid/cross logic activates extended lines and labels conditionally per session/timeframe.</li>
-      <li>Handles multi-day/week/month adjustments and gaps for alignment.</li>
-    </ul>
-
-  </details>
-</section>
-
-<!-- Module 2 -->
-<section id="module2">
-  <details>
-    <summary>Example Module Two</summary>
-
-    <h3>Core Purpose</h3>
-    <p>Example module for intraday range visualization and alerting.</p>
-
-    <h3>Key Features</h3>
-    <ul>
-      <li>Tracks high/low ranges per session.</li>
-      <li>Pushes lines and labels dynamically.</li>
-      <li>Alert triggers on range breakout.</li>
-    </ul>
-
-    <h3>Visual / Chart Behavior</h3>
-    <ul>
-      <li>Lines extend for visible range.</li>
-      <li>Optional boxes highlight breakout zones.</li>
-      <li>Labels display session extremes.</li>
-    </ul>
-
-    <h3>Triggers / State Changes</h3>
-    <ul>
-      <li>Breakout detection triggers alerts.</li>
-      <li>Conditional label updates per session end.</li>
-    </ul>
-
-  </details>
-</section>
-
-<!-- Module 3 -->
-<section id="module3">
-  <details>
-    <summary>Example Module Three</summary>
-
-    <h3>Core Purpose</h3>
-    <p>Demonstrates multi-timeframe alerting logic with persistent chart markers.</p>
-
-    <h3>Key Features</h3>
-    <ul>
-      <li>Stores alert markers in arrays for multiple timeframes.</li>
-      <li>Dynamic formatting of marker color and text.</li>
-      <li>Conditional alerting based on previous session extremes.</li>
-    </ul>
-
-    <h3>Visual / Chart Behavior</h3>
-    <ul>
-      <li>Persistent markers on chart across timeframe changes.</li>
-      <li>Optional highlighting for extreme events.</li>
-      <li>Dynamic label updates tied to price action.</li>
-    </ul>
-
-    <h3>Triggers / State Changes</h3>
-    <ul>
-      <li>Alerts trigger when price breaches stored extremes.</li>
-      <li>Markers update only on timeframe or session changes.</li>
-    </ul>
-
-  </details>
-</section>
-
-</body>
-</html>
