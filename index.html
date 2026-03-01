@@ -1,163 +1,174 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indicatore Premium All-in-1</title>
-<meta name="description" content="Indicatore premium per trading veloce e chiaro. 15 giorni di prova gratuita.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<title>Technical Feature Map Example</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
-body { background:#f5f5f7; color:#111; overflow-x:hidden; }
-a { text-decoration:none; }
-
-/* Container */
-.container { width:90%; max-width:1200px; margin:0 auto; }
-
-/* Hero */
-header {
-  position:relative; height:100vh; display:flex; align-items:center; justify-content:center;
-  text-align:center; overflow:hidden;
-}
-header video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0.5; }
-header::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:0; }
-
-header .hero-content { position:relative; z-index:1; max-width:900px; color:white; }
-header h1 { font-family: 'Poppins', sans-serif; font-size:60px; margin-bottom:20px; animation:fadeUp 1s ease forwards; opacity:0; }
-header p { font-size:20px; margin-bottom:40px; opacity:0; animation:fadeUp 1s 0.3s ease forwards; }
-header .cta { display:inline-block; padding:18px 50px; font-size:20px; border-radius:8px;
-  background:linear-gradient(45deg,#ff5722,#ff7043); color:white; font-weight:600; transition:0.3s; opacity:0; animation:fadeUp 1s 0.6s ease forwards;
-}
-header .cta:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
-
-/* Animazioni fadeUp */
-@keyframes fadeUp { 0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
-
-/* Section */
-section { padding:100px 0; }
-section h2 { font-size:36px; text-align:center; margin-bottom:50px; }
-section p { text-align:center; font-size:18px; max-width:800px; margin:0 auto 40px auto; }
-
-/* Feature Carousel */
-#features { background:#fff; }
-.carousel { display:flex; overflow:hidden; gap:30px; scroll-behavior:smooth; }
-.feature-card { flex:0 0 300px; background:#fefefe; border-radius:12px; padding:30px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s; }
-.feature-card:hover { transform:translateY(-10px); }
-.feature-card img { border-radius:8px; margin-bottom:20px; }
-
-/* Demo video */
-#demo-video video { display:block; margin:0 auto; max-width:90%; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.2); }
-
-/* Testimonials slider */
-#testimonials { background:#f0f0f3; }
-.testimonial-slider { display:flex; overflow:hidden; gap:30px; }
-.testimonial { flex:0 0 350px; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); opacity:0.9; transition:0.3s; }
-.testimonial p { font-style:italic; margin-bottom:15px; }
-.testimonial span { font-weight:bold; }
-
-/* Pricing */
-#pricing { background:#1a1a1a; color:white; text-align:center; border-radius:12px; margin:0 20px; padding:80px 30px; }
-#pricing del { color:#ccc; margin-right:15px; }
-#pricing .cta { display:inline-block; margin-top:30px; padding:20px 60px; font-size:22px; border-radius:10px; background:linear-gradient(45deg,#ff5722,#ff7043); transition:0.3s; }
-#pricing .cta:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.4); }
-
-/* FAQ */
-#faq .faq-item { background:white; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
-#faq .faq-item h4 { font-size:20px; margin-bottom:12px; }
-
-/* Footer */
-footer { background:#111; color:white; text-align:center; padding:50px 20px; font-size:14px; }
-
-/* Responsive */
-@media(max-width:768px){
-  header h1 { font-size:40px; }
-  header p { font-size:16px; }
-  section h2 { font-size:28px; }
-  section p { font-size:16px; }
-  .carousel, .testimonial-slider { flex-wrap:wrap; justify-content:center; }
-  .feature-card, .testimonial { flex:0 0 90%; }
-}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+  }
+  h1, h2, h3 {
+    margin: 10px 0 5px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  nav li {
+    margin-bottom: 5px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #007ACC;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  section {
+    background: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 0;
+  }
+  ul li {
+    margin-bottom: 4px;
+  }
+  .variable, .function {
+    font-family: monospace;
+    background: #e0e0e0;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <video autoplay muted loop playsinline>
-    <source src="hero-video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content container">
-    <h1>Indicatore Premium All-in-1</h1>
-    <p>Session boxes, HTF pivots, gaps e flag eventi sovrapposti non intrusivi. Analizza smart levels in un colpo d’occhio.</p>
-    <a href="#pricing" class="cta">Prova 15 giorni gratis</a>
-  </div>
-</header>
+<h1>Technical Feature Map</h1>
 
-<section id="features">
-  <div class="container">
-    <h2>Funzioni principali</h2>
-    <div class="carousel" id="featureCarousel">
-      <div class="feature-card"><img src="screenshot1.webp" alt="Feature 1"><h3>Session Boxes</h3><p>Identifica sessioni e range rapidamente.</p></div>
-      <div class="feature-card"><img src="screenshot2.webp" alt="Feature 2"><h3>HTF Pivots</h3><p>Pivot di timeframe più alti calcolati automaticamente.</p></div>
-      <div class="feature-card"><img src="screenshot3.webp" alt="Feature 3"><h3>Gaps & Event Flags</h3><p>Visualizza gap e eventi chiave senza interferenze.</p></div>
-      <!-- altri feature -->
-    </div>
-  </div>
+<nav>
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href="#module1">Module 1: Multi-Timeframe DWMQY Session Engine</a></li>
+    <li><a href="#module2">Module 2: Example Module Two</a></li>
+    <li><a href="#module3">Module 3: Example Module Three</a></li>
+  </ul>
+</nav>
+
+<!-- Module 1 -->
+<section id="module1">
+  <details open>
+    <summary>Multi-Timeframe DWMQY Session Engine</summary>
+
+    <h3>Core Purpose</h3>
+    <p>Tracks and visualizes Daily → Yearly sessions (DWMQY) with open/high/low/close, calculates ranges, manages raid/cross logic, and provides alerts. Supports multi-timeframe analysis.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li>Session start/end detection per timeframe using timezone-anchored timestamps.</li>
+      <li>Computes session highs/lows using first-candle and historical references.</li>
+      <li>Maintains multi-timeframe persistence via arrays for current, previous, and secondary sessions.</li>
+      <li>Raid/cross logic triggers extended lines and dynamic alerts on extreme breaches.</li>
+      <li>Dynamic formatting for labels, boxes, and ranges per session/timeframe.</li>
+      <li>Modular functions like <span class="function">f_SessionNB_HL</span>, <span class="function">f_ExtendLines</span>, <span class="function">f_DWMQY</span>.</li>
+    </ul>
+
+    <h3>Visual / Chart Behavior</h3>
+    <ul>
+      <li>Session high/low lines extended across chart; optional boxes for raid/cross events.</li>
+      <li>Labels display session ranges, first-candle extremes, and alerts.</li>
+      <li>Multi-level plotting: separate arrays/lines for current, previous, secondary session extremes.</li>
+      <li>Text overlays for H/L per timeframe: PD, PW, PM, PQ, PY.</li>
+      <li>Dynamic hiding and extension of lines reduces clutter.</li>
+      <li>First-candle and previous-session memory (<span class="variable">_High1</span>, <span class="variable">_Low1</span>, <span class="variable">_High2</span>, <span class="variable">_Low2</span>) for context.</li>
+    </ul>
+
+    <h3>Triggers / State Changes</h3>
+    <ul>
+      <li><span class="variable">_NB</span> triggers session start; <span class="variable">x_NB</span> triggers session end.</li>
+      <li>Cross detection (<span class="variable">HCross</span>, <span class="variable">LCross</span>) triggers when price breaches previous session highs/lows.</li>
+      <li>Raid/cross logic activates extended lines and labels conditionally per session/timeframe.</li>
+      <li>Handles multi-day/week/month adjustments and gaps for alignment.</li>
+    </ul>
+
+  </details>
 </section>
 
-<section id="demo-video">
-  <div class="container">
-    <h2>Video Dimostrativo</h2>
-    <video controls poster="video-poster.jpg">
-      <source src="demo-video.mp4" type="video/mp4">
-      Il tuo browser non supporta il video.
-    </video>
-  </div>
+<!-- Module 2 -->
+<section id="module2">
+  <details>
+    <summary>Example Module Two</summary>
+
+    <h3>Core Purpose</h3>
+    <p>Example module for intraday range visualization and alerting.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li>Tracks high/low ranges per session.</li>
+      <li>Pushes lines and labels dynamically.</li>
+      <li>Alert triggers on range breakout.</li>
+    </ul>
+
+    <h3>Visual / Chart Behavior</h3>
+    <ul>
+      <li>Lines extend for visible range.</li>
+      <li>Optional boxes highlight breakout zones.</li>
+      <li>Labels display session extremes.</li>
+    </ul>
+
+    <h3>Triggers / State Changes</h3>
+    <ul>
+      <li>Breakout detection triggers alerts.</li>
+      <li>Conditional label updates per session end.</li>
+    </ul>
+
+  </details>
 </section>
 
-<section id="testimonials">
-  <div class="container">
-    <h2>Cosa dicono gli utenti</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial"><p>"Indicatore fantastico, chiaro e veloce."</p><span>- Marco R.</span></div>
-      <div class="testimonial"><p>"Finalmente vedo il mercato senza sovraccarico."</p><span>- Lucia S.</span></div>
-      <!-- altri testimonial -->
-    </div>
-  </div>
+<!-- Module 3 -->
+<section id="module3">
+  <details>
+    <summary>Example Module Three</summary>
+
+    <h3>Core Purpose</h3>
+    <p>Demonstrates multi-timeframe alerting logic with persistent chart markers.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li>Stores alert markers in arrays for multiple timeframes.</li>
+      <li>Dynamic formatting of marker color and text.</li>
+      <li>Conditional alerting based on previous session extremes.</li>
+    </ul>
+
+    <h3>Visual / Chart Behavior</h3>
+    <ul>
+      <li>Persistent markers on chart across timeframe changes.</li>
+      <li>Optional highlighting for extreme events.</li>
+      <li>Dynamic label updates tied to price action.</li>
+    </ul>
+
+    <h3>Triggers / State Changes</h3>
+    <ul>
+      <li>Alerts trigger when price breaches stored extremes.</li>
+      <li>Markers update only on timeframe or session changes.</li>
+    </ul>
+
+  </details>
 </section>
-
-<section id="pricing">
-  <div class="container">
-    <h2>Piano Mensile</h2>
-    <p><del>$129</del> <strong>$109</strong></p>
-    <a href="stripe-link" class="cta">Abbonati Ora</a>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="container">
-    <h2>Domande Frequenti</h2>
-    <div class="faq-item"><h4>Come installo l’indicatore?</h4><p>Segui la guida passo-passo dopo l’acquisto.</p></div>
-    <div class="faq-item"><h4>Posso provare prima di pagare?</h4><p>Sì, 15 giorni di prova gratuita.</p></div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © 2026 Indicatore Premium. Tutti i diritti riservati. | Contatti: info@indicatorepremium.com
-  </div>
-</footer>
-
-<script>
-// Carousel automatico semplice feature
-const carousel = document.getElementById('featureCarousel');
-let scrollAmount = 0;
-function autoScroll() {
-  scrollAmount += 310; // larghezza card + gap
-  if(scrollAmount >= carousel.scrollWidth) scrollAmount = 0;
-  carousel.scrollTo({left:scrollAmount, behavior:'smooth'});
-}
-setInterval(autoScroll, 3000);
-</script>
 
 </body>
 </html>
