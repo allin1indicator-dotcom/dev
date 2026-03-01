@@ -6,13 +6,11 @@
 <meta name="theme-color" content="#0f1113">
 <title>ALL IN 1 — Structural Execution Framework</title>
 
-<!-- Optimized font loading (display swap) -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       as="style" onload="this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
                 rel="stylesheet"></noscript>
 
-<!-- SEO / Open‑Graph -->
 <meta name="description"
       content="All‑in‑One structural execution framework for traders – sessions, liquidity, gaps, volatility and events mapped in a single layer.">
 <meta property="og:title" content="ALL IN 1 — Structural Execution Framework">
@@ -22,22 +20,17 @@
 <meta property="og:image" content="https://your-domain.com/preview.jpg">
 
 <style>
-/* ────────────────────────────────
-   1️⃣ Design tokens
-   ──────────────────────────────── */
 :root{
   --bg:#0f1113;
   --surface:#15181b;
   --text:#e8ecef;
-  --muted:#b0b8c0;               /* higher contrast */
+  --muted:#b0b8c0;
   --accent:#ffffff;
   --border:#23272b;
-  --gap:24px;                    /* vertical rhythm */
+  --gap:24px;
 }
 
-/* ────────────────────────────────
-   2️⃣ Global reset
-   ──────────────────────────────── */
+/* Reset */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 img,video{display:block;max-width:100%;height:auto;}
 body{
@@ -48,26 +41,16 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-/* ────────────────────────────────
-   3️⃣ Layout containers
-   ──────────────────────────────── */
-.wrapper{
-  max-width:1400px;               /* wider container */
-  margin:0 auto;
-  padding:0 40px;
-}
+/* Layout */
+.wrapper{max-width:1400px;margin:0 auto;padding:0 40px;}
 
-/* ────────────────────────────────
-   4️⃣ Typography hierarchy
-   ──────────────────────────────── */
+/* Typography */
 h1{font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:var(--gap);}
 h2{font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:calc(var(--gap)/2);}
 h3{font-size:18px;font-weight:600;margin-bottom:8px;}
 p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 
-/* ────────────────────────────────
-   5️⃣ Buttons – accessible focus
-   ──────────────────────────────── */
+/* Buttons */
 .button{
   display:inline-block;
   margin-top:var(--gap);
@@ -87,38 +70,13 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   outline-offset:2px;
 }
 
-/* ────────────────────────────────
-   6️⃣ Two‑column grid (no gutter)
-   ──────────────────────────────── */
-.two-col{
-  display:grid;
-  grid-template-columns:8fr 3fr;   /* 66 % / 34 % */
-  gap:0;
-  align-items:stretch;
-}
-@media (max-width:1024px){
-  .two-col{grid-template-columns:1fr;}
-}
+/* Sticky Nav */
+.nav{position:sticky;top:0;background:var(--bg);z-index:10;padding:12px 0;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;}
+.logo{color:var(--accent);font-size:1.2rem;font-weight:600;}
+.nav-cta{background:var(--accent);color:#000;padding:10px 20px;}
 
-/* ────────────────────────────────
-   7️⃣ Card component
-   ──────────────────────────────── */
-.card{
-  background:var(--surface);
-  padding:36px;
-  border:1px solid var(--border);
-  border-radius:6px;
-  max-width:640px;
-}
-
-/* ────────────────────────────────
-   8️⃣ List inside “Execution Inside Structure”
-   ──────────────────────────────── */
-.list p{margin-bottom:8px;}
-
-/* ────────────────────────────────
-   9️⃣ Hero section
-   ──────────────────────────────── */
+/* Hero */
 .hero{position:relative;display:flex;align-items:center;justify-content:center;padding:0;}
 .hero-video{width:100%;filter:brightness(1.06);}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25);}
@@ -134,9 +92,29 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   text-shadow:0 3px 6px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
 }
 
-/* ────────────────────────────────
-   10️⃣ Scroll indicator
-   ──────────────────────────────── */
+/* Pricing Banner */
+.pricing-banner{background:var(--surface);padding:40px 0;text-align:center;}
+.badge{display:inline-block;background:#ffb400;color:#000;padding:4px 12px;border-radius:12px;margin-bottom:12px;}
+.price{font-size:2.4rem;font-weight:700;color:var(--accent);}
+.price span{font-size:0.6em;}
+
+/* Two‑column layout */
+.two-col{display:grid;grid-template-columns:8fr 3fr;gap:0;align-items:stretch;}
+@media (max-width:1024px){.two-col{grid-template-columns:1fr;}}
+
+/* Card */
+.card{
+  background:var(--surface);
+  padding:36px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  max-width:640px;
+}
+
+/* List */
+.list p{margin-bottom:8px;}
+
+/* Scroll indicator */
 .scroll-indicator{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
   width:22px;height:36px;border:2px solid rgba(255,255,255,.7);border-radius:14px;
@@ -152,22 +130,26 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   100%{opacity:0;transform:translate(-50%,12px);}
 }
 
-/* ────────────────────────────────
-   11️⃣ Footer
-   ──────────────────────────────── */
+/* Footer */
 .footer{padding:60px 0;text-align:center;font-size:14px;color:var(--muted);}
 
-/* ────────────────────────────────
-   12️⃣ Small responsive tweak
-   ──────────────────────────────── */
+/* Responsive tweaks */
 @media (max-width:768px){h1{font-size:34px;}}
 </style>
 </head>
 <body>
 
+<!-- Sticky Nav -->
+<header class="nav">
+  <div class="wrapper nav-inner">
+    <h1 class="logo">ALL‑IN‑1 Framework</h1>
+    <a href="#" class="button nav-cta">Start Free Trial</a>
+  </div>
+</header>
+
 <!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+  <video autoplay muted loop playsinline class="hero-video" loading="lazy">
     <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -177,6 +159,15 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
     <a href="#" class="button" aria-label="Start 15‑Day Free Trial">Start 15‑Day Free Trial</a>
   </div>
   <div class="scroll-indicator" aria-hidden="true"></div>
+</section>
+
+<!-- Pricing Banner -->
+<section class="pricing-banner">
+  <div class="wrapper">
+    <div class="badge">Best Value</div>
+    <div class="price">$109<span>/month</span></div>
+    <a href="#" class="button">Start 15‑Day Free Trial</a>
+  </div>
 </section>
 
 <div class="wrapper">
@@ -211,16 +202,6 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
         <p><strong>It amplifies structured discretion.</strong></p>
       </section>
 
-      <section aria-labelledby="pricing">
-        <div class="card">
-          <h2 id="pricing">Complete Framework Access</h2>
-          <div class="price">$109<span class="small"> / month</span></div>
-          <p>Sessions. Liquidity. Gaps. ADR. Event integration. Alerts. Replay. Every module included.</p>
-          <p class="small">15‑Day Full Trial. Cancel anytime.</p>
-          <a href="#" class="button" aria-label="Start 15‑Day Trial">Start 15‑Day Trial</a>
-        </div>
-      </section>
-
     </article>
 
     <!-- RIGHT COLUMN -->
@@ -238,14 +219,17 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIAL CAROUSEL -->
   <section aria-labelledby="testimonials">
     <h2 id="testimonials">Traders</h2>
-    <div class="testimonial">
+    <div class="testimonial active">
       <p>“Manual session marking and HTF scanning are gone. The framework loads aligned across timeframes. Execution feels deliberate.”<br><br><strong>— Thomas W.</strong></p>
     </div>
     <div class="testimonial">
       <p>“Replaced multiple tools with one consistent structural layer. Alerts tied to liquidity levels changed my workflow.”<br><br><strong>— Kevin L.</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>“The clarity of structure lets me focus on price action, not data overload.”<br><br><strong>— Maya R.</strong></p>
     </div>
   </section>
 
@@ -254,6 +238,17 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 <footer class="footer">
   © 2026 R‑TradingTools — Full Market Structure. Instantly Mapped.
 </footer>
+
+<script>
+/* Simple carousel: rotate testimonials every 5 seconds */
+const testimonials = document.querySelectorAll('.testimonial');
+let idx = 0;
+setInterval(() => {
+  testimonials[idx].classList.remove('active');
+  idx = (idx + 1) % testimonials.length;
+  testimonials[idx].classList.add('active');
+}, 5000);
+</script>
 
 </body>
 </html>
