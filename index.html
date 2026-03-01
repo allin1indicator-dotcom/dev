@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALL IN 1 — Institutional Structural Framework</title>
-<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped. Institutional access only.">
+<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -16,99 +16,61 @@
 --primary:#1e70b0;
 --primary-hover:#358097;
 --allocation:#bfa649;
---bull:#388e3c;
---bear:#8c1414;
 --light:#f7faf9;
+--text:#f7faf9;
+--muted:#a1b8bf;
 --max:1200px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
 body{
 background:var(--bg);
-color:#f7faf9;
-font-family:'Inter',system-ui,sans-serif;
+color:var(--text);
+font-family:'Inter',sans-serif;
 line-height:1.6;
 overflow-x:hidden;
 }
 
-.container{
-width:92%;
-max-width:var(--max);
-margin:auto;
-}
-
-section{
-padding:5rem 0;
-border-bottom:1px solid rgba(112,128,144,0.2);
-}
-
-h1{
-font-size:3rem;
-font-weight:600;
-letter-spacing:-0.02em;
-}
-
-h2{
-font-size:1.8rem;
-margin-bottom:1rem;
-}
-
-p{
-color:#a1b8bf;
-}
+.container{width:92%;max-width:var(--max);margin:auto;}
+section{padding:5rem 0;border-bottom:1px solid rgba(112,128,144,0.15);}
+h1{font-size:3rem;font-weight:600;letter-spacing:-0.02em;}
+h2{font-size:1.8rem;margin-bottom:1rem;}
+p{color:var(--muted);}
 
 .hero{
-position:relative;
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+position:relative;height:100vh;
+display:flex;align-items:center;justify-content:center;text-align:center;
 overflow:hidden;
 }
 
 .hero video{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0.25;
+position:absolute;width:100%;height:100%;
+object-fit:cover;opacity:.22;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-}
+.hero-content{position:relative;z-index:2;max-width:850px;}
 
 .badge{
 color:var(--allocation);
-margin-bottom:1rem;
-font-size:0.9rem;
+font-size:.9rem;margin-bottom:1rem;
 }
 
 .cta{
 margin-top:2rem;
 display:inline-block;
-padding:14px 28px;
+padding:14px 30px;
 background:var(--primary);
-color:white;
-text-decoration:none;
+color:white;text-decoration:none;
 font-weight:500;
-transition:0.2s ease;
+transition:.2s ease;
+cursor:pointer;
 }
 
-.cta:hover{
-background:var(--primary-hover);
-}
+.cta:hover{background:var(--primary-hover);}
 
 .secondary{
+background:transparent;border:1px solid var(--border);
 margin-left:1rem;
-background:transparent;
-border:1px solid var(--border);
 }
 
 .grid{
@@ -120,7 +82,7 @@ gap:2rem;
 .card{
 background:var(--surface);
 padding:2rem;
-border:1px solid rgba(112,128,144,0.2);
+border:1px solid rgba(112,128,144,0.15);
 }
 
 .screenshot{
@@ -129,26 +91,56 @@ padding:10px;
 border:1px solid var(--surface);
 }
 
-.pricing{
-text-align:center;
-}
-
 .price{
 font-size:2.5rem;
 color:var(--allocation);
 margin:1rem 0;
 }
 
-.form input, .form textarea{
+.testimonial{
+background:var(--surface);
+padding:2rem;
+margin-bottom:2rem;
+border:1px solid rgba(112,128,144,0.15);
+}
+
+footer{
+padding:3rem 0;
+font-size:.8rem;
+color:var(--muted);
+text-align:center;
+}
+
+/* Modal */
+
+.modal{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.7);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.modal-content{
+background:var(--surface);
+padding:3rem;
+width:90%;
+max-width:600px;
+}
+
+input, textarea{
 width:100%;
 padding:12px;
 margin-bottom:1rem;
-background:var(--surface);
-border:1px solid rgba(112,128,144,0.3);
+background:#111;
+border:1px solid rgba(112,128,144,.3);
 color:white;
 }
 
-.form button{
+button{
 width:100%;
 padding:14px;
 background:var(--primary);
@@ -157,18 +149,6 @@ color:white;
 font-weight:500;
 cursor:pointer;
 }
-
-footer{
-padding:3rem 0;
-font-size:0.8rem;
-color:#708090;
-text-align:center;
-}
-
-.parallax{
-transform:translateY(0);
-transition:transform 0.4s ease-out;
-}
 </style>
 </head>
 
@@ -176,83 +156,121 @@ transition:transform 0.4s ease-out;
 
 <section class="hero">
 <video autoplay muted loop>
-<source src="hero-replay.mp4" type="video/mp4">
+<source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
 </video>
 <div class="hero-content">
-<div class="badge">Q2 Allocation: <span style="color:#bfa649;">7 / 20</span> Remaining</div>
+<div class="badge">Q2 Allocation: <span id="seatCounter">7 / 20</span> Remaining</div>
 <h1>ALL IN 1</h1>
 <p>Unified Smart Market Framework. Instantly Loaded. Fully Mapped.</p>
-<a href="#apply" class="cta">Apply for Institutional Access</a>
-<a href="#framework" class="cta secondary">View Framework Documentation</a>
+<div>
+<a class="cta" onclick="openModal()">Get Allocation</a>
+<a href="#framework" class="cta secondary">View Framework</a>
 </div>
-</section>
-
-<section>
-<div class="container">
-<h2>Fragmented Timeframe Perception</h2>
-<p>Most traders operate with disconnected session awareness. Daily bias detached from quarterly structure. Liquidity interaction observed without historical continuity.</p>
 </div>
 </section>
 
 <section id="framework">
 <div class="container grid">
-<div class="card parallax">
+<div class="card">
 <h3>Session Boundary Engine</h3>
-<p>Daily to yearly segmentation mapped and persisted without manual markup.</p>
+<p>Time segmentation from Daily to Yearly with structural persistence.</p>
 </div>
-<div class="card parallax">
+<div class="card">
+<h3>Liquidity Interaction Matrix</h3>
+<p>Cross-timeframe raid detection without signal dependency.</p>
+</div>
+<div class="card">
 <h3>Range Memory Architecture</h3>
-<p>High/Low development tracked structurally, not visually guessed.</p>
-</div>
-<div class="card parallax">
-<h3>Liquidity Interaction Model</h3>
-<p>Raid and cross events contextualized across timeframe hierarchy.</p>
+<p>High/Low structural continuity embedded into execution workflow.</p>
 </div>
 </div>
 </section>
 
 <section>
 <div class="container">
-<h2>Live Structural Replay</h2>
+<h2>Structural Replay</h2>
 <div class="screenshot">
-<img src="screenshot1.png" style="width:100%;">
+<img src="IMG_6788.png" style="width:100%;">
 </div>
 </div>
 </section>
 
-<section class="pricing">
+<section>
 <div class="container">
-<h2>Institutional Allocation</h2>
+<p>Launched March 2026</p>
+<h2>Reserve your seat: $109 / month (first 12 months, then 129$/month)</h2>
 <p>Standard Allocation: $129/month</p>
 <div class="price">$109 / month</div>
-<p>14-Day Trial. No refunds after trial period.</p>
+<p>14-Day Trial. Allocation required. No refund post-trial.</p>
 </div>
 </section>
 
-<section id="apply">
+<section>
 <div class="container">
-<h2>Application</h2>
-<form class="form" action="thankyou.html" method="POST">
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email" required>
-<textarea placeholder="Trading Experience & Market Focus" required></textarea>
-<button type="submit">Submit for Review</button>
-</form>
+<h2>Trader's Feedback</h2>
+
+<div class="testimonial">
+<strong> 🇮🇪 Thomas W. — Futures Intraday Trader</strong>
+<p>Marking sessions, highs and gaps after work left me a step behind. Everything now updates in real‑time, so I never chase the chart. Stress is down, confidence is up— I can’t believe I ever traded without it.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🇺🇸 Amairani R. — Stock Swing Trader</strong>
+<p>Before I juggled five‑plus indicators, the chart was a mess and candles were hidden. This tool consolidates everything I actually use, keeps visuals out of the way and delivers reliable alerts. Building my daily narrative is now a pleasure.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🇵🇹 Johny F. — Index and Futures Operator</strong>
+<p>Version after version the tool got sharper. Key levels pop up exactly when they should and price reactions become crystal clear. If it vanished tomorrow I’d feel blind — that says it all.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🇮🇹 Matteo V. — Crypto Intraday Trader (300k payouts in 2023)</strong>
+<p>I used to draw midnight opens, gaps and daily/weekly levels by hand before my livestreams. 
+I was slow and error‑prone. Now they appear clean, centered and exactly how I want them. 
+A truly useful tool, highly recommended.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🇺🇸  Kevin L. — Futures Swing/Intraday Trader</strong>
+<p>I’ve been using it since the first beta. Sessions, timing and levels appear exactly where I need, no forced overlays. I open the chart and the full context is already there. That’s the highest compliment I can give.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🇸🇦  Mohamed D. — Commodities and Forex Trader</strong>
+<p>The alerts changed everything. I no longer stare at charts all day; a phone ping tells me a level was hit and the context is already on screen. I even run it on correlated pairs for SMT. It forces patience, consistency and frees me up when life gets busy.</p>
+</div>
+
+<div class="testimonial">
+<strong> 🔧 Riccardo F.  — Built from Necessity, refined because we deserve more.</strong>
+<p>I created this indicator out of frustration—messy charts, unsynced tools, endless manual drawing. After years of ICT study I wanted one framework that showed timing and liquidity without fighting price. Early users broke it, uncovered bugs and demanded features; each iteration was rebuilt, refined and stripped to what truly works. Today it’s the clean, fast, consistent overlay I rely on from session open to close. If it’s on the chart, it earned its place.</p>
+</div>
+  
 </div>
 </section>
 
 <footer>
 Operated by R-TradingTools. Educational framework only.  
-<a href="#">Full Risk Disclosure</a>
+<a href="#" onclick="openDisclosure()">Full Risk Disclosure</a>
 </footer>
 
+<!-- Risk Disclosure Modal -->
+<div class="modal" id="riskModal">
+<div class="modal-content">
+<h2>Risk Disclosure</h2>
+<p>Trading involves substantial risk. This framework is educational. No financial advice. Past structural behavior does not guarantee future market outcomes.</p>
+<button onclick="closeDisclosure()">Close</button>
+</div>
+</div>
+
 <script>
-window.addEventListener('scroll',()=>{
-document.querySelectorAll('.parallax').forEach(el=>{
-let offset = window.pageYOffset;
-el.style.transform = "translateY(" + offset * 0.02 + "px)";
-});
-});
+function openModal(){document.getElementById('applyModal').style.display='flex';}
+function openDisclosure(){document.getElementById('riskModal').style.display='flex';}
+function closeDisclosure(){document.getElementById('riskModal').style.display='none';}
+window.onclick=function(e){
+if(e.target==document.getElementById('applyModal')){applyModal.style.display='none';}
+if(e.target==document.getElementById('riskModal')){riskModal.style.display='none';}
+};
 </script>
 
 </body>
