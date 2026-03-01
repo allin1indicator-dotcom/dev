@@ -49,6 +49,104 @@ h1{font-size:3rem;font-weight:600;letter-spacing:-.02em;}
 h2{font-size:1.8rem;margin-bottom:1rem;}
 p{color:var(--muted);}
 
+
+.hero-premium{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 5%;
+background:linear-gradient(to bottom,var(--bg),var(--bg-alt-1));
+}
+
+.hero-inner{
+max-width:900px;
+}
+
+.hero-eyebrow{
+letter-spacing:.2em;
+text-transform:uppercase;
+font-size:.8rem;
+color:var(--allocation);
+margin-bottom:2rem;
+}
+
+.hero-title{
+font-size:clamp(3.5rem,7vw,5.2rem);
+font-weight:600;
+letter-spacing:-.04em;
+line-height:1.05;
+margin-bottom:2rem;
+}
+
+.hero-sub{
+font-size:1.3rem;
+color:var(--muted);
+max-width:650px;
+margin:0 auto 3rem;
+}
+
+.hero-cta-wrap{
+display:flex;
+justify-content:center;
+gap:1.5rem;
+flex-wrap:wrap;
+}
+
+.cta-primary{
+padding:16px 38px;
+background:var(--primary);
+color:#fff;
+text-decoration:none;
+font-weight:500;
+letter-spacing:.02em;
+transition:.3s ease;
+}
+
+.cta-primary:hover{
+background:var(--primary-hover);
+transform:translateY(-3px);
+}
+
+.cta-ghost{
+padding:16px 38px;
+border:1px solid var(--border);
+color:var(--text);
+text-decoration:none;
+transition:.3s ease;
+}
+
+.cta-ghost:hover{
+background:rgba(255,255,255,.04);
+}
+
+/* THESIS */
+
+.thesis-block{
+padding:9rem 5%;
+background:var(--bg-alt-1);
+}
+
+.thesis-inner{
+max-width:1200px;
+margin:auto;
+}
+
+.thesis-statement{
+font-size:clamp(2.5rem,5vw,4rem);
+font-weight:500;
+letter-spacing:-.03em;
+line-height:1.1;
+margin-bottom:5rem;
+}
+
+.thesis-visual img{
+width:100%;
+border-radius:8px;
+box-shadow:0 40px 100px rgba(0,0,0,.5);
+}
+  
 /* HERO */
 .hero{
 position:relative;
@@ -257,22 +355,37 @@ margin:0 7.5%;
 </head>
 
 <body>
+<section class="hero-premium">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Multi-Timeframe Liquidity Intelligence</p>
 
-<section class="hero">
-<video autoplay muted loop>
-<source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
-</video>
-<div class="hero-content">
-<div class="badge">Q2 Allocation: <span id="seatCounter">7 / 20</span> Remaining</div>
-<h1>ALL IN 1</h1>
-<p>Unified Smart Market Framework. Instantly Loaded. Fully Mapped.</p>
-<div>
-<a class="cta" onclick="openModal()">Get Allocation</a>
-<a href="#framework" class="cta secondary">View Framework</a>
-</div>
-</div>
+    <h1 class="hero-title">
+      Precision is not optional.
+    </h1>
+
+    <p class="hero-sub">
+      Institutional-grade session structure for traders who execute with intent.
+    </p>
+
+    <div class="hero-cta-wrap">
+      <a href="#purchase" class="cta-primary">Get Access</a>
+      <a href="#proof" class="cta-ghost">See It In Action</a>
+    </div>
+  </div>
 </section>
 
+<section class="thesis-block">
+  <div class="thesis-inner">
+    <h2 class="thesis-statement">
+      You don’t trade candles.<br>
+      You trade liquidity.
+    </h2>
+
+    <div class="thesis-visual">
+      <img src="your-screenshot.jpg" alt="DWMQY Liquidity Structure">
+    </div>
+  </div>
+</section>
 <section id="framework">
 <div class="container grid">
 <div class="card">
