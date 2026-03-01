@@ -92,6 +92,21 @@ footer{padding:3rem 0;font-size:.85rem;color:var(--muted);text-align:center;}
 input,textarea{width:100%;padding:12px;margin-bottom:1rem;background:--muted;color:--muted;border:1px solid rgba(255,255,255,.2);}
 button{width:100%;padding:14px;background:var(--primary);color:--muted;border:none;font-weight:600;cursor:pointer;border-radius:6px;}
 
+.v3_textSlider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.v3_content {
+  display: flex;
+  width: 500%;        /* 5 slides */
+}
+
+.v3_content_item {
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+  
 /* Responsive */
 @media (max-width:768px){
   .features-section,.feature-section{padding:0 20px;}
@@ -405,7 +420,7 @@ window.onclick=function(e){
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".v3_content", {
-  xPercent: -400,
+  xPercent: -400,     // 5 slides → -100 * (5 - 1)
   ease: "none",
   scrollTrigger: {
     trigger: "#v3_sticky_top",
@@ -414,6 +429,7 @@ gsap.to(".v3_content", {
     scrub: true,
     pin: true
   }
+
 });
 </script>
 
