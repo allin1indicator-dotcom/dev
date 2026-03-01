@@ -3,157 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL IN 1 — Institutional Context Framework</title>
-<meta name="description" content="Instant market context. Fully mapped multi-timeframe liquidity visualization for traders who demand clarity.">
+<title>ALL IN 1 — Institutional Structural Framework</title>
+<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
---bg:#0b0f14;
---bg-alt-1:#11161c;
---surface:#151b22;
-
---text:#f5f7fa;
---muted:#8b98a7;
-
---primary:#3a7cff;
---primary-hover:#2f6be0;
---allocation:#5fa8ff;
-
---border:rgba(255,255,255,.06);
-
---max:1200px;
+  --bg-0:#050816;
+  --bg-1:#0a1030;
+  --bg-2:#0f1845;
+  --surface-1:rgba(255,255,255,.04);
+  --surface-2:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.08);
+  --primary:#3a7bd5;
+  --primary-hover:#4f8ee8;
+  --accent:#c6a85a;
+  --danger:#d9534f;
+  --text:#f2f5ff;
+  --muted:#98a3c7;
+  --max:1200px;
 }
 
-/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.65; overflow-x:hidden;}
-.container{width:92%; max-width:var(--max); margin:auto;}
-section{padding:7rem 0; border-bottom:1px solid var(--border);}
-h1{font-weight:600; letter-spacing:-.02em;}
-h2{font-weight:500; margin-bottom:1rem;}
-p{color:var(--muted);}
+body{background:var(--bg-0);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+.container{width:92%;max-width:var(--max);margin:auto;}
+section{padding:6rem 0;}
+h1{font-size:3.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;}
+h2{font-size:2rem;margin-bottom:2rem;}
+p{color:var(--muted);line-height:1.6;}
 
 /* HERO */
 .hero{
-position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(to bottom,var(--bg),var(--bg-alt-1)); overflow:hidden;
+  position:relative;height:100vh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--bg-0);
 }
 .hero video{
-position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.18;
+  position:absolute;width:100%;height:100%;object-fit:cover;opacity:.22;
 }
-.hero-content{position:relative; z-index:2; max-width:900px;}
-.hero-eyebrow{letter-spacing:.2em; text-transform:uppercase; font-size:.85rem; color:var(--allocation); margin-bottom:2rem;}
-.hero-title{font-size:clamp(3.8rem,7vw,5.2rem); margin-bottom:2rem; line-height:1.05;}
-.hero-sub{font-size:1.3rem; color:var(--muted); max-width:700px; margin:0 auto 3rem;}
-.hero-cta-wrap{display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;}
-.cta{display:inline-block; padding:16px 36px; background:var(--primary); color:#fff; text-decoration:none; transition:.3s ease; font-weight:500; letter-spacing:.02em; cursor:pointer;}
-.cta:hover{background:var(--primary-hover); transform:translateY(-3px);}
-.cta-ghost{padding:16px 36px; border:1px solid var(--border); color:var(--text); text-decoration:none;}
-.cta-ghost:hover{background:rgba(255,255,255,.04);}
+.hero-content{position:relative;z-index:2;max-width:900px;}
+.badge{color:var(--accent);font-size:1rem;margin-bottom:1rem;font-weight:500;}
+.cta{margin-top:2rem;padding:16px 36px;display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;border-radius:6px;transition:.2s ease;cursor:pointer;}
+.cta:hover{background:var(--primary-hover);}
+.secondary{background:transparent;border:1px solid var(--border);margin-left:1rem;border-radius:6px;}
 
-/* THESIS BLOCK */
-.thesis-block{padding:9rem 5%; background:var(--bg-alt-1);}
-.thesis-inner{max-width:1200px; margin:auto;}
-.thesis-statement{font-size:clamp(2.5rem,5vw,4rem); font-weight:500; line-height:1.1; margin-bottom:5rem;}
-.thesis-visual img{width:100%; border-radius:8px; box-shadow:0 40px 100px rgba(0,0,0,.5);}
+/* Feature Grid */
+.feature-group{padding:4rem 0;}
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2.5rem;
+}
+.feature-card{
+  background:var(--surface-1);border-radius:12px;
+  padding:2.5rem;box-shadow:0 8px 20px rgba(0,0,0,.2);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.3);}
+.feature-card h3{margin-bottom:1rem;font-size:1.3rem;color:var(--accent);}
+.feature-card p{font-size:.95rem;color:var(--text);line-height:1.6;}
 
-/* GRID CARDS */
-.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
-.card{background:var(--surface); border:1px solid var(--border); padding:2.5rem; transition:.3s ease;}
-.card:hover{border-color:rgba(255,255,255,.12);}
+/* Screenshots */
+.screenshot{padding:10px;background:var(--surface-2);border-radius:8px;margin-bottom:2rem;}
 
-/* SCREENSHOT */
-.screenshot{padding:10px; background:var(--surface); border:1px solid var(--border);}
-.screenshot img{width:100%; border-radius:6px;}
+/* Pricing */
+.price-section{text-align:center;padding:4rem 0;background:var(--bg-1);border-radius:12px;margin:4rem 0;}
+.price{font-size:3rem;color:var(--accent);margin:1rem 0;}
 
-/* PRICE */
-.price{font-size:2.5rem; color:var(--allocation); margin:1rem 0;}
+/* Testimonials Carousel */
+.testimonial-carousel{position:relative;overflow:hidden;margin:6rem 0;}
+.carousel-track{display:flex;transition:transform 1.2s cubic-bezier(.22,.61,.36,1);}
+.testimonial-card{flex:0 0 70%;margin:0 15%;background:var(--surface-1);border-radius:12px;padding:2.5rem;backdrop-filter:blur(6px);opacity:.35;transform:scale(.9);transition:all .8s cubic-bezier(.22,.61,.36,1);cursor:pointer;}
+.testimonial-card.active{opacity:1;transform:scale(1);}
+.testimonial-card.left{transform:scale(.92) translateX(-40px);opacity:.5;}
+.testimonial-card.right{transform:scale(.92) translateX(40px);opacity:.5;}
+.testimonial-progress{position:relative;height:3px;width:100%;margin-top:2rem;background:rgba(255,255,255,.08);overflow:hidden;border-radius:2px;}
+.testimonial-progress-bar{height:100%;width:0%;background:var(--accent);transition:width 6.5s linear;}
 
-/* TESTIMONIAL CAROUSEL */
-.testimonial-carousel{position:relative; overflow:hidden; max-width:900px; margin:auto;}
-.carousel-track{display:flex; transition:transform 1.2s cubic-bezier(.22,.61,.36,1);}
-.testimonial-card{flex:0 0 70%; margin:0 15%; background:var(--surface); border:1px solid var(--border); padding:2.5rem; backdrop-filter:blur(8px); opacity:.35; transform:scale(.9) translateY(20px); transition:all .8s cubic-bezier(.22,.61,.36,1); cursor:pointer;}
-.testimonial-card.active{opacity:1; transform:scale(1) translateY(0);}
-.testimonial-card.left{transform:scale(.92) translateX(-40px); opacity:.5;}
-.testimonial-card.right{transform:scale(.92) translateX(40px); opacity:.5;}
-.testimonial-progress{position:relative; height:2px; width:100%; margin-top:2rem; background:rgba(255,255,255,.08); overflow:hidden;}
-.testimonial-progress-bar{height:100%; width:0%; background:var(--allocation); transition:width 6.5s linear;}
-@media(max-width:900px){.testimonial-card{flex:0 0 85%; margin:0 7.5%;}}
+/* Footer */
+footer{padding:3rem 0;font-size:.85rem;color:var(--muted);text-align:center;}
 
-/* FOOTER */
-footer{padding:3rem 0; font-size:.8rem; color:var(--muted); text-align:center;}
-.modal{position:fixed; top:0; left:0; width:100%; height:100%; display:none; z-index:999; background:rgba(0,0,0,.7); align-items:center; justify-content:center;}
-.modal-content{width:90%; max-width:600px; padding:3rem; background:var(--surface);}
-input,textarea{width:100%; padding:12px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid rgba(255,255,255,.2);}
-button{width:100%; padding:14px; background:var(--primary); color:#fff; border:none; font-weight:500; cursor:pointer;}
+/* Modal */
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;display:none;z-index:999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;}
+.modal-content{width:90%;max-width:600px;padding:3rem;background:var(--surface-1);border-radius:8px;}
+input,textarea{width:100%;padding:12px;margin-bottom:1rem;background:#111;color:#fff;border:1px solid rgba(255,255,255,.2);}
+button{width:100%;padding:14px;background:var(--primary);color:#fff;border:none;font-weight:600;cursor:pointer;border-radius:6px;}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop playsinline preload="metadata">
-    <source src="hero.mp4" type="video/mp4">
+  <video autoplay muted loop>
+    <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
   </video>
   <div class="hero-content">
-    <p class="hero-eyebrow">Multi-Timeframe Liquidity Intelligence</p>
-    <h1 class="hero-title">Precision is not optional.</h1>
-    <p class="hero-sub">A fully mapped liquidity framework. Multi-timeframe. Instantly loaded.</p>
-    <div class="hero-cta-wrap">
-      <a href="#purchase" class="cta">Get Access</a>
-      <a href="#proof" class="cta-ghost">See It In Action</a>
+    <div class="badge">Q2 Allocation: <span id="seatCounter">7 / 20</span> Remaining</div>
+    <h1>ALL IN 1</h1>
+    <p>Unified Smart Market Framework. Instantly Loaded. Fully Mapped.</p>
+    <div>
+      <a class="cta" onclick="openModal()">Get Allocation</a>
+      <a href="#features" class="cta secondary">View Features</a>
     </div>
   </div>
 </section>
 
-<!-- THESIS / VISUAL -->
-<section class="thesis-block">
-  <div class="thesis-inner">
-    <h2 class="thesis-statement">You don’t trade candles.<br>You trade liquidity.</h2>
-    <div class="thesis-visual">
-      <img src="your-screenshot.jpg" alt="Indicator Context Example">
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE GRID -->
-<section>
-  <div class="container grid">
-    <div class="card">
-      <h3>Session Boundary Engine</h3>
-      <p>Time segmentation from Daily to Yearly with structural persistence.</p>
-    </div>
-    <div class="card">
-      <h3>Liquidity Interaction Matrix</h3>
-      <p>Cross-timeframe raid detection without signal dependency.</p>
-    </div>
-    <div class="card">
-      <h3>Range Memory Architecture</h3>
-      <p>High/Low structural continuity embedded into execution workflow.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SCREENSHOT / PROOF -->
-<section id="proof">
+<!-- FEATURES -->
+<section id="features">
   <div class="container">
-    <h2>Visual Context Example</h2>
-    <div class="screenshot">
-      <img src="proof-chart.jpg" alt="Full chart context">
+    <h2 style="text-align:center;margin-bottom:3rem;">Core Features & Mechanics</h2>
+
+    <!-- Loop these cards for your 15–16 features -->
+    <div class="feature-group" style="background:var(--bg-1);padding:4rem 0;">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Multi-Timeframe Session Tracking</h3>
+          <p><strong>Core Purpose:</strong> Tracks and visualizes multi-timeframe (daily → yearly) sessions with high/low/open/close, calculates ranges, and manages raid/cross logic with alerts.</p>
+          <p><strong>Key Features:</strong> Determines session start/end for Daily, Weekly, Monthly, Quarterly, Yearly using timezone-anchored timestamps. Computes session highs/lows with first-candle and historical references. Raid/cross logic triggers extended lines and labels. Dynamically formats ranges and labels for display.</p>
+          <p><strong>Visual Behavior:</strong> Extends session high/low lines across the chart; boxes optional for raid/cross events. Multi-level plotting with text overlays for H/L per timeframe.</p>
+          <p><strong>Triggers:</strong> NB triggers session start, x_NB triggers session end. Cross detection flags when current price breaches previous session high/low.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>DWMQY Unified Framework</h3>
+          <p><strong>Unique Mechanisms:</strong> DWMQY system unifies Daily → Yearly tracking with cross-aware line/label persistence. Timezone-anchored session calculations adapt to instrument type (crypto, equity, futures, forex, index). First-candle and previous-session memory for extended context. Integrated raid system allows dynamic alerts.</p>
+          <p><strong>Positive Effects:</strong> Clear visualization of multi-timeframe extremes and ranges. Reduces clutter via dynamic line/label hiding and extension logic. Enhances context for intraday trading by aligning short-term price action with higher timeframe levels. Supports alerting and precise positioning of labels.</p>
+          <p><strong>Efficiency:</strong> Array-based management of lines and labels ensures efficient creation, update, and deletion. Conditional object creation prevents unnecessary performance overhead. Modular functions allow reuse across multiple timeframes.</p>
+        </div>
+
+        <!-- repeat additional feature cards here for all 15–16 features -->
+
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="purchase">
-  <div class="container">
-    <h2>Reserve your seat</h2>
-    <div class="price">$109 / month (first 12 months)</div>
-    <p>Standard Allocation: $129 / month. 14-day trial. Allocation required. No refund post-trial.</p>
-    <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="cta">Subscribe Now</a>
-  </div>
-</section>
-
-<!-- TESTIMONIAL CAROUSEL -->
+<!-- TESTIMONIALS -->
 <section>
   <div class="container">
     <h2 style="text-align:center;margin-bottom:3rem;">Trader Validation</h2>
@@ -161,79 +147,70 @@ button{width:100%; padding:14px; background:var(--primary); color:#fff; border:n
       <div class="carousel-track">
         <div class="testimonial-card active">
           <strong>🇮🇹 Matteo V. — Crypto Intraday Trader</strong>
-          <p>Structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
+          <p>I used to manually draw key levels before every livestream. Now structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
         </div>
         <div class="testimonial-card">
-          <strong>🇺🇸 Kevin L. — Futures Trader</strong>
-          <p>Sessions and structural levels appear exactly where they should. Full context instantly mapped.</p>
+          <strong>🇺🇸 Kevin L. — Futures Swing / Intraday Trader</strong>
+          <p>Sessions and structural levels appear exactly where they should. Full context is already mapped. Nothing unnecessary survives.</p>
         </div>
         <div class="testimonial-card">
-          <strong>🇸🇦 Mohamed D. — Forex & Commodities</strong>
-          <p>Alerts changed everything. Context is ready when price interacts. Patience and consistency improved immediately.</p>
-        </div>
-        <div class="testimonial-card">
-          <strong>🇮🇪 Thomas W. — Futures Intraday</strong>
-          <p>Real-time session automation removed manual prep. Stress dropped. Execution confidence increased materially.</p>
+          <strong>🇸🇦 Mohamed D. — Commodities & Forex Trader</strong>
+          <p>Alerts changed everything. I don’t stare at charts anymore. Context is ready when price interacts. Patience and consistency improved immediately.</p>
         </div>
       </div>
-      <div class="testimonial-progress"><div class="testimonial-progress-bar"></div></div>
+      <div class="testimonial-progress">
+        <div class="testimonial-progress-bar"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- PRICING -->
+<section class="price-section">
+  <div class="container">
+    <h2>Reserve your seat</h2>
+    <p>Exclusive monthly access for serious traders</p>
+    <div class="price">$109 / month</div>
+    <p>14-Day Trial. Allocation required. No refund post-trial.</p>
+    <a class="cta" href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" target="_blank">Subscribe Now</a>
+  </div>
+</section>
+
 <footer>
-Operated by R-TradingTools. Educational framework only.  
-<a href="#" onclick="document.getElementById('riskModal').style.display='flex'">Full Risk Disclosure</a>
+  Operated by R-TradingTools. Educational framework only.  
+  <a href="#" onclick="openDisclosure()">Full Risk Disclosure</a>
 </footer>
 
-<!-- RISK MODAL -->
+<!-- MODAL -->
 <div class="modal" id="riskModal">
   <div class="modal-content">
     <h2>Risk Disclosure</h2>
-    <p>Trading involves substantial risk. This framework is educational. Past behavior does not guarantee future outcomes.</p>
-    <button onclick="document.getElementById('riskModal').style.display='none'">Close</button>
+    <p>Trading involves substantial risk. This framework is educational. No financial advice. Past structural behavior does not guarantee future market outcomes.</p>
+    <button onclick="closeDisclosure()">Close</button>
   </div>
 </div>
 
 <script>
-/* Modal */
-window.onclick = function(e){
-  if(e.target==document.getElementById('riskModal')) document.getElementById('riskModal').style.display='none';
-}
+function openModal(){document.getElementById('applyModal').style.display='flex';}
+function openDisclosure(){document.getElementById('riskModal').style.display='flex';}
+function closeDisclosure(){document.getElementById('riskModal').style.display='none';}
+window.onclick=function(e){
+  if(e.target==document.getElementById('applyModal')) applyModal.style.display='none';
+  if(e.target==document.getElementById('riskModal')) riskModal.style.display='none';
+};
 
-/* Testimonial Carousel */
+/* Testimonial carousel */
 const track=document.querySelector('.carousel-track');
 const cards=document.querySelectorAll('.testimonial-card');
 const progress=document.querySelector('.testimonial-progress-bar');
 let index=0, auto, duration=6500;
-
-function animateProgress(){
-  progress.style.transition='none'; progress.style.width='0%';
-  void progress.offsetWidth;
-  progress.style.transition=`width ${duration}ms linear`;
-  progress.style.width='100%';
-}
-
-function updateCarousel(){
-  track.style.transform=`translateX(-${index*100}%)`;
-  cards.forEach(c=>c.classList.remove('active','left','right'));
-  cards[index].classList.add('active');
-  if(cards[index-1]) cards[index-1].classList.add('left');
-  if(cards[index+1]) cards[index+1].classList.add('right');
-  animateProgress();
-}
-
-cards.forEach((card,i)=>{
-  card.addEventListener('click',()=>{index=i; updateCarousel(); resetAuto();});
-});
-
-function next(){index=(index+1)%cards.length; updateCarousel();}
-function startAuto(){animateProgress(); auto=setInterval(next,duration);}
-function resetAuto(){clearInterval(auto); startAuto();}
-
-updateCarousel();
-startAuto();
+function animateProgress(){progress.style.transition='none';progress.style.width='0%';void progress.offsetWidth;progress.style.transition=`width ${duration}ms linear`;progress.style.width='100%';}
+function updateCarousel(){track.style.transform=`translateX(-${index*100}%)`;cards.forEach(c=>{c.classList.remove('active','left','right');});cards[index].classList.add('active');if(cards[index-1]) cards[index-1].classList.add('left');if(cards[index+1]) cards[index+1].classList.add('right');animateProgress();}
+cards.forEach((card,i)=>{card.addEventListener('click',()=>{index=i;updateCarousel();resetAuto();});});
+function next(){index=(index+1)%cards.length;updateCarousel();}
+function startAuto(){animateProgress();auto=setInterval(next,duration);}
+function resetAuto(){clearInterval(auto);startAuto();}
+updateCarousel();startAuto();
 </script>
 </body>
 </html>
