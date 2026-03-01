@@ -1,309 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL IN 1 ⛳️ — Technical Whitepaper</title>
-<meta name="description" content="ALL IN 1 ⛳️ — Unified time–liquidity mapping engine. Deterministic structural framework for professional intraday traders.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALL IN 1 – Structural Market Indicator</title>
+<link rel="stylesheet" href="styles.css">
 
-<style>
-:root{
-  --bg:#0e0f14;
-  --text:#e8ebf3;
-  --muted:#9aa3b2;
-  --line:#262c3a;
-  --accent:#2962ff;
-  --max:860px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.75;
-}
-.wrapper{max-width:var(--max);margin:auto;padding:120px 24px}
-h1,h2,h3{font-weight:600;letter-spacing:-0.02em}
-h1{font-size:44px;margin-bottom:28px}
-h2{font-size:28px;margin-top:90px;margin-bottom:22px}
-h3{font-size:20px;margin-top:50px;margin-bottom:14px}
-p{color:var(--muted);margin-bottom:18px}
-hr{border:none;border-top:1px solid var(--line);margin:90px 0}
-a{color:var(--accent);text-decoration:none}
-.badge{
-  display:inline-block;
-  border:1px solid var(--line);
-  padding:6px 14px;
-  border-radius:40px;
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:26px;
-}
-.cta{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 22px;
-  border:1px solid var(--accent);
-  border-radius:6px;
-}
-footer{
-  margin-top:120px;
-  font-size:13px;
-  color:var(--muted);
-}
-</style>
+
 </head>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Arial,sans-serif;line-height:1.6;color:#222;background:#fafafa}
+a{color:#0066cc;text-decoration:none}
+a:hover{color:#004999}
+.header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;border-bottom:1px solid #e0e0e0}
+.logo{font-weight:700;font-size:1.2rem}
+.nav a{margin-left:1.5rem;font-size:.95rem}
+.hero{padding:4rem 2rem;text-align:center;background:#0066cc;color:#fff}
+.hero h1{font-size:2.2rem;margin-bottom:.5rem}
+.hero p{font-size:1.1rem;margin-bottom:1.5rem}
+.cta{display:inline-block;padding:.8rem 1.6rem;background:#ffcc00;color:#222;border-radius:4px;font-weight:600}
+.demo{padding:2rem}
+.demo h2{text-align:center;margin-bottom:1rem}
+.features{padding:3rem 2rem;background:#fff}
+.features h2{text-align:center;margin-bottom:2rem}
+.grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.feature{background:#f5f5f5;padding:1.2rem;border-radius:4px}
+.feature h3{margin-bottom:.5rem;font-size:1.1rem}
+.testimonials{padding:2rem;background:#e9f5ff;text-align:center}
+.testimonials blockquote{margin:1rem auto;max-width:600px;font-style:italic}
+.pricing{padding:3rem 2rem;text-align:center;background:#fff}
+.price{font-size:2.5rem;color:#0066cc;margin:1rem 0}
+.plan-features{list-style:none;margin:1rem 0}
+.plan-features li{margin:.4rem 0}
+.footer{padding:1.5rem;text-align:center;background:#222;color:#ddd;font-size:.9rem}
+.footer a{color:#ffcc00}
+@media (max-width:600px){ .hero h1{font-size:1.8rem} .nav a{margin-left:.8rem}}
+</style>
 <body>
-
-<div class="wrapper">
-
-<span class="badge">Technical Whitepaper — Invite Only — Launched February 2026</span>
-
-<h1>ALL IN 1 ⛳️<br>Unified Time–Liquidity Mapping Engine</h1>
-
-<p>
-ALL IN 1 is a deterministic structural framework that encodes institutional reference levels into a synchronized, state-driven mapping layer.  
-It auto-draws, extends, freezes, and retires structural levels in real time, aligned to the New York session clock, without obscuring price.
-</p>
-
-<p>
-No signals. No prediction layer. No automation.  
-Context engine only.
-</p>
-
-<hr>
-
-<h2>Core Architecture</h2>
-
-<p>
-Price is evaluated across three coordinated axes: session segmentation, higher-timeframe reference levels, and gap inefficiencies.  
-Every element is time-stamped, conditionally extended, and programmatically invalidated when raided.
-</p>
-
-<p>
-The result is a unified state machine:  
-time → level → state → extension → invalidation.
-</p>
-
-<p>
-Manual drawing is eliminated.  
-Level drift is prevented.  
-Execution timing becomes standardized across days.
-</p>
-
-<hr>
-
-<h2>Intraday Session Engine</h2>
-
-<p>
-The system tracks Asia, London, New York Morning, Lunch, Afternoon, plus one custom block.  
-Each session is exchange-aligned and time-bounded.
-</p>
-
-<p>
-During an active window, rolling highs and lows are calculated dynamically.  
-At session close, the final high and low are frozen and projected forward as horizontal liquidity references.
-</p>
-
-<p>
-If price trades through a projected level, extension halts precisely at the violation candle.  
-If untouched, the level persists into the next trading day.
-</p>
-
-<p>
-This creates a chronological liquidity map.  
-Untouched highs and lows represent pending liquidity.  
-Raided levels mark structural interaction events.
-</p>
-
-<hr>
-
-<h2>HOD / LOD State Machine</h2>
-
-<p>
-Daily range tracking unfolds in three phases:
-</p>
-
-<p>
-18:00–00:00 NY defines the pre-midnight range.  
-At 00:00, this range freezes as the overnight structure.
-</p>
-
-<p>
-From 00:00 onward, live High of Day and Low of Day tracking begins.  
-At 08:30 NY, early expansion is locked as a structural benchmark.
-</p>
-
-<p>
-Each freeze event stores a discrete structural layer.  
-Expansion phases remain visible without retroactive distortion.
-</p>
-
-<hr>
-
-<h2>Higher Timeframe Reference Logic</h2>
-
-<p>
-For each completed day, week, month, quarter, and year:
-</p>
-
-<p>
-Final highs and lows are captured.  
-At the new period open, they project forward as liquidity targets.
-</p>
-
-<p>
-If raided, extension stops immediately and visual state mutates to completed.  
-If untouched, the level remains active.
-</p>
-
-<p>
-Binary liquidity state: pending or executed.  
-No fading. No subjective deletion.
-</p>
-
-<hr>
-
-<h2>Gap Architecture</h2>
-
-<h3>NWOG — New Week Opening Gap</h3>
-
-<p>
-Difference between current week open and prior week close defines a rectangular inefficiency zone.  
-The box extends through the entire week and includes midpoint and quarter levels.
-</p>
-
-<p>
-Midpoint interaction frequently signals partial rebalance.  
-Full traversal implies structural closure.
-</p>
-
-<h3>RTH Gap</h3>
-
-<p>
-Distance between prior Regular Trading Hours close and 09:30 NY open.  
-Pre-open reference converts into a defined gap box at 09:30, including midpoint.
-</p>
-
-<p>
-Used for intraday continuation or reversion context.
-</p>
-
-<hr>
-
-<h2>ADR Engine</h2>
-
-<p>
-A rolling 5-day average daily range defines statistical expansion boundaries.
-</p>
-
-<p>
-Symmetrical projections extend from current day extremes and contract dynamically as price expands.  
-When one boundary is breached, it marks the raid point and removes the opposite projection.
-</p>
-
-<p>
-Optional 60–70% threshold reflects realistic exhaustion probabilities rather than full-range expectation.
-</p>
-
-<hr>
-
-<h2>Custom Time Anchors</h2>
-
-<p>
-Up to six programmable open prices may be defined.  
-At each timestamp, the open is captured and projected as a horizontal bias reference.
-</p>
-
-<p>
-These anchors clarify premium/discount alignment and directional conviction relative to structural sweeps.
-</p>
-
-<hr>
-
-<h2>Alert System</h2>
-
-<p>
-Alerts are event-driven and trigger only on structural interaction:
-session extremes, higher timeframe highs/lows, gap bounds, ADR boundaries, and custom opens.
-</p>
-
-<p>
-No predictive triggers.  
-No repetitive noise.  
-Designed for off-screen structural monitoring.
-</p>
-
-<hr>
-
-<h2>Replay Integrity</h2>
-
-<p>
-All calculations are time-indexed.  
-No forward referencing.  
-Levels freeze strictly when historical time conditions are met.
-</p>
-
-<p>
-Replay mirrors live structural evolution.  
-No repaint behavior.
-</p>
-
-<hr>
-
-<h2>Operational Effect</h2>
-
-<p>
-Manual chart management is removed.  
-Session timing is standardized.  
-HTF liquidity cannot be forgotten.  
-Decision latency during raids decreases.
-</p>
-
-<p>
-Structural memory is externalized to the chart layer.
-</p>
-
-<hr>
-
-<h2>Limitations</h2>
-
-<p>
-No trade signals.  
-No probability scoring.  
-No order execution integration.  
-Requires structural literacy.
-</p>
-
-<p>
-Execution quality and risk discipline remain user-dependent variables.
-</p>
-
-<hr>
-
-<h2>System Philosophy</h2>
-
-<p>
-Markets distribute liquidity across time segments.  
-Structure evolves through raids and inefficiency fills.
-</p>
-
-<p>
-ALL IN 1 encodes that distribution into deterministic drawing rules.
-</p>
-
-<p>
-It is not an indicator stack.  
-It is a unified structural state engine.
-</p>
-
-<a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="cta">Start 15-Day Trial</a>
-
-<footer>
-ALL IN 1 ⛳️ — Independent TradingView Framework.  
-No affiliation with TradingView.
-</footer>
-
-</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">R‑TradingTools</div>
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>One Structural Framework.<br>Fully Mapped. Instantly Loaded.</h1>
+    <p>Real‑time sessions, HTF pivots, liquidity, gaps and volatility – unified into one execution layer.</p>
+    <a href="#pricing" class="cta">Start 15‑Day Free Trial</a>
+  </section>
+
+  <!-- Demo (TradingView embed) -->
+  <section id="demo" class="demo">
+    <h2>Live Demo</h2>
+    <iframe src="https://www.tradingview.com/embed-widget/your-widget-id"
+            allowtransparency="true" frameborder="0"
+            scrolling="no" style="width:100%;height:500px;"></iframe>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>Structural Consistency Over Fragmentation</h2>
+    <div class="grid">
+      <article class="feature">
+        <h3>Session Structure</h3>
+        <p>Asia, London, New York ranges persist until structurally invalidated.</p>
+      </article>
+      <article class="feature">
+        <h3>Liquidity Mapping</h3>
+        <p>D/W/M/Q/Y highs & lows extend forward across timeframes.</p>
+      </article>
+      <article class="feature">
+        <h3>Gap Framework</h3>
+        <p>RTH and weekly opening gaps remain active until resolved.</p>
+      </article>
+      <article class="feature">
+        <h3>Volatility Context</h3>
+        <p>5‑Day ADR projects measurable daily expansion.</p>
+      </article>
+      <article class="feature">
+        <h3>Event Awareness</h3>
+        <p>High‑impact economic events and holiday sessions mapped directly on chart.</p>
+      </article>
+      <article class="feature">
+        <h3>State‑Based Alerts</h3>
+        <p>Notifications trigger on structural interaction; replay fully preserved.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Traders Say</h2>
+    <blockquote>
+      “Manual session marking and HTF scanning are gone. The framework loads aligned across timeframes. Execution feels deliberate.” – Thomas W.
+    </blockquote>
+    <blockquote>
+      “Replaced multiple tools with one consistent structural layer. Alerts tied to liquidity levels changed my workflow.” – Kevin L.
+    </blockquote>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <h2>Complete Framework Access</h2>
+    <p class="price">$109 / month</p>
+    <ul class="plan-features">
+      <li>Sessions, Liquidity, Gaps, ADR, Event integration</li>
+      <li>All alerts, replay mode, full module set</li>
+      <li>15‑Day Full Trial – cancel anytime</li>
+    </ul>
+    <a href="#" class="cta">Start 15‑Day Trial</a>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" class="footer">
+    <p>© 2026 R‑TradingTools – All Rights Reserved</p>
+    <p>Contact: <a href="mailto:support@r‑tradingtools.com">support@r‑tradingtools.com</a></p>
+  </footer>
 </body>
 </html>
