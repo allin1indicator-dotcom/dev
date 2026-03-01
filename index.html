@@ -1,146 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DWMQY – Multi-Timeframe Context Model</title>
-<meta name="description" content="Time-based structural awareness engine for institutional levels. Context, not signals.">
+<title>ALL IN 1 — Institutional Structural Framework</title>
+<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped. Institutional access only.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#131722;
-  --panel:#1e222d;
-  --border:#2a2e39;
-  --text:#d1d4dc;
-  --muted:#787b86;
-  --accent:#2962ff;
-  --max:1100px;
-  --radius:6px;
+--bg:#080e31;
+--surface:#2e2e2e;
+--border:#708090;
+--primary:#1e70b0;
+--primary-hover:#358097;
+--allocation:#bfa649;
+--bull:#388e3c;
+--bear:#8c1414;
+--light:#f7faf9;
+--max:1200px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  line-height:1.55;
-  font-size:15px;
+background:var(--bg);
+color:#f7faf9;
+font-family:'Inter',system-ui,sans-serif;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 .container{
-  width:92%;
-  max-width:var(--max);
-  margin:0 auto;
-}
-
-header{
-  padding:3.5rem 0 2.5rem;
-  border-bottom:1px solid var(--border);
-}
-
-h1{
-  font-size:28px;
-  font-weight:600;
-  letter-spacing:-0.01em;
-}
-
-.subtitle{
-  color:var(--muted);
-  margin-top:.6rem;
-  max-width:720px;
-}
-
-.badge{
-  display:inline-block;
-  font-size:12px;
-  color:var(--accent);
-  margin-bottom:1rem;
+width:92%;
+max-width:var(--max);
+margin:auto;
 }
 
 section{
-  padding:3rem 0;
-  border-bottom:1px solid var(--border);
+padding:5rem 0;
+border-bottom:1px solid rgba(112,128,144,0.2);
+}
+
+h1{
+font-size:3rem;
+font-weight:600;
+letter-spacing:-0.02em;
+}
+
+h2{
+font-size:1.8rem;
+margin-bottom:1rem;
+}
+
+p{
+color:#a1b8bf;
+}
+
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0.25;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.badge{
+color:var(--allocation);
+margin-bottom:1rem;
+font-size:0.9rem;
+}
+
+.cta{
+margin-top:2rem;
+display:inline-block;
+padding:14px 28px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.2s ease;
+}
+
+.cta:hover{
+background:var(--primary-hover);
+}
+
+.secondary{
+margin-left:1rem;
+background:transparent;
+border:1px solid var(--border);
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
 }
 
 .card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:20px;
-  transition:background .15s ease, border .15s ease;
+background:var(--surface);
+padding:2rem;
+border:1px solid rgba(112,128,144,0.2);
 }
 
-.card:hover{
-  border-color:var(--accent);
+.screenshot{
+background:var(--light);
+padding:10px;
+border:1px solid var(--surface);
 }
 
-.card h3{
-  font-size:15px;
-  font-weight:500;
-  margin-bottom:8px;
+.pricing{
+text-align:center;
 }
 
-.card p{
-  font-size:14px;
-  color:var(--muted);
+.price{
+font-size:2.5rem;
+color:var(--allocation);
+margin:1rem 0;
+}
+
+.form input, .form textarea{
+width:100%;
+padding:12px;
+margin-bottom:1rem;
+background:var(--surface);
+border:1px solid rgba(112,128,144,0.3);
+color:white;
+}
+
+.form button{
+width:100%;
+padding:14px;
+background:var(--primary);
+border:none;
+color:white;
+font-weight:500;
+cursor:pointer;
 }
 
 footer{
-  padding:2rem 0;
-  font-size:12px;
-  color:var(--muted);
-  text-align:center;
+padding:3rem 0;
+font-size:0.8rem;
+color:#708090;
+text-align:center;
+}
+
+.parallax{
+transform:translateY(0);
+transition:transform 0.4s ease-out;
 }
 </style>
 </head>
 
-
 <body>
 
-<header class="container">
-  <span class="badge">MULTI-TIMEFRAME CONTEXT MODEL</span>
-  <h1>DWMQY Framework</h1>
-  <p class="subtitle">
-    Structured awareness of time-based institutional levels.
-    No signals. No bias. Pure structural context.
-  </p>
-</header>
-
-<section class="container">
-  <div class="grid">
-    <div class="card">
-      <h3>Session Architecture</h3>
-      <p>Daily → Yearly boundary tracking with persistent range memory.</p>
-    </div>
-    <div class="card">
-      <h3>Liquidity Interaction</h3>
-      <p>Raid and cross detection across aligned higher timeframes.</p>
-    </div>
-    <div class="card">
-      <h3>Range Development</h3>
-      <p>High/Low continuity and structural expansion monitoring.</p>
-    </div>
-  </div>
+<section class="hero">
+<video autoplay muted loop>
+<source src="hero-replay.mp4" type="video/mp4">
+</video>
+<div class="hero-content">
+<div class="badge">Q2 Allocation: <span style="color:#bfa649;">7 / 20</span> Remaining</div>
+<h1>ALL IN 1</h1>
+<p>Unified Smart Market Framework. Instantly Loaded. Fully Mapped.</p>
+<a href="#apply" class="cta">Apply for Institutional Access</a>
+<a href="#framework" class="cta secondary">View Framework Documentation</a>
+</div>
 </section>
 
-<section class="container">
-  <h2 style="margin-bottom:1rem;">Methodology</h2>
-  <p class="subtitle">
-    Time segmentation → Level persistence → Interaction logic →
-    Structural interpretation by the operator.
-  </p>
+<section>
+<div class="container">
+<h2>Fragmented Timeframe Perception</h2>
+<p>Most traders operate with disconnected session awareness. Daily bias detached from quarterly structure. Liquidity interaction observed without historical continuity.</p>
+</div>
 </section>
 
-<footer class="container">
-  Designed for structural traders. Not a signal generator.
+<section id="framework">
+<div class="container grid">
+<div class="card parallax">
+<h3>Session Boundary Engine</h3>
+<p>Daily to yearly segmentation mapped and persisted without manual markup.</p>
+</div>
+<div class="card parallax">
+<h3>Range Memory Architecture</h3>
+<p>High/Low development tracked structurally, not visually guessed.</p>
+</div>
+<div class="card parallax">
+<h3>Liquidity Interaction Model</h3>
+<p>Raid and cross events contextualized across timeframe hierarchy.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Live Structural Replay</h2>
+<div class="screenshot">
+<img src="screenshot1.png" style="width:100%;">
+</div>
+</div>
+</section>
+
+<section class="pricing">
+<div class="container">
+<h2>Institutional Allocation</h2>
+<p>Standard Allocation: $129/month</p>
+<div class="price">$109 / month</div>
+<p>14-Day Trial. No refunds after trial period.</p>
+</div>
+</section>
+
+<section id="apply">
+<div class="container">
+<h2>Application</h2>
+<form class="form" action="thankyou.html" method="POST">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Trading Experience & Market Focus" required></textarea>
+<button type="submit">Submit for Review</button>
+</form>
+</div>
+</section>
+
+<footer>
+Operated by R-TradingTools. Educational framework only.  
+<a href="#">Full Risk Disclosure</a>
 </footer>
 
+<script>
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.parallax').forEach(el=>{
+let offset = window.pageYOffset;
+el.style.transform = "translateY(" + offset * 0.02 + "px)";
+});
+});
+</script>
+
 </body>
+</html>
