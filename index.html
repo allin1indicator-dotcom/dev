@@ -30,14 +30,14 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.65;
+  line-height:1.5;
   -webkit-font-smoothing:antialiased;
 }
 
 nav{
   position:sticky;
   top:0;
-  background:rgba(245,245,247,.75);
+  background:rgba(245,245,247,.85);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
   z-index:1000;
@@ -46,7 +46,7 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:24px;
+  padding:16px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -55,7 +55,7 @@ nav{
 .nav-links a{
   text-decoration:none;
   color:var(--text);
-  margin-left:32px;
+  margin-left:24px;
   font-size:14px;
   letter-spacing:.02em;
   transition:opacity .25s ease;
@@ -66,64 +66,64 @@ nav{
 }
 
 section{
-  padding:160px 24px;
+  padding:100px 24px;
   position:relative;
   overflow:hidden;
 }
 
 .container{
-  max-width:1100px;
+  max-width:960px;
   margin:0 auto;
 }
 
 .hero{
-  padding-top:200px;
-  padding-bottom:200px;
+  padding-top:140px;
+  padding-bottom:140px;
   text-align:center;
 }
 
 h1{
-  font-size:64px;
-  line-height:1.05;
-  font-weight:600;
-  letter-spacing:-0.03em;
-  margin-bottom:40px;
-}
-
-h2{
-  font-size:44px;
+  font-size:52px;
+  line-height:1.1;
   font-weight:600;
   letter-spacing:-0.02em;
-  margin-bottom:40px;
-}
-
-h3{
-  font-size:26px;
-  font-weight:600;
-  margin-bottom:16px;
-}
-
-p{
-  font-size:19px;
-  color:var(--muted);
   margin-bottom:28px;
 }
 
-.large{
+h2{
+  font-size:36px;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  margin-bottom:28px;
+}
+
+h3{
   font-size:22px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+p{
+  font-size:17px;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.large{
+  font-size:20px;
   color:var(--text);
 }
 
 .buttons{
-  margin-top:56px;
+  margin-top:40px;
   display:flex;
   justify-content:center;
-  gap:24px;
+  gap:20px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 36px;
+  padding:14px 32px;
   font-size:16px;
   text-decoration:none;
   border-radius:999px;
@@ -134,12 +134,12 @@ p{
 .btn-primary{
   background:var(--accent);
   color:#fff;
-  box-shadow:0 8px 24px rgba(37,99,235,.25);
+  box-shadow:0 6px 20px rgba(37,99,235,.25);
 }
 
 .btn-primary:hover{
   transform:translateY(-2px);
-  box-shadow:0 12px 28px rgba(37,99,235,.35);
+  box-shadow:0 10px 28px rgba(37,99,235,.35);
 }
 
 .btn-secondary{
@@ -154,16 +154,15 @@ p{
 }
 
 .feature{
-  margin-bottom:80px;
+  margin-bottom:60px;
 }
 
 /* Divider animation */
-
 .divider{
   height:2px;
   width:100%;
   background:var(--line);
-  margin:140px 0 0 0;
+  margin:100px 0 0 0;
   position:relative;
 }
 
@@ -183,11 +182,10 @@ section.in-view .divider::after{
 }
 
 /* Scroll reveal */
-
 .reveal{
   opacity:0;
-  transform:translateY(40px);
-  transition:all 1s cubic-bezier(.4,0,.2,1);
+  transform:translateY(30px);
+  transition:all 0.8s cubic-bezier(.4,0,.2,1);
 }
 
 section.in-view .reveal{
@@ -202,24 +200,24 @@ section.in-view .reveal{
 .price-old{
   text-decoration:line-through;
   color:var(--muted);
-  font-size:24px;
+  font-size:22px;
 }
 
 .price-new{
-  font-size:44px;
+  font-size:36px;
   font-weight:600;
-  margin:12px 0 24px;
+  margin:10px 0 20px;
 }
 
 .footer-cta{
   text-align:center;
-  padding:200px 24px;
+  padding:140px 24px;
 }
 
 @media (max-width:768px){
-  h1{font-size:44px;}
-  h2{font-size:34px;}
-  section{padding:120px 24px;}
+  h1{font-size:36px;}
+  h2{font-size:28px;}
+  section{padding:80px 24px;}
 }
 </style>
 </head>
@@ -241,8 +239,7 @@ section.in-view .reveal{
   <div class="container reveal">
     <h1>A Structured Market Environment for Discretionary Precision</h1>
     <p class="large">All critical intraday and higher-timeframe context — unified, ordered, and embedded directly into price.</p>
-    <p>Professional execution depends on structured information.</p>
-    <p>This invite-only TradingView framework consolidates sessions, structural reference points, volatility expansion, inefficiencies, and macro timing into a single coherent system — engineered to accelerate analysis without degrading chart clarity.</p>
+    <p>Professional execution depends on structured information. Our framework consolidates session timing, volatility expansions, structural pivots, market imbalances, and macro events directly onto the chart for actionable context.</p>
     <div class="buttons">
       <a href="#pricing" class="btn btn-primary">Start 15-Day Free Trial</a>
       <a href="#features" class="btn btn-secondary">See It in Action</a>
@@ -254,15 +251,14 @@ section.in-view .reveal{
 <section>
   <div class="container reveal">
     <h2>The Problem</h2>
-    <p>Advanced traders typically operate with:</p>
-    <p>Manually drawn HTF levels.<br>
-    Session markers added daily.<br>
-    Independent ADR tools.<br>
-    Separate imbalance tracking.<br>
-    External economic calendars.</p>
-    <p>Each component may be valid. Together, they create fragmentation.</p>
-    <p>Fragmentation increases reaction time. Reaction time reduces execution quality.</p>
-    <p>The issue is not strategy. It is structural inefficiency.</p>
+    <p>Advanced traders often juggle multiple indicators manually:</p>
+    <ul>
+      <li>HTF pivots and session levels drawn by hand.</li>
+      <li>Separate ADR and volatility measurement tools.</li>
+      <li>Independent imbalance and displacement tracking.</li>
+      <li>External economic calendars or event markers.</li>
+    </ul>
+    <p>While individually useful, this fragmented workflow slows reaction time, increases error, and reduces execution efficiency. The problem is structural inefficiency, not strategy quality.</p>
   </div>
   <div class="divider"></div>
 </section>
@@ -270,10 +266,15 @@ section.in-view .reveal{
 <section>
   <div class="container reveal">
     <h2>The Solution</h2>
-    <p>This indicator functions as a unified structural layer.</p>
-    <p>Instead of stacking tools, it synchronizes them.</p>
-    <p>Time segmentation, volatility positioning, higher-timeframe anchors, and imbalance mapping are rendered within a controlled visual hierarchy that preserves candle dominance.</p>
-    <p>The result is not more information. It is compressed, ordered context.</p>
+    <p>This indicator creates a unified structural layer:</p>
+    <ul>
+      <li>Automatically maps intraday sessions with proportional scaling.</li>
+      <li>Projects higher-timeframe pivots downward, preserving chart alignment.</li>
+      <li>Identifies inefficiencies and displacements algorithmically in real-time.</li>
+      <li>Integrates macro event timing for controlled risk management.</li>
+      <li>Adjusts layers dynamically to prevent visual clutter.</li>
+    </ul>
+    <p>The result is actionable, compressed market context that preserves candle dominance and speeds discretionary execution.</p>
   </div>
   <div class="divider"></div>
 </section>
@@ -284,32 +285,32 @@ section.in-view .reveal{
 
     <div class="feature">
       <h3>Intraday Session Framework</h3>
-      <p>Trade within defined liquidity windows. Major trading sessions are automatically segmented and proportionally scaled to maintain timing precision across timeframes.</p>
+      <p>Trade within defined liquidity windows. Major sessions segmented and scaled to maintain precise timing across all timeframes.</p>
     </div>
 
     <div class="feature">
-      <h3>Higher-Timeframe Structural Anchors</h3>
-      <p>Maintain directional bias without switching charts. Daily and higher-timeframe pivots are projected downward with consistent scaling logic.</p>
+      <h3>Higher-Timeframe Anchors</h3>
+      <p>Directional bias maintained without switching charts. Daily and HTF pivots projected with consistent scaling logic.</p>
     </div>
 
     <div class="feature">
       <h3>Imbalance & Displacement Mapping</h3>
-      <p>Quantify inefficiency rather than guessing it. Algorithmic detection of structural gaps and displacement zones updates dynamically as price confirms.</p>
+      <p>Structural gaps and displacement zones identified automatically. Tracks where market inefficiency is developing and confirmed.</p>
     </div>
 
     <div class="feature">
       <h3>Volatility Positioning Engine</h3>
-      <p>Execute relative to expansion boundaries. Real-time ADR positioning defines objective intraday expansion limits and exhaustion thresholds.</p>
+      <p>Defines intraday expansion limits and exhaustion zones using real-time ADR. Ensures entries are aligned with market energy.</p>
     </div>
 
     <div class="feature">
       <h3>Scheduled Event Integration</h3>
-      <p>Control risk around volatility catalysts. High-impact macro releases are embedded directly into the chart timeline.</p>
+      <p>High-impact macro events integrated into the timeline to control risk and anticipate volatility spikes.</p>
     </div>
 
     <div class="feature">
       <h3>Adaptive Visual Logic</h3>
-      <p>Clarity under all market conditions. All components auto-layer, fade, and adjust to prevent overlap and maintain strict visual order.</p>
+      <p>Automatic layer adjustment, fade, and reordering ensures all components remain legible without overlapping candles or cluttering the chart.</p>
     </div>
 
   </div>
@@ -321,9 +322,7 @@ section.in-view .reveal{
     <h2>Pricing</h2>
     <div class="price-old">$129 per month</div>
     <div class="price-new">$109 per month</div>
-    <p>Full system access included.</p>
-    <p>15-day free trial. Subscription billed monthly via Stripe. Cancel anytime.</p>
-    <p>Transparent structure. No hidden tiers.</p>
+    <p>Full system access included with 15-day free trial. Monthly subscription via Stripe, cancel anytime. Transparent pricing — no hidden tiers.</p>
     <div class="buttons">
       <a href="#" class="btn btn-primary">Start 15-Day Free Trial</a>
     </div>
@@ -336,36 +335,36 @@ section.in-view .reveal{
     <h2>FAQ</h2>
 
     <h3>Is it beginner friendly?</h3>
-    <p>It assumes familiarity with market structure, liquidity, and volatility concepts.</p>
+    <p>Designed for traders familiar with market structure, liquidity, and volatility concepts.</p>
 
     <h3>Does it repaint?</h3>
-    <p>No forward-projected repaint logic is used. Elements update only on confirmed data.</p>
+    <p>No. Elements update only on confirmed data, never forward-projected.</p>
 
-    <h3>Can it be used on multiple assets?</h3>
-    <p>Yes. Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
+    <h3>Multiple assets?</h3>
+    <p>Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
 
-    <h3>Does it generate trade signals?</h3>
-    <p>No. It provides structured context for discretionary decisions.</p>
+    <h3>Generates trade signals?</h3>
+    <p>No. Provides structured context for discretionary decision-making.</p>
 
-    <h3>Is it multi-timeframe compatible?</h3>
-    <p>Yes. Built specifically for cross-timeframe structural alignment.</p>
+    <h3>Multi-timeframe compatible?</h3>
+    <p>Yes, built for cross-timeframe structural alignment.</p>
 
-    <h3>Can I cancel anytime?</h3>
-    <p>Yes. Cancellation is handled directly through Stripe.</p>
+    <h3>Cancellation?</h3>
+    <p>Handled directly through Stripe, anytime.</p>
 
-    <h3>Does it require additional software?</h3>
-    <p>No. Runs natively within TradingView via invite-only access.</p>
+    <h3>Additional software?</h3>
+    <p>None. Runs natively on TradingView via invite-only access.</p>
 
-    <h3>Is support available?</h3>
-    <p>Active subscribers receive support.</p>
+    <h3>Support?</h3>
+    <p>Active subscribers receive live support and updates.</p>
 
   </div>
 </section>
 
 <section class="footer-cta">
   <div class="container reveal">
-    <h2>Execute Within a Structured Framework.</h2>
-    <p>Eliminate fragmentation. Standardize context. Improve execution quality through environmental precision.</p>
+    <h2>Execute Within a Structured Framework</h2>
+    <p>Eliminate fragmentation. Standardize context. Execute with higher precision using real-time structural and volatility insights.</p>
     <div class="buttons">
       <a href="#" class="btn btn-primary">Start 15-Day Free Trial</a>
     </div>
@@ -374,7 +373,6 @@ section.in-view .reveal{
 
 <script>
 const sections = document.querySelectorAll("section");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -383,9 +381,7 @@ const observer = new IntersectionObserver(entries => {
   });
 },{ threshold:0.15 });
 
-sections.forEach(section => {
-  observer.observe(section);
-});
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
