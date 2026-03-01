@@ -3,74 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page Indicatore</title>
-<meta name="description" content="Scopri il nostro indicatore premium per analisi di mercato veloce e chiara. 15 giorni di prova gratuita.">
+<title>Indicatore Premium All-in-1</title>
+<meta name="description" content="Indicatore premium per trading veloce e chiaro. 15 giorni di prova gratuita.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
-/* Reset rapido */
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
-body { line-height:1.5; color:#111; background:#f8f8f8; }
-a { text-decoration:none; color:inherit; }
-img { max-width:100%; display:block; }
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+body { background:#f5f5f7; color:#111; overflow-x:hidden; }
+a { text-decoration:none; }
 
-/* Container generale */
+/* Container */
 .container { width:90%; max-width:1200px; margin:0 auto; }
 
 /* Hero */
 header {
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; padding:100px 0; background:#1a1a1a; color:white;
+  position:relative; height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; overflow:hidden;
 }
-header h1 { font-size:48px; margin-bottom:20px; }
-header p { font-size:20px; margin-bottom:30px; max-width:700px; }
-header .cta { background:#ff5722; color:white; padding:16px 40px; font-size:18px; border-radius:6px; transition:0.3s; }
-header .cta:hover { background:#e64a19; }
+header video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0.5; }
+header::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:0; }
 
-/* Section generale */
-section { padding:80px 0; }
-section h2 { font-size:36px; margin-bottom:40px; text-align:center; }
-section p { font-size:18px; margin-bottom:20px; text-align:center; max-width:800px; margin-left:auto; margin-right:auto; }
+header .hero-content { position:relative; z-index:1; max-width:900px; color:white; }
+header h1 { font-family: 'Poppins', sans-serif; font-size:60px; margin-bottom:20px; animation:fadeUp 1s ease forwards; opacity:0; }
+header p { font-size:20px; margin-bottom:40px; opacity:0; animation:fadeUp 1s 0.3s ease forwards; }
+header .cta { display:inline-block; padding:18px 50px; font-size:20px; border-radius:8px;
+  background:linear-gradient(45deg,#ff5722,#ff7043); color:white; font-weight:600; transition:0.3s; opacity:0; animation:fadeUp 1s 0.6s ease forwards;
+}
+header .cta:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
 
-/* Features */
-#features .feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
-.feature { background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; }
-.feature img { margin-bottom:20px; border-radius:6px; }
-.feature h3 { font-size:24px; margin-bottom:10px; }
+/* Animazioni fadeUp */
+@keyframes fadeUp { 0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
 
-/* Video demo */
-#demo-video video { display:block; margin:0 auto; border-radius:10px; max-width:90%; }
+/* Section */
+section { padding:100px 0; }
+section h2 { font-size:36px; text-align:center; margin-bottom:50px; }
+section p { text-align:center; font-size:18px; max-width:800px; margin:0 auto 40px auto; }
 
-/* Testimonials */
-#testimonials .testimonial { background:#fff; padding:30px; margin-bottom:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-#testimonials .testimonial p { font-style:italic; margin-bottom:10px; }
-#testimonials .testimonial span { font-weight:bold; color:#333; }
+/* Feature Carousel */
+#features { background:#fff; }
+.carousel { display:flex; overflow:hidden; gap:30px; scroll-behavior:smooth; }
+.feature-card { flex:0 0 300px; background:#fefefe; border-radius:12px; padding:30px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s; }
+.feature-card:hover { transform:translateY(-10px); }
+.feature-card img { border-radius:8px; margin-bottom:20px; }
+
+/* Demo video */
+#demo-video video { display:block; margin:0 auto; max-width:90%; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+
+/* Testimonials slider */
+#testimonials { background:#f0f0f3; }
+.testimonial-slider { display:flex; overflow:hidden; gap:30px; }
+.testimonial { flex:0 0 350px; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); opacity:0.9; transition:0.3s; }
+.testimonial p { font-style:italic; margin-bottom:15px; }
+.testimonial span { font-weight:bold; }
 
 /* Pricing */
-#pricing .price-box { text-align:center; background:#1a1a1a; color:white; padding:60px 30px; border-radius:12px; }
-#pricing .price-box del { color:#ccc; margin-right:15px; }
-#pricing .price-box .cta { margin-top:20px; }
+#pricing { background:#1a1a1a; color:white; text-align:center; border-radius:12px; margin:0 20px; padding:80px 30px; }
+#pricing del { color:#ccc; margin-right:15px; }
+#pricing .cta { display:inline-block; margin-top:30px; padding:20px 60px; font-size:22px; border-radius:10px; background:linear-gradient(45deg,#ff5722,#ff7043); transition:0.3s; }
+#pricing .cta:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.4); }
 
 /* FAQ */
-#faq .faq-item { margin-bottom:30px; background:white; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
-#faq .faq-item h4 { font-size:20px; margin-bottom:10px; }
+#faq .faq-item { background:white; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
+#faq .faq-item h4 { font-size:20px; margin-bottom:12px; }
 
 /* Footer */
-footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-size:14px; }
+footer { background:#111; color:white; text-align:center; padding:50px 20px; font-size:14px; }
 
 /* Responsive */
 @media(max-width:768px){
-  header h1 { font-size:36px; }
+  header h1 { font-size:40px; }
   header p { font-size:16px; }
   section h2 { font-size:28px; }
   section p { font-size:16px; }
+  .carousel, .testimonial-slider { flex-wrap:wrap; justify-content:center; }
+  .feature-card, .testimonial { flex:0 0 90%; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
+  <video autoplay muted loop playsinline>
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content container">
     <h1>Indicatore Premium All-in-1</h1>
-    <p>Session boxes, HTF pivots, gaps, ADR e flag eventi sovrapposti non intrusivi. Vedi smart levels in un colpo d'occhio.</p>
+    <p>Session boxes, HTF pivots, gaps e flag eventi sovrapposti non intrusivi. Analizza smart levels in un colpo d’occhio.</p>
     <a href="#pricing" class="cta">Prova 15 giorni gratis</a>
   </div>
 </header>
@@ -78,23 +95,11 @@ footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-si
 <section id="features">
   <div class="container">
     <h2>Funzioni principali</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <img src="screenshot1.webp" alt="Feature 1">
-        <h3>Session Boxes</h3>
-        <p>Identifica rapidamente le sessioni di trading e il loro range senza sovraccaricare il grafico.</p>
-      </div>
-      <div class="feature">
-        <img src="screenshot2.webp" alt="Feature 2">
-        <h3>HTF Pivots</h3>
-        <p>Pivot di timeframe più alti automaticamente calcolati per supporto e resistenza chiari.</p>
-      </div>
-      <div class="feature">
-        <img src="screenshot3.webp" alt="Feature 3">
-        <h3>Gaps & Event Flags</h3>
-        <p>Visualizza gap e eventi importanti senza interferire con l’azione del prezzo.</p>
-      </div>
-      <!-- aggiungi altri feature qui -->
+    <div class="carousel" id="featureCarousel">
+      <div class="feature-card"><img src="screenshot1.webp" alt="Feature 1"><h3>Session Boxes</h3><p>Identifica sessioni e range rapidamente.</p></div>
+      <div class="feature-card"><img src="screenshot2.webp" alt="Feature 2"><h3>HTF Pivots</h3><p>Pivot di timeframe più alti calcolati automaticamente.</p></div>
+      <div class="feature-card"><img src="screenshot3.webp" alt="Feature 3"><h3>Gaps & Event Flags</h3><p>Visualizza gap e eventi chiave senza interferenze.</p></div>
+      <!-- altri feature -->
     </div>
   </div>
 </section>
@@ -112,19 +117,16 @@ footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-si
 <section id="testimonials">
   <div class="container">
     <h2>Cosa dicono gli utenti</h2>
-    <div class="testimonial">
-      <p>"Questo indicatore ha cambiato il mio approccio al trading. Veloce, chiaro e preciso."</p>
-      <span>- Marco R.</span>
-    </div>
-    <div class="testimonial">
-      <p>"Finalmente vedo il mercato senza sovraccarico di informazioni. Top tool."</p>
-      <span>- Lucia S.</span>
+    <div class="testimonial-slider">
+      <div class="testimonial"><p>"Indicatore fantastico, chiaro e veloce."</p><span>- Marco R.</span></div>
+      <div class="testimonial"><p>"Finalmente vedo il mercato senza sovraccarico."</p><span>- Lucia S.</span></div>
+      <!-- altri testimonial -->
     </div>
   </div>
 </section>
 
 <section id="pricing">
-  <div class="container price-box">
+  <div class="container">
     <h2>Piano Mensile</h2>
     <p><del>$129</del> <strong>$109</strong></p>
     <a href="stripe-link" class="cta">Abbonati Ora</a>
@@ -134,15 +136,8 @@ footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-si
 <section id="faq">
   <div class="container">
     <h2>Domande Frequenti</h2>
-    <div class="faq-item">
-      <h4>Come installo l’indicatore?</h4>
-      <p>Segui la guida passo-passo dopo l’acquisto. L’installazione richiede pochi minuti.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Posso provare prima di pagare?</h4>
-      <p>Sì, offriamo 15 giorni di prova gratuita senza impegno.</p>
-    </div>
-    <!-- aggiungi altri FAQ qui -->
+    <div class="faq-item"><h4>Come installo l’indicatore?</h4><p>Segui la guida passo-passo dopo l’acquisto.</p></div>
+    <div class="faq-item"><h4>Posso provare prima di pagare?</h4><p>Sì, 15 giorni di prova gratuita.</p></div>
   </div>
 </section>
 
@@ -151,6 +146,18 @@ footer { background:#111; color:#fff; text-align:center; padding:40px 0; font-si
     © 2026 Indicatore Premium. Tutti i diritti riservati. | Contatti: info@indicatorepremium.com
   </div>
 </footer>
+
+<script>
+// Carousel automatico semplice feature
+const carousel = document.getElementById('featureCarousel');
+let scrollAmount = 0;
+function autoScroll() {
+  scrollAmount += 310; // larghezza card + gap
+  if(scrollAmount >= carousel.scrollWidth) scrollAmount = 0;
+  carousel.scrollTo({left:scrollAmount, behavior:'smooth'});
+}
+setInterval(autoScroll, 3000);
+</script>
 
 </body>
 </html>
