@@ -7,12 +7,13 @@
 
 <style>
 :root{
-  --bg:#ffffff;
+  --bg:#f5f5f7;
+  --surface:#ffffff;
   --text:#111111;
   --muted:#6e6e73;
-  --line:#e5e5e7;
-  --soft:#f5f5f7;
-  --accent:#000000;
+  --line:#e2e2e6;
+  --accent:#2563eb;
+  --accent-soft:rgba(37,99,235,.08);
 }
 
 *{
@@ -29,15 +30,15 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
 
 nav{
   position:sticky;
   top:0;
-  background:rgba(255,255,255,0.9);
-  backdrop-filter:blur(12px);
+  background:rgba(245,245,247,.75);
+  backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
   z-index:1000;
 }
@@ -56,8 +57,8 @@ nav{
   color:var(--text);
   margin-left:32px;
   font-size:14px;
-  letter-spacing:0.02em;
-  transition:opacity .2s ease;
+  letter-spacing:.02em;
+  transition:opacity .25s ease;
 }
 
 .nav-links a:hover{
@@ -65,46 +66,47 @@ nav{
 }
 
 section{
-  padding:120px 24px;
-  border-bottom:1px solid var(--line);
+  padding:160px 24px;
+  position:relative;
+  overflow:hidden;
 }
 
 .container{
-  max-width:960px;
+  max-width:1100px;
   margin:0 auto;
 }
 
 .hero{
-  padding-top:160px;
-  padding-bottom:160px;
+  padding-top:200px;
+  padding-bottom:200px;
   text-align:center;
 }
 
 h1{
-  font-size:56px;
-  line-height:1.1;
+  font-size:64px;
+  line-height:1.05;
   font-weight:600;
-  letter-spacing:-0.02em;
-  margin-bottom:32px;
+  letter-spacing:-0.03em;
+  margin-bottom:40px;
 }
 
 h2{
-  font-size:40px;
+  font-size:44px;
   font-weight:600;
   letter-spacing:-0.02em;
-  margin-bottom:32px;
+  margin-bottom:40px;
 }
 
 h3{
-  font-size:24px;
+  font-size:26px;
   font-weight:600;
   margin-bottom:16px;
 }
 
 p{
-  font-size:18px;
+  font-size:19px;
   color:var(--muted);
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
 
 .large{
@@ -113,7 +115,7 @@ p{
 }
 
 .buttons{
-  margin-top:48px;
+  margin-top:56px;
   display:flex;
   justify-content:center;
   gap:24px;
@@ -121,34 +123,76 @@ p{
 }
 
 .btn{
-  padding:16px 32px;
+  padding:16px 36px;
   font-size:16px;
   text-decoration:none;
   border-radius:999px;
-  transition:all .25s ease;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
   display:inline-block;
 }
 
 .btn-primary{
   background:var(--accent);
   color:#fff;
+  box-shadow:0 8px 24px rgba(37,99,235,.25);
 }
 
 .btn-primary:hover{
-  background:#333;
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(37,99,235,.35);
 }
 
 .btn-secondary{
   border:1px solid var(--line);
   color:var(--text);
+  background:var(--surface);
 }
 
 .btn-secondary:hover{
-  background:var(--soft);
+  background:var(--accent-soft);
+  border-color:var(--accent);
 }
 
 .feature{
-  margin-bottom:64px;
+  margin-bottom:80px;
+}
+
+/* Divider animation */
+
+.divider{
+  height:2px;
+  width:100%;
+  background:var(--line);
+  margin:140px 0 0 0;
+  position:relative;
+}
+
+.divider::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  transition:width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+section.in-view .divider::after{
+  width:100%;
+}
+
+/* Scroll reveal */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s cubic-bezier(.4,0,.2,1);
+}
+
+section.in-view .reveal{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .pricing{
@@ -162,24 +206,20 @@ p{
 }
 
 .price-new{
-  font-size:40px;
+  font-size:44px;
   font-weight:600;
-  margin:8px 0 24px;
-}
-
-.faq-item{
-  margin-bottom:40px;
+  margin:12px 0 24px;
 }
 
 .footer-cta{
   text-align:center;
-  padding:160px 24px;
+  padding:200px 24px;
 }
 
 @media (max-width:768px){
-  h1{font-size:40px;}
-  h2{font-size:32px;}
-  section{padding:96px 24px;}
+  h1{font-size:44px;}
+  h2{font-size:34px;}
+  section{padding:120px 24px;}
 }
 </style>
 </head>
@@ -198,7 +238,7 @@ p{
 </nav>
 
 <section class="hero">
-  <div class="container">
+  <div class="container reveal">
     <h1>A Structured Market Environment for Discretionary Precision</h1>
     <p class="large">All critical intraday and higher-timeframe context — unified, ordered, and embedded directly into price.</p>
     <p>Professional execution depends on structured information.</p>
@@ -208,10 +248,11 @@ p{
       <a href="#features" class="btn btn-secondary">See It in Action</a>
     </div>
   </div>
+  <div class="divider"></div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container reveal">
     <h2>The Problem</h2>
     <p>Advanced traders typically operate with:</p>
     <p>Manually drawn HTF levels.<br>
@@ -219,28 +260,26 @@ p{
     Independent ADR tools.<br>
     Separate imbalance tracking.<br>
     External economic calendars.</p>
-    <p>Each component may be valid.<br>
-    Together, they create fragmentation.</p>
-    <p>Fragmentation increases reaction time.<br>
-    Reaction time reduces execution quality.</p>
-    <p>The issue is not strategy.<br>
-    It is structural inefficiency.</p>
+    <p>Each component may be valid. Together, they create fragmentation.</p>
+    <p>Fragmentation increases reaction time. Reaction time reduces execution quality.</p>
+    <p>The issue is not strategy. It is structural inefficiency.</p>
   </div>
+  <div class="divider"></div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container reveal">
     <h2>The Solution</h2>
     <p>This indicator functions as a unified structural layer.</p>
     <p>Instead of stacking tools, it synchronizes them.</p>
     <p>Time segmentation, volatility positioning, higher-timeframe anchors, and imbalance mapping are rendered within a controlled visual hierarchy that preserves candle dominance.</p>
-    <p>The result is not more information.</p>
-    <p>It is compressed, ordered context.</p>
+    <p>The result is not more information. It is compressed, ordered context.</p>
   </div>
+  <div class="divider"></div>
 </section>
 
 <section id="features">
-  <div class="container">
+  <div class="container reveal">
     <h2>Core Features</h2>
 
     <div class="feature">
@@ -274,40 +313,11 @@ p{
     </div>
 
   </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Workflow</h2>
-    <h3>Pre-Session Structuring</h3>
-    <p>Open the chart and evaluate alignment.</p>
-    <p>Higher-timeframe anchors, volatility positioning, and session segmentation are pre-configured.</p>
-    <p>Bias formation becomes systematic.</p>
-
-    <h3>Active Session Execution</h3>
-    <p>Monitor liquidity interaction, imbalance reactions, and expansion behavior within a synchronized framework.</p>
-    <p>No re-drawing. No recalculating. No context switching.</p>
-    <p>Execution remains the primary task.</p>
-
-    <h3>Post-Session Analysis</h3>
-    <p>Review price development within the same structural architecture.</p>
-    <p>Study expansion symmetry, timing accuracy, and structural reactions without rebuilding context.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Differentiation</h2>
-    <p>This is not a predictive indicator.</p>
-    <p>It is an environmental control system.</p>
-    <p>Most tools attempt to generate signals. This framework defines boundaries, structure, and timing.</p>
-    <p>It was engineered specifically for narrative-based discretionary traders who operate through liquidity logic and structural alignment.</p>
-    <p>Distribution remains invite-only to preserve professional positioning.</p>
-  </div>
+  <div class="divider"></div>
 </section>
 
 <section id="pricing">
-  <div class="container pricing">
+  <div class="container reveal pricing">
     <h2>Pricing</h2>
     <div class="price-old">$129 per month</div>
     <div class="price-new">$109 per month</div>
@@ -318,74 +328,42 @@ p{
       <a href="#" class="btn btn-primary">Start 15-Day Free Trial</a>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Credibility</h2>
-    <p>Designed for:</p>
-    <p>Discretionary traders<br>
-    Liquidity and structure-focused operators<br>
-    Intermediate to advanced TradingView users</p>
-
-    <p>Not designed for:</p>
-    <p>Signal-dependent beginners<br>
-    Automated strategy users<br>
-    Copy-trading participants</p>
-
-    <p>Built from live discretionary execution experience with a singular objective: reduce structural friction inside the decision process.</p>
-  </div>
+  <div class="divider"></div>
 </section>
 
 <section id="faq">
-  <div class="container">
+  <div class="container reveal">
     <h2>FAQ</h2>
 
-    <div class="faq-item">
-      <h3>Is it beginner friendly?</h3>
-      <p>It assumes familiarity with market structure, liquidity, and volatility concepts.</p>
-    </div>
+    <h3>Is it beginner friendly?</h3>
+    <p>It assumes familiarity with market structure, liquidity, and volatility concepts.</p>
 
-    <div class="faq-item">
-      <h3>Does it repaint?</h3>
-      <p>No forward-projected repaint logic is used. Elements update only on confirmed data.</p>
-    </div>
+    <h3>Does it repaint?</h3>
+    <p>No forward-projected repaint logic is used. Elements update only on confirmed data.</p>
 
-    <div class="faq-item">
-      <h3>Can it be used on multiple assets?</h3>
-      <p>Yes. Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
-    </div>
+    <h3>Can it be used on multiple assets?</h3>
+    <p>Yes. Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
 
-    <div class="faq-item">
-      <h3>Does it generate trade signals?</h3>
-      <p>No. It provides structured context for discretionary decisions.</p>
-    </div>
+    <h3>Does it generate trade signals?</h3>
+    <p>No. It provides structured context for discretionary decisions.</p>
 
-    <div class="faq-item">
-      <h3>Is it multi-timeframe compatible?</h3>
-      <p>Yes. Built specifically for cross-timeframe structural alignment.</p>
-    </div>
+    <h3>Is it multi-timeframe compatible?</h3>
+    <p>Yes. Built specifically for cross-timeframe structural alignment.</p>
 
-    <div class="faq-item">
-      <h3>Can I cancel anytime?</h3>
-      <p>Yes. Cancellation is handled directly through Stripe.</p>
-    </div>
+    <h3>Can I cancel anytime?</h3>
+    <p>Yes. Cancellation is handled directly through Stripe.</p>
 
-    <div class="faq-item">
-      <h3>Does it require additional software?</h3>
-      <p>No. Runs natively within TradingView via invite-only access.</p>
-    </div>
+    <h3>Does it require additional software?</h3>
+    <p>No. Runs natively within TradingView via invite-only access.</p>
 
-    <div class="faq-item">
-      <h3>Is support available?</h3>
-      <p>Active subscribers receive support.</p>
-    </div>
+    <h3>Is support available?</h3>
+    <p>Active subscribers receive support.</p>
 
   </div>
 </section>
 
 <section class="footer-cta">
-  <div class="container">
+  <div class="container reveal">
     <h2>Execute Within a Structured Framework.</h2>
     <p>Eliminate fragmentation. Standardize context. Improve execution quality through environmental precision.</p>
     <div class="buttons">
@@ -393,6 +371,22 @@ p{
     </div>
   </div>
 </section>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("in-view");
+    }
+  });
+},{ threshold:0.15 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
