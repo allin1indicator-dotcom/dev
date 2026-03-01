@@ -7,40 +7,33 @@
 <meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
 :root{
---bg:#080e31;
---surface:#2e2e2e;
---border:#708090;
---primary:#1e70b0;
---primary-hover:#358097;
---allocation:#bfa649;
---light:#f7faf9;
---text:#f7faf9;
---muted:#a1b8bf;
+--bg:#080e31; --surface:#2e2e2e; --border:#708090;
+--primary:#1e70b0; --primary-hover:#358097; --allocation:#bfa649;
+--light:#f7faf9; --text:#f7faf9; --muted:#a1b8bf;
 --max:1200px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-background:var(--bg);
-color:var(--text);
-font-family:'Inter',sans-serif;
-line-height:1.6;
+background:var(--bg); color:var(--text);
+font-family:'Inter',sans-serif; line-height:1.6;
 overflow-x:hidden;
 }
 
 .container{width:92%;max-width:var(--max);margin:auto;}
-section{padding:5rem 0;border-bottom:1px solid rgba(112,128,144,0.15);}
-h1{font-size:3rem;font-weight:600;letter-spacing:-0.02em;}
+section{padding:5rem 0;border-bottom:1px solid rgba(112,128,144,.15);}
+
+h1{font-size:3rem;font-weight:600;letter-spacing:-.02em;}
 h2{font-size:1.8rem;margin-bottom:1rem;}
 p{color:var(--muted);}
 
+/* HERO */
 .hero{
-position:relative;height:100vh;
+position:relative;height:100vh;overflow:hidden;
 display:flex;align-items:center;justify-content:center;text-align:center;
-overflow:hidden;
 }
 
 .hero video{
@@ -50,20 +43,14 @@ object-fit:cover;opacity:.22;
 
 .hero-content{position:relative;z-index:2;max-width:850px;}
 
-.badge{
-color:var(--allocation);
-font-size:.9rem;margin-bottom:1rem;
-}
+.badge{color:var(--allocation);font-size:.9rem;margin-bottom:1rem;}
 
 .cta{
-margin-top:2rem;
+margin-top:2rem;padding:14px 30px;
 display:inline-block;
-padding:14px 30px;
-background:var(--primary);
-color:white;text-decoration:none;
-font-weight:500;
+background:var(--primary);color:#fff;text-decoration:none;
+font-weight:500;cursor:pointer;
 transition:.2s ease;
-cursor:pointer;
 }
 
 .cta:hover{background:var(--primary-hover);}
@@ -73,6 +60,7 @@ background:transparent;border:1px solid var(--border);
 margin-left:1rem;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -80,108 +68,78 @@ gap:2rem;
 }
 
 .card{
-background:var(--surface);
 padding:2rem;
-border:1px solid rgba(112,128,144,0.15);
+background:var(--surface);
+border:1px solid rgba(112,128,144,.15);
 }
 
 .screenshot{
-background:var(--light);
 padding:10px;
+background:var(--light);
 border:1px solid var(--surface);
 }
 
 .price{
-font-size:2.5rem;
-color:var(--allocation);
 margin:1rem 0;
+font-size:2.5rem;color:var(--allocation);
 }
 
 .testimonial{
+padding:2rem;margin-bottom:2rem;
 background:var(--surface);
-padding:2rem;
-margin-bottom:2rem;
-border:1px solid rgba(112,128,144,0.15);
+border:1px solid rgba(112,128,144,.15);
 }
 
 footer{
 padding:3rem 0;
-font-size:.8rem;
-color:var(--muted);
+font-size:.8rem;color:var(--muted);
 text-align:center;
 }
 
-/* Modal */
-
+/* MODAL */
 .modal{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+position:fixed;top:0;left:0;width:100%;height:100%;
+display:none;z-index:999;
 background:rgba(0,0,0,.7);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
+align-items:center;justify-content:center;
 }
 
 .modal-content{
+width:90%;max-width:600px;padding:3rem;
 background:var(--surface);
-padding:3rem;
-width:90%;
-max-width:600px;
 }
 
-input, textarea{
-width:100%;
-padding:12px;
-margin-bottom:1rem;
-background:#111;
+input,textarea{ 
+width:100%;padding:12px;margin-bottom:1rem;
+background:#111;color:#fff;
 border:1px solid rgba(112,128,144,.3);
-color:white;
 }
 
 button{
-width:100%;
-padding:14px;
-background:var(--primary);
-border:none;
-color:white;
-font-weight:500;
-cursor:pointer;
+width:100%;padding:14px;
+background:var(--primary);color:#fff;
+border:none;font-weight:500;cursor:pointer;
 }
 
-.testimonial-carousel{ position:relative; overflow:hidden; }
+/* TESTIMONIAL CAROUSEL */
+.testimonial-carousel{position:relative;overflow:hidden;}
 
-.carousel-track{
-display:flex;
-transition:transform .6s ease;
-}
+.carousel-track{display:flex;transition:transform .6s ease;}
 
 .testimonial-card{
-flex:0 0 70%;
-margin:0 15%;
+flex:0 0 70%;margin:0 15%;padding:2rem;
 background:var(--surface-1);
 border:1px solid var(--border);
-padding:2rem;
 backdrop-filter:blur(6px);
-opacity:.4;
-transform:scale(.92);
-transition:.4s ease;
-cursor:pointer;
+opacity:.4;transform:scale(.92);
+transition:.4s ease;cursor:pointer;
 }
 
-.testimonial-card.active{
-opacity:1;
-transform:scale(1);
-}
+.testimonial-card.active{opacity:1;transform:scale(1);}
 
 @media(max-width:900px){
-.testimonial-card{
-flex:0 0 85%;
-margin:0 7.5%;
+.testimonial-card{flex:0 0 85%;margin:0 7.5%;}
 }
-}
-
 </style>
 </head>
 
