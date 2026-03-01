@@ -3,586 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL IN 1 — Institutional Structural Framework</title>
-<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
-
+<title>ALL IN 1 — Institutional Context Framework</title>
+<meta name="description" content="Instant market context. Fully mapped multi-timeframe liquidity visualization for traders who demand clarity.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#050816;
---bg-alt-1:#0a1030;
---bg-alt-2:#0f1845;
---surface:rgba(255,255,255,.04);
---surface-hover:rgba(255,255,255,.06);
---border:rgba(255,255,255,.08);
+--bg:#0b0f14;
+--bg-alt-1:#11161c;
+--surface:#151b22;
 
---primary:#3a7bd5;
---primary-hover:#4f8ee8;
---allocation:#c6a85a;
---danger:#d9534f;
---text:#f2f5ff;
---muted:#98a3c7;
+--text:#f5f7fa;
+--muted:#8b98a7;
+
+--primary:#3a7cff;
+--primary-hover:#2f6be0;
+--allocation:#5fa8ff;
+
+--border:rgba(255,255,255,.06);
+
 --max:1200px;
 }
 
+/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-background:var(--bg);
-color:var(--text);
-font-family:'Inter',sans-serif;
-line-height:1.6;
-overflow-x:hidden;
-}
-
-.container{width:92%;max-width:var(--max);margin:auto;}
-
-section{
-padding:5rem 0;
-border-bottom:1px solid var(--border);
-}
-
-section:nth-of-type(odd){background:var(--bg-alt-1);}
-section:nth-of-type(even){background:var(--bg-alt-2);}
-
-h1{font-size:3rem;font-weight:600;letter-spacing:-.02em;}
-h2{font-size:1.8rem;margin-bottom:1rem;}
+body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.65; overflow-x:hidden;}
+.container{width:92%; max-width:var(--max); margin:auto;}
+section{padding:7rem 0; border-bottom:1px solid var(--border);}
+h1{font-weight:600; letter-spacing:-.02em;}
+h2{font-weight:500; margin-bottom:1rem;}
 p{color:var(--muted);}
 
-
-.hero-premium{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:0 5%;
-background:linear-gradient(to bottom,var(--bg),var(--bg-alt-1));
-}
-
-.hero-inner{
-max-width:900px;
-}
-
-.hero-eyebrow{
-letter-spacing:.2em;
-text-transform:uppercase;
-font-size:.8rem;
-color:var(--allocation);
-margin-bottom:2rem;
-}
-
-.hero-title{
-font-size:clamp(3.5rem,7vw,5.2rem);
-font-weight:600;
-letter-spacing:-.04em;
-line-height:1.05;
-margin-bottom:2rem;
-}
-
-.hero-sub{
-font-size:1.3rem;
-color:var(--muted);
-max-width:650px;
-margin:0 auto 3rem;
-}
-
-.hero-cta-wrap{
-display:flex;
-justify-content:center;
-gap:1.5rem;
-flex-wrap:wrap;
-}
-
-.cta-primary{
-padding:16px 38px;
-background:var(--primary);
-color:#fff;
-text-decoration:none;
-font-weight:500;
-letter-spacing:.02em;
-transition:.3s ease;
-}
-
-.cta-primary:hover{
-background:var(--primary-hover);
-transform:translateY(-3px);
-}
-
-.cta-ghost{
-padding:16px 38px;
-border:1px solid var(--border);
-color:var(--text);
-text-decoration:none;
-transition:.3s ease;
-}
-
-.cta-ghost:hover{
-background:rgba(255,255,255,.04);
-}
-
-/* THESIS */
-
-.thesis-block{
-padding:9rem 5%;
-background:var(--bg-alt-1);
-}
-
-.thesis-inner{
-max-width:1200px;
-margin:auto;
-}
-
-.thesis-statement{
-font-size:clamp(2.5rem,5vw,4rem);
-font-weight:500;
-letter-spacing:-.03em;
-line-height:1.1;
-margin-bottom:5rem;
-}
-
-.thesis-visual img{
-width:100%;
-border-radius:8px;
-box-shadow:0 40px 100px rgba(0,0,0,.5);
-}
-  
 /* HERO */
 .hero{
-position:relative;
-height:100vh;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:var(--bg);
+position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(to bottom,var(--bg),var(--bg-alt-1)); overflow:hidden;
 }
-
 .hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:.28;
+position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.18;
 }
+.hero-content{position:relative; z-index:2; max-width:900px;}
+.hero-eyebrow{letter-spacing:.2em; text-transform:uppercase; font-size:.85rem; color:var(--allocation); margin-bottom:2rem;}
+.hero-title{font-size:clamp(3.8rem,7vw,5.2rem); margin-bottom:2rem; line-height:1.05;}
+.hero-sub{font-size:1.3rem; color:var(--muted); max-width:700px; margin:0 auto 3rem;}
+.hero-cta-wrap{display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;}
+.cta{display:inline-block; padding:16px 36px; background:var(--primary); color:#fff; text-decoration:none; transition:.3s ease; font-weight:500; letter-spacing:.02em; cursor:pointer;}
+.cta:hover{background:var(--primary-hover); transform:translateY(-3px);}
+.cta-ghost{padding:16px 36px; border:1px solid var(--border); color:var(--text); text-decoration:none;}
+.cta-ghost:hover{background:rgba(255,255,255,.04);}
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:850px;
-}
+/* THESIS BLOCK */
+.thesis-block{padding:9rem 5%; background:var(--bg-alt-1);}
+.thesis-inner{max-width:1200px; margin:auto;}
+.thesis-statement{font-size:clamp(2.5rem,5vw,4rem); font-weight:500; line-height:1.1; margin-bottom:5rem;}
+.thesis-visual img{width:100%; border-radius:8px; box-shadow:0 40px 100px rgba(0,0,0,.5);}
 
-.badge{
-color:var(--allocation);
-font-size:.9rem;
-margin-bottom:1rem;
-}
+/* GRID CARDS */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
+.card{background:var(--surface); border:1px solid var(--border); padding:2.5rem; transition:.3s ease;}
+.card:hover{border-color:rgba(255,255,255,.12);}
 
-.cta{
-margin-top:2rem;
-padding:14px 30px;
-display:inline-block;
-background:var(--primary);
-color:#fff;
-text-decoration:none;
-font-weight:500;
-cursor:pointer;
-transition:.25s ease;
-}
+/* SCREENSHOT */
+.screenshot{padding:10px; background:var(--surface); border:1px solid var(--border);}
+.screenshot img{width:100%; border-radius:6px;}
 
-.cta:hover{
-background:var(--primary-hover);
-transform:translateY(-2px);
-}
-
-.secondary{
-background:transparent;
-border:1px solid var(--border);
-margin-left:1rem;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:2rem;
-}
-
-.card{
-padding:2rem;
-background:var(--surface);
-border:1px solid var(--border);
-backdrop-filter:blur(6px);
-}
-
-.card:hover{
-background:var(--surface-hover);
-}
-
-.screenshot{
-padding:10px;
-background:#ffffff;
-border:1px solid var(--border);
-}
-
-.price{
-margin:1rem 0;
-font-size:2.5rem;
-color:var(--allocation);
-}
-
-.testimonial{
-padding:2rem;
-margin-bottom:2rem;
-background:var(--surface);
-border:1px solid var(--border);
-}
-
-footer{
-padding:3rem 0;
-font-size:.8rem;
-color:var(--muted);
-text-align:center;
-}
-
-/* MODAL */
-.modal{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-display:none;
-z-index:999;
-background:rgba(0,0,0,.75);
-align-items:center;
-justify-content:center;
-}
-
-.modal-content{
-width:90%;
-max-width:600px;
-padding:3rem;
-background:var(--bg-alt-1);
-border:1px solid var(--border);
-}
-
-input,textarea{ 
-width:100%;
-padding:12px;
-margin-bottom:1rem;
-background:var(--bg-alt-2);
-color:#fff;
-border:1px solid var(--border);
-}
-
-button{
-width:100%;
-padding:14px;
-background:var(--primary);
-color:#fff;
-border:none;
-font-weight:500;
-cursor:pointer;
-}
-
-button:hover{
-background:var(--primary-hover);
-}
+/* PRICE */
+.price{font-size:2.5rem; color:var(--allocation); margin:1rem 0;}
 
 /* TESTIMONIAL CAROUSEL */
-.testimonial-carousel{
-position:relative;
-overflow:hidden;
-}
+.testimonial-carousel{position:relative; overflow:hidden; max-width:900px; margin:auto;}
+.carousel-track{display:flex; transition:transform 1.2s cubic-bezier(.22,.61,.36,1);}
+.testimonial-card{flex:0 0 70%; margin:0 15%; background:var(--surface); border:1px solid var(--border); padding:2.5rem; backdrop-filter:blur(8px); opacity:.35; transform:scale(.9) translateY(20px); transition:all .8s cubic-bezier(.22,.61,.36,1); cursor:pointer;}
+.testimonial-card.active{opacity:1; transform:scale(1) translateY(0);}
+.testimonial-card.left{transform:scale(.92) translateX(-40px); opacity:.5;}
+.testimonial-card.right{transform:scale(.92) translateX(40px); opacity:.5;}
+.testimonial-progress{position:relative; height:2px; width:100%; margin-top:2rem; background:rgba(255,255,255,.08); overflow:hidden;}
+.testimonial-progress-bar{height:100%; width:0%; background:var(--allocation); transition:width 6.5s linear;}
+@media(max-width:900px){.testimonial-card{flex:0 0 85%; margin:0 7.5%;}}
 
-.carousel-track{
-display:flex;
-transition:transform 1.2s cubic-bezier(.22,.61,.36,1);
-}
-
-.testimonial-progress{
-position:relative;
-height:2px;
-width:100%;
-margin-top:2rem;
-background:rgba(255,255,255,.08);
-overflow:hidden;
-}
-
-.testimonial-progress-bar{
-height:100%;
-width:0%;
-background:var(--accent);
-transition:width 6.5s linear;
-}
-
-.testimonial-card{
-flex:0 0 70%;
-margin:0 15%;
-background:var(--surface);
-border:1px solid var(--border);
-padding:2.5rem;
-backdrop-filter:blur(8px);
-opacity:.35;
-transform:scale(.9) translateY(20px);
-transition:all .8s cubic-bezier(.22,.61,.36,1);
-cursor:pointer;
-will-change:transform;
-}
-
-.testimonial-card.active{
-opacity:1;
-transform:scale(1) translateY(0);
-}
-
-.testimonial-card.left{
-transform:scale(.92) translateX(-40px);
-opacity:.5;
-}
-
-.testimonial-card.right{
-transform:scale(.92) translateX(40px);
-opacity:.5;
-}
-
-@media(max-width:900px){
-.testimonial-card{
-flex:0 0 85%;
-margin:0 7.5%;
-}
-}
+/* FOOTER */
+footer{padding:3rem 0; font-size:.8rem; color:var(--muted); text-align:center;}
+.modal{position:fixed; top:0; left:0; width:100%; height:100%; display:none; z-index:999; background:rgba(0,0,0,.7); align-items:center; justify-content:center;}
+.modal-content{width:90%; max-width:600px; padding:3rem; background:var(--surface);}
+input,textarea{width:100%; padding:12px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid rgba(255,255,255,.2);}
+button{width:100%; padding:14px; background:var(--primary); color:#fff; border:none; font-weight:500; cursor:pointer;}
 </style>
 </head>
-
 <body>
-<section class="hero-premium">
-  <div class="hero-inner">
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
     <p class="hero-eyebrow">Multi-Timeframe Liquidity Intelligence</p>
-
-    <h1 class="hero-title">
-      Precision is not optional.
-    </h1>
-
-    <p class="hero-sub">
-      Institutional-grade session structure for traders who execute with intent.
-    </p>
-
+    <h1 class="hero-title">Precision is not optional.</h1>
+    <p class="hero-sub">A fully mapped liquidity framework. Multi-timeframe. Instantly loaded.</p>
     <div class="hero-cta-wrap">
-      <a href="#purchase" class="cta-primary">Get Access</a>
+      <a href="#purchase" class="cta">Get Access</a>
       <a href="#proof" class="cta-ghost">See It In Action</a>
     </div>
   </div>
 </section>
 
+<!-- THESIS / VISUAL -->
 <section class="thesis-block">
   <div class="thesis-inner">
-    <h2 class="thesis-statement">
-      You don’t trade candles.<br>
-      You trade liquidity.
-    </h2>
-
+    <h2 class="thesis-statement">You don’t trade candles.<br>You trade liquidity.</h2>
     <div class="thesis-visual">
-      <video autoplay muted loop playsinline preload="metadata">
-      <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
-      </video>
+      <img src="your-screenshot.jpg" alt="Indicator Context Example">
     </div>
   </div>
 </section>
-<section id="framework">
-<div class="container grid">
-<div class="card">
-<h3>Session Boundary Engine</h3>
-<p>Time segmentation from Daily to Yearly with structural persistence.</p>
-</div>
-<div class="card">
-<h3>Liquidity Interaction Matrix</h3>
-<p>Cross-timeframe raid detection without signal dependency.</p>
-</div>
-<div class="card">
-<h3>Range Memory Architecture</h3>
-<p>High/Low structural continuity embedded into execution workflow.</p>
-</div>
-</div>
-</section>
 
+<!-- FEATURE GRID -->
 <section>
-<div class="container">
-<h2>Structural Replay</h2>
-<div class="screenshot">
-<img src="IMG_6788.jpeg" style="width:100%;">
-</div>
-</div>
+  <div class="container grid">
+    <div class="card">
+      <h3>Session Boundary Engine</h3>
+      <p>Time segmentation from Daily to Yearly with structural persistence.</p>
+    </div>
+    <div class="card">
+      <h3>Liquidity Interaction Matrix</h3>
+      <p>Cross-timeframe raid detection without signal dependency.</p>
+    </div>
+    <div class="card">
+      <h3>Range Memory Architecture</h3>
+      <p>High/Low structural continuity embedded into execution workflow.</p>
+    </div>
+  </div>
 </section>
 
+<!-- SCREENSHOT / PROOF -->
+<section id="proof">
+  <div class="container">
+    <h2>Visual Context Example</h2>
+    <div class="screenshot">
+      <img src="proof-chart.jpg" alt="Full chart context">
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="purchase">
+  <div class="container">
+    <h2>Reserve your seat</h2>
+    <div class="price">$109 / month (first 12 months)</div>
+    <p>Standard Allocation: $129 / month. 14-day trial. Allocation required. No refund post-trial.</p>
+    <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="cta">Subscribe Now</a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL CAROUSEL -->
 <section>
-<div class="container">
-<p>Launched March 2026</p>
-<h2>Reserve your seat: $109 / month (first 12 months, then 129$/month)</h2>
-<p>Standard Allocation: $129/month</p>
-<div class="price">$109 / month</div>
-<p>14-Day Trial. Allocation required. No refund post-trial.</p>
-</div>
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:3rem;">Trader Validation</h2>
+    <div class="testimonial-carousel">
+      <div class="carousel-track">
+        <div class="testimonial-card active">
+          <strong>🇮🇹 Matteo V. — Crypto Intraday Trader</strong>
+          <p>Structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
+        </div>
+        <div class="testimonial-card">
+          <strong>🇺🇸 Kevin L. — Futures Trader</strong>
+          <p>Sessions and structural levels appear exactly where they should. Full context instantly mapped.</p>
+        </div>
+        <div class="testimonial-card">
+          <strong>🇸🇦 Mohamed D. — Forex & Commodities</strong>
+          <p>Alerts changed everything. Context is ready when price interacts. Patience and consistency improved immediately.</p>
+        </div>
+        <div class="testimonial-card">
+          <strong>🇮🇪 Thomas W. — Futures Intraday</strong>
+          <p>Real-time session automation removed manual prep. Stress dropped. Execution confidence increased materially.</p>
+        </div>
+      </div>
+      <div class="testimonial-progress"><div class="testimonial-progress-bar"></div></div>
+    </div>
+  </div>
 </section>
 
-
-<section>
-<div class="container">
-<h2 style="text-align:center;margin-bottom:3rem;">Trader Validation</h2>
-
-<div class="testimonial-carousel">
-
-<div class="carousel-track">
-
-<div class="testimonial-card active">
-<strong>🇮🇹 Matteo V. — Crypto Intraday Trader (300k payouts in 2023)</strong>
-<p>I used to manually draw key levels before every livestream. Now structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
-<div class="testimonial-progress">
-  <div class="testimonial-progress-bar"></div>
-</div>
-</div>
-
-<div class="testimonial-card">
-<strong>🇺🇸 Kevin L. — Futures Swing / Intraday Trader</strong>
-<p>Sessions and structural levels appear exactly where they should. I open the chart and full context is already mapped. Nothing unnecessary survives.</p>
-</div>
-
-<div class="testimonial-card">
-<strong>🇸🇦 Mohamed D. — Commodities & Forex Trader</strong>
-<p>Alerts changed everything. I don’t stare at charts anymore. Context is ready when price interacts. Patience and consistency improved immediately.</p>
-</div>
-
-<div class="testimonial-card">
-<strong>🇮🇪 Thomas W. — Futures Intraday Trader</strong>
-<p>Real-time session automation removed manual prep. Stress dropped. Execution confidence increased materially.</p>
-</div>
-
-</div>
-</div>
-
-</div>
-</section>
-
-  
-<section>
-<div class="container">
-<h2>Trader's Feedback</h2>
-
-<div class="testimonial">
-<strong> 🇮🇪 Thomas W. — Futures Intraday Trader</strong>
-<p>Marking sessions, highs and gaps after work left me a step behind. Everything now updates in real‑time, so I never chase the chart. Stress is down, confidence is up— I can’t believe I ever traded without it.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🇺🇸 Amairani R. — Stock Swing Trader</strong>
-<p>Before I juggled five‑plus indicators, the chart was a mess and candles were hidden. This tool consolidates everything I actually use, keeps visuals out of the way and delivers reliable alerts. Building my daily narrative is now a pleasure.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🇵🇹 Johny F. — Index and Futures Operator</strong>
-<p>Version after version the tool got sharper. Key levels pop up exactly when they should and price reactions become crystal clear. If it vanished tomorrow I’d feel blind — that says it all.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🇮🇹 Matteo V. — Crypto Intraday Trader (300k payouts in 2023)</strong>
-<p>I used to draw midnight opens, gaps and daily/weekly levels by hand before my livestreams. 
-I was slow and error‑prone. Now they appear clean, centered and exactly how I want them. 
-A truly useful tool, highly recommended.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🇺🇸  Kevin L. — Futures Swing/Intraday Trader</strong>
-<p>I’ve been using it since the first beta. Sessions, timing and levels appear exactly where I need, no forced overlays. I open the chart and the full context is already there. That’s the highest compliment I can give.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🇸🇦  Mohamed D. — Commodities and Forex Trader</strong>
-<p>The alerts changed everything. I no longer stare at charts all day; a phone ping tells me a level was hit and the context is already on screen. I even run it on correlated pairs for SMT. It forces patience, consistency and frees me up when life gets busy.</p>
-</div>
-
-<div class="testimonial">
-<strong> 🔧 Riccardo F.  — Built from Necessity, refined because we deserve more.</strong>
-<p>I created this indicator out of frustration—messy charts, unsynced tools, endless manual drawing. After years of ICT study I wanted one framework that showed timing and liquidity without fighting price. Early users broke it, uncovered bugs and demanded features; each iteration was rebuilt, refined and stripped to what truly works. Today it’s the clean, fast, consistent overlay I rely on from session open to close. If it’s on the chart, it earned its place.</p>
-</div>
-  
-</div>
-</section>
-
+<!-- FOOTER -->
 <footer>
 Operated by R-TradingTools. Educational framework only.  
-<a href="#" onclick="openDisclosure()">Full Risk Disclosure</a>
+<a href="#" onclick="document.getElementById('riskModal').style.display='flex'">Full Risk Disclosure</a>
 </footer>
 
-<!-- Risk Disclosure Modal -->
+<!-- RISK MODAL -->
 <div class="modal" id="riskModal">
-<div class="modal-content">
-<h2>Risk Disclosure</h2>
-<p>Trading involves substantial risk. This framework is educational. No financial advice. Past structural behavior does not guarantee future market outcomes.</p>
-<button onclick="closeDisclosure()">Close</button>
-</div>
+  <div class="modal-content">
+    <h2>Risk Disclosure</h2>
+    <p>Trading involves substantial risk. This framework is educational. Past behavior does not guarantee future outcomes.</p>
+    <button onclick="document.getElementById('riskModal').style.display='none'">Close</button>
+  </div>
 </div>
 
 <script>
-function openModal(){document.getElementById('applyModal').style.display='flex';}
-function openDisclosure(){document.getElementById('riskModal').style.display='flex';}
-function closeDisclosure(){document.getElementById('riskModal').style.display='none';}
-window.onclick=function(e){
-if(e.target==document.getElementById('applyModal')){applyModal.style.display='none';}
-if(e.target==document.getElementById('riskModal')){riskModal.style.display='none';}
-};
-</script>
-<script>
+/* Modal */
+window.onclick = function(e){
+  if(e.target==document.getElementById('riskModal')) document.getElementById('riskModal').style.display='none';
+}
+
+/* Testimonial Carousel */
 const track=document.querySelector('.carousel-track');
 const cards=document.querySelectorAll('.testimonial-card');
 const progress=document.querySelector('.testimonial-progress-bar');
-
-let index=0;
-let auto;
-const duration=6500;
+let index=0, auto, duration=6500;
 
 function animateProgress(){
-progress.style.transition='none';
-progress.style.width='0%';
-void progress.offsetWidth; 
-progress.style.transition=`width ${duration}ms linear`;
-progress.style.width='100%';
+  progress.style.transition='none'; progress.style.width='0%';
+  void progress.offsetWidth;
+  progress.style.transition=`width ${duration}ms linear`;
+  progress.style.width='100%';
 }
 
 function updateCarousel(){
-track.style.transform=`translateX(-${index*100}%)`;
-
-cards.forEach(c=>{
-c.classList.remove('active','left','right');
-});
-
-cards[index].classList.add('active');
-if(cards[index-1]) cards[index-1].classList.add('left');
-if(cards[index+1]) cards[index+1].classList.add('right');
-
-animateProgress();
+  track.style.transform=`translateX(-${index*100}%)`;
+  cards.forEach(c=>c.classList.remove('active','left','right'));
+  cards[index].classList.add('active');
+  if(cards[index-1]) cards[index-1].classList.add('left');
+  if(cards[index+1]) cards[index+1].classList.add('right');
+  animateProgress();
 }
 
 cards.forEach((card,i)=>{
-card.addEventListener('click',()=>{
-index=i;
-updateCarousel();
-resetAuto();
-});
+  card.addEventListener('click',()=>{index=i; updateCarousel(); resetAuto();});
 });
 
-function next(){
-index=(index+1)%cards.length;
-updateCarousel();
-}
-
-function startAuto(){
-animateProgress();
-auto=setInterval(next,duration);
-}
-
-function resetAuto(){
-clearInterval(auto);
-startAuto();
-}
+function next(){index=(index+1)%cards.length; updateCarousel();}
+function startAuto(){animateProgress(); auto=setInterval(next,duration);}
+function resetAuto(){clearInterval(auto); startAuto();}
 
 updateCarousel();
 startAuto();
