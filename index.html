@@ -3,392 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0f1113">
-<title>ALL IN 1 — Structural Execution Framework</title>
-
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      as="style" onload="this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-                rel="stylesheet"></noscript>
-
-<meta name="description"
-      content="All‑in‑One structural execution framework for traders – sessions, liquidity, gaps, volatility and events mapped in a single layer.">
-<meta property="og:title" content="ALL IN 1 — Structural Execution Framework">
-<meta property="og:description" content="One structural framework, fully mapped, instantly loaded.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://your-domain.com/">
-<meta property="og:image" content="https://your-domain.com/preview.jpg">
+<title>All In 1 – Structural Execution Framework</title>
+<meta name="description" content="Invite-only TradingView structural execution framework. Full market structure. Instantly loaded. Built for profitable day traders.">
 
 <style>
-/* -------------------------------------------------
-   Design tokens – based on the common 16 px grid
-   ------------------------------------------------- */
 :root{
-  --bg:#0f1113;
-  --surface:#15181b;
-  --text:#e8ecef;
-  --muted:#b0b8c0;
-  --accent:#ffffff;
-  --border:#23272b;
-
-  --gap:16px;               /* base spacing */
-  --gap-lg:calc(var(--gap) * 2);   /* 32 px */
-  --gap-xl:calc(var(--gap) * 3);   /* 48 px */
+  --tv-bg:#0e0f14;
+  --tv-surface:#151822;
+  --tv-surface-2:#1c2130;
+  --tv-border:#2a3142;
+  --tv-text:#e6e9f2;
+  --tv-muted:#9aa3b2;
+  --tv-accent:#2962ff;
+  --tv-accent-2:#00bcd4;
+  --tv-danger:#ef5350;
+  --tv-radius:14px;
+  --tv-max:1180px;
 }
 
-/* -------------------------------------------------
-   Reset & global styles
-   ------------------------------------------------- */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-img,video{display:block;max-width:100%;height:auto;}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--tv-bg);
+  color:var(--tv-text);
   line-height:1.6;
-  -webkit-font-smoothing:antialiased;
 }
+.container{max-width:var(--tv-max);margin:auto;padding:0 24px}
+section{padding:90px 0}
+h1,h2,h3,h4,h5,h6{font-weight:600;letter-spacing:-0.02em}
+h1{font-size:44px;margin-bottom:20px}
+h2{font-size:32px;margin-bottom:20px}
+h3{font-size:22px;margin-bottom:12px}
+h4{font-size:18px;margin-bottom:10px}
+p{color:var(--tv-muted);margin-bottom:16px}
+a{text-decoration:none;color:inherit}
 
-/* -------------------------------------------------
-   Layout containers
-   ------------------------------------------------- */
-.wrapper{
-  max-width:1200px;               /* typical max width */
-  margin:0 auto;
-  padding:0 var(--gap);
-}
-
-/* -------------------------------------------------
-   Typography
-   ------------------------------------------------- */
-h1{
-  font-size:clamp(32px,6vw,56px);
-  font-weight:700;
-  letter-spacing:-0.03em;
-  line-height:1.1;
-  margin-bottom:var(--gap-xl);
-}
-h2{
-  font-size:1.75rem;
-  font-weight:700;
-  margin-bottom:var(--gap);
-}
-h3{
-  font-size:1.125rem;
-  font-weight:600;
-  margin-bottom:calc(var(--gap)/2);
-}
-p{
-  font-size:1rem;
-  color:var(--muted);
-  max-width:720px;
-  margin-bottom:var(--gap);
-}
-
-/* -------------------------------------------------
-   Buttons
-   ------------------------------------------------- */
-.button{
-  display:inline-block;
-  padding:12px 24px;
-  background:var(--accent);
-  color:#000;
-  text-decoration:none;
-  font-weight:600;
-  font-size:.875rem;
-  border-radius:4px;
-  transition:opacity .2s ease;
-}
-.button:hover{opacity:.85;}
-.button:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:2px;
-}
-
-/* -------------------------------------------------
-   Sticky navigation
-   ------------------------------------------------- */
-.nav{
-  position:sticky;
-  top:0;
-  background:var(--bg);
-  z-index:10;
-  padding:var(--gap) 0;
-}
-.nav-inner{
-  display:flex;
-  justify-content:space-between;
+.hero{padding:120px 0 90px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:60px;
   align-items:center;
-}
-.logo{
-  color:var(--accent);
-  font-size:1.125rem;
-  font-weight:600;
-}
-.nav-cta{
-  background:var(--accent);
-  color:#000;
-}
-
-/* -------------------------------------------------
-   Hero
-   ------------------------------------------------- */
-.hero{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-.hero-video{
-  width:100%;
-  filter:brightness(1.06);
-}
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.25);
-}
-.hero-inner{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0 var(--gap);
-}
-.hero-inner h1{
-  text-shadow:0 4px 10px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
-}
-.hero-inner p{
-  font-size:1.5rem;
-  font-weight:550;
-  color:var(--text);
-  max-width:720px;
-  margin-bottom:0;
-  text-shadow:0 3px 6px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
-}
-
-/* -------------------------------------------------
-   Pricing banner
-   ------------------------------------------------- */
-.pricing-banner{
-  background:var(--surface);
-  padding:var(--gap-xl) var(--gap);
-  text-align:center;
 }
 .badge{
   display:inline-block;
-  background:#ffb400;
-  color:#000;
-  padding:4px 12px;
-  border-radius:12px;
-  margin-bottom:var(--gap);
-  font-size:.875rem;
+  padding:6px 12px;
+  background:var(--tv-surface-2);
+  border:1px solid var(--tv-border);
+  border-radius:50px;
+  font-size:12px;
+  color:var(--tv-muted);
+  margin-bottom:20px;
 }
-.price{
-  font-size:2rem;
-  font-weight:700;
-  color:var(--accent);
-  margin-bottom:var(--gap);
+.cta-row{
+  display:flex;
+  gap:16px;
+  margin-top:24px;
+  flex-wrap:wrap;
 }
-.price span{
-  font-size:.6em;
+.btn{
+  padding:14px 22px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+  border:1px solid transparent;
+  transition:0.2s ease;
 }
-
-/* -------------------------------------------------
-   Two‑column layout
-   ------------------------------------------------- */
-.two-col{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:var(--gap-xl);
-  align-items:start;
+.btn-primary{
+  background:var(--tv-accent);
+  color:white;
 }
-@media (max-width:1024px){
-  .two-col{grid-template-columns:1fr;}
+.btn-primary:hover{opacity:0.9}
+.btn-outline{
+  border:1px solid var(--tv-border);
+  background:transparent;
 }
-
-/* -------------------------------------------------
-   Card component
-   ------------------------------------------------- */
 .card{
-  background:var(--surface);
-  padding:var(--gap-xl);
-  border:1px solid var(--border);
-  border-radius:6px;
+  background:var(--tv-surface);
+  border:1px solid var(--tv-border);
+  border-radius:var(--tv-radius);
+  padding:28px;
 }
-
-/* -------------------------------------------------
-   List inside “Execution Inside Structure”
-   ------------------------------------------------- */
-.list p{
-  margin-bottom:calc(var(--gap)/2);
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
-
-/* -------------------------------------------------
-   Scroll indicator
-   ------------------------------------------------- */
-.scroll-indicator{
-  position:absolute;
-  bottom:var(--gap);
-  left:50%;
-  transform:translateX(-50%);
-  width:22px;
-  height:36px;
-  border:2px solid rgba(255,255,255,.7);
-  border-radius:14px;
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:32px;
 }
-.scroll-indicator::after{
-  content:'';
-  position:absolute;
-  top:6px;
-  left:50%;
-  width:4px;
-  height:6px;
-  background:#fff;
-  border-radius:2px;
-  transform:translateX(-50%);
-  animation:scroll 2.4s infinite;
+.contrast{
+  background:var(--tv-surface-2);
+  border-top:1px solid var(--tv-border);
+  border-bottom:1px solid var(--tv-border);
 }
-@keyframes scroll{
-  0%{opacity:0;transform:translate(-50%,0);}
-  40%{opacity:1;}
-  100%{opacity:0;transform:translate(-50%,12px);}
-}
-
-/* -------------------------------------------------
-   Footer
-   ------------------------------------------------- */
-.footer{
-  padding:var(--gap-xl) 0;
+.pricing{text-align:center}
+.price-box{max-width:480px;margin:40px auto 0}
+.price{font-size:40px;font-weight:700}
+.faq-item{margin-bottom:28px}
+footer{
+  padding:60px 0;
+  border-top:1px solid var(--tv-border);
+  color:var(--tv-muted);
+  font-size:13px;
   text-align:center;
-  font-size:.875rem;
-  color:var(--muted);
 }
-
-/* -------------------------------------------------
-   Responsive tweaks
-   ------------------------------------------------- */
-@media (max-width:768px){
-  h1{font-size:2rem;}
+@media(max-width:960px){
+  .hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}
 }
 </style>
 </head>
+
 <body>
 
-<!-- Sticky Nav -->
-<header class="nav">
-  <div class="wrapper nav-inner">
-    <h1 class="logo">ALL‑IN‑1 Framework</h1>
-    <a href="#" class="button nav-cta">Start Free Trial</a>
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Invite-Only • Launched February 2026</span>
+      <h1>One Execution Layer.<br>Fully Mapped. Instantly Loaded.</h1>
+      <p>Professional market-structure overlay for profitable day traders. No manual drawing. No tab switching. No structural rebuilding.</p>
+      <div class="cta-row">
+        <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Start 15-Day Trial</a>
+        <a href="#pricing" class="btn btn-outline">View Subscription</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Core Promise</h3>
+      <p>Full market structure embedded directly inside price. Context persists. Narrative stabilizes across sessions.</p>
+      <h4>Positioning</h4>
+      <p>Execution framework. Not signals. Not predictive. Structured discretion only.</p>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <video autoplay muted loop playsinline class="hero-video" loading="lazy">
-    <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner wrapper">
-    <h1>One Structural Framework.<br>Fully Mapped. Instantly Loaded.</h1>
-    <p>Real‑time sessions, HTF pivots, liquidity, gaps and volatility — unified into one execution layer.</p>
-    <a href="#" class="button" aria-label="Start 15‑Day Free Trial">Start 15‑Day Free Trial</a>
-  </div>
-  <div class="scroll-indicator" aria-hidden="true"></div>
-</section>
-
-<!-- Pricing Banner -->
-<section class="pricing-banner">
-  <div class="wrapper">
-    <div class="badge">Best Value</div>
-    <div class="price">$109<span>/month</span></div>
-    <a href="#" class="button">Start 15‑Day Free Trial</a>
-  </div>
-</section>
-
-<div class="wrapper">
-
-  <!-- TWO‑COLUMN MAIN CONTENT -->
-  <section class="two-col">
-
-    <!-- LEFT COLUMN -->
-    <article class="left">
-
-      <section aria-labelledby="consistency">
-        <h2 id="consistency">Structural Consistency Over Fragmentation</h2>
-        <p>Most traders don’t lack strategy. They lack structural continuity.</p>
-        <p>Context fragments. Execution degrades.</p>
-        <p><strong>ALL IN 1 eliminates rebuilding.</strong> Open the chart. Structure is already mapped.</p>
-      </section>
-
-      <section aria-labelledby="execution">
-        <h2 id="execution">Execution Inside Structure</h2>
-        <div class="list">
-          <p>• Narrative visible immediately across timeframes</p>
-          <p>• Bias framed before execution</p>
-          <p>• Volatility measurable, not emotional</p>
-          <p>• Structural references consistent session to session</p>
-          <p>• Reduced screen dependency</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="scope">
-        <h2 id="scope">Defined Scope</h2>
-        <p>Does not generate entries. Does not predict direction. Does not automate trades.</p>
-        <p><strong>It amplifies structured discretion.</strong></p>
-      </section>
-
-    </article>
-
-    <!-- RIGHT COLUMN -->
-    <aside class="right" aria-labelledby="architecture">
-      <h2 id="architecture">Architectural Layer</h2>
-      <div class="grid">
-        <div><h3>Session Structure</h3><p>Asia, London, New York ranges persist until structurally invalidated.</p></div>
-        <div><h3>Liquidity Mapping</h3><p>D/W/M/Q/Y highs & lows extend forward across timeframes.</p></div>
-        <div><h3>Gap Framework</h3><p>RTH and Weekly opening gaps remain active until resolved.</p></div>
-        <div><h3>Volatility Context</h3><p>5‑Day ADR projects measurable daily expansion.</p></div>
-        <div><h3>Event Awareness</h3><p>High‑impact economic events and holiday sessions mapped directly on chart.</p></div>
-        <div><h3>State‑Based Alerts</h3><p>Notifications trigger on structural interaction. Replay fully preserved.</p></div>
+<section>
+  <div class="container">
+    <h2>Cognitive Fragmentation</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Manual Plotting</h3>
+        <p>Repeated structural rebuilding wastes preparation time.</p>
       </div>
-    </aside>
-
-  </section>
-
-  <!-- TESTIMONIAL CAROUSEL -->
-  <section aria-labelledby="testimonials">
-    <h2 id="testimonials">Traders</h2>
-    <div class="testimonial active">
-      <p>“Manual session marking and HTF scanning are gone. The framework loads aligned across timeframes. Execution feels deliberate.”<br><br><strong>— Thomas W.</strong></p>
+      <div class="card">
+        <h3>Tab Switching</h3>
+        <p>Context split across layouts weakens execution flow.</p>
+      </div>
+      <div class="card">
+        <h3>Indicator Stacking</h3>
+        <p>Overlays compete for attention. Price loses priority.</p>
+      </div>
     </div>
-    <div class="testimonial">
-      <p>“Replaced multiple tools with one consistent structural layer. Alerts tied to liquidity levels changed my workflow.”<br><br><strong>— Kevin L.</strong></p>
-    </div>
-    <div class="testimonial">
-      <p>“The clarity of structure lets me focus on price action, not data overload.”<br><br><strong>— Maya R.</strong></p>
-    </div>
-  </section>
+  </div>
+</section>
 
-</div>
+<section class="contrast">
+  <div class="container">
+    <h2>Structural Shift</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Instant Narrative</h3>
+        <p>Sessions, highs/lows, gaps and projections mapped automatically.</p>
+      </div>
+      <div>
+        <h3>Persistent Context</h3>
+        <p>Levels extend forward and change state when interacted with.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer class="footer">
-  © 2026 R‑TradingTools — Full Market Structure. Instantly Mapped.
+<section>
+  <div class="container">
+    <h2>Structural Components</h2>
+    <div class="grid-3">
+      <div class="card"><h3>Sessions</h3><p>Asia, London, New York. Persistent until invalidated.</p></div>
+      <div class="card"><h3>HTF Projections</h3><p>D/W/M/Q/Y highs and lows projected forward.</p></div>
+      <div class="card"><h3>Gap Logic</h3><p>NY close–open and weekly opening gaps.</p></div>
+      <div class="card"><h3>HOD / LOD</h3><p>Real-time tracking with structural state logic.</p></div>
+      <div class="card"><h3>5-Day ADR</h3><p>Projected range expectation.</p></div>
+      <div class="card"><h3>Advanced Logic</h3><p>Custom opens, economic calendar, holiday session filters.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contrast">
+  <div class="container">
+    <h2>Behavioral Intelligence</h2>
+    <div class="grid-3">
+      <div class="card"><h3>State-Based Alerts</h3><p>Structural interaction triggers. Reduced screen dependency.</p></div>
+      <div class="card"><h3>Auto-Adjustment</h3><p>Overlaps resolve automatically. Labels reposition.</p></div>
+      <div class="card"><h3>Replay Compatible</h3><p>Historical interaction preserved for review and media.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Execution Benefits</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Preparation in Seconds</h3>
+        <p>What required minutes now loads instantly.</p>
+      </div>
+      <div class="card">
+        <h3>Complete Context in Screenshots</h3>
+        <p>Recordings and shared charts retain full structural narrative.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contrast">
+  <div class="container">
+    <h2>Installation</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>1. Subscribe</h3>
+        <p>Activate 15-day full trial via Stripe.</p>
+      </div>
+      <div class="card">
+        <h3>2. Invite Access</h3>
+        <p>Receive TradingView invite during onboarding window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h4>Is this automated trading?</h4>
+      <p>No. Structured discretion support only.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Who is it for?</h4>
+      <p>Profitable, confident intraday traders.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Why subscription?</h4>
+      <p>Revenue reinvested into structural expansion and advertising growth.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="contrast">
+  <div class="container pricing">
+    <h2>Limited Onboarding Capacity</h2>
+    <div class="card price-box">
+      <h3>Monthly Subscription</h3>
+      <p class="price">$109<span style="font-size:16px;color:var(--tv-muted)"> / month</span></p>
+      <p>15-day full trial included.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Start Trial</a>
+        <a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="btn btn-outline">Book Private Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="text-align:center">
+    <h2>Structural Consistency Replaces Fragmentation</h2>
+    <p>Context precedes precision. Precision precedes performance.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:30px">
+      <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Request Access</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 All In 1. Invite-Only TradingView Indicator. Independent product.
 </footer>
-
-<script>
-/* Simple testimonial carousel – rotates every 5 s */
-const testimonials = document.querySelectorAll('.testimonial');
-let cur = 0;
-setInterval(() => {
-  testimonials[cur].classList.remove('active');
-  cur = (cur + 1) % testimonials.length;
-  testimonials[cur].classList.add('active');
-}, 5000);
-</script>
 
 </body>
 </html>
