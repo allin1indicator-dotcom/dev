@@ -120,14 +120,35 @@ width:100%;padding:14px;
 background:var(--primary);color:#fff;
 border:none;font-weight:500;cursor:pointer;
 }
+
+  
 .testimonial-carousel{
 position:relative;
 overflow:hidden;
 }
-
+<div class="testimonial-progress">
+  <div class="testimonial-progress-bar"></div>
+</div>
+  
 .carousel-track{
 display:flex;
 transition:transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+.testimonial-progress{
+position:relative;
+height:2px;
+width:100%;
+margin-top:2rem;
+background:rgba(255,255,255,.08);
+overflow:hidden;
+}
+
+.testimonial-progress-bar{
+height:100%;
+width:0%;
+background:var(--accent);
+transition:width 6.5s linear;
 }
 
 .testimonial-card{
@@ -328,8 +349,19 @@ if(e.target==document.getElementById('riskModal')){riskModal.style.display='none
 <script>
 const track=document.querySelector('.carousel-track');
 const cards=document.querySelectorAll('.testimonial-card');
+const progress=document.querySelector('.testimonial-progress-bar');
+
 let index=0;
 let auto;
+const duration=6500;
+
+function animateProgress(){
+progress.style.transition='none';
+progress.style.width='0%';
+void progress.offsetWidth; 
+progress.style.transition=`width ${duration}ms linear`;
+progress.style.width='100%';
+}
 
 function updateCarousel(){
 track.style.transform=`translateX(-${index*100}%)`;
@@ -339,13 +371,10 @@ c.classList.remove('active','left','right');
 });
 
 cards[index].classList.add('active');
+if(cards[index-1]) cards[index-1].classList.add('left');
+if(cards[index+1]) cards[index+1].classList.add('right');
 
-if(cards[index-1]){
-cards[index-1].classList.add('left');
-}
-if(cards[index+1]){
-cards[index+1].classList.add('right');
-}
+animateProgress();
 }
 
 cards.forEach((card,i)=>{
@@ -362,7 +391,8 @@ updateCarousel();
 }
 
 function startAuto(){
-auto=setInterval(next,6500);
+animateProgress();
+auto=setInterval(next,duration);
 }
 
 function resetAuto(){
