@@ -8,107 +8,126 @@
 
 <style>
 :root{
-  --tv-bg:#0e0f14;
-  --tv-surface:#151822;
-  --tv-surface-2:#1c2130;
-  --tv-border:#2a3142;
-  --tv-text:#e6e9f2;
-  --tv-muted:#9aa3b2;
-  --tv-accent:#2962ff;
-  --tv-accent-2:#00bcd4;
-  --tv-danger:#ef5350;
-  --tv-radius:14px;
-  --tv-max:1180px;
+  --bg:#0c0f14;
+  --surface:#141924;
+  --surface-2:#1b2230;
+  --border:#273043;
+  --text:#e8ecf3;
+  --muted:#8f98a8;
+  --accent:#2962ff;
+  --accent-strong:#1e4ed8;
+
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+
+  --shadow-sm:0 6px 20px rgba(0,0,0,0.25);
+  --shadow-md:0 20px 60px rgba(0,0,0,0.35);
+  --shadow-lg:0 40px 120px rgba(0,0,0,0.45);
+
+  --max:1180px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:var(--tv-bg);
-  color:var(--tv-text);
+  background:radial-gradient(circle at 20% 0%, #111624 0%, var(--bg) 60%);
+  color:var(--text);
   line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
-.container{max-width:var(--tv-max);margin:auto;padding:0 24px}
-section{padding:90px 0}
-h1,h2,h3,h4,h5,h6{font-weight:600;letter-spacing:-0.02em}
-h1{font-size:44px;margin-bottom:20px}
-h2{font-size:32px;margin-bottom:20px}
-h3{font-size:22px;margin-bottom:12px}
-h4{font-size:18px;margin-bottom:10px}
-p{color:var(--tv-muted);margin-bottom:16px}
+.container{max-width:var(--max);margin:auto;padding:0 24px}
+section{padding:110px 0}
+h1,h2,h3,h4{letter-spacing:-0.02em;font-weight:600}
+h1{font-size:48px;line-height:1.15;margin-bottom:24px;max-width:16ch}
+h2{font-size:34px;margin-bottom:28px}
+h3{font-size:20px;margin-bottom:12px}
+p{color:var(--muted);max-width:70ch}
 a{text-decoration:none;color:inherit}
-
-.hero{padding:120px 0 90px}
+.badge{
+  display:inline-block;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:50px;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.hero{
+  padding:140px 0 110px;
+}
 .hero-grid{
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
-  gap:60px;
+  gap:70px;
   align-items:center;
 }
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  background:var(--tv-surface-2);
-  border:1px solid var(--tv-border);
-  border-radius:50px;
-  font-size:12px;
-  color:var(--tv-muted);
-  margin-bottom:20px;
+.hero-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:40px;
+  box-shadow:var(--shadow-md);
 }
-.cta-row{
-  display:flex;
-  gap:16px;
-  margin-top:24px;
-  flex-wrap:wrap;
-}
+.cta-row{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}
 .btn{
-  padding:14px 22px;
+  padding:15px 26px;
   border-radius:8px;
   font-weight:600;
   font-size:14px;
-  border:1px solid transparent;
-  transition:0.2s ease;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
 }
 .btn-primary{
-  background:var(--tv-accent);
-  color:white;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 8px 30px rgba(41,98,255,0.35);
 }
-.btn-primary:hover{opacity:0.9}
+.btn-primary:hover{
+  background:var(--accent-strong);
+  transform:translateY(-2px);
+}
 .btn-outline{
-  border:1px solid var(--tv-border);
+  border:1px solid var(--border);
   background:transparent;
 }
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
 .card{
-  background:var(--tv-surface);
-  border:1px solid var(--tv-border);
-  border-radius:var(--tv-radius);
-  padding:28px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:30px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .2s ease;
 }
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:32px;
-}
+.card:hover{transform:translateY(-4px)}
 .contrast{
-  background:var(--tv-surface-2);
-  border-top:1px solid var(--tv-border);
-  border-bottom:1px solid var(--tv-border);
+  background:var(--surface-2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
-.pricing{text-align:center}
-.price-box{max-width:480px;margin:40px auto 0}
-.price{font-size:40px;font-weight:700}
-.faq-item{margin-bottom:28px}
+.slideshow{
+  position:relative;
+  height:320px;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+}
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+.slide.active{opacity:1}
 footer{
   padding:60px 0;
-  border-top:1px solid var(--tv-border);
-  color:var(--tv-muted);
-  font-size:13px;
+  border-top:1px solid var(--border);
   text-align:center;
+  font-size:13px;
+  color:var(--muted);
 }
 @media(max-width:960px){
   .hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}
@@ -121,19 +140,17 @@ footer{
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="badge">Invite-Only • Launched February 2026</span>
+      <span class="badge">Invite-Only • Launched Feb 2026</span>
       <h1>One Execution Layer.<br>Fully Mapped. Instantly Loaded.</h1>
-      <p>Professional market-structure overlay for profitable day traders. No manual drawing. No tab switching. No structural rebuilding.</p>
+      <p>Professional structural framework for profitable intraday traders. No rebuilding. No stacking. No tab switching.</p>
       <div class="cta-row">
         <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Start 15-Day Trial</a>
-        <a href="#pricing" class="btn btn-outline">View Subscription</a>
+        <a href="#pricing" class="btn btn-outline">View Pricing</a>
       </div>
     </div>
-    <div class="card">
-      <h3>Core Promise</h3>
-      <p>Full market structure embedded directly inside price. Context persists. Narrative stabilizes across sessions.</p>
-      <h4>Positioning</h4>
-      <p>Execution framework. Not signals. Not predictive. Structured discretion only.</p>
+    <div class="hero-card">
+      <h3>Structural Consistency</h3>
+      <p>Sessions, HTF levels, gaps, projections and alerts embedded directly into price.</p>
     </div>
   </div>
 </header>
@@ -142,18 +159,9 @@ footer{
   <div class="container">
     <h2>Cognitive Fragmentation</h2>
     <div class="grid-3">
-      <div class="card">
-        <h3>Manual Plotting</h3>
-        <p>Repeated structural rebuilding wastes preparation time.</p>
-      </div>
-      <div class="card">
-        <h3>Tab Switching</h3>
-        <p>Context split across layouts weakens execution flow.</p>
-      </div>
-      <div class="card">
-        <h3>Indicator Stacking</h3>
-        <p>Overlays compete for attention. Price loses priority.</p>
-      </div>
+      <div class="card"><h3>Manual Drawing</h3><p>Repeated structural plotting every session.</p></div>
+      <div class="card"><h3>Layout Switching</h3><p>Context split across tabs.</p></div>
+      <div class="card"><h3>Indicator Overload</h3><p>Price no longer central.</p></div>
     </div>
   </div>
 </section>
@@ -162,121 +170,60 @@ footer{
   <div class="container">
     <h2>Structural Shift</h2>
     <div class="grid-2">
-      <div>
-        <h3>Instant Narrative</h3>
-        <p>Sessions, highs/lows, gaps and projections mapped automatically.</p>
-      </div>
-      <div>
-        <h3>Persistent Context</h3>
-        <p>Levels extend forward and change state when interacted with.</p>
-      </div>
+      <div class="card"><h3>Instant Narrative</h3><p>All sessions and structural references auto-loaded.</p></div>
+      <div class="card"><h3>State-Based Logic</h3><p>Levels evolve when interacted with.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>Structural Components</h2>
-    <div class="grid-3">
-      <div class="card"><h3>Sessions</h3><p>Asia, London, New York. Persistent until invalidated.</p></div>
-      <div class="card"><h3>HTF Projections</h3><p>D/W/M/Q/Y highs and lows projected forward.</p></div>
-      <div class="card"><h3>Gap Logic</h3><p>NY close–open and weekly opening gaps.</p></div>
-      <div class="card"><h3>HOD / LOD</h3><p>Real-time tracking with structural state logic.</p></div>
-      <div class="card"><h3>5-Day ADR</h3><p>Projected range expectation.</p></div>
-      <div class="card"><h3>Advanced Logic</h3><p>Custom opens, economic calendar, holiday session filters.</p></div>
+    <h2>Media</h2>
+    <div class="slideshow">
+      <img src="image1.jpg" class="slide active" alt="">
+      <img src="image2.jpg" class="slide" alt="">
+      <img src="image3.jpg" class="slide" alt="">
     </div>
   </div>
 </section>
 
 <section class="contrast">
-  <div class="container">
-    <h2>Behavioral Intelligence</h2>
-    <div class="grid-3">
-      <div class="card"><h3>State-Based Alerts</h3><p>Structural interaction triggers. Reduced screen dependency.</p></div>
-      <div class="card"><h3>Auto-Adjustment</h3><p>Overlaps resolve automatically. Labels reposition.</p></div>
-      <div class="card"><h3>Replay Compatible</h3><p>Historical interaction preserved for review and media.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
   <div class="container">
     <h2>Execution Benefits</h2>
     <div class="grid-2">
-      <div class="card">
-        <h3>Preparation in Seconds</h3>
-        <p>What required minutes now loads instantly.</p>
-      </div>
-      <div class="card">
-        <h3>Complete Context in Screenshots</h3>
-        <p>Recordings and shared charts retain full structural narrative.</p>
-      </div>
+      <div class="card"><h3>Seconds, Not Minutes</h3><p>Preparation reduced dramatically.</p></div>
+      <div class="card"><h3>Alert Integration</h3><p>Reduced screen dependency.</p></div>
     </div>
   </div>
 </section>
 
-<section class="contrast">
-  <div class="container">
-    <h2>Installation</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>1. Subscribe</h3>
-        <p>Activate 15-day full trial via Stripe.</p>
-      </div>
-      <div class="card">
-        <h3>2. Invite Access</h3>
-        <p>Receive TradingView invite during onboarding window.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="container">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <h4>Is this automated trading?</h4>
-      <p>No. Structured discretion support only.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Who is it for?</h4>
-      <p>Profitable, confident intraday traders.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Why subscription?</h4>
-      <p>Revenue reinvested into structural expansion and advertising growth.</p>
-    </div>
-  </div>
-</section>
-
-<section id="pricing" class="contrast">
-  <div class="container pricing">
-    <h2>Limited Onboarding Capacity</h2>
-    <div class="card price-box">
-      <h3>Monthly Subscription</h3>
-      <p class="price">$109<span style="font-size:16px;color:var(--tv-muted)"> / month</span></p>
+<section id="pricing">
+  <div class="container" style="text-align:center">
+    <h2>Limited Onboarding</h2>
+    <div class="card" style="max-width:480px;margin:40px auto">
+      <h3>$109 / Month</h3>
       <p>15-day full trial included.</p>
       <div class="cta-row" style="justify-content:center">
-        <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Start Trial</a>
-        <a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="btn btn-outline">Book Private Call</a>
+        <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Subscribe</a>
+        <a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="btn btn-outline">Private Call</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container" style="text-align:center">
-    <h2>Structural Consistency Replaces Fragmentation</h2>
-    <p>Context precedes precision. Precision precedes performance.</p>
-    <div class="cta-row" style="justify-content:center;margin-top:30px">
-      <a href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="btn btn-primary">Request Access</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 All In 1. Invite-Only TradingView Indicator. Independent product.
+© 2026 All In 1. Independent TradingView Indicator.
 </footer>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let index=0;
+setInterval(()=>{
+  slides[index].classList.remove('active');
+  index=(index+1)%slides.length;
+  slides[index].classList.add('active');
+},4000);
+</script>
 
 </body>
 </html>
