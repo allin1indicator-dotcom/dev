@@ -4,238 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Structured Market Environment</title>
-
 <style>
-:root{
-  --bg:#f5f5f7;
-  --surface:#ffffff;
-  --text:#111111;
-  --muted:#6e6e73;
-  --line:#e2e2e6;
-  --accent:#2563eb;
-  --accent-soft:rgba(37,99,235,.08);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
-
-nav{
-  position:sticky;
-  top:0;
-  background:rgba(245,245,247,.85);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--line);
-  z-index:1000;
-}
-
-.nav-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:16px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:var(--text);
-  margin-left:24px;
-  font-size:14px;
-  letter-spacing:.02em;
-  transition:opacity .25s ease;
-}
-
-.nav-links a:hover{
-  opacity:.6;
-}
-
-section{
-  padding:100px 24px;
-  position:relative;
-  overflow:hidden;
-}
-
-.container{
-  max-width:960px;
-  margin:0 auto;
-}
-
-.hero{
-  padding-top:140px;
-  padding-bottom:140px;
-  text-align:center;
-}
-
-h1{
-  font-size:52px;
-  line-height:1.1;
-  font-weight:600;
-  letter-spacing:-0.02em;
-  margin-bottom:28px;
-}
-
-h2{
-  font-size:36px;
-  font-weight:600;
-  letter-spacing:-0.01em;
-  margin-bottom:28px;
-}
-
-h3{
-  font-size:22px;
-  font-weight:600;
-  margin-bottom:12px;
-}
-
-p{
-  font-size:17px;
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-.large{
-  font-size:20px;
-  color:var(--text);
-}
-
-.buttons{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:14px 32px;
-  font-size:16px;
-  text-decoration:none;
-  border-radius:999px;
-  transition:all .3s cubic-bezier(.4,0,.2,1);
-  display:inline-block;
-}
-
-.btn-primary{
-  background:var(--accent);
-  color:#fff;
-  box-shadow:0 6px 20px rgba(37,99,235,.25);
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 28px rgba(37,99,235,.35);
-}
-
-.btn-secondary{
-  border:1px solid var(--line);
-  color:var(--text);
-  background:var(--surface);
-}
-
-.btn-secondary:hover{
-  background:var(--accent-soft);
-  border-color:var(--accent);
-}
-
-.feature{
-  margin-bottom:60px;
-}
-
-/* Divider animation compact */
-.divider{
-  height:2px;
-  width:100%;
-  background:var(--line);
-  margin:100px 0 0 0;
-  position:relative;
-}
-.divider::after{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,var(--accent),transparent);
-  transition:width 1.2s cubic-bezier(.4,0,.2,1);
-}
-section.in-view .divider::after{
-  width:100%;
-}
-
-/* Scroll reveal */
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.8s cubic-bezier(.4,0,.2,1);
-}
-section.in-view .reveal{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Sticky titles for scroll effect */
-.sticky-title{
-  position:sticky;
-  top:80px;
-  background:var(--bg);
-  z-index:5;
-}
-
-.paragraph{
-  opacity:0;
-  transition:opacity 0.6s ease;
-}
-
-.paragraph.visible{
-  opacity:1;
-}
-
-.pricing{
-  text-align:center;
-}
-
-.price-old{
-  text-decoration:line-through;
-  color:var(--muted);
-  font-size:22px;
-}
-
-.price-new{
-  font-size:36px;
-  font-weight:600;
-  margin:10px 0 20px;
-}
-
-.footer-cta{
-  text-align:center;
-  padding:140px 24px;
-}
-
-@media (max-width:768px){
-  h1{font-size:36px;}
-  h2{font-size:28px;}
-  section{padding:80px 24px;}
-}
+:root{--bg:#f5f5f7; --surface:#ffffff; --text:#111111; --muted:#6e6e73; --line:#e2e2e6; --accent:#2563eb; --accent-soft:rgba(37,99,235,.08);}
+*{margin:0; padding:0; box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased;}
+nav{position:sticky; top:0; background:rgba(245,245,247,.85); backdrop-filter:blur(20px); border-bottom:1px solid var(--line); z-index:1000;}
+.nav-inner{max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
+.nav-links a{text-decoration:none; color:var(--text); margin-left:24px; font-size:14px; letter-spacing:.02em; transition:opacity .25s ease;}
+.nav-links a:hover{opacity:.6;}
+section{padding:100px 24px; position:relative; overflow:hidden;}
+.container{max-width:960px; margin:0 auto;}
+.hero{padding-top:140px; padding-bottom:140px; text-align:center;}
+h1{font-size:52px; line-height:1.1; font-weight:600; letter-spacing:-0.02em; margin-bottom:28px;}
+h2{font-size:36px; font-weight:600; letter-spacing:-0.01em; margin-bottom:28px;}
+h3{font-size:22px; font-weight:600; margin-bottom:12px;}
+p{font-size:17px; color:var(--muted); margin-bottom:20px;}
+.large{font-size:20px; color:var(--text);}
+.buttons{margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;}
+.btn{padding:14px 32px; font-size:16px; text-decoration:none; border-radius:999px; transition:all .3s cubic-bezier(.4,0,.2,1); display:inline-block;}
+.btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 20px rgba(37,99,235,.25);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 28px rgba(37,99,235,.35);}
+.btn-secondary{border:1px solid var(--line); color:var(--text); background:var(--surface);}
+.btn-secondary:hover{background:var(--accent-soft); border-color:var(--accent);}
+.feature{margin-bottom:60px;}
+.divider{height:2px; width:100%; background:var(--line); margin:100px 0 0 0; position:relative;}
+.divider::after{content:""; position:absolute; left:0; top:0; height:100%; width:0%; background:linear-gradient(90deg,var(--accent),transparent); transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+section.in-view .divider::after{width:100%;}
+.reveal{opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(.4,0,.2,1);}
+section.in-view .reveal{opacity:1; transform:translateY(0);}
+.sticky-title{position:sticky; top:80px; background:var(--bg); z-index:5;}
+.paragraph{height:0; overflow:hidden; transition:height 0.6s ease, margin 0.6s ease;}
+.paragraph.expand{height:auto; margin-bottom:20px;}
+.pricing{text-align:center;}
+.price-old{text-decoration:line-through; color:var(--muted); font-size:22px;}
+.price-new{font-size:36px; font-weight:600; margin:10px 0 20px;}
+.footer-cta{text-align:center; padding:140px 24px;}
+@media (max-width:768px){h1{font-size:36px;} h2{font-size:28px;} section{padding:80px 24px;}}
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -253,7 +60,7 @@ section.in-view .reveal{
   <div class="container reveal">
     <h1>A Structured Market Environment for Discretionary Precision</h1>
     <p class="large">All critical intraday and higher-timeframe context — unified, ordered, and embedded directly into price.</p>
-    <p class="paragraph visible">Professional execution depends on structured information. Our framework consolidates session timing, volatility expansions, structural pivots, market imbalances, and macro events directly onto the chart for actionable context.</p>
+    <p class="paragraph expand">Professional execution depends on structured information. Our framework consolidates session timing, volatility expansions, structural pivots, market imbalances, and macro events directly onto the chart for actionable context.</p>
     <div class="buttons">
       <a href="#pricing" class="btn btn-primary">Start 15-Day Free Trial</a>
       <a href="#features" class="btn btn-secondary">See It in Action</a>
@@ -265,12 +72,7 @@ section.in-view .reveal{
 <section>
   <div class="container reveal">
     <h2 class="sticky-title">The Problem</h2>
-    <p class="paragraph">Advanced traders often juggle multiple indicators manually:
-      <br>HTF pivots and session levels drawn by hand.
-      <br>Separate ADR and volatility measurement tools.
-      <br>Independent imbalance and displacement tracking.
-      <br>External economic calendars or event markers.
-    </p>
+    <p class="paragraph">Advanced traders often juggle multiple indicators manually: HTF pivots and session levels drawn by hand; Separate ADR and volatility measurement tools; Independent imbalance and displacement tracking; External economic calendars or event markers.</p>
     <p class="paragraph">While individually useful, this fragmented workflow slows reaction time, increases error, and reduces execution efficiency. The problem is structural inefficiency, not strategy quality.</p>
   </div>
   <div class="divider"></div>
@@ -279,13 +81,7 @@ section.in-view .reveal{
 <section>
   <div class="container reveal">
     <h2 class="sticky-title">The Solution</h2>
-    <p class="paragraph">This indicator creates a unified structural layer:
-      <br>Automatically maps intraday sessions with proportional scaling.
-      <br>Projects higher-timeframe pivots downward, preserving chart alignment.
-      <br>Identifies inefficiencies and displacements algorithmically in real-time.
-      <br>Integrates macro event timing for controlled risk management.
-      <br>Adjusts layers dynamically to prevent visual clutter.
-    </p>
+    <p class="paragraph">This indicator creates a unified structural layer: Automatically maps intraday sessions with proportional scaling; Projects higher-timeframe pivots downward, preserving chart alignment; Identifies inefficiencies and displacements algorithmically in real-time; Integrates macro event timing for controlled risk management; Adjusts layers dynamically to prevent visual clutter.</p>
     <p class="paragraph">The result is actionable, compressed market context that preserves candle dominance and speeds discretionary execution.</p>
   </div>
   <div class="divider"></div>
@@ -345,31 +141,22 @@ section.in-view .reveal{
 <section id="faq">
   <div class="container reveal">
     <h2 class="sticky-title">FAQ</h2>
-
     <h3>Is it beginner friendly?</h3>
     <p class="paragraph">Designed for traders familiar with market structure, liquidity, and volatility concepts.</p>
-
     <h3>Does it repaint?</h3>
     <p class="paragraph">No. Elements update only on confirmed data, never forward-projected.</p>
-
     <h3>Multiple assets?</h3>
     <p class="paragraph">Compatible with forex, indices, crypto, and other TradingView-supported markets.</p>
-
     <h3>Generates trade signals?</h3>
     <p class="paragraph">No. Provides structured context for discretionary decision-making.</p>
-
     <h3>Multi-timeframe compatible?</h3>
     <p class="paragraph">Yes, built for cross-timeframe structural alignment.</p>
-
     <h3>Cancellation?</h3>
     <p class="paragraph">Handled directly through Stripe, anytime.</p>
-
     <h3>Additional software?</h3>
     <p class="paragraph">None. Runs natively on TradingView via invite-only access.</p>
-
     <h3>Support?</h3>
     <p class="paragraph">Active subscribers receive live support and updates.</p>
-
   </div>
 </section>
 
@@ -385,27 +172,26 @@ section.in-view .reveal{
 
 <script>
 // Scroll reveal
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("in-view");
-    }
-  });
-},{threshold:0.15});
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");}});},{threshold:0.15});
 sections.forEach(section=>observer.observe(section));
 
-// Paragrafo singolo visibile per titolo
-const paragraphs = document.querySelectorAll('.paragraph');
-const paraObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      paragraphs.forEach(p=>p.classList.remove('visible'));
-      entry.target.classList.add('visible');
-    }
-  });
-},{threshold:0.5});
-paragraphs.forEach(p=>paraObserver.observe(p));
+// Paragrafo espande spazio
+const paragraphs=document.querySelectorAll('.paragraph');
+paragraphs.forEach(p=>{
+  const paraObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        p.style.height=p.scrollHeight+'px';
+        p.classList.add('expand');
+      } else {
+        p.style.height='0px';
+        p.classList.remove('expand');
+      }
+    });
+  },{threshold:0.5});
+  paraObserver.observe(p);
+});
 </script>
 
 </body>
