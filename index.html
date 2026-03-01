@@ -7,7 +7,7 @@
 <meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-/* 630C04, 5B6304*/
+/* 630C04, 5B6304 */
 <style>
 :root{
   --bg-0:#042B63;
@@ -126,12 +126,6 @@ button{width:100%;padding:14px;background:var(--primary);color:--muted;border:no
   <img class="v3_iconic-standard-curve-img" src="./images/gradiant-bg-new.png" alt="">
 
   <div class="v3_iconic-standard-content">
-      <div class="v3_col-1">
-          <span class="gradient-text-white">THE</span>
-          <img src="IMG_6787.jpeg" alt="">
-          <span class="gradient-text-white">STANDARD</span>
-      </div>
-
       <div class="v3_col-2">
           <div class="text">
               <p>We don’t just teach skills. We live by values that elevate everything we do.</p>
@@ -342,17 +336,6 @@ button{width:100%;padding:14px;background:var(--primary);color:--muted;border:no
   </div>
 </section>
 
-<script>
-  // Simple toggle functionality
-  const toggles = document.querySelectorAll('.toggle-btn');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const details = btn.parentElement.nextElementSibling.nextElementSibling;
-      details.style.display = details.style.display === 'block' ? 'none' : 'block';
-      btn.textContent = details.style.display === 'block' ? 'Details ▲' : 'Details ▼';
-    });
-  });
-</script>
   
 <!-- TESTIMONIALS -->
 <section>
@@ -434,7 +417,18 @@ gsap.to(".v3_content", {
 });
 </script>
 
-/* Testimonial carousel */
+<script>
+  // Simple toggle functionality
+  const toggles = document.querySelectorAll('.toggle-btn');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.parentElement.nextElementSibling.nextElementSibling;
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+      btn.textContent = details.style.display === 'block' ? 'Details ▲' : 'Details ▼';
+    });
+  });
+</script>
+  
 <script>
 const track=document.querySelector('.carousel-track');
 const cards=document.querySelectorAll('.testimonial-card');
