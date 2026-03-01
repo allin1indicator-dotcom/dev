@@ -6,65 +6,68 @@
 <meta name="theme-color" content="#0f1113">
 <title>ALL IN 1 — Structural Execution Framework</title>
 
-<!-- 7️⃣ Optimized font loading -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<!-- Optimized font loading (display swap) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      as="style" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+                rel="stylesheet"></noscript>
 
-<!-- 9️⃣ SEO / Open‑Graph -->
-<meta name="description" content="All‑in‑One structural execution framework for traders – sessions, liquidity, gaps, volatility and events mapped in a single layer.">
+<!-- SEO / Open‑Graph -->
+<meta name="description"
+      content="All‑in‑One structural execution framework for traders – sessions, liquidity, gaps, volatility and events mapped in a single layer.">
 <meta property="og:title" content="ALL IN 1 — Structural Execution Framework">
 <meta property="og:description" content="One structural framework, fully mapped, instantly loaded.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://your‑domain.com/">
-<meta property="og:image" content="https://your‑domain.com/preview.jpg">
+<meta property="og:url" content="https://your-domain.com/">
+<meta property="og:image" content="https://your-domain.com/preview.jpg">
 
 <style>
-/* ────────────────────────────────────────────────
-   1️⃣  Design tokens (colors, spacing, rhythm)
-   ──────────────────────────────────────────────── */
+/* ────────────────────────────────
+   1️⃣ Design tokens
+   ──────────────────────────────── */
 :root{
   --bg:#0f1113;
   --surface:#15181b;
   --text:#e8ecef;
-  --muted:#b0b8c0;               /* 5️⃣ higher contrast */
+  --muted:#b0b8c0;               /* higher contrast */
   --accent:#ffffff;
   --border:#23272b;
-  --gap:24px;                    /* 3️⃣ vertical rhythm */
+  --gap:24px;                    /* vertical rhythm */
 }
 
-/* ────────────────────────────────────────────────
-   2️⃣  Global reset & base styles
-   ──────────────────────────────────────────────── */
-*{box-sizing:border-box;margin:0;padding:0;}
+/* ────────────────────────────────
+   2️⃣ Global reset
+   ──────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 img,video{display:block;max-width:100%;height:auto;}
 body{
   font-family:'Inter',system-ui,-apple-system,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.7;               /* 4️⃣ improved readability */
+  line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 
-/* ────────────────────────────────────────────────
-   3️⃣  Layout containers
-   ──────────────────────────────────────────────── */
+/* ────────────────────────────────
+   3️⃣ Layout containers
+   ──────────────────────────────── */
 .wrapper{
-  max-width:1400px;               /* 1️⃣ wider container */
+  max-width:1400px;               /* wider container */
   margin:0 auto;
   padding:0 40px;
 }
 
-/* ────────────────────────────────────────────────
-   4️⃣  Typography hierarchy
-   ──────────────────────────────────────────────── */
+/* ────────────────────────────────
+   4️⃣ Typography hierarchy
+   ──────────────────────────────── */
 h1{font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:var(--gap);}
 h2{font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:calc(var(--gap)/2);}
 h3{font-size:18px;font-weight:600;margin-bottom:8px;}
 p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 
-/* ────────────────────────────────────────────────
-   5️⃣  Buttons – accessibility focus
-   ──────────────────────────────────────────────── */
+/* ────────────────────────────────
+   5️⃣ Buttons – accessible focus
+   ──────────────────────────────── */
 .button{
   display:inline-block;
   margin-top:var(--gap);
@@ -84,27 +87,22 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   outline-offset:2px;
 }
 
-/* ────────────────────────────────────────────────
-   6️⃣  Grid layout – responsive & no gap between columns
-   ──────────────────────────────────────────────── */
+/* ────────────────────────────────
+   6️⃣ Two‑column grid (no gutter)
+   ──────────────────────────────── */
 .two-col{
   display:grid;
-  grid-template-columns:8fr 3fr;   /* 2️⃣ proportion */
-  gap:0;                           /* 2️⃣ no space between columns */
+  grid-template-columns:8fr 3fr;   /* 66 % / 34 % */
+  gap:0;
   align-items:stretch;
 }
 @media (max-width:1024px){
   .two-col{grid-template-columns:1fr;}
 }
 
-/* 7️⃣  Divider between left‑hand paragraphs */
-.left p:not(:last-child){
-  padding-bottom:calc(var(--gap)/2);
-  margin-bottom:0;
-  border-bottom:2px solid var(--border);
-}
-
-/* 8️⃣  Card component */
+/* ────────────────────────────────
+   7️⃣ Card component
+   ──────────────────────────────── */
 .card{
   background:var(--surface);
   padding:36px;
@@ -113,10 +111,14 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   max-width:640px;
 }
 
-/* 9️⃣  List inside “Execution Inside Structure” */
+/* ────────────────────────────────
+   8️⃣ List inside “Execution Inside Structure”
+   ──────────────────────────────── */
 .list p{margin-bottom:8px;}
 
-/* 10️⃣  Hero section */
+/* ────────────────────────────────
+   9️⃣ Hero section
+   ──────────────────────────────── */
 .hero{position:relative;display:flex;align-items:center;justify-content:center;padding:0;}
 .hero-video{width:100%;filter:brightness(1.06);}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25);}
@@ -132,7 +134,9 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   text-shadow:0 3px 6px rgba(0,0,0,.65),0 2px 4px rgba(0,0,0,.06);
 }
 
-/* 11️⃣  Scroll indicator */
+/* ────────────────────────────────
+   10️⃣ Scroll indicator
+   ──────────────────────────────── */
 .scroll-indicator{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
   width:22px;height:36px;border:2px solid rgba(255,255,255,.7);border-radius:14px;
@@ -148,15 +152,20 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   100%{opacity:0;transform:translate(-50%,12px);}
 }
 
-/* 12️⃣  Footer */
+/* ────────────────────────────────
+   11️⃣ Footer
+   ──────────────────────────────── */
 .footer{padding:60px 0;text-align:center;font-size:14px;color:var(--muted);}
 
-/* 13️⃣  Misc – remove stray rule */
+/* ────────────────────────────────
+   12️⃣ Small responsive tweak
+   ──────────────────────────────── */
 @media (max-width:768px){h1{font-size:34px;}}
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline class="hero-video">
     <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
@@ -164,7 +173,7 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   <div class="hero-overlay"></div>
   <div class="hero-inner wrapper">
     <h1>One Structural Framework.<br>Fully Mapped. Instantly Loaded.</h1>
-    <p>Real-time sessions, HTF pivots, liquidity, gaps and volatility — unified into one execution layer.</p>
+    <p>Real‑time sessions, HTF pivots, liquidity, gaps and volatility — unified into one execution layer.</p>
     <a href="#" class="button" aria-label="Start 15‑Day Free Trial">Start 15‑Day Free Trial</a>
   </div>
   <div class="scroll-indicator" aria-hidden="true"></div>
@@ -172,9 +181,7 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
 
 <div class="wrapper">
 
-  <!-- ──────────────────────────────────────
-       2‑column main content
-       ────────────────────────────────────── -->
+  <!-- TWO‑COLUMN MAIN CONTENT -->
   <section class="two-col">
 
     <!-- LEFT COLUMN -->
@@ -207,7 +214,7 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
       <section aria-labelledby="pricing">
         <div class="card">
           <h2 id="pricing">Complete Framework Access</h2>
-          <div class="price">$109<span class="small"> / month</span></div>
+          <div class="price">$109<span class="small"> / month</span></div>
           <p>Sessions. Liquidity. Gaps. ADR. Event integration. Alerts. Replay. Every module included.</p>
           <p class="small">15‑Day Full Trial. Cancel anytime.</p>
           <a href="#" class="button" aria-label="Start 15‑Day Trial">Start 15‑Day Trial</a>
@@ -223,7 +230,7 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
         <div><h3>Session Structure</h3><p>Asia, London, New York ranges persist until structurally invalidated.</p></div>
         <div><h3>Liquidity Mapping</h3><p>D/W/M/Q/Y highs & lows extend forward across timeframes.</p></div>
         <div><h3>Gap Framework</h3><p>RTH and Weekly opening gaps remain active until resolved.</p></div>
-        <div><h3>Volatility Context</h3><p>5-Day ADR projects measurable daily expansion.</p></div>
+        <div><h3>Volatility Context</h3><p>5‑Day ADR projects measurable daily expansion.</p></div>
         <div><h3>Event Awareness</h3><p>High‑impact economic events and holiday sessions mapped directly on chart.</p></div>
         <div><h3>State‑Based Alerts</h3><p>Notifications trigger on structural interaction. Replay fully preserved.</p></div>
       </div>
@@ -235,17 +242,17 @@ p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:var(--gap);}
   <section aria-labelledby="testimonials">
     <h2 id="testimonials">Traders</h2>
     <div class="testimonial">
-      <p>“Manual session marking and HTF scanning are gone. The framework loads aligned across timeframes. Execution feels deliberate.”<br><br><strong>— Thomas W.</strong></p>
+      <p>“Manual session marking and HTF scanning are gone. The framework loads aligned across timeframes. Execution feels deliberate.”<br><br><strong>— Thomas W.</strong></p>
     </div>
     <div class="testimonial">
-      <p>“Replaced multiple tools with one consistent structural layer. Alerts tied to liquidity levels changed my workflow.”<br><br><strong>— Kevin L.</strong></p>
+      <p>“Replaced multiple tools with one consistent structural layer. Alerts tied to liquidity levels changed my workflow.”<br><br><strong>— Kevin L.</strong></p>
     </div>
   </section>
 
 </div>
 
 <footer class="footer">
-  © 2026 R‑TradingTools — Full Market Structure. Instantly Mapped.
+  © 2026 R‑TradingTools — Full Market Structure. Instantly Mapped.
 </footer>
 
 </body>
