@@ -3,66 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Landing</title>
+<title>Structural Visibility Engine | TradingView Indicator</title>
 <style>
-/* Critical CSS for fast rendering */
-body {margin:0;font-family:Arial,sans-serif;line-height:1.6;color:#111;background:#f9f9f9;}
-header, section, footer {max-width:1200px;margin:auto;padding:2rem;}
-header {text-align:center;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
-h1 {font-size:2.5rem;margin-bottom:0.5rem;}
-p {margin-bottom:1rem;}
-a.button {display:inline-block;padding:1rem 2rem;background:#007bff;color:#fff;text-decoration:none;border-radius:5px;transition:0.3s;}
-a.button:hover {background:#0056b3;}
-section {background:#fff;margin-top:2rem;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
-section:nth-child(even){background:#f1f1f1;}
-.fade {opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
-.visible {opacity:1;transform:translateY(0);}
+:root {
+    --bg-primary: #0e1116;
+    --bg-secondary: #141922;
+    --border: #1f2633;
+    --text-primary: #e6e9ef;
+    --text-secondary: #9aa4b2;
+    --accent: #3a6df0;
+    --accent-hover: #5a84ff;
+    --max-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    width: 92%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 18px;
+    max-width: 760px;
+}
+
+.hero {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.hero-sub {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 760px;
+}
+
+.cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 26px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 14px 26px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-box {
+    background: var(--bg-secondary);
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+footer {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Product Name</h1>
-  <p>One-line value proposition that hooks your visitor immediately.</p>
-  <a href="#signup" class="button">Get Started</a>
-</header>
-
-<section>
-  <h2>Problem We Solve</h2>
-  <p>Describe the key pain point of your audience in 1–2 sentences.</p>
+<section class="hero">
+<div class="container">
+    <h1>Structural Visibility Under Pressure</h1>
+    <p class="hero-sub">
+        A timeframe-adaptive visibility engine for discretionary traders who already understand structure — but require persistent hierarchy during live execution.
+    </p>
+    <div class="cta-group">
+        <a href="#access" class="btn-primary">Access the Indicator</a>
+        <a href="#mechanism" class="btn-secondary">View How It Works</a>
+    </div>
+</div>
 </section>
 
 <section>
-  <h2>How It Works</h2>
-  <p>Three bullet points summarizing the solution, using icons or emojis if desired.</p>
+<div class="container grid-2">
+    <div>
+        <h2>Execution Breaks Before Analysis Does</h2>
+    </div>
+    <div>
+        <p>You can map weekly narrative. You understand liquidity draws. You define intraday bias correctly.</p>
+        <p>Yet during acceleration, hierarchy collapses. Levels lose weight. Markings conflict. Continuation references disappear.</p>
+        <p>Profits expand — then erode through management inconsistency. Not from ignorance. From structural visibility decay.</p>
+    </div>
+</div>
+</section>
+
+<section id="mechanism">
+<div class="container grid-2">
+    <div>
+        <h2>Persistent Structural Coherence</h2>
+        <p>
+            The indicator continuously anchors higher timeframe extremes, liquidity zones, and structural pivots into your active timeframe without visual overload.
+        </p>
+        <p>
+            It compresses multi-timeframe structure into a clean hierarchy so execution decisions remain aligned with the weekly and daily narrative — even during intraday volatility.
+        </p>
+    </div>
+    <div>
+        <p>
+            No signals. No directional bias. No predictive overlays.
+        </p>
+        <p>
+            It preserves context automatically, reduces manual marking drift, and maintains continuation references once in profit.
+        </p>
+    </div>
+</div>
 </section>
 
 <section>
-  <h2>Proof / Testimonials</h2>
-  <p>Include social proof, user stats, or short testimonials.</p>
+<div class="container">
+    <h2>Logical Proof of Value</h2>
+    <p>
+        When structure remains visually dominant, premature partials reduce. Stops near known higher timeframe extremes become statistically rarer. Re-entries become deliberate rather than reactive.
+    </p>
+    <p>
+        Users report clearer trade management during volatility and less chart degradation across sessions. The workflow remains consistent from weekly mapping to intraday execution.
+    </p>
+</div>
 </section>
 
-<section id="signup">
-  <h2>Sign Up / CTA</h2>
-  <form action="#" method="POST">
-    <input type="email" name="email" placeholder="Your email" required style="padding:0.5rem; width:60%; margin-right:0.5rem;">
-    <button type="submit" class="button">Join Now</button>
-  </form>
+<section>
+<div class="container">
+    <h2>Structural Advantages</h2>
+    <div class="grid-3">
+        <div class="feature-box">
+            <h3>Timeframe-Adaptive Anchors</h3>
+            <p>Higher timeframe extremes remain visually weighted across intraday charts without manual redraw.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Hierarchy Preservation</h3>
+            <p>Automatic structural layering prevents minor levels from overpowering primary narrative zones.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Continuation References</h3>
+            <p>Clear structural markers once in profit to reduce premature exits under momentum.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Chart De-Cluttering Logic</h3>
+            <p>Removes visual noise accumulation while preserving critical structural context.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Session Coherence</h3>
+            <p>Consistent visual framework from weekly mapping through intraday session execution.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Framework Agnostic</h3>
+            <p>Integrates with liquidity-based or institutional-style models without altering discretion.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section>
+<div class="container grid-2">
+    <div>
+        <h2>Who This Is For</h2>
+        <ul>
+            <li>Discretionary traders with multi-timeframe awareness.</li>
+            <li>Traders who understand structure but lose clarity during live management.</li>
+            <li>Operators seeking execution stability, not prediction.</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Who This Is Not For</h2>
+        <ul>
+            <li>Beginners learning basic market structure.</li>
+            <li>Signal-dependent traders.</li>
+            <li>Those seeking automated trade entries or win-rate optimization.</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<section id="access">
+<div class="container">
+    <h2>Stabilize Your Execution Layer</h2>
+    <p>
+        If your analysis is structurally sound but execution variance remains the constraint, this tool functions as infrastructure — not decoration.
+    </p>
+    <div class="cta-group">
+        <a href="#" class="btn-primary">Access the Indicator</a>
+    </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+        <h3>Does this generate trade signals?</h3>
+        <p>No. It enhances structural visibility. All execution decisions remain discretionary.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is this compatible with liquidity-based frameworks?</h3>
+        <p>Yes. It is framework-agnostic and designed for traders already using structural or institutional models.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Will this improve my win rate?</h3>
+        <p>It does not alter probability. It reduces execution friction and structural oversight.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Does it replace manual analysis?</h3>
+        <p>No. It preserves and reinforces it across timeframes.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is it suitable for beginners?</h3>
+        <p>No. It assumes structural literacy and discretionary trade management experience.</p>
+    </div>
+</div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Product Name. All rights reserved.</p>
+<div class="container">
+    Structural Visibility Engine — Professional TradingView Infrastructure
+</div>
 </footer>
-
-<script>
-// Simple scroll fade-in
-const faders = document.querySelectorAll('.fade');
-const appearOptions = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver((entries, observer)=>{
-  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }});
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
-</script>
 
 </body>
 </html>
