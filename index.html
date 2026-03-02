@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Landing</title>
+<style>
+/* Critical CSS for fast rendering */
+body {margin:0;font-family:Arial,sans-serif;line-height:1.6;color:#111;background:#f9f9f9;}
+header, section, footer {max-width:1200px;margin:auto;padding:2rem;}
+header {text-align:center;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+h1 {font-size:2.5rem;margin-bottom:0.5rem;}
+p {margin-bottom:1rem;}
+a.button {display:inline-block;padding:1rem 2rem;background:#007bff;color:#fff;text-decoration:none;border-radius:5px;transition:0.3s;}
+a.button:hover {background:#0056b3;}
+section {background:#fff;margin-top:2rem;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+section:nth-child(even){background:#f1f1f1;}
+.fade {opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
+.visible {opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Product Name</h1>
+  <p>One-line value proposition that hooks your visitor immediately.</p>
+  <a href="#signup" class="button">Get Started</a>
+</header>
+
+<section>
+  <h2>Problem We Solve</h2>
+  <p>Describe the key pain point of your audience in 1–2 sentences.</p>
+</section>
+
+<section>
+  <h2>How It Works</h2>
+  <p>Three bullet points summarizing the solution, using icons or emojis if desired.</p>
+</section>
+
+<section>
+  <h2>Proof / Testimonials</h2>
+  <p>Include social proof, user stats, or short testimonials.</p>
+</section>
+
+<section id="signup">
+  <h2>Sign Up / CTA</h2>
+  <form action="#" method="POST">
+    <input type="email" name="email" placeholder="Your email" required style="padding:0.5rem; width:60%; margin-right:0.5rem;">
+    <button type="submit" class="button">Join Now</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 Product Name. All rights reserved.</p>
+</footer>
+
+<script>
+// Simple scroll fade-in
+const faders = document.querySelectorAll('.fade');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer)=>{
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }});
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
