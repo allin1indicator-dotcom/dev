@@ -3,150 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Institutional Time-Based Market Intelligence Engine</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>ALL IN 1 – Institutional-Grade Market Context</title>
 <style>
-  /* --- Base Styles --- */
-  body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#f1f1f1; scroll-behavior:smooth; }
-  a { text-decoration:none; color:inherit; }
-  section { padding:100px 5%; position:relative; overflow:hidden; }
-  h1,h2,h3 { margin:0 0 20px; }
-  p { margin:0 0 16px; line-height:1.6; }
-  .cta { display:inline-block; padding:14px 28px; background:#ff4f00; color:#fff; font-weight:600; border-radius:4px; transition:0.3s; }
-  .cta:hover { background:#ff7200; }
-  .flex { display:flex; gap:20px; flex-wrap:wrap; }
-  .table { background:rgba(255,255,255,0.05); padding:16px; border-radius:6px; font-size:0.9rem; }
-  .layer { opacity:0; transform:translateY(40px); transition:all 0.8s ease-out; }
-  .layer.visible { opacity:1; transform:translateY(0); }
-
-  /* --- Hero Section --- */
-  .hero {
-    height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-    text-align:center;
-  }
-  .hero h1 { font-size:3rem; margin-bottom:20px; }
-  .hero p { font-size:1.2rem; margin-bottom:40px; max-width:700px; }
-
-  /* --- Animated Lines / Chart Placeholders --- */
-  .session-line { height:2px; background:#00ffcc; margin:8px 0; width:0; }
-  .adr-line { height:2px; background:#ff004f; margin:8px 0; width:0; }
-  .box { border:1px solid #888; padding:10px; margin:10px 0; opacity:0.5; }
-  .marker { width:8px; height:8px; border-radius:50%; display:inline-block; }
-
-  /* --- Section Specific Styles --- */
-  .anchors .line { background:#00ffcc; height:2px; margin:4px 0; width:0; }
-  .sessions .box { background:rgba(0,255,204,0.2); }
-  .adr .line { background:#ff004f; height:2px; margin:4px 0; width:0; }
-  .events .box { background:rgba(255,255,255,0.1); margin:6px 0; padding:6px; border-left:3px solid #ff4f00; }
-  .detail { background:rgba(255,255,255,0.05); padding:12px; border-radius:4px; font-size:0.8rem; }
-
+body {font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #111;}
+.hero-section {background: #0a0a0a; color: #fff; padding: 60px 20px; text-align: center;}
+.hero-section h1 {font-size: 3em; margin-bottom: 10px;}
+.hero-section p {font-size: 1.2em; margin-bottom: 20px;}
+.btn {background: #ff6b00; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px;}
+.section {padding: 50px 20px;}
+.section h2 {font-size: 2em; margin-bottom: 20px;}
+.features {display: grid; grid-template-columns: 1fr 1fr; gap: 20px;}
+.feature-card {background: #f4f4f4; padding: 20px; border-radius: 10px;}
+.feature-card h3 {margin-top: 0;}
+.testimonials {background: #eaeaea; padding: 50px 20px;}
+.testimonial {margin-bottom: 30px;}
+.cta-section {text-align: center; padding: 60px 20px; background: #0a0a0a; color: #fff;}
+table {border-collapse: collapse; width: 100%; margin-top: 20px;}
+th, td {border: 1px solid #ccc; padding: 10px; text-align: left;}
 </style>
 </head>
 <body>
 
 <!-- Hero Section -->
-<section class="hero">
-  <img src="logo_placeholder.png" alt="Market Intelligence Logo" style="width:120px; margin-bottom:20px;">
-  <h1>Institutional Time-Based Market Intelligence Engine</h1>
-  <p>Visualize, track, and anticipate market structure across all timeframes with a fully integrated system engineered for precision, persistence, and decision-making.</p>
-  <a href="#subscription" class="cta">Start Trading with Precision →</a>
+<section class="hero-section">
+<h1>ALL IN 1 ⛳️ – Complete Market Structure Layer</h1>
+<p>Multi-timeframe sessions, HTF highs/lows, gaps, ADR, news, and holidays – instantly loaded, fully persistent, and ready for execution.</p>
+<a href="#trial" class="btn">Start 15-Day Free Trial</a>
 </section>
 
-<!-- Section 1: Temporal Anchors & Core Structure -->
-<section class="anchors layer">
-  <h2>Time Anchors Define Market Structure</h2>
-  <div class="flex">
-    <div>
-      <h3>DWMQY</h3>
-      <p>Tracks Daily → Yearly sessions, calculating high/low/open/close per timeframe. Manages raid/cross alerts and preserves persistent chart objects.</p>
-    </div>
-    <div>
-      <h3>NWOG</h3>
-      <p>Weekly opens/closes, gaps, weekly directional bias, mid/quarter averages, active gap detection.</p>
-    </div>
-    <div>
-      <h3>RTH & OPEN</h3>
-      <p>Regular trading hours mapping, multiple intraday opens, dynamic labels, persistent lines.</p>
-    </div>
-  </div>
-  <!-- Placeholder for animated lines -->
-  <div class="line session-line"></div>
-  <div class="line session-line"></div>
+<!-- Problem Section -->
+<section class="section">
+<h2>The Real Problem Traders Face</h2>
+<ul>
+<li>Manual context rebuilding every session slows execution</li>
+<li>Higher-timeframe levels require constant scanning</li>
+<li>Gaps, volatility projections, and news are handled separately</li>
+<li>Narratives reset across instruments and sessions</li>
+<li>Result: Cognitive fragmentation, not clutter</li>
+</ul>
 </section>
 
-<!-- Section 2: Session Delivery & Intraday Mapping -->
-<section class="sessions layer">
-  <h2>Intraday Precision & Session Intelligence</h2>
-  <div class="box">Intraday Session Boxes (AS, LDN, NYM) with high/low lines, first-candle tracking, cross detection</div>
-  <div class="box">HOD/LOD: Persistent daily high/low lines with dynamic updates</div>
+<!-- Solution Section -->
+<section class="section">
+<h2>The ALL IN 1 Solution</h2>
+<p>Instead of assembling context piece by piece, ALL IN 1 loads a complete structural framework the moment a chart opens. No manual drawing. No tab switching. Price remains central; context remains persistent.</p>
+
+<div class="features">
+
+<!-- DWMQY Module -->
+<div class="feature-card">
+<h3>DWMQY – Daily/Weekly/Monthly/Quarterly/Yearly Levels</h3>
+<p><strong>Purpose:</strong> Tracks and visualizes multi-timeframe sessions with high/low/open/close, ranges, raid/cross logic, and alerts.</p>
+<p><strong>Visual:</strong> Extends session high/low lines, boxes for raid/cross, and labels for H/L extremes per timeframe.</p>
+<p><strong>Benefits:</strong> Multi-timeframe clarity, context alignment, and persistent reference for intraday trading.</p>
+<img src="screenshot-dwmqy.png" alt="DWMQY Module Screenshot">
+</div>
+
+<!-- Intraday Session Module -->
+<div class="feature-card">
+<h3>Intraday Session</h3>
+<p><strong>Purpose:</strong> Manages intraday session tracking, first-candle ranges, raid/cross detection, and alerts.</p>
+<p><strong>Visual:</strong> Color-coded session boxes, dynamic high/low lines, and labels.</p>
+<p><strong>Benefits:</strong> Reduces preparation time, aligns intraday action with higher timeframe sessions.</p>
+<img src="screenshot-intraday.png" alt="Intraday Session Screenshot">
+</div>
+
+<!-- HOD/LOD Module -->
+<div class="feature-card">
+<h3>HOD/LOD Tracker</h3>
+<p><strong>Purpose:</strong> Persistent daily high/low references for intraday context.</p>
+<p><strong>Visual:</strong> Horizontal lines with labels updating in real-time.</p>
+<p><strong>Benefits:</strong> Avoids clutter, maintains readable intraday reference across markets.</p>
+<img src="screenshot-hodlod.png" alt="HOD/LOD Module Screenshot">
+</div>
+
+<!-- RTH Module -->
+<div class="feature-card">
+<h3>RTH – Regular Trading Hours Gaps & Averages</h3>
+<p><strong>Purpose:</strong> Tracks RTH opens, closes, averages, and cross events.</p>
+<p><strong>Visual:</strong> Horizontal lines and arrows for direction; linked close-average lines.</p>
+<p><strong>Benefits:</strong> Intraday and interday clarity, gap identification, decision support.</p>
+<img src="screenshot-rth.png" alt="RTH Module Screenshot">
+</div>
+
+<!-- NWOG Module -->
+<div class="feature-card">
+<h3>NWOG – New Week Open/Close & Gaps</h3>
+<p><strong>Purpose:</strong> Tracks weekly open/close, mid/quarter averages, gaps, and directional context.</p>
+<p><strong>Visual:</strong> Lines and boxes with start/end week labels and directional symbols.</p>
+<p><strong>Benefits:</strong> Week-over-week trend clarity, multi-timeframe alignment.</p>
+<img src="screenshot-nwog.png" alt="NWOG Module Screenshot">
+</div>
+
+<!-- ADR Module -->
+<div class="feature-card">
+<h3>ADR – Average Daily Range</h3>
+<p><strong>Purpose:</strong> Tracks full and reduced ADR levels with directional bias and intraday alerts.</p>
+<p><strong>Visual:</strong> Labeled lines and boxes for ADR and reduced ADR.</p>
+<p><strong>Benefits:</strong> Intraday range clarity, breakout cues, multi-day smoothing.</p>
+<img src="screenshot-adr.png" alt="ADR Module Screenshot">
+</div>
+
+<!-- OPEN Module -->
+<div class="feature-card">
+<h3>OPEN – Multiple Market Opens</h3>
+<p><strong>Purpose:</strong> Tracks up to 5 open levels with labels, lines, and historical context.</p>
+<p><strong>Visual:</strong> Lines and boxes per open session, dynamically styled.</p>
+<p><strong>Benefits:</strong> Clear intraday and historical reference for execution.</p>
+<img src="screenshot-open.png" alt="OPEN Module Screenshot">
+</div>
+
+<!-- DOW Module -->
+<div class="feature-card">
+<h3>DOW – Day-of-Week Labels</h3>
+<p><strong>Purpose:</strong> Tracks day-of-week markers, aligning weekly high/low context.</p>
+<p><strong>Visual:</strong> Color-coded labels above/below weekly extremes.</p>
+<p><strong>Benefits:</strong> Improves weekly context visualization and historical preservation.</p>
+<img src="screenshot-dow.png" alt="DOW Module Screenshot">
+</div>
+
+<!-- NOTE Module -->
+<div class="feature-card">
+<h3>NOTE – Daily Annotations</h3>
+<p><strong>Purpose:</strong> Displays configurable daily note in a single-cell table.</p>
+<p><strong>Visual:</strong> Persistent styled table cell with text alignment options.</p>
+<p><strong>Benefits:</strong> Clear, non-overlapping daily annotation system.</p>
+<img src="screenshot-note.png" alt="NOTE Module Screenshot">
+</div>
+
+<!-- DETAIL Module -->
+<div class="feature-card">
+<h3>DETAIL – Chart Info Table</h3>
+<p><strong>Purpose:</strong> Shows date, time, timeframe, and branded label in a compact table.</p>
+<p><strong>Visual:</strong> Bottom-left anchored table with dynamic styling.</p>
+<p><strong>Benefits:</strong> Quick contextual reference, multi-timeframe aware.</p>
+<img src="screenshot-detail.png" alt="DETAIL Module Screenshot">
+</div>
+
+<!-- HOLIDAY Module -->
+<div class="feature-card">
+<h3>HOLIDAY – Market Holiday Markers</h3>
+<p><strong>Purpose:</strong> Marks holidays with box and label without overlapping candles.</p>
+<p><strong>Visual:</strong> Semi-transparent colored box under daily lows with text.</p>
+<p><strong>Benefits:</strong> Enhances situational awareness and historical context.</p>
+<img src="screenshot-holiday.png" alt="HOLIDAY Module Screenshot">
+</div>
+
+<!-- OLD LINE MANAGEMENT Module -->
+<div class="feature-card">
+<h3>OLD LINE MANAGEMENT</h3>
+<p><strong>Purpose:</strong> Maintains chart clarity by removing outdated lines/labels across multiple timeframes.</p>
+<p><strong>Visual:</strong> Only current, relevant levels remain visible.</p>
+<p><strong>Benefits:</strong> Clean charts, multi-timeframe persistence without clutter.</p>
+<img src="screenshot-oldlines.png" alt="OLD LINE MANAGEMENT Screenshot">
+</div>
+
+<!-- NEWS Module -->
+<div class="feature-card">
+<h3>NEWS – Economic Event Visualization</h3>
+<p><strong>Purpose:</strong> Aggregates, timestamps, and displays economic news aligned with daily/weekly sessions.</p>
+<p><strong>Visual:</strong> Table + lines + labels, color-coded by impact with tooltips.</p>
+<p><strong>Benefits:</strong> Links news to price action, preserves historical context, actionable alerts.</p>
+<img src="screenshot-news.png" alt="NEWS Module Screenshot">
+</div>
+
+</div>
 </section>
 
-<!-- Section 3: Volatility & Structural Thresholds -->
-<section class="adr layer">
-  <h2>Measure Market Expansion</h2>
-  <div class="line adr-line">ADR Rolling 5-Day Range: Full/Reduced, directional bias, breach alerts</div>
+<!-- Testimonials Section -->
+<section class="testimonials">
+<h2>What Traders Are Saying</h2>
+<div class="testimonial">
+<p>🇮🇪 Thomas W.: “Execution feels deliberate instead of reactive. The framework loads instantly and remains aligned across timeframes.”</p>
+</div>
+<div class="testimonial">
+<p>🇺🇸 Amairani R.: “Replaced multiple tools with a single structured layer. Preparation time significantly reduced.”</p>
+</div>
+<div class="testimonial">
+<p>🇵🇹 Johny F.: “Structural references appear exactly when relevant and change state after interaction.”</p>
+</div>
+<div class="testimonial">
+<p>🇮🇹 Matteo V.: “Preparation is faster, cleaner, and more consistent.”</p>
+</div>
+<div class="testimonial">
+<p>🇺🇸 Kevin L.: “Sessions, volatility projections, and HTF levels remain stable without constant adjustment.”</p>
+</div>
+<div class="testimonial">
+<p>🇸🇦 Mohamed D.: “Alerts tied to structural levels reduce screen dependency, supporting disciplined execution.”</p>
+</div>
+<div class="testimonial">
+<p>🔧 Riccardo F.: “Built for structural clarity. Every feature earned its place through iteration and real use.”</p>
+</div>
 </section>
 
-<!-- Section 4: Event & Context Layer -->
-<section class="events layer">
-  <h2>Contextual Market Intelligence</h2>
-  <div class="box">DOW Labels aligned with weekly highs/lows</div>
-  <div class="box">Holiday Boxes with dynamic labels</div>
-  <div class="box">News Events: timestamped, color-coded by impact, aligned to sessions and weekly extremes</div>
-  <div class="box">Notes: Configurable daily annotations overlay</div>
+<!-- CTA Section -->
+<section class="cta-section" id="trial">
+<h2>Access ALL IN 1 Today</h2>
+<p>Professional Access: $109 | Founding Access: $99 (limited seats)</p>
+<a href="#" class="btn">Start 15-Day Free Trial</a>
+<p>All modules included. Multi-timeframe structural mapping. Session + liquidity framework. Event & volatility integration. Alert system. Replay compatibility.</p>
 </section>
-
-<!-- Section 5: Interface, Details & Structural Integrity -->
-<section class="interface layer">
-  <h2>Persistent, Clean, Multi-Timeframe Clarity</h2>
-  <div class="detail">
-    DETAIL Table: Date, Time, Timeframe, Branding
-  </div>
-  <div class="detail">
-    OLD LINE MANAGEMENT: Garbage collection of outdated lines/labels
-  </div>
-</section>
-
-<!-- Section 6: Unified Architecture & Mechanism -->
-<section class="architecture layer">
-  <h2>How All Modules Work Together</h2>
-  <ol>
-    <li>Time Anchors → Multi-timeframe structural reference points</li>
-    <li>Session Engines → Intraday extremes, first-candle, raid/cross detection</li>
-    <li>ADR → Expansion/contraction zones relative to anchors</li>
-    <li>Events Layer → News, holidays, notes overlay on structure</li>
-    <li>Interface & Integrity → Persistent tables, garbage collection</li>
-  </ol>
-</section>
-
-<!-- Section 7: Value Proposition & Subscription Pitch -->
-<section id="subscription" class="value layer">
-  <h2>Why This Is Institutional Grade</h2>
-  <p>Replaces 8–10 separate tools. Multi-layered, persistent, multi-timeframe aware. Decision-enabling: raid/cross alerts, breakout thresholds, news + holiday context.</p>
-  <a href="https://your-stripe-link.com" class="cta">Unlock Full Market Intelligence →</a>
-  <div class="flex">
-    <img src="comparison_placeholder.png" alt="Tool Replacement Graphic" style="width:300px;">
-  </div>
-</section>
-
-<script>
-  // Scroll-triggered animation
-  const layers = document.querySelectorAll('.layer');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
-    });
-  }, { threshold:0.2 });
-  layers.forEach(layer => observer.observe(layer));
-
-  // Placeholder animation for lines
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.session-line, .adr-line').forEach(line => {
-      line.style.width = '100%';
-    });
-  });
-</script>
 
 </body>
 </html>
