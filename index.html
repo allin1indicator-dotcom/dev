@@ -3,117 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R) ALL IN 1 ⛳️ | Institutional Trading Suite</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>THE GREEN ⛳️ | Institutional Trading Environment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: radial-gradient(circle at top right, #10b98122, transparent); }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .accent-text { color: #10b981; }
-        .btn-primary { background: #10b981; transition: all 0.3s ease; }
-        .btn-primary:hover { background: #059669; transform: translateY(-2px); }
+        :root {
+            --bg-dark: #0f1115;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --accent-green: #2ecc71;
+            --text-main: #e0e0e0;
+            --text-dim: #94a3b8;
+            --border-glow: rgba(46, 204, 113, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Hero Section */
+        .hero-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-green);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .highlight-col {
+            background: rgba(46, 204, 113, 0.05);
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            font-style: italic;
+            border-left: 2px solid var(--accent-green);
+            padding-left: 25px;
+            margin-bottom: 40px;
+        }
+
+        .author {
+            font-style: normal;
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+            color: var(--text-dim);
+        }
+
+        /* CTA Section */
+        .cta-box {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(145deg, rgba(46, 204, 113, 0.1), transparent);
+            border: 1px solid var(--border-glow);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #000;
+            padding: 18px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 25px var(--border-glow);
+            transform: scale(1.05);
+        }
+
+        /* Utilities */
+        .red { color: #ff4d4d; }
+        .tag {
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-img { height: 300px; }
+        }
     </style>
 </head>
-<body class="hero-gradient">
+<body>
 
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="text-2xl font-bold tracking-tighter">R) ALL IN 1 <span class="accent-text">⛳️</span></div>
-        <div class="space-x-8 hidden md:flex text-sm font-medium text-slate-400">
-            <a href="#features" class="hover:text-emerald-400">Features</a>
-            <a href="#logic" class="hover:text-emerald-400">The Logic</a>
-            <a href="#pricing" class="hover:text-emerald-400">Pricing</a>
-        </div>
-        <a href="#pricing" class="btn-primary px-5 py-2 rounded-full text-sm font-bold">Get Access</a>
-    </nav>
-
-    <header class="py-20 px-6 text-center max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
-            Trade Like the Institution, Not the Liquidity.
-        </h1>
-        <p class="text-lg text-slate-400 mb-10">
-            The ultimate TradingView suite for ICT, SMC, and Order Flow traders. 
-            All your HTF structures, Intraday Sessions, and News Data in <b>one unified view</b>.
-        </p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-            <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg">Start Your Subscription</a>
-            <a href="#features" class="glass px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition">Explore Features</a>
-        </div>
+    <header class="container">
+        <div class="logo">THE GREEN ⛳️</div>
+        <h1>Absolute Visual Clarity.</h1>
+        <p class="subtitle">3 Years of Engineering. Zero Visual Friction. The Final Approach to Institutional Market Structure.</p>
+        
+        <img src="https://via.placeholder.com/1200x600/1a1d23/ffffff?text=Institutional+Chart+Example+-+Clean+Manicured+Levels" alt="The Green Environment Preview" class="hero-img glass">
     </header>
 
-    <section id="features" class="py-20 max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-2xl">
-                <i class="fa-solid fa-layer-group accent-text text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Omni-Temporal Mapping</h3>
-                <p class="text-slate-400 text-sm">Synchronized DWMQY Highs & Lows. See historical liquidity anchors without switching timeframes.</p>
+    <div class="container">
+        <section>
+            <div class="grid">
+                <div>
+                    <span class="tag">THE PROBLEM</span>
+                    <h2>Trading in the "Rough"</h2>
+                    <p style="color: var(--text-dim);">Retail charts are a graveyard of "Spaghetti Code." Overlapping data leads to hesitation, and hesitation leads to missed entries. If your chart is messy, your execution will be messy.</p>
+                    <ul style="margin-top: 20px; list-style: none;">
+                        <li>❌ <b>Label Stacking:</b> Indicators fighting for the same pixel.</li>
+                        <li>❌ <b>Ghost Lines:</b> Old levels bleeding through current price.</li>
+                        <li>❌ <b>Chromatic Noise:</b> Eye fatigue from neon-heavy UIs.</li>
+                    </ul>
+                </div>
+                <div class="glass feature-card" style="border-color: rgba(255, 77, 77, 0.2);">
+                    <p style="text-align: center; color: var(--text-dim);"></p>
+                </div>
             </div>
-            <div class="glass p-8 rounded-2xl">
-                <i class="fa-solid fa-bolt accent-text text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Institutional Gap Engine</h3>
-                <p class="text-slate-400 text-sm">Real-time NWOG (New Week Opening Gap) and RTH settlement tracking with 50% midpoint automation.</p>
-            </div>
-            <div class="glass p-8 rounded-2xl">
-                <i class="fa-solid fa-newspaper accent-text text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Live News HUD</h3>
-                <p class="text-slate-400 text-sm">High-impact economic events plotted directly on your candles. Never get caught by NFP or FOMC again.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="logic" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">The "Alpha" Logic</h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check accent-text mt-1"></i>
-                        <span><b>Dynamic ADR Exhaustion:</b> Levels recalculate as price moves, identifying the mathmatical limit of the day.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check accent-text mt-1"></i>
-                        <span><b>Midnight/9:30 Anchors:</b> Automatic mapping of the "True Day" for Power of 3 accumulation tracking.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check accent-text mt-1"></i>
-                        <span><b>Raid-Aware Logic:</b> The script differentiates between a price touch and a liquidity sweep.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="glass aspect-video rounded-2xl flex items-center justify-center border-dashed border-2 border-slate-700">
-                <span class="text-slate-500">[Insert High-Res GIF of Script in Action]</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-20 max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-4">Complete Access</h2>
-        <p class="text-slate-400 mb-12">One subscription. Every feature. Unlimited updates.</p>
-        
-        <div class="glass p-12 rounded-3xl border-2 border-emerald-500 relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-emerald-500 text-slate-900 text-xs font-black px-4 py-1 uppercase tracking-widest">
-                Most Popular
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Monthly Pro License</h3>
-            <div class="text-6xl font-black mb-6">$49<span class="text-xl text-slate-500">/mo</span></div>
+        <section id="solution">
+            <span class="tag">THE SOLUTION</span>
+            <h2>A Manicured Environment ($109 Standard)</h2>
             
-            <ul class="text-left space-y-4 mb-10">
-                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Full R) ALL IN 1 Suite access</li>
-                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Real-time Economic Data Feeds</li>
-                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Multi-Broker/Futures Compatibility</li>
-                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Private Discord Community Access</li>
-            </ul>
+            <div class="grid">
+                <div class="glass feature-card">
+                    <h3>Surgical Line Termination</h3>
+                    <p>Our DWMQY lines calculate the exact micro-tick of interaction. They stop <b>precisely 1 pixel</b> before price makes contact. No ghost lines, just pure neutralized data.</p>
+                </div>
+                <div class="glass feature-card">
+                    <h3>Zero-Collision Label Stack</h3>
+                    <p>Our proprietary <b>Vertical-Stacking Algorithm</b> detects label collisions in real-time. Midnight Open, News, and ADR re-order themselves perfectly. You never lose the candle.</p>
+                </div>
+                <div class="glass feature-card">
+                    <h3>92% Frosted Glass UI</h3>
+                    <p>Calibrated transparency allows you to see HTF levels <i>through</i> intraday sessions. High-density context with zero visual weight.</p>
+                </div>
+            </div>
+        </section>
 
-            <a href="YOUR_STRIPE_LINK_HERE" class="btn-primary w-full block py-4 rounded-xl font-bold text-xl shadow-lg shadow-emerald-900/20">
-                Get Instant Access
-            </a>
-            <p class="mt-4 text-xs text-slate-500">Secure checkout via Stripe. Cancel anytime.</p>
-        </div>
-    </section>
+        <section>
+            <h2>The Professional Edge</h2>
+            <div class="glass" style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Standard "All-In-One" ($39)</th>
+                            <th class="highlight-col">THE GREEN ⛳️ ($109)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Label Logic</td>
+                            <td>Overlapping / Unreadable</td>
+                            <td class="highlight-col">Dynamic Y-Axis Stacking</td>
+                        </tr>
+                        <tr>
+                            <td>Line Physics</td>
+                            <td>Infinite Rays (Messy)</td>
+                            <td class="highlight-col">Surgical Termination at Touch</td>
+                        </tr>
+                        <tr>
+                            <td>Session UI</td>
+                            <td>Solid Blocks (Opaque)</td>
+                            <td class="highlight-col">92% Frosted Glass Transparency</td>
+                        </tr>
+                        <tr>
+                            <td>News Integration</td>
+                            <td>External Links Only</td>
+                            <td class="highlight-col">Real-Time On-Chart Pulse (<span class="red">🔴</span>)</td>
+                        </tr>
+                        <tr>
+                            <td>Engine Build</td>
+                            <td>Generic Templates</td>
+                            <td class="highlight-col">3-Year Proprietary Framework</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <footer class="py-10 text-center text-slate-600 border-t border-slate-800">
-        <p>&copy; 2026 R) ALL IN 1. Designed for TradingView Professionals.</p>
-    </footer>
+        <section>
+            <h2>The Institutional Feature Suite</h2>
+            <div class="grid">
+                <div>
+                    <p><b>Midnight 🌙 Anchor:</b> The institutional "True North" for Daily Bias.</p>
+                    <p><b>The News Pulse:</b> High-Impact (<span class="red">🔴</span>) events plotted directly on your scale.</p>
+                    <p><b>The Gap Engine:</b> RTH & NWOG Midpoints—algorithmic "Magnets".</p>
+                </div>
+                <div>
+                    <p><b>5-Day ADR:</b> Dynamic exhaustion zones that scale as price expands.</p>
+                    <p><b>Validation Engine:</b> HOD/LOD structural tracking with 15m hold validation.</p>
+                    <p><b>Live HUD:</b> Real-time Symbol, Timeframe, and NY Clock dashboard.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="testimonial">
+                "I used to run 7 different indicators to get this data. My chart was a mess. Switching to THE GREEN gave me back my focus. The way the labels stack themselves is worth the subscription alone."
+                <span class="author">— J. Marcus, Funded Institutional Trader</span>
+            </div>
+            <div class="testimonial">
+                "The attention to detail is insane. The lines stopping exactly before the wick hits? That's when you know a developer actually trades."
+                <span class="author">— Sarah T., Macro-Trend Specialist</span>
+            </div>
+        </section>
+
+        <section class="glass" style="padding: 60px; border-left: 4px solid var(--accent-green);">
+            <h2>The 1,095 Day Journey</h2>
+            <p style="color: var(--text-dim); font-size: 1.1rem;">This wasn't built in a weekend. THE GREEN is the result of 3 years of recursive testing across 1,500+ trading sessions. We didn't just write code; we solved the physics of the TradingView canvas to ensure your manicured view never breaks during high volatility.</p>
+        </section>
+
+        <section>
+            <div class="glass cta-box">
+                <span class="tag">LIMITED MEMBERSHIP</span>
+                <h2>Access The Green</h2>
+                <div class="price">$109<span style="font-size: 1rem; color: var(--text-dim);"> / Month</span></div>
+                <p style="margin-bottom: 30px; color: var(--text-dim);">Includes Full Framework, Proprietary UI, and Private Community Access.</p>
+                <a href="#" class="btn">Join The Club</a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-dim);">7-Day Satisfaction Guarantee</p>
+            </div>
+        </section>
+
+        <footer style="padding: 40px 0; text-align: center; color: #444; font-size: 0.8rem;">
+            © 2023-2026 THE GREEN TRADING ENVIRONMENT. ALL RIGHTS RESERVED.
+        </footer>
+    </div>
 
 </body>
 </html>
