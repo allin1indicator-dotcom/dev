@@ -3,84 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradingView Indicator | Professional Launch</title>
+    <title>R) ALL IN 1 ⛳️ | Institutional Trading Suite</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: radial-gradient(circle at top right, #10b98122, transparent); }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .accent-text { color: #10b981; }
+        .btn-primary { background: #10b981; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #059669; transform: translateY(-2px); }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="hero-gradient">
 
-    <header class="bg-slate-900 text-white pt-24 pb-32 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <span class="bg-blue-600 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">New Release 2026</span>
-            <h1 class="text-5xl md:text-6xl font-extrabold mt-6 mb-6 tracking-tight">
-                Trade the Trend, <span class="text-blue-500">Not the Noise.</span>
-            </h1>
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-                Unlock high-probability signals with our proprietary Pine Script logic. Designed for disciplined traders who value precision over hype.
-            </p>
-            
-            <div class="relative max-w-5xl mx-auto">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-25"></div>
-                <div class="relative bg-slate-800 rounded-xl border border-slate-700 shadow-2xl overflow-hidden">
-                    <div class="bg-slate-700/50 p-3 flex gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1611974714024-4696f0579e00?auto=format&fit=crop&w=1200&q=80" alt="Indicator Screenshot" class="w-full h-auto opacity-90">
-                </div>
-            </div>
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">R) ALL IN 1 <span class="accent-text">⛳️</span></div>
+        <div class="space-x-8 hidden md:flex text-sm font-medium text-slate-400">
+            <a href="#features" class="hover:text-emerald-400">Features</a>
+            <a href="#logic" class="hover:text-emerald-400">The Logic</a>
+            <a href="#pricing" class="hover:text-emerald-400">Pricing</a>
+        </div>
+        <a href="#pricing" class="btn-primary px-5 py-2 rounded-full text-sm font-bold">Get Access</a>
+    </nav>
+
+    <header class="py-20 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+            Trade Like the Institution, Not the Liquidity.
+        </h1>
+        <p class="text-lg text-slate-400 mb-10">
+            The ultimate TradingView suite for ICT, SMC, and Order Flow traders. 
+            All your HTF structures, Intraday Sessions, and News Data in <b>one unified view</b>.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg">Start Your Subscription</a>
+            <a href="#features" class="glass px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition">Explore Features</a>
         </div>
     </header>
 
-    <section class="py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Engineered for Accuracy</h2>
-            <p class="text-slate-600 text-center mb-16">Derived directly from quantitative market analysis.</p>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-blue-600 uppercase tracking-wide">Core Logic</h3>
-                    <p class="text-slate-700 leading-relaxed">
-                        Our script uses a multi-timeframe volatility filter to ensure you never enter a trade during low-volume "fakeouts." (Paste your AI-generated bullet here).
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-blue-600 uppercase tracking-wide">The Edge</h3>
-                    <p class="text-slate-700 leading-relaxed">
-                        Unlike standard RSI or MACD, this indicator adapts to market regime changes in real-time, switching from trend-following to mean-reversion logic automatically.
-                    </p>
-                </div>
+    <section id="features" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-2xl">
+                <i class="fa-solid fa-layer-group accent-text text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Omni-Temporal Mapping</h3>
+                <p class="text-slate-400 text-sm">Synchronized DWMQY Highs & Lows. See historical liquidity anchors without switching timeframes.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <i class="fa-solid fa-bolt accent-text text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Institutional Gap Engine</h3>
+                <p class="text-slate-400 text-sm">Real-time NWOG (New Week Opening Gap) and RTH settlement tracking with 50% midpoint automation.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <i class="fa-solid fa-newspaper accent-text text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Live News HUD</h3>
+                <p class="text-slate-400 text-sm">High-impact economic events plotted directly on your candles. Never get caught by NFP or FOMC again.</p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-slate-100 border-t border-slate-200">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-slate-900 mb-6">Ready to Level Up?</h2>
-            <p class="text-lg text-slate-600 mb-12">Get instant access to the invite-only script on TradingView.</p>
-            
-            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
-                <p class="text-slate-400 italic mb-4">[Your Stripe Pricing Table Embed Code Goes Here]</p>
-                <div class="py-10 border-2 border-dashed border-slate-200 rounded-xl text-slate-400 font-mono text-sm">
-                    &lt;stripe-pricing-table&gt;
-                </div>
-                <button class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-200">
-                    Subscribe Now - $XX/mo
-                </button>
+    <section id="logic" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">The "Alpha" Logic</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check accent-text mt-1"></i>
+                        <span><b>Dynamic ADR Exhaustion:</b> Levels recalculate as price moves, identifying the mathmatical limit of the day.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check accent-text mt-1"></i>
+                        <span><b>Midnight/9:30 Anchors:</b> Automatic mapping of the "True Day" for Power of 3 accumulation tracking.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check accent-text mt-1"></i>
+                        <span><b>Raid-Aware Logic:</b> The script differentiates between a price touch and a liquidity sweep.</span>
+                    </li>
+                </ul>
             </div>
-            
-            <p class="mt-8 text-sm text-slate-500 italic font-medium">
-                *Includes setup guide and 24/7 technical support.
-            </p>
+            <div class="glass aspect-video rounded-2xl flex items-center justify-center border-dashed border-2 border-slate-700">
+                <span class="text-slate-500">[Insert High-Res GIF of Script in Action]</span>
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-400 text-xs">
-        &copy; 2026 Your Trading Brand. All signals are for educational purposes only.
+    <section id="pricing" class="py-20 max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-4">Complete Access</h2>
+        <p class="text-slate-400 mb-12">One subscription. Every feature. Unlimited updates.</p>
+        
+        <div class="glass p-12 rounded-3xl border-2 border-emerald-500 relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-emerald-500 text-slate-900 text-xs font-black px-4 py-1 uppercase tracking-widest">
+                Most Popular
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Monthly Pro License</h3>
+            <div class="text-6xl font-black mb-6">$49<span class="text-xl text-slate-500">/mo</span></div>
+            
+            <ul class="text-left space-y-4 mb-10">
+                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Full R) ALL IN 1 Suite access</li>
+                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Real-time Economic Data Feeds</li>
+                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Multi-Broker/Futures Compatibility</li>
+                <li class="flex gap-3"><i class="fa-solid fa-circle-check accent-text"></i> Private Discord Community Access</li>
+            </ul>
+
+            <a href="YOUR_STRIPE_LINK_HERE" class="btn-primary w-full block py-4 rounded-xl font-bold text-xl shadow-lg shadow-emerald-900/20">
+                Get Instant Access
+            </a>
+            <p class="mt-4 text-xs text-slate-500">Secure checkout via Stripe. Cancel anytime.</p>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-600 border-t border-slate-800">
+        <p>&copy; 2026 R) ALL IN 1. Designed for TradingView Professionals.</p>
     </footer>
 
 </body>
