@@ -1,457 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL IN 1 — Institutional Structural Framework</title>
-<meta name="description" content="Unified Smart Market Framework. Instantly Loaded. Fully Mapped.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg-0:#042B63;
-  --bg-1:#0C0463;
-  --bg-2:#630C04;
-  --surface-1:rgba(255,255,255,.04);
-  --surface-2:rgba(255,255,255,.06);
-  --border:rgba(255,255,255,.08);
-  --primary:#3a7bd5;
-  --primary-hover:#4f8ee8;
-  --accent:#E6D097;
-  --danger:#630C04;
-  --text:#CCDADB;
-  --muted:#98a3c7;
-  --max:1200px;
-}
-
-/* Reset & Base */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg-0);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-.container{width:92%;max-width:var(--max);margin:auto;}
-section{padding:6rem 0;}
-h1{font-size:3.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;color:--muted;text-align:center;margin-bottom:1rem;}
-h2,h3{font-weight:600;margin-bottom:1.5rem;color:--muted;}
-h2{font-size:2rem;}
-p{color:var(--muted);line-height:1.6;font-size:1rem;}
-/* ul{padding-left:1.5rem;margin-top:1rem;}
-li{margin-bottom:.7rem;}*/
-
-/* HERO */
-.hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--bg-0);}
-.hero video{position:absolute;width:100%;height:100%;object-fit:cover;opacity:.22;}
-.hero-content{position:relative;z-index:2;max-width:900px;}
-.badge{color:var(--accent);font-size:1rem;margin-bottom:1rem;font-weight:500;}
-.cta{margin-top:2rem;padding:16px 36px;display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;border-radius:6px;transition:.2s ease;cursor:pointer;}
-.cta:hover{background:var(--primary-hover);}
-.secondary{background:transparent;border:1px solid var(--border);margin-left:1rem;border-radius:6px;}
-
-/* Feature Grid & Cards */
-.feature-section{max-width:1100px;margin:0 auto;padding:0 30px;}
-.feature-card{
-  background:var(--surface-1);border-radius:12px;padding:2.5rem;box-shadow:0 8px 20px rgba(0,0,0,0.07);
-  transition:transform .3s ease, box-shadow .3s ease;margin-bottom:30px;
-}
-.feature-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,0.1);}
-.feature-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;margin-bottom:15px;}
-.feature-header h2{font-size:1.6rem;margin:0;}
-.toggle-btn{background:none;border:none;font-size:1rem;font-weight:600;color:--muted;cursor:pointer;transition:color .2s;}
-.toggle-btn:hover{color:--muted;}
-.feature-summary{margin-top:10px;}
-.feature-summary ul{padding-left:1.2rem;}
-.feature-summary li::before{content:"•";color:--muted;display:inline-block;width:1em;margin-left:-1em;}
-.feature-details{display:none;margin-top:20px;padding-top:15px;border-top:1px solid --muted;color:--muted;font-size:.95rem;}
-.feature-details p{margin-bottom:12px;}
-.feature-summary strong,.feature-details strong{color:--muted;}
-.feature-grid { display: grid;  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-  
-/* Screenshots */
-.screenshot{padding:10px;background:var(--surface-2);border-radius:8px;margin-bottom:2rem;}
-
-/* Pricing */
-.price-section{text-align:center;padding:4rem 0;background:var(--bg-1);border-radius:12px;margin:4rem 0;}
-.price{font-size:3rem;color:var(--accent);margin:1rem 0;}
-
-/* Testimonials Carousel */
-.testimonial-carousel{position:relative;overflow:hidden;margin:6rem 0;}
-.carousel-track{display:flex;transition:transform 1.2s cubic-bezier(.22,.61,.36,1);}
-.testimonial-card{flex:0 0 70%;margin:0 15%;background:var(--surface-1);border-radius:12px;padding:2.5rem;backdrop-filter:blur(6px);opacity:.35;transform:scale(.9);transition:all .8s cubic-bezier(.22,.61,.36,1);cursor:pointer;}
-.testimonial-card.active{opacity:1;transform:scale(1);}
-.testimonial-card.left{transform:scale(.92) translateX(-40px);opacity:.5;}
-.testimonial-card.right{transform:scale(.92) translateX(40px);opacity:.5;}
-.testimonial-progress{position:relative;height:3px;width:100%;margin-top:2rem;background:rgba(255,255,255,.08);overflow:hidden;border-radius:2px;}
-.testimonial-progress-bar{height:100%;width:0%;background:var(--accent);transition:width 6.5s linear;}
-
-/* Footer */
-footer{padding:3rem 0;font-size:.85rem;color:var(--muted);text-align:center;}
-
-/* Modal */
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;display:none;z-index:999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;}
-.modal-content{width:90%;max-width:600px;padding:3rem;background:var(--surface-1);border-radius:8px;}
-input,textarea{width:100%;padding:12px;margin-bottom:1rem;background:--muted;color:--muted;border:1px solid rgba(255,255,255,.2);}
-button{width:100%;padding:14px;background:var(--primary);color:--muted;border:none;font-weight:600;cursor:pointer;border-radius:6px;}
-
-.v3_textSlider {
-  overflow: hidden;
-  width: 100%;
-}
-
-.v3_content {
-  display: flex;
-  width: 100%;        /* 5 slides */
-}
-
-.v3_content_item {
-  min-width: 100%;
-  display: flex;
-}
-  
-/* Responsive */
-@media (max-width:768px){
-  .features-section,.feature-section{padding:0 20px;}
-  h1{font-size:2.2rem;}
-  .feature-header h2{font-size:1.4rem;}
-}
-
-/* Optional: hover & toggle animations */
-.feature-details{transition:max-height .4s ease, opacity .4s ease;overflow:hidden;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Geometry | Alpha Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: #ededed; font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .border-glow { border: 1px solid #333; transition: 0.3s; }
+        .border-glow:hover { border-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-<!-- HERO -->
-<section class="hero">
-  <video autoplay muted loop>
-    <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <div class="badge">Q2 Allocation: <span id="seatCounter">7 / 20</span> Remaining</div>
-    <h1>ALL IN 1</h1>
-    <p>Unified Smart Market Framework. Instantly Loaded. Fully Mapped.</p>
-    <div>
-      <a class="cta" onclick="openModal()">Get Allocation</a>
-      <a href="#features" class="cta secondary">View Features</a>
-    </div>
-  </div>
-</section>
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="text-xl font-bold tracking-tighter italic">GEOMETRY<span class="text-blue-500">ENGINE</span></div>
+        <a href="#access" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">Get Access</a>
+    </nav>
 
-<section class="v3_iconic-standard" id="v3_sticky_top">
-
-  <div class="v3_iconic-standard-slider">
-      <div class="v3_textSlider">
-          <div class="v3_content">
-
-              <div class="v3_content_item">
-                  <div>
-                  <h1 class="gradient-text-white">Elevation Over Imitation</h1>
-                  <h2>We rise by thinking differently and striving beyond the status quo.</h2>
-                  </div>
-              </div>
-
-              <div class="v3_content_item">
-                  <h1 class="gradient-text-white">Excellence in the Everyday</h1>
-                  <h2>Greatness comes from daily effort, attention to detail, and showing up with intention.</h2>
-              </div>
-
-              <div class="v3_content_item">
-                  <h1 class="gradient-text-white">Clarity Creates Confidence</h1>
-                  <h2>We pursue knowledge that empowers action.</h2>
-              </div>
-
-              <div class="v3_content_item">
-                  <h1 class="gradient-text-white">Freedom Through Discipline</h1>
-                  <h2>Success is earned through consistency and structured learning.</h2>
-              </div>
-
-              <div class="v3_content_item">
-                  <h1 class="gradient-text-white">Built to Empower</h1>
-                  <h2>We grow stronger by lifting others up</h2>
-              </div>
-
-          </div>
-      </div>
-  </div>
-
-</section>
-
-<section class="features-section">
-
-  <div class="container">
-
-    <h1 class="section-title">
-      Advanced Market Session & Reference Tools
-    </h1>
-
-    <p class="section-subtitle">
-      Seamlessly visualize multi-timeframe sessions, intraday highs/lows,
-      RTH levels, and weekly directional context. Designed for clarity,
-      precision, and actionable insight.
-    </p>
-
-    <!-- GRID START -->
-    <div class="feature-grid">
-
-      <!-- Feature 1 -->
-      <div class="feature-card">
-        <div class="feature-header">
-          <h2>DWMQY – Multi-Timeframe Session Engine</h2>
-          <button class="toggle-btn">Details ▼</button>
+    <header class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <span class="text-blue-500 font-mono text-sm tracking-widest uppercase">Institutional Market Architecture</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-4 mb-6 leading-tight">
+            Stop Trading Lag. <br>Start Trading <span class="gradient-text">Geometry.</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
+            A professional-grade engine mapping the structural DNA of the market. Time, Session Openings, and Liquidity Pools—rendered in real-time.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <button class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-gray-200 transition">Add to TradingView</button>
+            <button class="bg-transparent border border-gray-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-900 transition">View Documentation</button>
         </div>
-        <div class="feature-summary">
-          <p><strong>Core Purpose:</strong>
-            Align short-term price action with higher timeframe context,
-            tracking daily to yearly sessions effortlessly.
-          </p>
-          <ul>
-            <li>Unified Daily → Yearly session tracking with persistence.</li>
-            <li>Dynamic raid/cross alerts highlighting extremes.</li>
-            <li>First-candle & previous session memory.</li>
-          </ul>
-        </div>
-        <div class="feature-details">
-          <p><strong>Visual Highlights:</strong>
-            Multi-level lines and optional raid/cross boxes.
-          </p>
-          <p><strong>Unique Mechanisms:</strong>
-            Cross-aware persistence and timezone-anchored logic.
-          </p>
-          <p><strong>Positive Effects:</strong>
-            Instant multi-timeframe clarity with reduced clutter.
-          </p>
-        </div>
-      </div>
+    </header>
 
-      <!-- Feature 2 -->
-      <div class="feature-card">
-        <div class="feature-header">
-          <h2>Intraday Session</h2>
-          <button class="toggle-btn">Details ▼</button>
+    <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
+            <div class="text-3xl mb-4">🏛️</div>
+            <h3 class="text-xl font-bold mb-2">Macro Narrative</h3>
+            <p class="text-gray-400 text-sm">Track PDH/PWH/PMH and the 50% Equilibrium of the New Week Opening Gap (NWOG).</p>
         </div>
-        <div class="feature-summary">
-          <p><strong>Core Purpose:</strong>
-            Optimize intraday trading with precise session tracking.
-          </p>
-          <ul>
-            <li>Configurable raid display per session.</li>
-            <li>First-candle range tracking.</li>
-            <li>Multi-session plotting with color coding.</li>
-          </ul>
+        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-xl font-bold mb-2">Volatility Containers</h3>
+            <p class="text-gray-400 text-sm">Automated Session Killzones: London, NY Morning, and the critical Midnight 00:00 Reset.</p>
         </div>
-        <div class="feature-details">
-          <p><strong>Visual Highlights:</strong>
-            Session boxes and dynamic high/low extensions.
-          </p>
-          <p><strong>Unique Mechanisms:</strong>
-            Multi-layer persistence arrays with real-time crosses.
-          </p>
-          <p><strong>Positive Effects:</strong>
-            Automated labeling with minimal visual noise.
-          </p>
+        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
+            <div class="text-3xl mb-4">✘</div>
+            <h3 class="text-xl font-bold mb-2">Liquidity Engine</h3>
+            <p class="text-gray-400 text-sm">Live Raid Detection (✘) and SMT Divergence tracking against correlated assets.</p>
         </div>
-      </div>
+    </section>
 
-      <!-- Feature 3 -->
-      <div class="feature-card">
-        <div class="feature-header">
-          <h2>HOD/LOD Tracker</h2>
-          <button class="toggle-btn">Details ▼</button>
+    <section class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold mb-10 text-center">Institutional Reference Points</h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-800">
+            <table class="w-full text-left text-sm">
+                <thead class="bg-zinc-900 text-gray-400 uppercase">
+                    <tr>
+                        <th class="p-4">Level Type</th>
+                        <th class="p-4">Visual Label</th>
+                        <th class="p-4">Strategic Significance</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800">
+                    <tr><td class="p-4 font-bold text-blue-400">NWOG</td><td class="p-4">Purple Line</td><td class="p-4 text-gray-400">Weekly Bias & Mean Reversion Target</td></tr>
+                    <tr><td class="p-4 font-bold text-orange-400">RTH</td><td class="p-4">Orange Line</td><td class="p-4 text-gray-400">Daily Gap Fill (Essential for Futures)</td></tr>
+                    <tr><td class="p-4 font-bold text-red-500">Raids</td><td class="p-4">" ✘ "</td><td class="p-4 text-gray-400">High-Probability Reversal Confirmation</td></tr>
+                </tbody>
+            </table>
         </div>
-        <div class="feature-summary">
-          <p><strong>Core Purpose:</strong>
-            Provide persistent intraday high/low references.
-          </p>
-          <ul>
-            <li>Timezone-aware daily tracking.</li>
-            <li>Real-time extension on new highs/lows.</li>
-          </ul>
-        </div>
-        <div class="feature-details">
-          <p><strong>Visual Highlights:</strong>
-            Clean horizontal HOD/LOD lines with labels.
-          </p>
-          <p><strong>Unique Mechanisms:</strong>
-            Independent persistent objects per level.
-          </p>
-          <p><strong>Positive Effects:</strong>
-            Clear intraday structure without clutter.
-          </p>
-        </div>
-      </div>
+    </section>
 
-      <!-- Feature 4 -->
-      <div class="feature-card">
-        <div class="feature-header">
-          <h2>RTH Reference</h2>
-          <button class="toggle-btn">Details ▼</button>
-        </div>
-        <div class="feature-summary">
-          <p><strong>Core Purpose:</strong>
-            Track RTH levels, gaps, and averages.
-          </p>
-          <ul>
-            <li>RTH open/close and midpoint tracking.</li>
-            <li>Gap visualization with cross detection.</li>
-            <li>Directional context via symbols.</li>
-          </ul>
-        </div>
-        <div class="feature-details">
-          <p><strong>Visual Highlights:</strong>
-            Persistent RTH lines with clear separation.
-          </p>
-          <p><strong>Unique Mechanisms:</strong>
-            Multi-session cross tracking.
-          </p>
-          <p><strong>Positive Effects:</strong>
-            Strong intraday and interday structure.
-          </p>
-        </div>
-      </div>
+    <footer class="text-center py-20 border-t border-gray-900">
+        <p class="text-gray-500 text-sm italic">Designed for SMC & ICT Practitioners. Trade responsibly.</p>
+    </footer>
 
-      <!-- Feature 5 -->
-      <div class="feature-card">
-        <div class="feature-header">
-          <h2>NWOG – Weekly Reference</h2>
-          <button class="toggle-btn">Details ▼</button>
-        </div>
-        <div class="feature-summary">
-          <p><strong>Core Purpose:</strong>
-            Deliver week-over-week directional insight.
-          </p>
-          <ul>
-            <li>Weekly open/close and multi-level averages.</li>
-            <li>Dynamic gap detection and closure tracking.</li>
-            <li>Multi-week historical context.</li>
-          </ul>
-        </div>
-        <div class="feature-details">
-          <p><strong>Visual Highlights:</strong>
-            Weekly lines, boxes, and bias indicators.
-          </p>
-          <p><strong>Unique Mechanisms:</strong>
-            Persistent week tracking system.
-          </p>
-          <p><strong>Positive Effects:</strong>
-            Immediate weekly directional clarity.
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <!-- GRID END -->
-
-  </div>
-</section>
-
-  
-<!-- TESTIMONIALS -->
-<section>
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:3rem;">Trader Validation</h2>
-    <div class="testimonial-carousel">
-      <div class="carousel-track">
-        <div class="testimonial-card active">
-          <strong>🇮🇹 Matteo V. — Crypto Intraday Trader</strong>
-          <p>I used to manually draw key levels before every livestream. Now structure loads instantly, clean and aligned. Execution is faster, narrative clearer, zero clutter.</p>
-        </div>
-        <div class="testimonial-card">
-          <strong>🇺🇸 Kevin L. — Futures Swing / Intraday Trader</strong>
-          <p>Sessions and structural levels appear exactly where they should. Full context is already mapped. Nothing unnecessary survives.</p>
-        </div>
-        <div class="testimonial-card">
-          <strong>🇸🇦 Mohamed D. — Commodities & Forex Trader</strong>
-          <p>Alerts changed everything. I don’t stare at charts anymore. Context is ready when price interacts. Patience and consistency improved immediately.</p>
-        </div>
-      </div>
-      <div class="testimonial-progress">
-        <div class="testimonial-progress-bar"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="price-section">
-  <div class="container">
-    <h2>Reserve your seat</h2>
-    <p>Exclusive monthly access for serious traders</p>
-    <div class="price">$109 / month</div>
-    <p>14-Day Trial. Allocation required. No refund post-trial.</p>
-    <a class="cta" href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" target="_blank">Subscribe Now</a>
-  </div>
-</section>
-
-<footer>
-  Operated by R-TradingTools. Educational framework only.  
-  <a href="#" onclick="openDisclosure()">Full Risk Disclosure</a>
-</footer>
-
-<!-- MODAL -->
-<div class="modal" id="riskModal">
-  <div class="modal-content">
-    <h2>Risk Disclosure</h2>
-    <p>Trading involves substantial risk. This framework is educational. No financial advice. Past structural behavior does not guarantee future market outcomes.</p>
-    <button onclick="closeDisclosure()">Close</button>
-  </div>
-</div>
-
-<script>
-function openModal(){document.getElementById('applyModal').style.display='flex';}
-function openDisclosure(){document.getElementById('riskModal').style.display='flex';}
-function closeDisclosure(){document.getElementById('riskModal').style.display='none';}
-window.onclick=function(e){
-  if(e.target==document.getElementById('applyModal')) applyModal.style.display='none';
-  if(e.target==document.getElementById('riskModal')) riskModal.style.display='none';
-};
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-const container = document.querySelector(".v3_content");
-const sections  = gsap.utils.toArray(".v3_content_item");
-
-gsap.to(container, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: "#v3_sticky_top",
-    start: "top top",
-    end: () => "+=" + container.offsetWidth,
-    scrub: 1,
-    pin: true,
-    anticipatePin: 1,
-    invalidateOnRefresh: true
-  }
-});
-</script>
-
-<script>
-  // Simple toggle functionality
-  const toggles = document.querySelectorAll('.toggle-btn');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const details = btn.parentElement.nextElementSibling.nextElementSibling;
-      details.style.display = details.style.display === 'block' ? 'none' : 'block';
-      btn.textContent = details.style.display === 'block' ? 'Details ▲' : 'Details ▼';
-    });
-  });
-</script>
-  
-<script>
-const track=document.querySelector('.carousel-track');
-const cards=document.querySelectorAll('.testimonial-card');
-const progress=document.querySelector('.testimonial-progress-bar');
-let index=0, auto, duration=6500;
-function animateProgress(){progress.style.transition='none';progress.style.width='0%';void progress.offsetWidth;progress.style.transition=`width ${duration}ms linear`;progress.style.width='100%';}
-function updateCarousel(){track.style.transform=`translateX(-${index*100}%)`;cards.forEach(c=>{c.classList.remove('active','left','right');});cards[index].classList.add('active');if(cards[index-1]) cards[index-1].classList.add('left');if(cards[index+1]) cards[index+1].classList.add('right');animateProgress();}
-cards.forEach((card,i)=>{card.addEventListener('click',()=>{index=i;updateCarousel();resetAuto();});});
-function next(){index=(index+1)%cards.length;updateCarousel();}
-function startAuto(){animateProgress();auto=setInterval(next,duration);}
-function resetAuto(){clearInterval(auto);startAuto();}
-updateCarousel();startAuto();
-</script>
 </body>
 </html>
