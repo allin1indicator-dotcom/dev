@@ -364,116 +364,69 @@
             </div>
         </div>
 
-        <div class="module-code-snippet">
-            <div class="code-header">Collision & Stacking Logic</div>
-            <pre><code>
-// Automated Label Stacking for Convergent Levels
-f_DWMQY_LabTxt(prefix, vals) =>
-    // Detects if multiple timeframes share the same price
-    // Adds dynamic spacing (/ 　  　) to prevent visual overlap
-    string spaces = shift_count > 0 ? 
-        str.repeat(" / 　  　", shift_count) : ""
-    array.set(result, i, f_style(labelName) + spaces)
 
-// Cross-Cycle Memory Management
-if Daily_NB 
-    f_ShiftDown(delTime, delLow, Arr_WeekLabels, ...) 
-    // Prunes and re-stacks labels as price moves
-            </code></pre>
+    <div class="module-window" id="feature-sessions">
+        <div class="module-header">
+            <span class="module-number">02</span>
+            <h3>Institutional Session Framework</h3>
         </div>
-    </div>
-</div>
-
-<div class="module-window" id="feature-sessions">
-    <div class="module-header">
-        <span class="module-number">02</span>
-        <h3>Institutional Session Framework</h3>
-    </div>
+        
+        <div class="module-grid">
+            <div class="module-analysis">
+                <div class="analysis-block">
+                    <h4>The Logic: Time-Price Distillation</h4>
+                    <p>
+                        The script uses <code>f_ParseAdjustTime</code> to anchor volatility windows to New York local time, regardless of your exchange timezone. It isolates the <strong>Opening Range</strong>—the high and low of the first minutes of a session—using a sophisticated <code>request.security</code> call that fetches sub-minute data even when viewing higher timeframes.
+                    </p>
+                </div>
+                
+                <div class="analysis-block">
+                    <h4>The Visual Solution: The "Ghost" Opening Range</h4>
+                    <p>
+                        Through the <code>SessBoxC1</code> logic, the indicator draws a secondary, lighter box within the main session. This highlights the <strong>Initial Balance</strong> (first 15/30/60m), allowing you to see if the session is trending away from its start or trapped in a range expansion.
+                    </p>
+                </div>
     
-    <div class="module-grid">
-        <div class="module-analysis">
-            <div class="analysis-block">
-                <h4>The Logic: Time-Price Distillation</h4>
-                <p>
-                    The script uses <code>f_ParseAdjustTime</code> to anchor volatility windows to New York local time, regardless of your exchange timezone. It isolates the <strong>Opening Range</strong>—the high and low of the first minutes of a session—using a sophisticated <code>request.security</code> call that fetches sub-minute data even when viewing higher timeframes.
-                </p>
-            </div>
-            
-            <div class="analysis-block">
-                <h4>The Visual Solution: The "Ghost" Opening Range</h4>
-                <p>
-                    Through the <code>SessBoxC1</code> logic, the indicator draws a secondary, lighter box within the main session. This highlights the <strong>Initial Balance</strong> (first 15/30/60m), allowing you to see if the session is trending away from its start or trapped in a range expansion.
-                </p>
-            </div>
-
-            <div class="analysis-block">
-                <h4>The Tactical Edge: Session Raids</h4>
-                <p>
-                    The <code>f_CrossTm</code> function tracks if the London High is raided by New York. If a raid occurs, the script prunes the old level and alerts you. This filters out "stale" levels and highlights active <strong>Liquidity Grabs</strong> in real-time.
-                </p>
+                <div class="analysis-block">
+                    <h4>The Tactical Edge: Session Raids</h4>
+                    <p>
+                        The <code>f_CrossTm</code> function tracks if the London High is raided by New York. If a raid occurs, the script prunes the old level and alerts you. This filters out "stale" levels and highlights active <strong>Liquidity Grabs</strong> in real-time.
+                    </p>
+                </div>
             </div>
         </div>
-
-        <div class="module-code-snippet">
-            <div class="code-header">Opening Range & Raid Detection</div>
-            <pre><code>
-// Fetching sub-timeframe Opening Range 
-[reqHigh1st, reqLow1st] = request.security(ticker, 
-    Candle1_PeriodTF, [high[n], low[n]], 
-    lookahead=barmerge.lookahead_on)
-
-// Session Cross Detection (The "Raid" Logic)
-[xHCross, xLCross, ...] = f_CrossTm(Daily_NB, x_NB, 
-    x_Sess, Holiday, true, true, 
-    x_High, x_Low, _High, _Low)
-            </code></pre>
+    </div>
+    <div class="module-window" id="feature-rth">
+        <div class="module-header">
+            <span class="module-number">03</span>
+            <h3>RTH Structural Gaps</h3>
         </div>
-    </div>
-</div>
-<div class="module-window" id="feature-rth">
-    <div class="module-header">
-        <span class="module-number">03</span>
-        <h3>RTH Structural Gaps</h3>
-    </div>
+        
+        <div class="module-grid">
+            <div class="module-analysis">
+                <div class="analysis-block">
+                    <h4>The Logic: The "Closing Bell" Anchor</h4>
+                    <p>
+                        The script anchors to <strong>16:15 New York time</strong> (the true settlement for many futures). It captures <code>RTH_Close0</code> and compares it to the 9:30 AM <code>RTH_Open</code>. This calculates the physical gap that needs to be "filled" for the market to return to equilibrium.
+                    </p>
+                </div>
+                
+                <div class="analysis-block">
+                    <h4>The Tactical Edge: 1/2 RTH Midpoint</h4>
+                    <p>
+                        A standout feature is the <code>RTH_Avg</code>. By calculating the <strong>mathematical mean</strong> between the previous close and the current open, the engine plots a <code>1/2 RTH</code> level. Institutional algorithms often treat this 50% retracement of the gap as a primary "Fair Value" pivot.
+                    </p>
+                </div>
     
-    <div class="module-grid">
-        <div class="module-analysis">
-            <div class="analysis-block">
-                <h4>The Logic: The "Closing Bell" Anchor</h4>
-                <p>
-                    The script anchors to <strong>16:15 New York time</strong> (the true settlement for many futures). It captures <code>RTH_Close0</code> and compares it to the 9:30 AM <code>RTH_Open</code>. This calculates the physical gap that needs to be "filled" for the market to return to equilibrium.
-                </p>
+                <div class="analysis-block">
+                    <h4>The Visual Solution: Gap Directionality</h4>
+                    <p>
+                        Using <code>OpenUp</code> booleans, the script dynamically changes label icons (▲/▼) and placement. If the market opens above the prior close, it signals a "Gap Up" and tracks the <code>RTH_Close</code> as a support floor that, if broken, triggers a <strong>Gap Fill</strong> narrative.
+                    </p>
+                </div>
             </div>
-            
-            <div class="analysis-block">
-                <h4>The Tactical Edge: 1/2 RTH Midpoint</h4>
-                <p>
-                    A standout feature is the <code>RTH_Avg</code>. By calculating the <strong>mathematical mean</strong> between the previous close and the current open, the engine plots a <code>1/2 RTH</code> level. Institutional algorithms often treat this 50% retracement of the gap as a primary "Fair Value" pivot.
-                </p>
-            </div>
-
-            <div class="analysis-block">
-                <h4>The Visual Solution: Gap Directionality</h4>
-                <p>
-                    Using <code>OpenUp</code> booleans, the script dynamically changes label icons (▲/▼) and placement. If the market opens above the prior close, it signals a "Gap Up" and tracks the <code>RTH_Close</code> as a support floor that, if broken, triggers a <strong>Gap Fill</strong> narrative.
-                </p>
-            </div>
-        </div>
-
-        <div class="module-code-snippet">
-            <div class="code-header">Gap & Midpoint Calculation</div>
-            <pre><code>
-// Calculate the RTH Gap and its 50% Midpoint
-RTH_Open := Open
-RTH_Avg  := math.avg(RTH_Close, RTH_Open)
-OpenUp   := RTH_Open > RTH_Close
-
-// Display Gap Magnitude
-RTH_LabelTxt = OpenUp ? "▲ 𝗥𝗧𝗛" : "▼ 𝗥𝗧𝗛"
-            </code></pre>
         </div>
     </div>
-</div>
 
 <div class="pro-tip-box" style="border-left: 4px solid var(--accent-blue); background: var(--bg-card); padding: 1.5rem; margin-top: 1rem;">
     <h5 style="color: var(--accent-blue); margin-bottom: 0.5rem; font-family: 'JetBrains Mono';">SYSTEM INSIGHT: RANGE MAGNITUDE</h5>
