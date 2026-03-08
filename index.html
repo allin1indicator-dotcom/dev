@@ -3,452 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Structural Operator | Institutional Infrastructure</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-black: #0a0a0b;
-            --bg-card: #141416;
-            --accent-blue: #007AFF;
-            --text-main: #e4e4e7;
-            --text-dim: #a1a1aa;
-            --border: #27272a;
-            --success: #10b981;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 8rem 0 4rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pre-head-hook {
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.85rem;
-            color: var(--accent-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .authority-headline {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #fff, #71717a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .sub-headline {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 4rem;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-blue);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-
-        .btn-primary:hover { transform: translateY(-2px); }
-        .btn-secondary:hover { background: var(--bg-card); }
-
-        .hero-visual {
-            width: 100%;
-            height: 450px;
-            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-black) 100%);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-visual::after {
-            content: "SYSTEM STATUS: OPERATIONAL";
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--success);
-        }
-
-        /* Identity / Pain Section */
-        .identity-shift {
-            padding: 8rem 0;
-            background: #0d0d0e;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .body-lead {
-            font-size: 1.1rem;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-        }
-
-        .pain-points {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .point {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-
-        .point .icon { color: #ef4444; font-weight: bold; }
-
-        .value-prop-card {
-            background: var(--accent-blue);
-            padding: 3rem;
-            border-radius: 8px;
-            color: white;
-            position: relative;
-        }
-
-        blockquote {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .quote-sub {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-
-        /* Comparison Table */
-        .comparison-section {
-            padding: 8rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .comparison-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-        }
-
-        .comparison-table th {
-            text-align: left;
-            padding: 1.5rem;
-            border-bottom: 2px solid var(--border);
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        .comparison-table td {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .highlight {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .hero-section { padding-top: 4rem; }
-        }
-    </style>
+    <title>Indicator Features - TradingView Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <section class="hero-section">
-        <div class="container">
-            <p class="pre-head-hook">For the trader who sees the move at 8:00 AM but loses the level by 10:30 AM.</p>
-            <h1 class="authority-headline">
-                The Structural Operator:<br>
-                <span class="gradient-text">Automated Coherence</span>
-            </h1>
-            <p class="sub-headline">
-                Eliminate Structural Blindness. Bridge the Execution Gap. 
-                Move from "Strategy-Rich" to <strong>Funded Operator</strong>.
-            </p>
-            <div class="cta-group">
-                <a href="#pricing" class="btn-primary">Deploy Infrastructure</a>
-                <a href="#modules" class="btn-secondary">Technical Modules</a>
-            </div>
-            <div class="hero-visual">
-                <span style="color: var(--text-dim); font-family: 'JetBrains Mono';">[ PREVIEWING SYSTEM_HUD v3.0 ]</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="identity-shift">
-        <div class="container grid-2">
-            <div class="text-content">
-                <h2 class="section-title">The Paradox of the Proficient Trader.</h2>
-                <p class="body-lead">
-                    You understand HTF liquidity, SMC, and institutional cycles. You are strategy-rich, but <strong>process-poor</strong>.
-                </p>
-                <div class="pain-points">
-                    <div class="point">
-                        <span class="icon">✕</span>
-                        <p><strong>Visual Decay:</strong> Your 8:00 AM precision becomes noise as manual levels clutter the chart.</p>
-                    </div>
-                    <div class="point">
-                        <span class="icon">✕</span>
-                        <p><strong>Context Fragmentation:</strong> You drop to the 1m and "forget" the Weekly Narrative.</p>
-                    </div>
-                    <div class="point">
-                        <span class="icon">✕</span>
-                        <p><strong>Cognitive Bleed:</strong> You waste mental energy on math instead of managing risk.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="value-prop-card">
-                <blockquote>"It doesn't give you a new strategy. It gives you the Clean Cockpit required to trade the one you already have."</blockquote>
-                <p class="quote-sub">— OPERATIONAL INFRASTRUCTURE v.1</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison-section">
-        <div class="container">
-            <h3 class="comparison-title">Operational Clarity vs. Manual Fatigue</h3>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Manual Mapping</th>
-                        <th>The Operator Suite</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HTF Awareness</td>
-                        <td>Fades during volatility.</td>
-                        <td class="highlight">Permanent Visual Fixture.</td>
-                    </tr>
-                    <tr>
-                        <td>Chart Hygiene</td>
-                        <td>Cluttered with "dead" levels.</td>
-                        <td class="highlight">Self-Cleaning Logic.</td>
-                    </tr>
-                    <tr>
-                        <td>Mental Load</td>
-                        <td>High. Constant re-drawing.</td>
-                        <td class="highlight">Zero. Execution Focus.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <div class="module-window" id="feature-dwmqy">
-    <div class="module-header">
-        <span class="module-number">01</span>
-        <h3>Multi-Cycle High/Low Framework</h3>
-    </div>
+<div class="container">
     
-    <div class="module-grid">
-        <div class="module-analysis">
-            <div class="analysis-block">
-                <h4>The Logic: Cross-Cycle Coherence</h4>
-                <p>
-                    Unlike standard indicators that look at one period, this engine simultaneously tracks 
-                    <strong>Daily, Weekly, Monthly, Quarterly, and Yearly</strong> extremes. It uses a 
-                    <code>f_SessionNB_HL</code> function to identify "New Bar" (NB) events across all time-horizons, 
-                    ensuring that a Quarterly level is just as precise as a Daily one.
-                </p>
-            </div>
-            
-            <div class="analysis-block">
-                <h4>The Visual Solution: Adaptive Label Stacking</h4>
-                <p>
-                    Your charts stay clean through <strong>Collision Avoidance Logic</strong>. The <code>f_ShiftDown</code> 
-                    and <code>f_DWMQY_LabTxt</code> functions detect when multiple HTF levels (like a Monthly High and a Weekly High) 
-                    converge. Instead of overlapping text, the system "stacks" the labels with dynamic spacing, 
-                    providing a clear "Liquidity Cluster" visual.
-                </p>
-            </div>
-
-            <div class="analysis-block">
-                <h4>The Mental Load Reduction: Automatic Narrative</h4>
-                <p>
-                    Eliminates the need for "Manual Multi-Timeframe Analysis." When you drop to a 1m chart for entry, 
-                    the <strong>Yearly and Quarterly</strong> boundaries are automatically projected into your field of view. 
-                    You immediately know if you are at a "Major Liquidity Ceiling" or a "Minor Daily Retracement."
-                </p>
+    <div class="feature-card">
+        <div class="feature-header">
+            <div class="icon-box">🗓️</div>
+            <div class="title-area">
+                <h3>Multi-Timeframe Highs & Lows (DWMQY)</h3>
+                <p>Track critical institutional levels from Daily to Yearly timeframes automatically.</p>
             </div>
         </div>
 
-
-    <div class="module-window" id="feature-sessions">
-        <div class="module-header">
-            <span class="module-number">02</span>
-            <h3>Institutional Session Framework</h3>
-        </div>
-        
-        <div class="module-grid">
-            <div class="module-analysis">
-                <div class="analysis-block">
-                    <h4>The Logic: Time-Price Distillation</h4>
-                    <p>
-                        The script uses <code>f_ParseAdjustTime</code> to anchor volatility windows to New York local time, regardless of your exchange timezone. It isolates the <strong>Opening Range</strong>—the high and low of the first minutes of a session—using a sophisticated <code>request.security</code> call that fetches sub-minute data even when viewing higher timeframes.
-                    </p>
-                </div>
-                
-                <div class="analysis-block">
-                    <h4>The Visual Solution: The "Ghost" Opening Range</h4>
-                    <p>
-                        Through the <code>SessBoxC1</code> logic, the indicator draws a secondary, lighter box within the main session. This highlights the <strong>Initial Balance</strong> (first 15/30/60m), allowing you to see if the session is trending away from its start or trapped in a range expansion.
-                    </p>
-                </div>
-    
-                <div class="analysis-block">
-                    <h4>The Tactical Edge: Session Raids</h4>
-                    <p>
-                        The <code>f_CrossTm</code> function tracks if the London High is raided by New York. If a raid occurs, the script prunes the old level and alerts you. This filters out "stale" levels and highlights active <strong>Liquidity Grabs</strong> in real-time.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="module-window" id="feature-rth">
-        <div class="module-header">
-            <span class="module-number">03</span>
-            <h3>RTH Structural Gaps</h3>
-        </div>
-        
-        <div class="module-grid">
-            <div class="module-analysis">
-                <div class="analysis-block">
-                    <h4>The Logic: The "Closing Bell" Anchor</h4>
-                    <p>
-                        The script anchors to <strong>16:15 New York time</strong> (the true settlement for many futures). It captures <code>RTH_Close0</code> and compares it to the 9:30 AM <code>RTH_Open</code>. This calculates the physical gap that needs to be "filled" for the market to return to equilibrium.
-                    </p>
-                </div>
-                
-                <div class="analysis-block">
-                    <h4>The Tactical Edge: 1/2 RTH Midpoint</h4>
-                    <p>
-                        A standout feature is the <code>RTH_Avg</code>. By calculating the <strong>mathematical mean</strong> between the previous close and the current open, the engine plots a <code>1/2 RTH</code> level. Institutional algorithms often treat this 50% retracement of the gap as a primary "Fair Value" pivot.
-                    </p>
-                </div>
-    
-                <div class="analysis-block">
-                    <h4>The Visual Solution: Gap Directionality</h4>
-                    <p>
-                        Using <code>OpenUp</code> booleans, the script dynamically changes label icons (▲/▼) and placement. If the market opens above the prior close, it signals a "Gap Up" and tracks the <code>RTH_Close</code> as a support floor that, if broken, triggers a <strong>Gap Fill</strong> narrative.
-                    </p>
-                </div>
+        <div class="accordion">
+            <input type="checkbox" id="feature1" class="accordion-input">
+            <label for="feature1" class="accordion-label">Technical Details & Visual Components</label>
+            <div class="accordion-content">
+                <p>This module processes historical and real-time data to provide institutional-grade reference points using advanced <code>f_SessionNB_HL</code> logic.</p>
+                <ul class="details-list">
+                    <li><strong>Coverage:</strong> Daily, Weekly, Monthly, Quarterly, and Yearly projections.</li>
+                    <li><strong>Smart Overlap:</strong> <code>f_ShiftDown</code> logic prevents label stacking when levels coincide.</li>
+                    <li><strong>Raid Tracking:</strong> Real-time detection of Previous High/Low breaches.</li>
+                    <li><strong>Dynamic Ranges:</strong> Automatic calculation of PD/PW price ranges.</li>
+                </ul>
             </div>
         </div>
     </div>
 
-<div class="pro-tip-box" style="border-left: 4px solid var(--accent-blue); background: var(--bg-card); padding: 1.5rem; margin-top: 1rem;">
-    <h5 style="color: var(--accent-blue); margin-bottom: 0.5rem; font-family: 'JetBrains Mono';">SYSTEM INSIGHT: RANGE MAGNITUDE</h5>
-    <p style="font-size: 0.9rem; color: var(--text-dim);">
-        The Operator Suite calculates the pip/point range of the previous Day, Week, and Month (<code>PDRange</code>, <code>PWRange</code>). 
-        This allows you to instantly gauge if the current expansion is overextended relative to historical volatility.
-    </p>
-</div>
-<div class="pro-tip-box" style="border-left: 4px solid var(--accent-green); background: var(--bg-card); padding: 1.5rem; margin-top: 1rem;">
-    <h5 style="color: var(--accent-green); margin-bottom: 0.5rem; font-family: 'JetBrains Mono';">DEV NOTE: TIMEZONE ALIGNMENT</h5>
-    <p style="font-size: 0.9rem; color: var(--text-dim);">
-        The engine automatically recalculates session starts based on <code>America/New_York</code> offsets. Whether you are trading London or Tokyo, the Killzones align with the <strong>Institutional Clock</strong>, ensuring your levels match where the real volume enters the market.
-    </p>
-</div>
-<div class="pro-tip-box" style="border-left: 4px solid var(--accent-orange); background: var(--bg-card); padding: 1.5rem; margin-top: 1rem;">
-    <h5 style="color: var(--accent-orange); margin-bottom: 0.5rem; font-family: 'JetBrains Mono';">TRADER INSIGHT: THE GAP FILL</h5>
-    <p style="font-size: 0.9rem; color: var(--text-dim);">
-        Statistical data suggests that RTH Gaps in the S&P 500 fill within the same session over 70% of the time. This engine doesn't just show the gap; it draws a <strong>Link Line</strong> between price and the target, providing a visual "magnet" for your intraday targets.
-    </p>
-</div>
+    <div class="feature-card">
+        <div class="feature-header">
+            <div class="icon-box">🌍</div>
+            <div class="title-area">
+                <h3>Intraday Session Brackets (AS, LDN, NY)</h3>
+                <p>Visualize Asia, London, and New York volatility zones with automated expansion targets.</p>
+            </div>
+        </div>
 
+        <div class="accordion">
+            <input type="checkbox" id="feature2" class="accordion-input">
+            <label for="feature2" class="accordion-label">Technical Details & Visual Components</label>
+            <div class="accordion-content">
+                <p>Precision session tracking for intraday liquidity analysis across all global markets.</p>
+                <ul class="details-list">
+                    <li><strong>Five Key Zones:</strong> AS, LDN, NY Morning, NY Lunch, and NY Afternoon.</li>
+                    <li><strong>Candle-1st Analysis:</strong> Highlights the initial 1m/5m/15m trend within a new session.</li>
+                    <li><strong>Volatility Boxes:</strong> Shaded zones using <code>BoxC</code> to define session high-low boundaries.</li>
+                    <li><strong>Extension Logic:</strong> <code>f_ExtendLines</code> tracks unmitigated session liquidity.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <div class="feature-card">
+        <div class="feature-header">
+            <div class="icon-box">⚖️</div>
+            <div class="title-area">
+                <h3>Regular Trading Hours (RTH) Gap & Midpoint</h3>
+                <p>Master Futures markets with RTH Close (Gaps) and the 50% Equilibrium level.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <input type="checkbox" id="feature3" class="accordion-input">
+            <label for="feature3" class="accordion-label">Technical Details & Visual Components</label>
+            <div class="accordion-content">
+                <p>Essential for NQ/ES traders to monitor the "True" market open and institutional closing gaps.</p>
+                <ul class="details-list">
+                    <li><strong>RTH Close:</strong> Automatic marking of the 16:15 NY close as a primary gap reference.</li>
+                    <li><strong>The Midpoint (1/2):</strong> Calculates the equilibrium between RTH Open and previous Close.</li>
+                    <li><strong>Gap Direction:</strong> Visual ▲/▼ indicators for immediate bias confirmation.</li>
+                    <li><strong>ETH/RTH Separation:</strong> Clearly filters out overnight noise from core session data.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
