@@ -1,0 +1,143 @@
+:root {
+    --bg-color: #131722;        /* TradingView Dark Background */
+    --card-bg: #1e222d;        /* TradingView Component Background */
+    --border-color: #363c4e;   /* Subtle Border */
+    --text-main: #d1d4dc;      /* Primary Text Color */
+    --text-dim: #b2b5be;       /* Muted Text */
+    --accent-blue: #2962ff;    /* TradingView Brand Blue */
+    --accent-hover: #1e53e5;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--text-dim);
+}
+
+.feature-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-box {
+    font-size: 32px;
+    background: rgba(41, 98, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1;
+}
+
+.title-area h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.title-area p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Accordion Logic */
+.accordion {
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-label {
+    display: block;
+    cursor: pointer;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.accordion-label:hover {
+    color: var(--accent-hover);
+}
+
+.accordion-label::after {
+    content: '＋';
+    float: right;
+    font-weight: bold;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Expand on Check */
+.accordion-input:checked ~ .accordion-content {
+    max-height: 500px; /* Large enough for content */
+    margin-top: 12px;
+}
+
+.accordion-input:checked ~ .accordion-label::after {
+    content: '－';
+}
+
+/* Detailed List inside accordion */
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
+
+.details-list li {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    display: flex;
+    gap: 10px;
+}
+
+.details-list li strong {
+    color: var(--text-main);
+    min-width: 120px;
+}
+
+code {
+    background: rgba(255,255,255,0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ff9800; /* Subtle orange for code parts */
+    font-size: 0.85rem;
+}
