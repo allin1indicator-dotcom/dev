@@ -3,77 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Geometry | Alpha Engine</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Structural Operator | Institutional Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0a0a0a; color: #ededed; font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .border-glow { border: 1px solid #333; transition: 0.3s; }
-        .border-glow:hover { border-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+        :root {
+            --bg-black: #0a0a0b;
+            --bg-card: #141416;
+            --accent-blue: #007AFF;
+            --text-main: #e4e4e7;
+            --text-dim: #a1a1aa;
+            --border: #27272a;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pre-head-hook {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .authority-headline {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #71717a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-headline {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); }
+        .btn-secondary:hover { background: var(--bg-card); }
+
+        .hero-visual {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-black) 100%);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual::after {
+            content: "SYSTEM STATUS: OPERATIONAL";
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--success);
+        }
+
+        /* Identity / Pain Section */
+        .identity-shift {
+            padding: 8rem 0;
+            background: #0d0d0e;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .body-lead {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+        }
+
+        .pain-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .point {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .point .icon { color: #ef4444; font-weight: bold; }
+
+        .value-prop-card {
+            background: var(--accent-blue);
+            padding: 3rem;
+            border-radius: 8px;
+            color: white;
+            position: relative;
+        }
+
+        blockquote {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .quote-sub {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 8rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th {
+            text-align: left;
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero-section { padding-top: 4rem; }
+        }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="text-xl font-bold tracking-tighter italic">GEOMETRY<span class="text-blue-500">ENGINE</span></div>
-        <a href="#access" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">Get Access</a>
-    </nav>
-
-    <header class="max-w-7xl mx-auto px-6 py-20 text-center">
-        <span class="text-blue-500 font-mono text-sm tracking-widest uppercase">Institutional Market Architecture</span>
-        <h1 class="text-5xl md:text-7xl font-extrabold mt-4 mb-6 leading-tight">
-            Stop Trading Lag. <br>Start Trading <span class="gradient-text">Geometry.</span>
-        </h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
-            A professional-grade engine mapping the structural DNA of the market. Time, Session Openings, and Liquidity Pools—rendered in real-time.
-        </p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-            <button class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-gray-200 transition">Add to TradingView</button>
-            <button class="bg-transparent border border-gray-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-900 transition">View Documentation</button>
-        </div>
-    </header>
-
-    <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
-            <div class="text-3xl mb-4">🏛️</div>
-            <h3 class="text-xl font-bold mb-2">Macro Narrative</h3>
-            <p class="text-gray-400 text-sm">Track PDH/PWH/PMH and the 50% Equilibrium of the New Week Opening Gap (NWOG).</p>
-        </div>
-        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
-            <div class="text-3xl mb-4">⚡</div>
-            <h3 class="text-xl font-bold mb-2">Volatility Containers</h3>
-            <p class="text-gray-400 text-sm">Automated Session Killzones: London, NY Morning, and the critical Midnight 00:00 Reset.</p>
-        </div>
-        <div class="p-8 rounded-2xl border-glow bg-zinc-900/50">
-            <div class="text-3xl mb-4">✘</div>
-            <h3 class="text-xl font-bold mb-2">Liquidity Engine</h3>
-            <p class="text-gray-400 text-sm">Live Raid Detection (✘) and SMT Divergence tracking against correlated assets.</p>
+    <section class="hero-section">
+        <div class="container">
+            <p class="pre-head-hook">For the trader who sees the move at 8:00 AM but loses the level by 10:30 AM.</p>
+            <h1 class="authority-headline">
+                The Structural Operator:<br>
+                <span class="gradient-text">Automated Coherence</span>
+            </h1>
+            <p class="sub-headline">
+                Eliminate Structural Blindness. Bridge the Execution Gap. 
+                Move from "Strategy-Rich" to <strong>Funded Operator</strong>.
+            </p>
+            <div class="cta-group">
+                <a href="#pricing" class="btn-primary">Deploy Infrastructure</a>
+                <a href="#modules" class="btn-secondary">Technical Modules</a>
+            </div>
+            <div class="hero-visual">
+                <span style="color: var(--text-dim); font-family: 'JetBrains Mono';">[ PREVIEWING SYSTEM_HUD v3.0 ]</span>
+            </div>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold mb-10 text-center">Institutional Reference Points</h2>
-        <div class="overflow-x-auto rounded-xl border border-gray-800">
-            <table class="w-full text-left text-sm">
-                <thead class="bg-zinc-900 text-gray-400 uppercase">
+    <section class="identity-shift">
+        <div class="container grid-2">
+            <div class="text-content">
+                <h2 class="section-title">The Paradox of the Proficient Trader.</h2>
+                <p class="body-lead">
+                    You understand HTF liquidity, SMC, and institutional cycles. You are strategy-rich, but <strong>process-poor</strong>.
+                </p>
+                <div class="pain-points">
+                    <div class="point">
+                        <span class="icon">✕</span>
+                        <p><strong>Visual Decay:</strong> Your 8:00 AM precision becomes noise as manual levels clutter the chart.</p>
+                    </div>
+                    <div class="point">
+                        <span class="icon">✕</span>
+                        <p><strong>Context Fragmentation:</strong> You drop to the 1m and "forget" the Weekly Narrative.</p>
+                    </div>
+                    <div class="point">
+                        <span class="icon">✕</span>
+                        <p><strong>Cognitive Bleed:</strong> You waste mental energy on math instead of managing risk.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="value-prop-card">
+                <blockquote>"It doesn't give you a new strategy. It gives you the Clean Cockpit required to trade the one you already have."</blockquote>
+                <p class="quote-sub">— OPERATIONAL INFRASTRUCTURE v.1</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <h3 class="comparison-title">Operational Clarity vs. Manual Fatigue</h3>
+            <table class="comparison-table">
+                <thead>
                     <tr>
-                        <th class="p-4">Level Type</th>
-                        <th class="p-4">Visual Label</th>
-                        <th class="p-4">Strategic Significance</th>
+                        <th>Feature</th>
+                        <th>Manual Mapping</th>
+                        <th>The Operator Suite</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-800">
-                    <tr><td class="p-4 font-bold text-blue-400">NWOG</td><td class="p-4">Purple Line</td><td class="p-4 text-gray-400">Weekly Bias & Mean Reversion Target</td></tr>
-                    <tr><td class="p-4 font-bold text-orange-400">RTH</td><td class="p-4">Orange Line</td><td class="p-4 text-gray-400">Daily Gap Fill (Essential for Futures)</td></tr>
-                    <tr><td class="p-4 font-bold text-red-500">Raids</td><td class="p-4">" ✘ "</td><td class="p-4 text-gray-400">High-Probability Reversal Confirmation</td></tr>
+                <tbody>
+                    <tr>
+                        <td>HTF Awareness</td>
+                        <td>Fades during volatility.</td>
+                        <td class="highlight">Permanent Visual Fixture.</td>
+                    </tr>
+                    <tr>
+                        <td>Chart Hygiene</td>
+                        <td>Cluttered with "dead" levels.</td>
+                        <td class="highlight">Self-Cleaning Logic.</td>
+                    </tr>
+                    <tr>
+                        <td>Mental Load</td>
+                        <td>High. Constant re-drawing.</td>
+                        <td class="highlight">Zero. Execution Focus.</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </section>
-
-    <footer class="text-center py-20 border-t border-gray-900">
-        <p class="text-gray-500 text-sm italic">Designed for SMC & ICT Practitioners. Trade responsibly.</p>
-    </footer>
 
 </body>
 </html>
