@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AionFrame | The 20 Protocol</title>
+    <title>Contexstory | The 20 Protocol</title>
     <style>
         :root { --accent: #00ff88; --bg: #050505; --card: #111; }
         body { background: var(--bg); color: #999; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* Cinematic Video Hero */
-                /* Cinematic Video Hero */
         .hero { 
             position: relative;
             height: 100vh; 
@@ -21,10 +19,11 @@
             text-align: left; 
             padding: 60px;             
             box-sizing: border-box;
-            overflow: hidden; /* This hides any video overflow */
+            overflow: hidden;
             border-bottom: 1px solid #222;
         }
 
+        /* FIXED: No-Zoom Logic ensures detail is preserved */
         #bg-video {
             position: absolute;
             top: 0;
@@ -35,7 +34,6 @@
             z-index: -2;
             filter: contrast(1.1) brightness(0.5); 
         }
-
 
         .overlay {
             position: absolute;
@@ -51,7 +49,6 @@
         .tagline { color: var(--accent); font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; z-index: 1; font-weight: bold;}
         .hero-desc { max-width: 500px; margin-top: 25px; font-size: 1.1rem; color: #fff; z-index: 1; opacity: 0.8; line-height: 1.6; }
         
-        /* Content Section */
         .container { max-width: 900px; margin: auto; padding: 100px 20px; }
         h2 { color: #fff; font-size: 2rem; letter-spacing: -1px; margin-bottom: 40px; }
         
@@ -59,7 +56,6 @@
         .reason-card { border-left: 1px solid #333; padding-left: 20px; }
         .reason-card h3 { color: #fff; margin-top: 0; font-size: 1.2rem; }
         
-        /* Pricing / The 20 Protocol */
         .pricing-section { background: #fff; color: #000; padding: 80px 40px; border-radius: 2px; margin-top: 100px; text-align: center; }
         .big-price { font-size: 5rem; font-weight: 900; margin: 0; line-height: 1; letter-spacing: -4px; }
         .daily-breakdown { font-size: 1.3rem; font-weight: 700; color: #333; margin-top: 10px; }
@@ -68,15 +64,11 @@
         .btn:hover { background: transparent; color: #000; }
         
         .limit-tag { color: #ff4444; font-weight: bold; margin-top: 25px; font-size: 0.85rem; letter-spacing: 1px; }
-        .comparison-text { font-style: italic; margin-top: 30px; color: #666; font-size: 1rem; line-height: 1.6; max-width: 450px; margin-left: auto; margin-right: auto; }
-
-        footer { text-align: center; padding: 60px 20px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px; border-top: 1px solid #111; }
 
         @media (max-width: 768px) {
             .reasoning-grid { grid-template-columns: 1fr; }
             h1 { font-size: 3rem; }
             .hero { padding: 40px 30px; }
-            .big-price { font-size: 4rem; }
         }
     </style>
 </head>
@@ -88,49 +80,44 @@
         </video>
         <div class="overlay"></div>
 
-        <div class="tagline">TradingView Context Engine</div>
-        <h1>AIONFRAME</h1>
-        <p class="hero-desc">A surgical framework for institutional time & price analysis. Engineered for high-stakes intraday narratives.</p>
+        <div class="tagline">The Narrative Engine</div>
+        <h1>CONTEXSTORY</h1>
+        <p class="hero-desc">Surgical time and price analysis. Built for those who trade the story, not just the signal.</p>
     </div>
 
     <div class="container">
-        <h2>The Alpha is in the Context.</h2>
+        <h2>Read the Market's Story.</h2>
         <div class="reasoning-grid">
             <div class="reason-card">
-                <h3>Temporal Anchoring</h3>
-                <p>Automatic tracking of Midnight Open, RTH gaps, and dynamic session boundaries. Stop guessing the bias; see where the institutions are positioned.</p>
+                <h3>Temporal Context</h3>
+                <p>Automatic tracking of Midnight Open and RTH gaps. Stop guessing the bias; see the institutional anchor points.</p>
             </div>
             <div class="reason-card">
-                <h3>Statistical Rejection Logic</h3>
-                <p>Identify liquidity traps in real-time. AionFrame flags the "how" and "where" of price arrival, saving you from premature entries.</p>
+                <h3>Statistical Clarity</h3>
+                <p>Dynamic session expansion and liquidity thresholds mapped in real-time. Know exactly where the traps are laid.</p>
             </div>
             <div class="reason-card">
-                <h3>Spectral Visual Intelligence</h3>
-                <p>Proprietary transparency layering. High-probability confluence zones are revealed naturally, without obscuring the raw price action.</p>
+                <h3>Spectral Intelligence</h3>
+                <p>Advanced transparency logic highlights confluence without burying the price. Precision without the clutter.</p>
             </div>
             <div class="reason-card">
-                <h3>0.04R Risk Management</h3>
-                <p>One saved stop-loss per month pays for the tool for a year. AionFrame is an insurance policy for your capital.</p>
+                <h3>The 0.04R Business Model</h3>
+                <p>At €4.90/day, Contexstory is an infrastructure cost. One saved stop-loss pays for the entire protocol.</p>
             </div>
         </div>
 
         <div class="pricing-section">
-            <span style="text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 3px;">The 20 Protocol Access</span>
+            <span style="text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 3px;">Join The 20 Protocol</span>
             <div class="big-price">€147<span style="font-size: 1.5rem; letter-spacing: 0;">/mo</span></div>
             <div class="daily-breakdown">€4.90 PER DAY</div>
             
-            <p class="comparison-text">
-                Less than a daily coffee. <br>
-                For a professional trader, this is a negligible operational cost to secure a definitive edge.
-            </p>
-
             <a href="#" class="btn">Apply for Access</a>
-            <div class="limit-tag">● STRICTLY LIMITED TO 20 ACTIVE SLOTS</div>
+            <div class="limit-tag">● 20 SLOTS REMAINING</div>
         </div>
     </div>
 
     <footer>
-        AIONFRAME PROTOCOL // ENCRYPTED ACCESS // © 2026 PROFESSIONAL GRADE ANALYTICS
+        CONTEXSTORY PROTOCOL // © 2026 PROFESSIONAL GRADE ANALYTICS
     </footer>
 
 </body>
