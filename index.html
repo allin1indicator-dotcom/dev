@@ -6,68 +6,122 @@
     <title>AionFrame | The 20 Protocol</title>
     <style>
         :root { --accent: #00ff88; --bg: #050505; --card: #111; }
-        body { background: var(--bg); color: #999; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid #222; }
-        h1 { color: #fff; font-size: 3.5rem; letter-spacing: -2px; margin: 0; }
-        .tagline { color: var(--accent); font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+        body { background: var(--bg); color: #999; font-family: 'Inter', 'Helvetica Neue', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        
+        /* Video Background Styling */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            filter: grayscale(30%) brightness(40%); /* Keeps focus on text */
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark tint for readability */
+            z-index: -1;
+        }
+
+        h1 { color: #fff; font-size: 4.5rem; letter-spacing: -3px; margin: 0; font-weight: 900; }
+        .tagline { color: var(--accent); font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; font-weight: bold; }
+        
         .container { max-width: 900px; margin: auto; padding: 80px 20px; }
-        .reasoning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
-        .reason-card h3 { color: #fff; margin-bottom: 10px; }
+        
+        /* Value Cards */
+        .reasoning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .reason-card { background: var(--card); padding: 30px; border: 1px solid #222; border-radius: 4px; }
+        .reason-card h3 { color: #fff; margin-top: 0; font-size: 1.2rem; }
+
+        /* Pricing Box */
         .pricing-section { background: #fff; color: #000; padding: 60px; border-radius: 4px; margin-top: 80px; text-align: center; }
-        .big-price { font-size: 4.5rem; font-weight: 900; margin: 0; line-height: 1; }
-        .daily-breakdown { font-size: 1.2rem; font-weight: 600; color: #555; margin-top: 10px; }
-        .btn { display: inline-block; background: #000; color: #fff; padding: 20px 40px; text-decoration: none; font-weight: bold; margin-top: 30px; letter-spacing: 1px; transition: 0.3s; }
-        .btn:hover { background: var(--accent); color: #000; }
-        .limit-tag { color: #ff4444; font-weight: bold; margin-top: 20px; font-size: 0.8rem; }
-        .comparison-text { font-style: italic; margin-top: 20px; color: #444; font-size: 0.95rem; }
+        .big-price { font-size: 5rem; font-weight: 900; margin: 0; line-height: 1; letter-spacing: -2px; }
+        .daily-breakdown { font-size: 1.3rem; font-weight: 700; color: #666; margin-top: 5px; }
+        
+        .btn { display: inline-block; background: #000; color: #fff; padding: 22px 50px; text-decoration: none; font-weight: 900; margin-top: 30px; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+        .btn:hover { background: var(--accent); color: #000; transform: translateY(-3px); }
+        
+        .limit-tag { color: #ff4444; font-weight: bold; margin-top: 25px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .comparison-text { font-style: italic; margin-top: 25px; color: #555; font-size: 1rem; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .reasoning-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero">
+    <section class="hero">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="ALL IN 1 ⛳️ Landing Video Project.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+
         <div class="tagline">TradingView Context Engine</div>
         <h1>AIONFRAME</h1>
-        <p style="max-width: 500px;">A surgical framework for institutional time & price analysis. Limited to 20 seats.</p>
-    </div>
+        <p style="max-width: 600px; color: #eee; font-size: 1.1rem;">Professional-grade market narrative. Limited to 20 seats.</p>
+        <a href="#access" class="btn" style="background: var(--accent); color: #000; font-size: 0.8rem; padding: 12px 25px;">EXPLORE PROTOCOL</a>
+    </section>
 
-    <div class="container">
-        <h2>Why AionFrame?</h2>
+    <div class="container" id="access">
         <div class="reasoning-grid">
             <div class="reason-card">
-                <h3>Eliminate Decision Fatigue</h3>
-                <p>AionFrame automates the plotting of Midnight Open, RTH gaps, and session ranges. Your job isn't to draw lines—it's to execute trades.</p>
+                <h3>The Cost of Inaction</h3>
+                <p>One saved stop-loss per month pays for the entire year. AionFrame identifies liquidity traps before you fall into them by tracking the <i>how</i> behind every move.</p>
             </div>
             <div class="reason-card">
-                <h3>The "Stop-Loss" Insurance</h3>
-                <p>One saved stop-loss per month pays for the entire year. AionFrame identifies liquidity traps before you fall into them.</p>
+                <h3>0.04R Per Day</h3>
+                <p>If you risk €100 per trade, this engine costs you pennies compared to the edge it provides. Less than €5/day for institutional-grade context.</p>
             </div>
             <div class="reason-card">
-                <h3>Surgical Clarity</h3>
-                <p>Proprietary transparency logic ensures the price action is the hero, while the context is the map. No clutter. No noise. Just Alpha.</p>
+                <h3>Spectral Clarity</h3>
+                <p>Designed for the iPad and High-Res setups. Our proprietary transparency logic ensures price remains king while the map guides your execution.</p>
             </div>
             <div class="reason-card">
-                <h3>Institutional Pulse</h3>
-                <p>Watch session boxes expand in real-time. Understand <i>how</i> price arrives at a level, not just <i>when</i>.</p>
+                <h3>The 20 Protocol</h3>
+                <p>To preserve the statistical edge, access is restricted. Once the 20th slot is filled, the door is locked to the public indefinitely.</p>
             </div>
         </div>
 
         <div class="pricing-section">
-            <span style="text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 2px;">Founder Access</span>
-            <div class="big-price">€147<span style="font-size: 1.5rem;">/mo</span></div>
-            <div class="daily-breakdown">€4.90 / day</div>
+            <span style="text-transform: uppercase; font-size: 0.8rem; font-weight: 900; letter-spacing: 3px;">Full Context Access</span>
+            <div class="big-price">€147<span style="font-size: 1.5rem; letter-spacing: 0;">/mo</span></div>
+            <div class="daily-breakdown">€4.90 PER DAY</div>
             
             <p class="comparison-text">
-                Less than a coffee and a bagel. <br>
-                If you risk €100 per trade, AionFrame costs only <b>0.04R</b> per day.
+                "The most expensive tool in trading is a cluttered chart. <br> 
+                AionFrame is the cure."
             </p>
 
-            <a href="#" class="btn">SECURE YOUR SLOT</a>
-            <div class="limit-tag">STRICTLY LIMITED TO 20 USERS</div>
+            <a href="#" class="btn">SECURE FOUNDER SLOT</a>
+            <div class="limit-tag">Strictly Limited: 20/20 Slots Total</div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding-bottom: 40px; font-size: 0.7rem; opacity: 0.4;">
-        AionFrame Protocol © 2026 | Professional Grade Analytics
+    <footer style="text-align: center; padding: 40px; font-size: 0.7rem; opacity: 0.4; border-top: 1px solid #222;">
+        AionFrame Protocol © 2026 | Built for the High-Timeframe Analyst.
     </footer>
 
 </body>
