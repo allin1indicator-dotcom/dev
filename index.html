@@ -1,211 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ – Premium Market‑Structure Indicator</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
-<style>
-:root{
-  --bg-page:#f7faf9;
-  --text:#222;
-  --accent:#0066ff;
-  --accent-dark:#004c99;
-  --highlight:#ff9800;
-  --divider:#e0e0e0;
-  --candle-up:#28e17d;
-  --candle-down:#000000;
-  --as-c:#886f14;--ldn-c:#1e70b0;--nym-c:#8c1414;--nyl-c:#537b88;--nya-c:#41793a;--my-c:#673873;
-  --as-box:#bfa649;--ldn-box:#358097;--nym-box:#d14130;--nyl-box:#a1b8bf;--nya-box:#568f53;--my-box:#b28abc;
-  --rth-c:#c67624;--dhl-c:#080e31;
-  --nwog-c:#796bb8;--adr-c:#694a25;--news-c:#000000;--detail-c:#2e2e2e;
-}
-body{font-family:Arial,sans-serif;background:var(--bg-page);color:var(--text);margin:0;}
-.container{max-width:960px;margin:auto;padding:2rem;}
-h1{font-size:2.4rem;margin-bottom:.5rem}
-h2{font-size:1.8rem;margin-top:2rem}
-p{line-height:1.6;margin:1rem 0}
-a{color:var(--accent);text-decoration:none}
-a:hover{color:var(--accent-dark)}
-.cta{display:inline-block;background:var(--accent);color:#fff;padding:.8rem 1.6rem;border-radius:4px;font-weight:bold;margin-top:1rem}
-.cta:hover{background:var(--accent-dark)}
-.hr{border:none;height:1px;background:var(--divider);margin:2rem 0}
-.box{background:#fff;border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1.5rem 0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-.toggle{border:1px solid var(--divider);border-radius:4px;margin:1rem 0}
-.toggle summary{background:#fff;padding:.8rem 1rem;cursor:pointer;font-weight:bold}
-.toggle[open] summary{background:var(--bg-page)}
-.toggle div{padding:1rem;background:#fff}
-.slideshow{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;margin:2rem 0}
-.slideshow img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;opacity:0;animation:fade 45s infinite}
-.slideshow img:nth-child(1){animation-delay:0s}
-.slideshow img:nth-child(2){animation-delay:5s}
-.slideshow img:nth-child(3){animation-delay:10s}
-.slideshow img:nth-child(4){animation-delay:15s}
-.slideshow img:nth-child(5){animation-delay:20s}
-.slideshow img:nth-child(6){animation-delay:25s}
-.slideshow img:nth-child(7){animation-delay:30s}
-.slideshow img:nth-child(8){animation-delay:35s}
-.slideshow img:nth-child(9){animation-delay:40s}
-@keyframes fade{
-  0%{opacity:0}2%{opacity:1}22%{opacity:1}24%{opacity:0}100%{opacity:0}
-}
-.testimonial{border-left:4px solid var(--accent);padding-left:1rem;margin:1.5rem 0}
-.faq dt{font-weight:bold;margin-top:.8rem}
-.faq dd{margin-left:1rem;margin-bottom:.5rem}
-.price{font-size:2rem;font-weight:bold}
-.badge{background:var(--highlight);color:#fff;padding:0.2rem 0.5rem;border-radius:3px;margin-left:0.5rem}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AionFrame | The 20 Protocol</title>
+    <style>
+        :root { --accent: #00ff88; --bg: #050505; --card: #111; }
+        body { background: var(--bg); color: #999; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid #222; }
+        h1 { color: #fff; font-size: 3.5rem; letter-spacing: -2px; margin: 0; }
+        .tagline { color: var(--accent); font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+        .container { max-width: 900px; margin: auto; padding: 80px 20px; }
+        .reasoning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+        .reason-card h3 { color: #fff; margin-bottom: 10px; }
+        .pricing-section { background: #fff; color: #000; padding: 60px; border-radius: 4px; margin-top: 80px; text-align: center; }
+        .big-price { font-size: 4.5rem; font-weight: 900; margin: 0; line-height: 1; }
+        .daily-breakdown { font-size: 1.2rem; font-weight: 600; color: #555; margin-top: 10px; }
+        .btn { display: inline-block; background: #000; color: #fff; padding: 20px 40px; text-decoration: none; font-weight: bold; margin-top: 30px; letter-spacing: 1px; transition: 0.3s; }
+        .btn:hover { background: var(--accent); color: #000; }
+        .limit-tag { color: #ff4444; font-weight: bold; margin-top: 20px; font-size: 0.8rem; }
+        .comparison-text { font-style: italic; margin-top: 20px; color: #444; font-size: 0.95rem; }
+    </style>
 </head>
 <body>
-<div class="container">
 
-<img src="IMG_1197.jpeg" alt="Logo" style="max-width:180px;display:block;margin-bottom:1.5rem">
+    <div class="hero">
+        <div class="tagline">TradingView Context Engine</div>
+        <h1>AIONFRAME</h1>
+        <p style="max-width: 500px;">A surgical framework for institutional time & price analysis. Limited to 20 seats.</p>
+    </div>
 
-<h1>𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️ – Premium Market‑Structure Indicator</h1>
-<p><strong>Full market structure, auto‑drawn, instantly loaded.</strong> Sessions, HTF highs & lows, gaps, ADR, news and holiday logic appear on the chart without a single click.</p>
-<a href="#trial" class="cta">Start 15‑Day Free Trial</a>
+    <div class="container">
+        <h2>Why AionFrame?</h2>
+        <div class="reasoning-grid">
+            <div class="reason-card">
+                <h3>Eliminate Decision Fatigue</h3>
+                <p>AionFrame automates the plotting of Midnight Open, RTH gaps, and session ranges. Your job isn't to draw lines—it's to execute trades.</p>
+            </div>
+            <div class="reason-card">
+                <h3>The "Stop-Loss" Insurance</h3>
+                <p>One saved stop-loss per month pays for the entire year. AionFrame identifies liquidity traps before you fall into them.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Surgical Clarity</h3>
+                <p>Proprietary transparency logic ensures the price action is the hero, while the context is the map. No clutter. No noise. Just Alpha.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Institutional Pulse</h3>
+                <p>Watch session boxes expand in real-time. Understand <i>how</i> price arrives at a level, not just <i>when</i>.</p>
+            </div>
+        </div>
 
-<hr class="hr">
+        <div class="pricing-section">
+            <span style="text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 2px;">Founder Access</span>
+            <div class="big-price">€147<span style="font-size: 1.5rem;">/mo</span></div>
+            <div class="daily-breakdown">€4.90 / day</div>
+            
+            <p class="comparison-text">
+                Less than a coffee and a bagel. <br>
+                If you risk €100 per trade, AionFrame costs only <b>0.04R</b> per day.
+            </p>
 
-<h2>The Real Problem</h2>
-<p>Traders have tools, but they lack structural consistency. Manual session marking, constant HTF scanning, separate gap/volatility tracking, and off‑chart news create <strong>cognitive fragmentation</strong>.</p>
+            <a href="#" class="btn">SECURE YOUR SLOT</a>
+            <div class="limit-tag">STRICTLY LIMITED TO 20 USERS</div>
+        </div>
+    </div>
 
-<h2>The Shift</h2>
-<p>ALL IN 1 loads a complete structural framework the moment a chart opens—no drawing, no syncing, no tab‑switching. Price stays central; context stays persistent.</p>
+    <footer style="text-align: center; padding-bottom: 40px; font-size: 0.7rem; opacity: 0.4;">
+        AionFrame Protocol © 2026 | Professional Grade Analytics
+    </footer>
 
-<hr class="hr">
-
-<h2>Pain → Structural Resolution</h2>
-<div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
-  <div class="card"><strong>Manual session marking slows execution</strong> → Auto‑plotted Asia, London & NY ranges persist until invalidated.</div>
-  <div class="card"><strong>HTF blind spots distort bias</strong> → Daily‑Weekly‑Monthly‑Quarterly‑Yearly extremes extend forward.</div>
-  <div class="card"><strong>Gaps require separate tracking</strong> → NY close‑to‑open & weekly opening gaps stay active until filled.</div>
-  <div class="card"><strong>Volatility expectations are guesswork</strong> → 5‑Day ADR projects realistic daily expansion.</div>
-  <div class="card"><strong>News disrupts narrative</strong> → High‑impact events appear directly on the chart.</div>
-  <div class="card"><strong>Holiday sessions distort liquidity</strong> → Holiday boxes mark abnormal session structure automatically.</div>
-  <div class="card"><strong>Daily prep consumes time</strong> → Complete narrative loads instantly on any instrument.</div>
-</div>
-
-<hr class="hr">
-
-<div class="box">
-  <strong>Solution – ONE adaptive layer</strong>
-  <ul>
-    <li>Session‑structure engine</li>
-    <li>Multi‑timeframe liquidity mapping</li>
-    <li>Opening‑imbalance detection</li>
-    <li>Intraday expansion tracking (Live H/L + 5‑Day ADR)</li>
-    <li>Custom anchor levels</li>
-    <li>Calendar & event awareness</li>
-    <li>State‑based alerts</li>
-    <li>Replay‑compatible framework</li>
-  </ul>
-  <p>Labels auto‑adjust, levels stack when overlapping, and historical levels change state when re‑traded. No candle obstruction, no visual noise, no manual rebuilding.</p>
-</div>
-
-<hr class="hr">
-
-<h2>Core Benefits</h2>
-<ul>
-  <li>Instant market narrative across all timeframes</li>
-  <li>Preparation time drops ~80 %</li>
-  <li>Consistent structural references session‑to‑session</li>
-  <li>Measurable volatility expectations</li>
-  <li>Execution decisions within a defined context</li>
-  <li>Alerts reduce screen‑monitoring time</li>
-  <li>Replay mode preserves full contextual accuracy</li>
-  <li>Screenshots contain complete structural data</li>
-</ul>
-
-<hr class="hr">
-
-<div class="slideshow">
-  <img src="IMG_6781.jpeg" alt="Indicator view 1">
-  <img src="IMG_6782.jpeg" alt="Indicator view 2">
-  <img src="IMG_6783.jpeg" alt="Indicator view 3">
-  <img src="IMG_6784.jpeg" alt="Indicator view 4">
-  <img src="IMG_6785.jpeg" alt="Indicator view 5">
-  <img src="IMG_6786.jpeg" alt="Indicator view 6">
-  <img src="IMG_6787.jpeg" alt="Indicator view 7">
-  <img src="IMG_6788.jpeg" alt="Indicator view 8">
-  <img src="IMG_6790.jpeg" alt="Indicator view 9">
-</div>
-
-<hr class="hr">
-
-<h2>What Traders Are Saying</h2>
-<div class="testimonial"><strong>Thomas W. (IE)</strong> – “From manual marking to structured execution. The framework loads instantly and stays aligned across timeframes.”</div>
-<div class="testimonial"><strong>Amairani R. (US)</strong> – “Consolidated framework, clear narrative. Sessions, highs/lows and gaps coexist without obscuring price.”</div>
-<div class="testimonial"><strong>Johny F. (PT)</strong> – “Context appears exactly when relevant and changes state after interaction.”</div>
-<div class="testimonial"><strong>Matteo V. (IT)</strong> – “Preparation is faster, cleaner and more consistent.”</div>
-<div class="testimonial"><strong>Kevin L. (US)</strong> – “Long‑term structural consistency without constant adjustment.”</div>
-<div class="testimonial"><strong>Mohamed D. (SA)</strong> – “Alerts let me step away from the screen without losing awareness.”</div>
-<div class="testimonial"><strong>Riccardo F.</strong> – “Built for structural clarity, not more indicators.”</div>
-
-<hr class="hr">
-
-<h2>State‑Based Alerts</h2>
-<details class="toggle">
-  <summary>How to set up alerts (click to expand)</summary>
-  <div>
-    <ol>
-      <li>Open the indicator’s Alert Panel (gear icon).</li>
-      <li>Select the level to monitor – Daily High, NY Gap, Holiday Box, etc.</li>
-      <li>Choose condition: Crosses Up, Crosses Down, or Touches.</li>
-      <li>Set notification method – Discord webhook, email, or phone.</li>
-      <li>Save. Alerts fire automatically when price interacts with the level.</li>
-    </ol>
-    <p>Alerts are logged to your Coda sheet via the Cloudflare Worker.</p>
-  </div>
-</details>
-
-<h2>Adding the Indicator</h2>
-<details class="toggle">
-  <summary>One‑click installation (click to expand)</summary>
-  <div>
-    <ol>
-      <li>Log into TradingView and open any chart.</li>
-      <li>Navigate to Indicators → My Scripts → 𝗥) 𝗔𝗟𝗟 𝗜𝗡 𝟭 ⛳️.</li>
-      <li>If not subscribed, you’ll be redirected to Stripe checkout.</li>
-      <li>After activation, the indicator loads automatically on every chart.</li>
-      <li>Use Settings to toggle modules without leaving the chart.</li>
-    </ol>
-  </div>
-</details>
-
-<hr class="hr">
-
-<h2>FAQ & Support</h2>
-<dl class="faq">
-  <dt>Do I need to keep the indicator running 24/7?</dt>
-  <dd>No. It loads when you open a chart; you can close the browser anytime.</dd>
-  <dt>Can I use it on multiple devices?</dt>
-  <dd>Yes. Subscription ties to your TradingView account.</dd>
-  <dt>Need help customizing modules?</dt>
-  <dd>Book a 30‑minute Strategy Call below.</dd>
-</dl>
-
-<a href="https://calendly.com/your‑booking‑link" class="cta">Book a Call</a>
-
-<hr class="hr">
-
-<h2>Pricing</h2>
-<p class="price"><strong>$109 / month</strong><span class="badge">Professional Access</span></p>
-<p>Founding Access – <strong>$99 / month</strong> (limited seats)</p>
-<ul>
-  <li>All modules included</li>
-  <li>Multi‑timeframe structural mapping</li>
-  <li>Session + liquidity framework</li>
-  <li>Event & volatility integration</li>
-  <li>State‑based alert system</li>
-  <li>Replay compatibility</li>
-</ul>
-<p>15‑day full‑access trial. Private, cancel anytime. Limited onboarding capacity.</p>
-
-<a id="trial" href="https://buy.stripe.com/14AfZhbZR2rO7wpbX54AU0k" class="cta">Start 15‑Day Trial</a>
-<a href="https://buy.stripe.com/dRm7sL6Fx6I4dUNbX54AU0j" class="cta" style="margin-left:1rem;">Private Strategy Call</a>
-
-</div>
 </body>
 </html>
